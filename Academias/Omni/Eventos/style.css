@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Baloo-Regular';
+    src: url('./fonts/Baloo-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Comfortaa_Bold';
+    src: url('./fonts/Comfortaa_Bold.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#marca {
+	position: absolute;
+	top: 410px;
+	left: -260px;
+	display: none;
+}
+#cortina {
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1360px;
+    height: 703px;
+	background: #000;
+}
+/* Dados */
+div#nome {
+    position: absolute;
+    left: 603px;
+    top: 200px;
+    font-family: 'Baloo-Regular';
+    color: #001C54;
+    font-size: 80px;
+    width: 710px;
+    display: none;
+	line-height: 85px;
+}
+div#dia, #local, #horario {
+    position: absolute;
+    left: 603px;
+    top: 390px;
+    font-family: 'Comfortaa_Bold';
+    color: #001C54;
+    font-size: 50px;
+    width: 710px;
+    display: none;
+}
+#local {
+	top: 470px;
+}
+#horario {
+	top: 550px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	height: 703px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 1360px;
+	height: 703px;
+	object-fit: fill;
+}
+
+/* animacao */
+.exibir-marca {
+    animation-name: exibir-marca;
+    animation-duration: 1800ms;
+}
+@keyframes exibir-marca {
+    from {
+        left: -500px;
+		top: 530px;
+    }
+    to {
+        left: -260px;
+		top: 410px;
+    }
+}

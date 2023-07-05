@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'avenir-next-lt-pro-demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+div#total_vagas {
+    position: absolute;
+    left: 775px;
+    top: 669px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    font-size: 22px;
+    text-shadow: 2px 2px #555;
+    display: none;
+}
+#itens {
+    position: absolute;
+    left: 256px;
+    top: 263px;
+    width: 848px;
+}
+.area {
+    float: left;
+    width: 539px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    text-shadow: 2px 2px #555;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 18.5px;
+    display: none;
+}
+.vagas {
+    float: left;
+    width: 308px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    text-shadow: 2px 2px #555;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 18.5px;
+    display: none;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mostra-texto {
+    animation-name: mostra-texto;
+    animation-duration: .5s;
+}
+.esconde-texto {
+    animation-name: esconde-texto;
+    animation-duration: .3s;
+}
+@keyframes mostra-texto{
+    from {
+        top: 382px;
+        opacity: 0;
+    }
+    to {
+        top: 322px;
+        opacity: 1;
+    }
+}
+@keyframes esconde-texto{
+    from {
+        top: 322px;
+        opacity: 1;
+    }
+    to {
+        top: 280px;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Helvetica-Black';
+    src: url('./fonts/Helvetica-Black.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+div#texto {
+    display: none;
+    font-size: 40px;
+    line-height: 50px;
+}
+div.texto {
+    position: absolute;
+    left: 250px;
+    top: 270px;
+    font-family: 'Helvetica-Black';
+    color: #000000;
+    font-size: 47px;
+    width: 860px;
+    opacity: 1;
+    display: none;
+    text-align: center;
+    line-height: 55px;
+    text-transform: uppercase;
+}
+div.texto a {
+    color: #000;
+}
+div.texto * {
+    text-decoration: none;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

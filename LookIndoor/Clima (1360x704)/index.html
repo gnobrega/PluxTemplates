@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Abertura/fundo -->
+        <video id="fundo" src=""></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Hoje -->
+            <div id="tempHoje">00º</div>
+            <div id="chuvaHoje">00%</div>
+            <div id="umidHoje">00%</div>
+            <div id="maxHoje">00º</div>
+            <div id="minHoje">00º</div>
+
+            <!-- Próximos dias -->
+            <div id="dia1" class="dia">---</div>
+            <div id="dia2" class="dia">---</div>
+            <div id="dia3" class="dia">---</div>
+            <div id="dia4" class="dia">---</div>
+
+            <img id="icon1" class="icon" src="./media/1.png" />
+            <div id="chuva1" class="chuva">00%</div>
+            <div id="min1" class="min">00º</div>
+            <div id="max1" class="max">00º</div>
+
+            <img id="icon2" class="icon" src="./media/1.png" />
+            <div id="chuva2" class="chuva">00%</div>
+            <div id="min2" class="min">00º</div>
+            <div id="max2" class="max">00º</div>
+
+            <img id="icon3" class="icon" src="./media/1.png" />
+            <div id="chuva3" class="chuva">00%</div>
+            <div id="min3" class="min">00º</div>
+            <div id="max3" class="max">00º</div>
+
+            <img id="icon4" class="icon" src="./media/1.png" />
+            <div id="chuva4" class="chuva">00%</div>
+            <div id="min4" class="min">00º</div>
+            <div id="max4" class="max">00º</div>
+        </div>
+
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+
+            //var DATA_SOURCE = "/CONTEUDO/PREVISAO/previsao.xml";
+            
+            var objDate = new Date();
+
+            $(function () {
+                
+                //Conteúdo encontrado
+                if (typeof (GnContentFound) != 'undefined') {
+                    GnContentFound();
+                }
+
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    //loadData(DATA_SOURCE);
+                    loadData("/CONTEUDO/PREVISAO/weather.json", "/CONTEUDO/PREVISAO/forecast.json");
+
+                    //Preenche os dias
+                    var dias = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+                    var hoje = objDate.getDay();
+                    $("#dia1").html(dias[hoje]);
+                    hoje = getNextDay(hoje);
+                    $("#dia2").html(dias[hoje]);
+                    hoje = getNextDay(hoje);
+                    $("#dia3").html(dias[hoje]);
+                    hoje = getNextDay(hoje);
+                    $("#dia4").html(dias[hoje]);
+                } else { //Preview
+
+                    //Autplay
+                    $("#abertura").ready(function () {
+                        GnPlay();
+                    });
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+			
+                //Ajusta o zoom até enquadrar na tela
+                var zoom = window.innerWidth / 1360;
+                $("body").css('-moz-transform', "scale("+zoom+","+zoom+")");
+                //$("body").css('zoom', zoom);
+                
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                var video = $("#fundo").get(0);
+                if( video.readyState == 4 ) {
+                    video.play();
+                } else {
+                    video.addEventListener('loadeddata', function() {
+                       video.play();
+                    }, false);
+                }
+
+                //Animaçao
+                $("#tempHoje").show();
+                $("#tempHoje").addClass('mostrar-temp-hoje');
+                $("#chuvaHoje").show();
+                $("#chuvaHoje").addClass('mostrar-chuva-hoje');
+                $("#umidHoje").show();
+                $("#umidHoje").addClass('mostrar-umid-hoje');
+                $("#maxHoje").show();
+                $("#maxHoje").addClass('mostrar-max-hoje');
+                $("#minHoje").show();
+                $("#minHoje").addClass('mostrar-min-hoje');
+
+                video.ontimeupdate = function () {
+                    if (video.currentTime > 6.7 && !contentLoaded) {
+                        contentLoaded = true;
+
+                        $("#tempHoje").css('opacity', '0');
+                        $("#tempHoje").addClass('esconder-temp');
+                        $("#chuvaHoje").css('opacity', '0');
+                        $("#chuvaHoje").addClass('esconder-umid');
+                        $("#umidHoje").css('opacity', '0');
+                        $("#umidHoje").addClass('esconder-umid');
+                        $("#maxHoje").css('opacity', '0');
+                        $("#maxHoje").addClass('esconder-umid');
+                        $("#minHoje").css('opacity', '0');
+                        $("#minHoje").addClass('esconder-umid');
+                        /**/
+                        setTimeout(function () {
+                            $(".dia").fadeIn();
+                            $(".icon").fadeIn();
+                            $(".min").fadeIn();
+                            $(".max").fadeIn();
+                        }, 500);
+                        setTimeout(function () {
+                            $(".chuva").fadeIn();
+                        }, 600);
+                    }
+                };
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+
+            //Carrega os dados 
+            function loadData(source, source2) {
+                var url = GnLib.getContentPath() + source + "?nocache=" + Math.random();
+                $.get(url, function (data) {
+                        
+                        //Define o turno
+                        var periodo = "night";
+                        if (objDate.getHours() >= 7 && objDate.getHours() < 19) {
+                            periodo = "day";
+                        }
+
+                        //Preenche os campos
+                        var tmp = parseInt(data.data.temperature);
+                        var hmid = parseInt(data.data.humidity);
+                        var icon = parseInt(data.data.icon)+"";
+                        $("#tempHoje").html(tmp + "º");
+                        $("#umidHoje").html(hmid + "%");
+                        
+                        //Muda o turno
+                        var date = new Date();
+                        if( date.getHours() > 17 ) {
+                            if( icon.indexOf("n") == -1 ) {
+                                icon = icon+"n";
+                            }
+                        }                        
+
+                        //Seleciona o vídeo de fundo
+                        switch (icon+"") {
+                            case "3":
+                            case "4":
+                            case "4r":
+                                classeVideo = "DiaChuva";
+                                break;
+                            case "1":
+                                classeVideo = "DiaLimpo";
+                                break;
+                            case "2":
+                            case "2r":
+                            case "3TM":
+                            case "9":
+                                classeVideo = "DiaNublado";
+                                break;
+                            case "5":
+                            case "6":
+                                classeVideo = "DiaTempestade";
+                                break;
+                            case "3n":
+                            case "4n":
+                            case "4rN":
+                                classeVideo = "NoiteChuva";
+                                break;
+                            case "1n":
+                                classeVideo = "NoiteLimpo";
+                                break;
+                            case "2n":
+                            case "2rN":
+                            case "9n":
+                                classeVideo = "NoiteNublado";
+                                break;
+                            case "5n":
+                            case "6n":
+                                classeVideo = "NoiteTempestade";
+                                break;
+                            default:
+                                classeVideo = "DiaNublado";
+                        }
+                        
+                        //Carrega o vídeo
+                        $("video#fundo").attr("src", "./media/"+classeVideo+".mp4");
+                }, 'json');
+                
+                var url = GnLib.getContentPath() + source2 + "?nocache=" + Math.random();
+                $.get(url, function (data) {
+                    var minH = parseInt(data.data[0].temperature.min);
+                    var maxH = parseInt(data.data[0].temperature.max);
+                    var prob = parseInt(data.data[0].rain.probability);
+                    $("#minHoje").html(maxH+"º");
+                    $("#maxHoje").html(minH+"º");
+                    $("#chuvaHoje").html(prob+"%");
+                    var date = new Date();
+                    for( i = 1; i <= 4; i ++ ) {
+                        var item = data.data[i]
+                        var rain = item.rain.probability;
+                        var max = item.temperature.max;
+                        var min = item.temperature.min;
+                        var icon = item.text_icon.icon.day;
+                        if( date.getHours() > 17 ) {
+                            icon = item.text_icon.icon.night;
+                        }
+                        
+                        $("#chuva"+i).html(parseInt(rain)+"%");
+                        $("#max"+i).html(parseInt(max)+"º");
+                        $("#min"+i).html(parseInt(min)+"º");
+                        $("#icon"+i).attr("src", "./media/"+getIcon(icon)+".png");
+                        console.log(item);
+                    }
+                }, 'json');
+            }
+            
+            function getIcon(key) {
+                switch( key + "") {
+                    case "1":
+                        icon = "3";
+                        break;
+                    case "1n":
+                        icon = "8";
+                        break;
+                    case "2":
+                        icon = "3";
+                        break;
+                    case "2n":
+                    case "2rN":
+                    case "9n":
+                        icon = "9";
+                        break;
+                    case "2r":
+                    case "9":
+                        icon = "4";
+                        break;
+                    case "3":
+                    case "4":
+                    case "4r":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                        icon = "2";
+                        break;
+                    case "3n":
+                    case "4n":
+                    case "4rN":
+                    case "5n":
+                    case "6n":
+                    case "7n":
+                    case "8n":
+                        icon = "7";
+                        break;
+                    case "3TM":
+                        icon = "1";
+                        break;
+                    case "9":
+                        break;
+                    default:
+                        icon = "10";
+                        break;
+                }
+                return icon;
+            }
+            
+            /*function loadData(source) {
+                var url = GnLib.getContentPath() + DATA_SOURCE + "?nocache=" + Math.random();
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+                        //Conteúdo encontrado
+                        if (typeof (GnContentFound) != 'undefined') {
+                            GnContentFound();
+                        }
+
+                        //Define o turno
+                        var periodo = "night";
+                        if (objDate.getHours() >= 7 && objDate.getHours() < 19) {
+                            periodo = "day";
+                        }
+                        
+                        //Preenche os campos
+                        var hmid = $(data).find('cc').find('hmid').text();
+                        var tmp = $(data).find('cc').find('tmp').text();
+                        
+                        var max1 = $(data).find("dayf day").eq(0).find('hi').text();
+                        var min1 = $(data).find("dayf day").eq(0).find('low').text();
+                        var chuva1 = $(data).find("dayf day").eq(0).find('ppcp').eq(0).text();
+                        var icon1 = getIconIndice($(data).find("dayf day").eq(0).find('icond').eq(0).text());
+                        if (periodo == 'night') {
+                            icon1 = parseInt(icon1) + 5;
+                        }
+                        
+                        var chuva2 = $(data).find("dayf day").eq(1).find('ppcp').eq(0).text();
+                        var max2 = $(data).find("dayf day").eq(1).find('hi').text();
+                        var min2 = $(data).find("dayf day").eq(1).find('low').text();
+                        var icon2 = getIconIndice($(data).find("dayf day").eq(1).find('icond').eq(0).text());
+                        if (periodo == 'night') {
+                            icon2 = parseInt(icon2) + 5;
+                        }
+
+                        var chuva3 = $(data).find("dayf day").eq(2).find('ppcp').eq(0).text();
+                        var max3 = $(data).find("dayf day").eq(2).find('hi').text();
+                        var min3 = $(data).find("dayf day").eq(2).find('low').text();
+                        var icon3 = getIconIndice($(data).find("dayf day").eq(1).find('icond').eq(0).text());
+                        if (periodo == 'night') {
+                            icon3 = parseInt(icon3) + 5;
+                        }
+
+                        var chuva4 = $(data).find("dayf day").eq(3).find('ppcp').eq(0).text();
+                        var max4 = $(data).find("dayf day").eq(3).find('hi').text();
+                        var min4 = $(data).find("dayf day").eq(3).find('low').text();
+                        var icon4 = getIconIndice($(data).find("dayf day").eq(1).find('icond').eq(0).text());
+                        if (periodo == 'night') {
+                            icon4 = parseInt(icon4) + 5;
+                        }
+
+                        $("#tempHoje").html(tmp + "º");
+                        $("#chuvaHoje").html(chuva1 + "%");
+                        $("#umidHoje").html(hmid + "%");
+                        $("#minHoje").html(max1 + "º");
+                        $("#maxHoje").html(min1 + "º");
+                        
+                        $("#icon1").attr("src", "./media/"+icon1+".png");
+                        $("#icon2").attr("src", "./media/"+icon2+".png");
+                        $("#icon3").attr("src", "./media/"+icon3+".png");
+                        $("#icon4").attr("src", "./media/"+icon4+".png");
+
+                        $("#chuva1").html(chuva1 + "%");
+                        $("#chuva2").html(chuva2 + "%");
+                        $("#chuva3").html(chuva3 + "%");
+                        $("#chuva4").html(chuva4 + "%");
+                        
+                        $("#max1").html(max1 + "º");
+                        $("#max2").html(max2 + "º");
+                        $("#max3").html(max3 + "º");
+                        $("#max4").html(max4 + "º");
+
+                        $("#min1").html(min1 + "º");
+                        $("#min2").html(min2 + "º");
+                        $("#min3").html(min3 + "º");
+                        $("#min4").html(min4 + "º");
+
+                        //Seleciona o vídeo de fundo
+                        switch (icon1+"") {
+                            case "1":
+                                classeVideo = "DiaNublado";
+                                break;
+                            case "2":
+                                classeVideo = "DiaChuva";
+                                break;
+                            case "3":
+                                classeVideo = "DiaLimpo";
+                                break;
+                            case "4":
+                                classeVideo = "DiaNublado";
+                                break;
+                            case "5":
+                                classeVideo = "DiaTempestade";
+                                break;
+                            case "6":
+                                classeVideo = "NoiteNublado";
+                                break;
+                            case "7":
+                                classeVideo = "NoiteChuva";
+                                break;
+                            case "8":
+                                classeVideo = "NoiteLimpo";
+                                break;
+                            case "9":
+                                classeVideo = "NoiteNublado";
+                                break;
+                            case "10":
+                                classeVideo = "NoiteTempestade";
+                                break;
+                            default:
+                                classeVideo = "DiaNublado";
+                        }
+                        
+                        //Carrega o vídeo
+                        $("video#fundo").attr("src", "./media/"+classeVideo+".mp4");
+                    }
+                });
+            }*/
+
+            //Formata o número
+            function formatNumber(val) {
+                var params = val.split(',');
+                if (params.length == 2) {
+                    return params[0] + "," + params[1].substr(0, 2);
+                } else {
+                    return val;
+                }
+            }
+
+            /**
+             * Recupera o índice do icone
+             */
+            function getIconIndice(icond) {
+                var icon = "1";
+                switch (icond) {
+
+                    //1 - nuvem
+                    case 'cloudy':
+                    case 'fog':
+                        icon = "1";
+                        break;
+
+                        //3 - sol
+                    case 'clear':
+                        icon = "3";
+                        break;
+
+                        //4 - sol + nuvem
+                    case 'hazy':
+                    case 'mostlycloudy':
+                    case 'mostlysunny':
+                    case 'partlycloudy':
+                    case 'partlysunny':
+                        icon = "4";
+                        break;
+
+                        //5 - nuvem + chuva
+                    case 'chanceflurries':
+                    case 'chancerain':
+                    case 'chancesleet':
+                    case 'chancesnow':
+                    case 'chancetstorms':
+                    case 'flurries':
+                    case 'sleet':
+                    case 'rain':
+                    case 'snow':
+                        icon = "5";
+                        break;
+                }
+                return icon;
+            }
+            
+            //Recupera o próximo dia da semana
+            function getNextDay(hoje) {
+                if (hoje < 6) {
+                    hoje++;
+                } else {
+                    hoje = 0;
+                }
+                return hoje;
+            }
+
+        </script>
+    </body>
+</html>

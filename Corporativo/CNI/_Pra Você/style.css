@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'HelveticaRounded-Bold_2';
+    src: url('./fonts/HelveticaRounded-Bold_2.otf') format('opentype');
+}
+@font-face {
+    font-family: 'akzidenz-grotesk';
+    src: url('./fonts/akzidenz-grotesk.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+
+div#editoria {
+    position: absolute;
+    left: 700px;
+    top: 65px;
+    font-family: 'HelveticaRounded-Bold_2';
+    color: #0e73bb;
+    font-size: 50pt;
+    display: none;
+    width: 560px;
+    text-align: right;
+}
+div#titulo {
+    position: absolute;
+    left: 755px;
+    top: 172px;
+    font-family: 'HelveticaRounded-Bold_2';
+    color: #1b2020;
+    font-size: 40pt;
+    display: none;
+    width: 560px;
+    line-height: 40pt;
+}
+div#texto {
+    position: absolute;
+    left: 755px;
+    top: 300px;
+    font-family: 'akzidenz-grotesk';
+    color: #1b2020;
+    font-size: 32pt;
+    width: 560px;
+    display: none;    
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 180px;
+    left: 130px;
+    height: 420px;
+    width: 586px;
+}
+video#abertura {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+img#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    object-fit: fill;
+}

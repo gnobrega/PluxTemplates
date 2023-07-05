@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1360, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <video src="./media/fnudo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Imagem -->
+            <div id="ctImg">
+                <img id="fileId" />
+            </div>
+            
+            <!-- Dados -->
+            <div id="pais1"></div>
+            <div id="x">X</div>
+            <div id="pais2"></div>
+            <div id="titulo"></div>
+            <div id="preco"></div>
+            <div id="data_hora"></div>
+            <div id="containerTexto">
+                <span id="texto"></span>
+            </div>
+            
+        </div>
+        
+        <div id="blackout"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/buteko101/promocao_do_dia.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+				   
+                   //Autplay
+                   setTimeout(function() {
+                       GnPlay();
+                   }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("video").get(0).play();
+                if( $("#titulo").text() != '' ) {
+                    $("#blackout").fadeOut();
+
+                    setTimeout(function() {
+                        $("#titulo, #preco, #data_hora, #pais1, #pais2, #x, #ctImg").fadeIn();
+                    }, 3000);
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

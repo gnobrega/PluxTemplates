@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Franklin Gothic Medium Cond Regular';
+    src: url('./fonts/Franklin Gothic Medium Cond Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, video {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+#fundo {
+    position: absolute;
+    width: 1360px;
+    height: 768px;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+ .indicador {
+     position: absolute;
+     top: 341px;
+     left: 830px;
+     color: #373636;
+     font-size: 37px;
+     width: 200px;
+     text-align: center;
+     font-family: 'Franklin Gothic Medium Cond Regular';
+     font-weight: bold;
+     display: none;
+ }
+ #ipca {
+    top: 447px;
+ }
+ #igp {
+    top: 559px;
+ }

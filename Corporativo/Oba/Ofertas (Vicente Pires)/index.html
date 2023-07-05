@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <div id="fundo"></div>
+            
+            <!-- Dados -->
+            <div id="dados">
+                <!-- Imagem -->
+                <img id="fileId" />
+                <div id="produto">Produto</div>
+                <div id="preco"></div>
+                <div id="cents"></div>
+                <div id="quantidade"></div>
+                <div id="vigencia"></div>
+            </div>
+            
+            <!-- Abertura -->
+            <video id="abertura" src="./media/abertura.mp4?a=1" ></video>
+            
+            <!-- Fechamento -->
+            <div id="ctFechamento">
+                <div id="fechamento"></div>
+            </div>
+            
+            <!-- Calhau -->
+            <video id="calhau" src="./media/calhau.mp4?a=1" ></video>
+            
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            var possuiConteudo = true;
+            
+            //Evita que o player pule a peça na falta de conteúdo
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+            
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/OBA/oba_led.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(tempalte) {
+                       var params = $("#preco").html().split(",");
+                       $("#preco").html(params[0]+",");
+                       $("#cents").html(params[1]);
+                       var validade = $("#validade").html();
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+                   $("body").css("zoom", "1.57");
+
+                   var params = $("#preco").html().split(",");
+                    $("#preco").html(params[0]+",");
+                    $("#cents").html(params[1]);
+                    var validade = $("#validade").html();
+				   
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                if( possuiConteudo ) {
+                    $("#abertura").get(0).play();
+                    setTimeout(function() {
+                        $("#abertura").css("top", "-184px");
+                        $("#abertura").addClass("subir-abertura");
+                    }, 2000);
+                } else {
+                    $("#calhau").show();
+                    $("#calhau").get(0).play();
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
+            }
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+        </script>
+    </body>
+</html>

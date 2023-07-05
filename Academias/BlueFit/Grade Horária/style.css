@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url('./fonts/Nexa Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+}
+#fundo-grade {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#hora {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    color: #F9F9F9;
+    font-size: 80px;
+    font-family: 'Nexa Bold';
+}
+/* Dados */
+#conteudo { 
+}
+.horario {
+    position: absolute;
+    color: #504E4E;
+    font-size: 38px;
+    font-family: 'Nexa Bold';
+    left: 59px;
+    text-align: center;
+}
+.horario div.sub {
+}
+.linha1 {
+    top: 247px;
+    display: none;
+}
+.linha2 {
+    top: 324px;
+    display: none;
+}
+.linha2 div.sub {
+    display: none;
+}
+.linha3 {
+    top: 420px;
+    display: none;
+}
+.linha4 {
+    top: 512px;
+    display: none;
+}
+.linha5 {
+    top: 600px;
+    display: none;
+}
+.linha6 {
+    top: 683px;
+    display: none;
+}
+.campo1 {
+    left: 285px;
+    width: 375px;
+}
+.campo2 {
+    left: 712px;
+    width: 275px;
+}
+.campo3 {
+    left: 1047px;
+    width: 275px;
+}
+.campo {
+    position: absolute;
+    height: 46px;
+    color: #504E4E;
+    font-size: 30px;
+    font-family: 'Nexa Bold';
+    margin-top: 9px;
+    overflow: hidden;
+    text-align: center;
+}
+#data {
+    position: absolute;
+    top: 95px;
+    left: 395px;
+    color: #F9F9F9;
+    font-size: 48px;
+    font-family: 'Nexa Bold';
+}
+
+/* animation */
+.show-grade {
+    animation-name: show-grade;
+    animation-duration: .5s;
+}
+@keyframes show-grade{
+    from {
+        top: 800px;
+    }
+    to {
+        top: 330px;
+    }
+}

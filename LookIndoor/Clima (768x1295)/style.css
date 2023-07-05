@@ -1,0 +1,293 @@
+@font-face {
+    font-family: 'AkzidenzGrotesk-Cond';
+    src: url('./fonts/AkzidenzGrotesk-Cond.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Uni Sans Semi Bold';
+    src: url('./fonts/Uni Sans Semi Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'avenir-next-lt-pro-demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 768px;
+    height: 1295px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    left: 768px;
+}
+/* Dados */
+#conteudo { 
+}
+#hora {
+    position: absolute;
+    top: 1020px;
+    left: 187px;
+    font-size: 90px;
+    font-family: 'AvenirNextLTPro-Bold';
+    color: #fff;
+    display: none;
+}
+#hora span {
+    font-family: 'AvenirNextLTPro-Regular';
+    color: #A6D0FB;
+}
+#tempHoje {
+    position: absolute;
+    color: #fff;
+    font-family: 'AkzidenzGrotesk-Cond';
+    font-size: 350px;
+    top: 633px;
+    left: 240px;
+    display: none;
+}
+#chuvaHoje, #umidHoje, #maxHoje, #minHoje {
+    position: absolute;
+    font-family: 'Uni Sans Semi Bold';
+    color: #fff;
+    font-size: 72px;
+    display: none;
+}
+#chuvaHoje {
+    top: 1144px;
+    left: 500px;
+}
+#umidHoje {
+    top: 1144px;
+    left: 228px;
+}
+#maxHoje {
+    top: 560px;
+    left: 1010px;
+}
+#minHoje {
+    top: 560px;
+    left: 845px;
+}
+img.icon {
+    position: absolute;
+    top: 165px;
+    display: none;
+    left: 126px;
+}
+img#icon1 {
+    top: 200px;
+}
+img#icon2 {
+    top: 476px;
+}
+img#icon3 {
+    top: 752px;
+}
+img#icon4 {
+    top: 1028px;
+}
+/* animation */
+.mostrar-temp-hoje {
+    animation-name: mostrar-temp-hoje;
+    animation-duration: 1s;
+}
+.mostrar-chuva-hoje {
+    animation-name: mostrar-chuva-hoje;
+    animation-duration: 1s;
+}
+.mostrar-umid-hoje {
+    animation-name: mostrar-umid-hoje;
+    animation-duration: 1s;
+}
+.mostrar-max-hoje {
+    animation-name: mostrar-max-hoje;
+    animation-duration: 1s;
+}
+.mostrar-min-hoje {
+    animation-name: mostrar-min-hoje;
+    animation-duration: 1s;
+}
+.esconder-temp {
+    animation-name: esconder-temp;
+    animation-duration: 600ms;
+}
+.esconder-umid {
+    animation-name: esconder-umid;
+    animation-duration: 600ms;
+}
+@keyframes mostrar-temp-hoje {
+    from {
+        opacity: 0;
+        left: 290px;
+    }
+    to {
+        opacity: 1;
+        left: 240px;
+        
+    }
+}
+@keyframes mostrar-chuva-hoje {
+    from {
+        opacity: 0;
+        left: 330px;
+    }
+    to {
+        opacity: 1;
+        left: 310px;
+    }
+}
+@keyframes mostrar-umid-hoje {
+    from {
+        opacity: 0;
+        left: 575px;
+    }
+    to {
+        opacity: 1;
+        left: 555px;
+    }
+}
+@keyframes mostrar-min-hoje {
+    from {
+        opacity: 0;
+        left: 865px;
+    }
+    to {
+        opacity: 1;
+        left: 845px;
+    }
+}
+@keyframes mostrar-max-hoje {
+    from {
+        opacity: 0;
+        left: 1030px;
+    }
+    to {
+        opacity: 1;
+        left: 1010px;
+    }
+}
+@keyframes esconder-temp {
+    from {
+        opacity: 1;
+        top: 190px;
+    }
+    to {
+        opacity: 0;
+        top: 210px;
+    }
+}
+@keyframes esconder-umid {
+    from {
+        opacity: 1;
+        top: 560px;
+    }
+    to {
+        opacity: 0;
+        top: 580px;
+    }
+}
+div#tempoAgora {
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    top: 166px;
+    left: 131px;
+    display: none;
+}
+
+/* Próximos dias */
+div.chuva {
+    position: absolute;
+    font-size: 60px;
+    color: #fff;
+    font-family: 'AkzidenzGrotesk-Cond';
+    top: 393px;
+    display: none;
+    left: 520px;
+}
+div#chuva1 {
+    top: 148px;
+}
+div#chuva2 {
+    top: 420px;
+}
+div#chuva3 {
+    top: 699px;
+}
+div#chuva4 {
+    top: 971px;
+}
+div.min,
+div.max {
+    position: absolute;
+    font-size: 78px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    top: 219px;  
+    display: none;
+    width: 140px;
+    text-align: center;
+    left: 480px;
+    font-weight: bold;
+}
+div#min1 {
+}
+div#max1 {
+    top: 303px;
+}
+div#min2 {
+    top: 495px;
+}
+div#max2 {
+    top: 580px;
+}
+div#min3 {
+    top: 772px;
+}
+div#max3 {
+    top: 854px;
+}
+div#min4 {
+    top: 1043px;
+}
+div#max4 {
+    top: 1128px;
+}
+div.dia {
+    position: absolute;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 35px;
+    color: #fff;
+    top: 155px;
+    display: none;
+    left: 126px;
+}
+div#dia1 {
+    
+}
+div#dia2 {
+    top: 431px;
+}
+div#dia3 {
+    top: 705px;
+}
+div#dia4 {
+    top: 980px;
+}

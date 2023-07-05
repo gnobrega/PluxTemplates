@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'BwModelica-Medium';
+    src: url('./fonts/BwModelica-Medium.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, video {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+div#nome {
+    position: absolute;
+    left: 595px;
+    top: 220px;
+    font-family: 'Nexa Bold';
+    color: #91BF56;
+    font-size: 34px;
+    width: 490px;
+    text-align: center;
+    display: none;
+    font-family: 'BwModelica-Medium';
+}
+div#descricao {
+    position: absolute;
+    left: 595px;
+    top: 320px;
+    font-family: 'BwModelica-Medium';
+    color: #000;
+    font-size: 26px;
+    width: 490px;
+    display: none;
+    line-height: 35px;
+    letter-spacing: 1px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 200px;
+    left: 140px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: fill;
+}
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 500ms;
+}
+.exibir-descricao {
+    animation-name: exibir-descricao;
+    animation-duration: 500ms;
+}
+@keyframes exibir-nome {
+    from {
+        left: 565px;
+    }
+    to {
+        left: 595px;
+    }
+}
+@keyframes exibir-descricao {
+    from {
+        opacity: 0;
+        top: 245px;
+    }
+    to {
+        opacity: 1;
+        top: 320px;
+    }
+}

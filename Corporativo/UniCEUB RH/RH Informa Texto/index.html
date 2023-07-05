@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            <img id="fileId" src="" />
+
+            <!-- Dados -->
+            <div id="titulo">Título</div>
+            <div id="texto1">Texto 1</div>
+            <div id="texto2">Texto 2</div>
+            <div id="informacoes" class="extra">Informações</div>
+            <div id="email" class="extra">Email</div>
+            <div id="ramal" class="extra">Ramal</div>
+            <div id="editorias">Editorias</div>
+            <img id="img0" />
+        </div>
+        
+        <!-- Abertura -->
+        <video id="abertura" src="./media/abertura.mp4"></video>
+		
+		<!-- Cortina -->
+		<div id="cortina"></div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            $(function () {
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/rh_informa.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function() {
+                        
+                        //Configura o layuot pela editoria
+                        var editoria = $("#editorias").html();
+                        switch (editoria) {
+                            case 'Capacitação':
+                                frame = 1;
+                                break;
+                            case 'Gestão de Desempenho':
+                                frame = 2;
+                                break;
+                            case 'Qualidade de Vida':
+                                frame = 3;
+                                break;
+                            case 'Talentos':
+                                frame = 4;
+                                break;
+                            case 'Benefícios':
+                                frame = 5;
+                                break;
+                            case 'Gestão de Clima':
+                                frame = 6;
+                                break;
+                            case 'Comunicação Interna':
+                                frame = 7;
+                                break;
+                            default:
+                                frame = 1;
+                        };
+                        $("#conteudo").addClass("frame"+frame);
+                    });
+
+                } else { //Preview
+                    //Autplay
+                    $("#abertura").ready(function () {
+                        GnPlay();
+                    });
+                }
+               
+            });
+
+            //Autoplay
+            function GnPlay() {
+
+                //Dá play no vídeo
+                //var video = $("#abertura").get(0);
+                //video.play();
+				$("#cortina").hide();
+                $("#abertura").css('top', '768px');
+                $("#abertura").addClass('esconde-abertura');
+
+                //Exibe o texto inicial
+                $("#titulo").fadeIn();
+                $("#texto1").fadeIn();
+
+                //Substitui o texto
+                setTimeout(function () {
+                    $("#texto1").css('opacity', 0);
+                    $("#texto1").addClass('esconde-texto');
+                }, 9800);
+                setTimeout(function () {
+                    $("#texto2").show();
+                    $("#texto2").css('opacity', 1);
+                    $("#texto2").addClass('exibe-texto');
+                }, 10000);
+                setTimeout(function () {
+                    $("#texto2").removeClass('exibe-texto');
+                    $("#texto2").css('opacity', 0);
+                    $("#texto2").addClass('esconde-texto');
+                }, 19800);
+                setTimeout(function () {
+                    $(".extra").fadeIn();
+//                    $(".extra").css('opacity', 1);
+//                    $(".extra").addClass('exibe-texto');
+                }, 20000);
+                
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+        </script>
+    </body>
+</html>

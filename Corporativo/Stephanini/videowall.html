@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 4080px;
+                height: 768px;
+				overflow: hidden;
+            }
+            iframe {
+                position: absolute;
+                border: none;
+				overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <script src='./jquery-3.5.1.min.js'></script>
+        <script>
+            //var TELA_W = 680;
+            //var TELA_H = 384;
+			//var TELA_W = 340;
+            //var TELA_H = 162;
+			var TELA_W = 320;
+            var TELA_H = 540;
+            var FRAMES = [
+
+                /*** LINHA 1 ***/
+                {
+                    //Painel Loterias
+                    //'src': 'http://disponibilidadetelecom.cetec.df.caixa/Home/?Filial=7434,7435,7436,7433,7438,7445,7874,7875,7876,7466,7469,7470,7877,0&TipoPainel=Lotericos',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 1,
+                    'y': 1,
+                    'zoom': .2
+                },
+                /*{
+                    //Painel Qualidade
+                    'src': 'http://disponibilidadetelecom.cetec.df.caixa/Home/?Filial=7434,7435,7436,7433,7438,7445,7874,7875,7876,7466,7469,7470,7877,0&TipoPainel=Qualidade',
+                    'width': 1,
+                    'height': 1,
+                    'x': 2,
+                    'y': 1,
+                },*/
+				// 1 - 1
+                {
+				
+                    //Painel Negocial
+                    //'src': 'http://disponibilidadetelecom.cetec.df.caixa/',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 2,
+                    'y': 1,
+                    'zoom': .2,
+                    'refresh': 15
+                },
+                {
+                    /* 2 X 2 */
+                    //Painel Agências
+                    //'src': 'http://disponibilidadetelecom.cetec.df.caixa/Home/?Filial=7434,7435,7436,7433,7438,7445,7874,7875,7876,7466,7469,7470,7877,0&TipoPainel=Tecnologia',
+                    'src': [
+                        'http://pt.wikipedia.org',
+                        'http://uol.com.br',
+                        'http://terra.com.br',
+                    ],
+                    'width': 2,
+                    'height': 2,
+                    'x': 3,
+                    'y': 1,
+                    'zoom': .4,
+                    'refresh': 15
+                },
+                {
+                    //Spectrum Backbone
+                    //'src': 'http://spectrum.caixa/spectrum/',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 5,
+                    'y': 1,
+                    'zoom': .2
+                },
+                {
+                    //Spectrum Extranet BSB
+                    //'src': 'http://spectrum.caixa/spectrum/',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 6,
+                    'y': 1,
+                    'zoom': .2
+                },
+                
+
+                /*** LINHA 1 ***/
+                {
+                    //Spectrum Extranet SP
+                    //'src': 'http://spectrum.caixa/spectrum/',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 1,
+                    'y': 2,
+                    'zoom': .2
+                },
+                {
+                    //Spectrum Extranet ELO
+                    //'src': 'http://spectrum.caixa/spectrum/',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 2,
+                    'y': 2,
+                    'zoom': .2
+                },
+                {
+                    //Painel Canais
+                    //'src': 'http://canais.ceptisp.caixa/inicio.php',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 5,
+                    'y': 2,
+                    'zoom': .2
+                },
+                {
+                    //Painel SISPL
+                    //'src': 'https://indicadores.ceptibr.caixa/painel/negocios',
+                    'src': 'http://pt.wikipedia.org',
+                    'width': 1,
+                    'height': 1,
+                    'x': 6,
+                    'y': 2,
+                    'zoom': .2
+                }
+            ];
+
+            //Render
+            $(function() {
+                render();
+            });
+
+            //Renderiza os frames
+            function render() {
+                for( i in FRAMES ) {
+                    
+                    //Configurações
+                    var frame = FRAMES[i];
+                    var frameId = 'frame-'+i;
+                    var zoom = 1;
+                    if( frame.zoom ) {
+                        zoom = frame.zoom;
+                    }
+                    var w = frame.width * TELA_W / zoom;
+                    var h = frame.height * TELA_H / zoom;
+                    var x = (frame.x-1) * TELA_W;
+                    var y = (frame.y-1) * TELA_H;
+
+                    //Cria o frame
+                    var iframe = $('<iframe>')
+                        .css('width', w+"px")
+                        .css('height', h+"px")
+                        .css('left', x+"px")
+                        .css('top', y+"px")
+                        .css('transform-origin', '0 0')
+                        .css('transform', 'scale('+zoom+')')
+                        .attr('id', frameId);
+
+                    //Source
+                    var source = frame.src;
+                    if( typeof(frame.src) == 'object' ) {
+                        source = frame.src[0];
+                    }
+                    iframe.attr('src', source);
+
+                    //Adiciona à página
+                    $('body').append(iframe);
+
+                    //Atualiza o conteúdo
+                    if( frame.refresh ) {
+                        setInterval(function(fId) {
+                            refresh(fId);
+                        }, frame.refresh*1000, frameId);
+                    }
+                }
+            }
+
+            //Atualiza o conteúdo de um frame
+            function refresh(frameId) {
+                var idx = parseInt(frameId.replace('frame-', ''));
+                var frame = FRAMES[idx];
+                var source = frame.src;
+                if( typeof(frame.src) == 'object' ) {
+                    
+                    //Carrega o próximo conteúdo
+                    if( !frame.index ) {
+                        frame.index = 0;
+                    }
+                    frame.index ++;
+                    if( !frame.src[frame.index] ) {
+                        frame.index = 0;
+                    }
+                    source = frame.src[frame.index];    
+                }
+
+                //Atualiza o frame
+                $("#"+frameId).attr('src', source);
+            }
+        </script>
+    </body>
+</html>

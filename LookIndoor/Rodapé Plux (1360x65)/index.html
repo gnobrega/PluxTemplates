@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        <div id="content">
+            <img id="relogio" src="./media/relogio.png" />
+            <div id="hora">00:00</div>
+            <div id="tempo">
+
+                <!-- Tempo agora Humidade -->
+                <div id="zona1" class="zona"><span>TEMPO AGORA</span>
+                    <img class="icon-sol" src="./media/ico-sol.png" />
+                    <img src="./media/ico-gota.png" class="icon-gota" /> <span class="txtUmid val">UR 00%</span>
+                </div>
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona2" class="zona"><span>TEMPO AGORA</span>
+                    <img class="icon-sol" src="./media/ico-sol.png" />
+                    <img src="./media/ico-term.png" class="icon-term" /> <span class="txtTmp val">00º</span>
+                </div>
+                
+                <!-- Tempo Hoje MAX e MIN -->
+                <div id="zona3" class="zona"><span>TEMPO HOJE</span>
+                    <img class="icon-sol" src="./media/ico-sol.png" />
+                    <img class="icon-term" src="./media/ico-term.png" />
+                    <span class="subtext">MAX</span>
+                    <span class="val max">00º</span>
+                    <span class="subtext">MIN</span>
+                    <span class="val min">00º</span>
+                </div>
+                
+                <!-- Tempo hoje chuva -->
+                <div id="zona4" class="zona"><span>TEMPO HOJE</span>
+                    <img class="icon-sol" src="./media/ico-sol.png" />
+                    <img src="./media/ico-chuva.png" class="icon-chuva" /> 
+                    <span class="txtChuva val">0%</span>
+                </div>
+                
+                <!-- Tempo amanha chuva -->
+                <div id="zona5" class="zona"><span>TEMPO AMANHÃ</span>
+                    <img class="icon-sol" src="./media/ico-sol.png" />
+                    <img src="./media/ico-chuva.png" class="icon-chuva" /> 
+                    <span class="txtChuva val">0%</span>
+                </div>
+                
+                <!-- Tempo Amanha MAX e MIN -->
+                <div id="zona6" class="zona"><span>TEMPO AMANHÃ</span>
+                    <img class="icon-sol" src="./media/ico-sol.png" />
+                    <img class="icon-term" src="./media/ico-term.png" />
+                    <span class="subtext">MAX</span>
+                    <span class="val max">00º</span>
+                    <span class="subtext">MIN</span>
+                    <span class="val min">00º</span>
+                </div>
+
+                <!-- Dolar -->
+                <div id="zona7" class="zona">
+                    <span class='simbol'>$</span>
+                    <span>DÓLAR</span>
+                    <span class="variacao">0,00%</span>
+                    <span class="valor">R$0,00</span>
+                </div>
+
+                <!-- Euro -->
+                <div id="zona8" class="zona">
+                    <span class='simbol'>€</span>
+                    <span>EURO</span>
+                    <span class="variacao">0,00%</span>
+                    <span class="valor">R$0,00</span>
+                </div>
+                
+            </div>
+            
+            <img id="logo" src="./media/logo.png" />
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "/CONTEUDO/PREVISAO/previsao.xml";
+            var objDate = new Date();
+            
+            //Dá o Ok sobre o carregamento com sucesso
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+            
+            function GnPlay() {
+			
+                //Ajusta o zoom até enquadrar na tela
+                var zoom = window.innerWidth / 1360;
+                $("body").css('-moz-transform', "scale("+zoom+","+zoom+")");
+                $("body").css('zoom', zoom);
+            }
+
+            //Recupera a hora
+            autoloadFooter();
+            
+            //Carrega o rodapé
+            function autoloadFooter() {
+                
+                //Atualiza o relógio
+                updateTime();
+                setInterval(updateTime, 200);
+                
+                //Carrega os dados
+                var source1 = "/CONTEUDO/PREVISAO/weather.json";
+                var source2 = "/CONTEUDO/PREVISAO/forecast.json";
+                var source3 = "/CONTEUDO/ECONOMIA/economia.xml";
+                loadData(source1, source2, source3);
+                
+                //Inicia o carrossel
+                setInterval(function() {
+                    toggle();
+                }, 9000);
+            }
+            
+            //Atualiza o relógio
+            function updateTime () {
+                var MESES = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+                var d = new Date();
+                var horas = d.getHours();
+                var minutos = d.getMinutes();
+                        var segundos = d.getSeconds();
+                var dia = d.getDate();
+                var mes = d.getMonth();
+                var ano = d.getFullYear();
+                if (horas < 10) {
+                    horas = "0" + horas;
+                }
+                if (minutos < 10) {
+                    minutos = "0" + minutos;
+                }
+                        if (segundos < 10) {
+                    segundos = "0" + segundos;
+                }
+                if (dia < 10) {
+                    dia = "0" + dia;
+                }
+                $("#hora").html(horas + ":" + minutos + "<span>:"+segundos+"</span>");
+            }
+           
+            //Carrega os dados 
+            function loadData(source, source2, source3) {
+
+                //Carrega o tempo
+                var url = GnLib.getContentPath() + source + "?nocache=" + Math.random();
+                $.get(url, function (data) {
+                        
+                        //Define o turno
+                        var periodo = "night";
+                        if (objDate.getHours() >= 7 && objDate.getHours() < 19) {
+                            periodo = "day";
+                        }
+
+                        //Preenche os campos
+                        var tmp = parseInt(data.data.temperature);
+                        var hmid = parseInt(data.data.humidity);
+                        var icon = parseInt(data.data.icon)+"";
+                        $("#zona1 .txtUmid").html("UR " + hmid + "%");
+                        $("#zona2 .txtTmp").html(tmp + "º");
+                       
+                }, 'json');
+                
+                var url = GnLib.getContentPath() + source2 + "?nocache=" + Math.random();
+                $.get(url, function (data) {
+                    var minH = parseInt(data.data[0].temperature.min);
+                    var maxH = parseInt(data.data[0].temperature.max);
+                    var prob = parseInt(data.data[0].rain.probability);
+                    $("#zona3 .max").html(maxH + "º");
+                    $("#zona3 .min").html(minH + "º");
+                    $("#zona4 .txtChuva").html(prob + "%");
+
+                    var date = new Date();
+                    
+                    var item = data.data[1]
+                    var rain = item.rain.probability;
+                    var max = item.temperature.max;
+                    var min = item.temperature.min;
+                    var icon = item.text_icon.icon.day;
+                    
+                    $("#zona5 .txtChuva").html(rain + "%");
+                    $("#zona6 .max").html(max + "º");
+                    $("#zona6 .min").html(min + "º");
+                    
+                    //$("#icon"+i).attr("src", "./media/"+getIcon(icon)+".png");
+                }, 'json');
+
+                // Carrega a cotação
+                var url3 = GnLib.getContentPath() + source3 + "?nocache=" + Math.random();
+                $.ajax({
+                    url: url3,
+                    type: 'GET',
+                    success: function (data) {
+                        var dolar = formatNumber($(data).find('dolarComercial venda').attr('valor'));
+                        var dolarVar = formatNumber($(data).find('dolarComercial variacao').attr('valor'));
+                        var euro = formatNumber($(data).find('euro venda').attr('valor'));
+                        var euroVar = formatNumber($(data).find('euro variacao').attr('valor'));
+                        
+                        $("#zona7 .valor").text("R$"+dolar);
+                        $("#zona7 .variacao").text(dolarVar+"%");
+                        if( dolarVar.substr(0,1) == '+' ) {
+                            $("#zona7 .variacao").addClass('positiva');
+                        } else {
+                            $("#zona7 .variacao").addClass('negativa');
+                        }
+
+                        $("#zona8 .valor").text("R$"+euro);
+                        $("#zona8 .variacao").text(euroVar+"%");
+                        if( euroVar.substr(0,1) == '+' ) {
+                            $("#zona8 .variacao").addClass('positiva');
+                        } else {
+                            $("#zona8 .variacao").addClass('negativa');
+                        }
+                    }
+                });
+            }
+
+            //Formata o número
+            function formatNumber(val) {
+                console.log(val);
+                var params = val.split(',');
+                var rs = val;
+                var symbol = "";
+                if( params.length == 2 ) {
+                    rs = params[0]+"."+params[1].substr(0,2);
+                    var first = rs.substr(0, 1);
+                    if( isNaN(first) ) {
+                        symbol = first;
+                        rs = rs.substr(1);
+                    }
+                }
+                rs = parseFloat(rs).toFixed(2) + "";
+                rs = symbol + rs.replace(".", ",");
+                return rs;
+            }
+            
+            function getIcon(key) {
+                switch( key + "") {
+                    case "1":
+                        icon = "3";
+                        break;
+                    case "1n":
+                        icon = "8";
+                        break;
+                    case "2":
+                        icon = "3";
+                        break;
+                    case "2n":
+                    case "2rN":
+                    case "9n":
+                        icon = "9";
+                        break;
+                    case "2r":
+                    case "9":
+                        icon = "4";
+                        break;
+                    case "3":
+                    case "4":
+                    case "4r":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                        icon = "2";
+                        break;
+                    case "3n":
+                    case "4n":
+                    case "4rN":
+                    case "5n":
+                    case "6n":
+                    case "7n":
+                    case "8n":
+                        icon = "7";
+                        break;
+                    case "3TM":
+                        icon = "1";
+                        break;
+                    case "9":
+                        break;
+                    default:
+                        icon = "10";
+                        break;
+                }
+                return icon;
+            }
+            
+            //Recupera o indice da zona
+            var zonaIndex = 1;
+            function getNextZone() {
+                if( zonaIndex < $(".zona").length ) {
+                    zonaIndex++;
+                } else {
+                    zonaIndex = 1;
+                }
+                return zonaIndex;
+            }
+            
+            //Troca a zona
+            function toggle() {
+                $(".zona").fadeOut();
+                var idx = getNextZone();
+                setTimeout(function() {
+                    $("#zona"+idx).fadeIn();
+                }, 500);
+            }
+
+        </script>
+    </body>
+</html>

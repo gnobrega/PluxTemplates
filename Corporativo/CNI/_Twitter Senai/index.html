@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4"></video>
+
+            <!-- Imagem -->
+            <div id="ctImg">
+                <img id="fileId" />
+            </div>
+            
+            <!-- Dados -->
+            <div id="texto1" class="texto">Texto</div>
+            <div id="texto2" class="texto"></div>
+            <div id="texto" ></div>
+        </div>
+        
+        <div id="blackout"></div>
+
+        <!-- Calhau -->
+        <video src="./media/calhau.mp4" id="calhau"></video>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/twitter_senainacional.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        
+                        //Carrega o segundo twitt
+                        /*GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                            $("#texto2").html($("#texto").html());
+                        });*/
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+				   
+                   //Autplay
+                   setTimeout(function() {
+                       GnPlay();
+                   }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("#texto1").html($("#texto").html());
+                
+                if( $("#texto1").text() != '' ) {
+
+                    $("#blackout").hide();
+                    $("#fundo").get(0).play();
+                    setTimeout(function() {
+                        $("#ctImg").fadeIn();
+                        $("#texto1").fadeIn();
+                    } ,1200);
+                    setTimeout(function() {
+                        $("#texto1").fadeOut();
+                        $("#ctImg").fadeOut();
+                    } ,10000);
+
+                    //Esconde o texto 1
+                    /*setTimeout(function() {
+                        $("#texto1").css("opacity", "0");
+                        
+                        //Exibe o texto 2
+                        $("#texto2").fadeIn();
+                    } ,15000);*/
+
+                } else {
+                    
+                    // Calhau
+                    $("#blackout").hide();
+                    $("#calhau").show();
+                    $("#calhau").get(0).play();
+                } 
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

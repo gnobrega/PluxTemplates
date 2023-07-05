@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Abertura -->
+        <video id="abertura" src="./media/abertura.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+        </div>
+        
+        <!-- Cortina -->
+        <div id="cortina"></div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script src="./date.format.js"></script>
+        <script>
+            
+            var aniversariantes = [];
+            $(function () {
+                var date = new Date();
+
+                if (!GnLib.getParam('preview')) {
+                    
+                    //Sobrepõe o GnContentFound
+                    if (typeof (GnContentFound) != 'undefined') {
+                        GnContentFoundTmp = GnContentFound;
+                        GnContentFound = null;
+                    }
+
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/aniversariantes.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function (template) {
+
+                        //Extrai os aniversariantes da semana
+                        for (i in template.registros) {
+                            var registro = template.registros[i];
+                            var data = registro.data.split("/");
+                            var dataIso = new Date(date.getFullYear(),data[1]-1,data[0]);
+                            if( date.format('W') == dataIso.format('W') ) {
+                                aniversariantes.push(registro);
+                            }
+                        }
+                        
+                        //Notifica o sistema de que foram encontrados registros
+                        if( aniversariantes.length ) {
+                            if (typeof (GnContentFoundTmp) != 'undefined') {
+                                GnContentFoundTmp();
+                            }
+                        }
+
+                        //Lança os aniversariantes na tela
+                        for( var a in aniversariantes ) {
+                            var aniversariante = aniversariantes[a];
+                            var div = $("<div class='item'></div>");
+                            div.append($("<div class='data'>13/02</div>"));
+                            div.append($("<div class='nome'>"+aniversariante.nome+"</div>"));
+                            div.append($("<div class='setor'>"+aniversariante.setor+"</div>"));
+                            $("#conteudo").append(div);
+                        }
+                    });
+
+                } else { //Preview
+
+                    //Autplay
+                    $("#abertura").ready(function () {
+                        GnPlay();
+                    });
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+                
+                if( $(".nome").length > 0 ) {
+                    $("#cortina").hide();
+
+                    //Dá play no vídeo
+                    var video = $("#abertura").get(0);
+                    video.play();
+
+                    //Agenda a exibição do conteúdo
+                    var contentLoaded = false;
+                    video.ontimeupdate = function () {
+
+                        if (video.currentTime > 2.2 && !contentLoaded) {
+                            contentLoaded = true;
+
+                            $(".nome").fadeIn('slow');
+                            $(".data").fadeIn('slow');
+                            setTimeout(function () {
+                                $(".setor").fadeIn('slow');
+                            }, 500);
+                        }
+                    };
+                }
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost") > -1) {
+                setTimeout(GnPlay, 1000);
+            }
+
+            // Returns the ISO week of the date.
+            Date.prototype.getWeekNumber = function(){
+                var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+                var dayNum = d.getUTCDay() || 7;
+                d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+                var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+                return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+            };
+
+        </script>
+    </body>
+</html>

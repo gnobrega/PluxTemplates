@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Imagem -->
+            <img id="fileId" />
+
+            <!-- Degradê -->
+            <div id="degrade"></div>
+            
+            <!-- Dados -->
+            <div id="bgTitulo"></div>
+            <div id="titulo"></div>
+            <div id="containerTexto">
+                <span id="texto"></span>
+            </div>
+
+            <!-- Topo -->
+            <img id="topo" src="./media/topo.png">
+            
+        </div>
+        
+        <div id="blackout"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/fique_por_dentro.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+				   
+                   //Autplay
+                   setTimeout(function() {
+                       GnPlay();
+                   }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                if( $("#titulo").text() != '' ) {
+                    $("#blackout").fadeOut();
+
+                    $('#topo').show();
+                    $('#topo').addClass('mostrar-topo');
+
+                    setTimeout(function() {
+                        $('#titulo').fadeIn();
+                    }, 300);
+                    setTimeout(function() {
+                        $('#containerTexto').fadeIn();
+                    }, 600);
+
+                    $("#pg-titulo").show();
+                    $("#pg-titulo").addClass('show-title');
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

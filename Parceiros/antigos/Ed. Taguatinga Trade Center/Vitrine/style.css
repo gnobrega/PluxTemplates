@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'avenir-next-lt-pro';
+    src: url('./fonts/avenir-next-lt-pro.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-BoldCnIt';
+    src: url('./fonts/AvenirNextLTPro-BoldCnIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Cn_0';
+    src: url('./fonts/AvenirNextLTPro-Cn_0.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #062A2C;
+    overflow: hidden;
+}
+/* Dados */
+div#site {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Futura Std Bold';    
+}
+div#nome_loja {
+    position: absolute;
+    left: 760px;
+    top: 238px;
+    font-family: 'AvenirNextLTPro-Bold';
+    color: #676767;
+    font-size: 48px;
+    display: none;
+}
+div#descricao {
+    position: absolute;
+    left: 760px;
+    top: 300px;
+    font-family: 'AvenirNextLTPro-Cn_0';
+    color: #4F4F4F;
+    font-size: 29px;
+    display: none;
+    width: 560px;
+}
+div#numero_loja {
+    position: absolute;
+    left: 760px;
+    top: 400px;
+    font-family: 'AvenirNextLTPro-Bold';
+    color: #676767;
+    font-size: 48px;
+    display: none;
+    width: 560px;
+}
+div#andar {
+    position: absolute;
+    left: 760px;
+    top: 460px;
+    font-family: 'AvenirNextLTPro-Cn_0';
+    color: #676767;
+    font-size: 48px;
+    display: none;
+    width: 560px;
+}
+div#telefone {
+    position: absolute;
+    left: 760px;
+    top: 520px;
+    font-family: 'AvenirNextLTPro-Bold';
+    color: #676767;
+    font-size: 30px;
+    display: none;
+    width: 560px;
+}
+div#site {
+    position: absolute;
+    left: 760px;
+    top: 560px;
+    font-family: 'AvenirNextLTPro-Cn_0';
+    color: #009A8D;
+    font-size: 38px;
+    width: 560px;
+    display: none;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* animacao */
+.exibir-conteudo {
+    animation-name: exibir-conteudo;
+    animation-duration: 600ms;
+}
+@keyframes exibir-conteudo {
+    from {
+        opacity: 0;
+        left: 730px;
+    }
+    to {
+        opacity: 1;
+        left: 760px;
+    }
+}
+
+.exibir-imagem {
+    animation-name: exibir-imagem;
+    animation-duration: 600ms;
+}
+@keyframes exibir-imagem {
+    from {
+        left: -800px;
+    }
+    to {
+        left: 0px;
+    }
+}

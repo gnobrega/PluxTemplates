@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'NeoSansW1G-Regular';
+    src: url('./fonts/NeoSansW1G-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'NeoSansW1G-Bold';
+    src: url('./fonts/NeoSansW1G-Bold.ttf') format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'MonumentExtended-Regular';
+}
+html, body {
+    width: 768px;
+    height: 1360px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#blackout {
+    width: 768px;
+    height: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+    object-fit: fill;
+}
+#titulo, #horario, #texto1, #dia {
+    position: absolute;
+    left: 40px;
+    top: 460px;
+    font-size: 78px;
+    line-height: 85px;
+    color: #fff;
+    width: 710px;
+    font-family: 'NeoSansW1G-Regular';
+    display: none;
+}
+#titulo, #texto1 {
+    font-style: italic;
+}
+#horario, #dia {
+    top: 680px;
+    font-weight: bold;
+    font-size: 100px;
+}
+#dia {
+    top: 40px;
+    text-align: right;
+    width: 240px;
+    font-size: 80px;
+    line-height: 80px;
+    left: 490px;
+}
+#texto1 {
+    font-size: 70px;
+    top: 790px;
+}

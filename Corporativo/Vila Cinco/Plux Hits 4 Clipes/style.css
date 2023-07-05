@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Futura Bk BT Book';
+    src: url('./fonts/Futura Bk BT Book.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'FutuMd';
+    src: url('./fonts/FutuMd.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+}
+video#midiaVideo {
+    width: 1360px;
+    height: 768px;
+    object-fit: cover;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+}
+#back-info {
+    position: absolute;
+    width: 1260px;
+    height: 200px;
+    top: 530px;
+    left: 40px;
+    background: url(./media/fundo-info.png);
+    display: none;
+}
+img#cover {
+    position: absolute;
+    top: 530px;
+    left: 40px;
+    display: none;
+}
+div#artist {
+    width: 1000px;
+    color: #ED145A;
+    font-size: 30px;
+    font-family: 'Futura Bk BT Book';
+    position: absolute;
+    top: 561px;
+    left: 285px;
+    display: none;
+}
+div#music {
+    width: 1000px;
+    color: #fff;
+    font-size: 50px;
+    font-family: 'FutuMd';
+    position: absolute;
+    top: 598px;
+    left: 285px;
+    display: none;
+}
+div#album {
+    width: 1000px;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Futura Bk BT Book';
+    position: absolute;
+    top: 661px;
+    left: 285px;
+    display: none;
+}
+#classificacao {
+    position: absolute;
+    top: 665px;
+    left: 320px;
+    width: 693px;
+    height: 68px;
+    text-align: center;
+    display: none;
+}
+#artista {
+    position: absolute;
+    top: 30px;
+    left: 790px;
+    width: 693px;
+    height: 68px;
+    text-align: center;
+    display: none;
+}
+#lancamento {
+    position: absolute;
+    top: 30px;
+    left: 790px;
+    width: 693px;
+    height: 68px;
+    text-align: center;
+    display: none;
+}
+
+/* animation */
+.exibir-fundo {
+    animation-name: exibir-fundo;
+    animation-duration: .7s;
+}
+@keyframes exibir-fundo{
+    from {
+        opacity: 0;
+        left: -600px;
+    }
+    to {
+        opacity: 1;
+        left: 40px;
+    }
+}
+.esconder-fundo {
+    animation-name: esconder-fundo;
+    animation-duration: .7s;
+}
+@keyframes esconder-fundo{
+    from {
+        opacity: 1;
+        left: 40px;
+    }
+    to {
+        opacity: 0;
+        left: 500px;
+    }
+}

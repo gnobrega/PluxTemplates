@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'AkzidenzGrotesk-ExtraBold_1';
+    src: url('./fonts/AkzidenzGrotesk-ExtraBold_1.otf') format('opentype');
+}
+@font-face {
+    font-family: 'GothamHTF-Book';
+    src: url('./fonts/GothamHTF-Book.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#logo {
+	position: absolute;
+	top: 585px;
+	left: 1225px;
+	display: none;
+	width: 120px;
+}
+/* Dados */
+div#titulo {
+    position: absolute;
+    left: 625px;
+    top: 335px;
+    font-family: 'AkzidenzGrotesk-ExtraBold_1';
+    color: #fff;
+    font-size: 55px;
+    width: 660px;
+    display: none;
+}
+div#complemento, div#preco {
+    position: absolute;
+    left: 625px;
+    top: 410px;
+    font-family: 'GothamHTF-Book';
+    color: #fff;
+    font-size: 30px;
+    width: 595px;
+    text-align: center;
+    display: none;
+}
+div#preco {
+    top: 513px;
+    left: 715px;
+    font-size: 70px;
+    text-align: left;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 130px;
+    left: 260px;
+}
+
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 800ms;
+}
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+.exibir-retangulo {
+    animation-name: exibir-retangulo;
+    animation-duration: 800ms;
+}
+@keyframes exibir-nome {
+    from {
+        opacity: 0;
+        left: 610px;
+    }
+    to {
+        opacity: 1;
+        left: 630px;
+    }
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}
+@keyframes exibir-retangulo {
+    from {
+        opacity: 0;
+        left: 410px;
+    }
+    to {
+        opacity: 1;
+        left: 510px;
+    }
+}

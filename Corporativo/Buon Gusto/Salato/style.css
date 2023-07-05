@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Exo-Bold';
+    src: url('./fonts/Exo-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Exo-Regular';
+    src: url('./fonts/Exo-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AkzidenzGrotesk-Super';
+    src: url('./fonts/AkzidenzGrotesk-Super.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#fundo, #imgFundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 703px;
+}
+#fundo {
+    object-fit: fill;
+}
+#imgFundo {
+    display: none;
+}
+#logo {
+	position: absolute;
+	top: 585px;
+	left: 1225px;
+	display: none;
+	width: 120px;
+}
+/* Dados */
+div#titulo {
+    position: absolute;
+    left: 783px;
+    top: 514px;
+    font-family: 'Exo-Bold';
+    color: #CC3601;
+    font-size: 40px;
+    width: 600px;
+    display: none;
+}
+div#complemento, div#preco, div#cents {
+    position: absolute;
+    left: 783px;
+    top: 591px;
+    font-family: 'Exo-Regular';
+    color: #7A4444;
+    font-size: 35px;
+    width: 530px;
+    display: none;
+}
+div#quantidade {
+    position: absolute;
+    left: 913px;
+    top: 469px;
+    font-family: 'Exo-Regular';
+    color: #663333;
+    font-size: 26px;
+    width: 300px;
+    text-align: left;
+    display: none;
+}
+div#preco, div#cents {
+    font-family: 'Exo-Bold';
+    top: 424px;
+    left: 700px;
+    font-size: 110px;
+    text-align: left;
+    color: #663333;
+    letter-spacing: -5px;
+}
+div#preco {
+    top: 375px;
+    width: 185px;
+    text-align: right;
+}
+div#cents {
+    left: 893px;
+    font-size: 60px;
+    top: 392px;
+    letter-spacing: 0;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 2px;
+    left: 42px;
+    width: 698px;
+}
+
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 800ms;
+}
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+.exibir-retangulo {
+    animation-name: exibir-retangulo;
+    animation-duration: 800ms;
+}
+@keyframes exibir-nome {
+    from {
+        opacity: 0;
+        left: 610px;
+    }
+    to {
+        opacity: 1;
+        left: 630px;
+    }
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}
+@keyframes exibir-retangulo {
+    from {
+        opacity: 0;
+        left: 410px;
+    }
+    to {
+        opacity: 1;
+        left: 510px;
+    }
+}

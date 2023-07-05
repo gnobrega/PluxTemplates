@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4" muted></video>
+
+            <!-- Dados -->
+            <div id="usuario"></div>
+            <div id="hashtag"></div>
+
+            <div id="midia">
+
+                <!-- Video -->
+                <video id="midiaVideo" ></video>
+
+                <!-- Imagem -->
+                <img id="fileId" />
+            </div>
+            <div id="molde"></div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "/CONTEUDO/INSTAGRAM/instagram.xml";
+            var DURATION = 15000;
+            var ext;
+
+            $(function () {
+
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    GnLib.autoloadContent(DATA_SOURCE, function (template) {
+                        ext = $("#fileId").attr("src").substr(-3);
+                        if (ext == "mp4") {
+                            $("video#midiaVideo").attr("src", $("#fileId").attr("src").replace("img", "vid"));
+                            $("video#midiaVideo").on("loadeddata", function () {
+                                var oWidth = $(this).get(0).videoWidth;
+                                var oHeight = $(this).get(0).videoHeight;
+                                redimensionarMidia($("video#midiaVideo"), oWidth, oHeight);
+                                $("video#midiaVideo").hide();
+                            });
+
+                        } else {
+                            //Redimensiona a mídia
+                            $("img#fileId").on('load', function () {
+                                var oWidth = $(this).get(0).width;
+                                var oHeight = $(this).get(0).height;
+                                redimensionarMidia($("img#fileId"), oWidth, oHeight);
+                                $("#midia").hide();
+                            });
+                        }
+                    });
+
+                } else { //Preview
+
+                    //Autplay
+                    GnPlay();
+                }
+                
+                //Autoplay - localhost
+                if (window.location.href.indexOf("localhost/html5") > -1) {
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+			
+				//Ajusta o zoom até enquadrar na tela
+                var zoom = window.innerWidth / 1360;
+                $("body").css('-moz-transform', "scale("+zoom+","+zoom+")");
+                $("body").css('zoom', zoom);
+
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                if( video.readyState == 4 ) {
+                    video.play();
+                } else {
+                    video.onloadeddata = function() {
+                        video.play();
+                    }
+                }
+
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                video.ontimeupdate = function () {
+                    if (video.currentTime > 5 && !contentLoaded) {
+                        contentLoaded = true;
+
+                        //Exibe a mídia
+                        $("#midia").fadeIn();
+
+                        //Play no vídeo
+                        if ($("video#midiaVideo").attr('src')) {
+                            $("video#midiaVideo").show();
+                            $("video#midiaVideo").get(0).play();
+                        }
+
+                        //Exibe o conteúdo
+                        $("#usuario").show();
+                        $("#usuario").addClass("show-user");
+                        $("#hashtag").show();
+                        $("#hashtag").addClass("show-hashtag");
+                    }
+                }
+            }
+
+            //Redimensiona a mídia
+            var maxSize = 704;
+            function redimensionarMidia(midia, oWidth, oHeight) {
+                var width, height;
+                if (oWidth > oHeight) {
+                    width = maxSize;
+                    height = getHeight(oWidth, oHeight, width);
+                    midia.get(0).width = width;
+                } else {
+                    height = maxSize;
+                    width = getWidth(oHeight, oWidth, height);
+                    midia.get(0).height = maxSize;
+                }
+
+                midia.css("top", getPosY(midia, height));
+                midia.css("left", getPosX(midia, width));
+            }
+
+            var wContainer = 894;
+            var hContainer = 704;
+            function getPosX(midia, width) {
+                return (wContainer - width) / 2;
+            }
+            function getPosY(midia, height) {
+                return (hContainer - height) / 2;
+            }
+            function getWidth(oWidth, oHeight, height) {
+                var width = height * oWidth / oHeight;
+                return width;
+            }
+            function getHeight(oWidth, oHeight, width) {
+                var height = width * oHeight / oWidth;
+                return height;
+            }
+
+        </script>
+    </body>
+</html>

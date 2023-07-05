@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'FUTURAXK';
+    src: url('./fonts/FUTURAXK.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'CORBEL';
+    src: url('./fonts/CORBEL.TTF') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 768px;
+    height: 1295px;
+}
+body {
+    background: #00376d;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1295px;
+}
+#usuario {
+    position: absolute;
+    top: 1100px;
+    left: 85px;
+    font-family: 'FUTURAXK';
+    font-size: 45px;
+    color: #fff;
+    display: none;
+}
+#hashtag {
+    position: absolute;
+    top: 1165px;
+    left: 85px;
+    font-family: 'CORBEL';
+    font-size: 36px;
+    color: #fff;
+    width: 630px;
+    display: none;
+}
+#fileId, #midiaVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#molde {
+    position: absolute;
+    width: 704px;
+    height: 704px;
+    border: 1px solid blue;
+    left: 95px;
+    display: none;
+}
+#fundo {
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    top: 1360px;
+}
+#midia {
+    position: absolute;
+    /*display: none;*/
+}
+
+/* animation */
+.show-user {
+    animation-name: show-user;
+    animation-duration: .6s;
+}
+.show-hashtag {
+    animation-name: show-hashtag;
+    animation-duration: .6s;
+}
+@keyframes show-user{
+    from {
+        opacity: 0;
+        top: 1180px;
+    }
+    to {
+        opacity: 1;
+        top: 1100px;
+    }
+}
+@keyframes show-hashtag{
+    from {
+        opacity: 0;
+        top: 1245px;
+    }
+    to {
+        opacity: 1;
+        top: 1165px;
+    }
+}

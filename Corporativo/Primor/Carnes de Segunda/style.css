@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'MyriadPro-Semibold';
+    src: url('./fonts/MyriadPro-Semibold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BoldCond';
+    src: url('./fonts/MyriadPro-BoldCond.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#ctImg {
+	display: none;
+}
+#blackground {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+	background: #000;
+	z-index: 999;
+}
+#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#lista {
+	position: absolute;
+	top: 270px;
+	left: 50px;
+	width: 720px;
+}
+#titulo2 {
+	position: absolute;
+	top: 593px;
+	left: 890px;
+	font-size: 50px;
+	color: #fff;
+	font-family: "MyriadPro-BoldCond";
+	width: 338px;
+	line-height: 50px;
+}
+#lista .item {
+	height: 65px;
+}
+#lista .item * {
+	font-size: 30px;
+	padding-top: 13px;
+	float: left;
+}
+#lista .titulo {
+	width: 570px;
+	padding-left: 20px;
+}
+#lista .item.cinza {
+	background: #BCC9D6;
+}
+#lista .item.ativo {
+	background: #990000;
+	color: #fff;
+}
+.hidden {
+	display: none;
+}
+.foto {
+	position: absolute;
+	top: 265px;
+	left: 860px;
+	width: 390px;
+}

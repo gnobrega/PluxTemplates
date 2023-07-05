@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'AlrightSans-Bold-v3';
+    src: url('./fonts/AlrightSans-Bold-v3.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AlrightSans-Medium-v3';
+    src: url('./fonts/AlrightSans-Medium-v3.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AlrightSans-Black-v3';
+    src: url('./fonts/AlrightSans-Black-v3.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+div#negocios_editoria {
+    position: absolute;
+    width: 500px;
+    top: 14px;
+    left: 430px;
+    color: #FFF;
+    font-size: 39px;
+    font-family: 'AlrightSans-Black-v3';
+    text-align: center;
+    display: none;
+}
+div#propostas_anterior,
+div#propostas_atual,
+div#contrados_anterior,
+div#contrados_atual {
+    position: absolute;
+    left: 200px;
+    top: 334px;
+    font-family: 'AlrightSans-Bold-v3';
+    color: #FFF;
+    font-size: 60px;
+    width: 324px;
+    line-height: 50px;
+    text-align: center;
+    display: none;
+}
+div#propostas_atual, div#contrados_atual {
+    left: 834px;
+}
+div#contrados_anterior, div#contrados_atual {
+    top: 516px;
+}
+div#conversao_anterior,
+div#conversao_atual {
+    position: absolute;
+    width: 162px;
+    top: 466px;
+    left: 60px;
+    color: #F8971D;
+    font-size: 39px;
+    font-family: 'AlrightSans-Bold-v3';
+    text-align: center;
+    display: none;
+}
+div#conversao_atual {
+    left: 1130px;
+}
+div#tela2 {
+    display: none;
+}
+div#norte_anterior,
+div#norte_atual,
+div#nordeste_anterior,
+div#nordeste_atual,
+div#co_anterior,
+div#co_atual,
+div#sudeste_anterior,
+div#sudeste_atual,
+div#sul_anterior,
+div#sul_atual {
+    position: absolute;
+    width: 120px;
+    top: 250px;
+    left: 1014px;
+    color: #FFF;
+    font-size: 37px;
+    font-family: 'AlrightSans-Bold-v3';
+    text-align: center;
+}
+div#norte_atual,
+div#nordeste_atual,
+div#co_atual,
+div#sudeste_atual,
+div#sul_atual {
+    left: 1163px;
+}
+div#nordeste_anterior,
+div#nordeste_atual {
+    top: 329px;
+}
+div#co_anterior,
+div#co_atual {
+    top: 406px;
+}
+div#sudeste_anterior,
+div#sudeste_atual {
+    top: 483px;
+}
+div#sul_anterior,
+div#sul_atual {
+    top: 562px;
+}
+#mes {
+    position: absolute;
+    width: 300px;
+    top: 660px;
+    left: 987px;
+    color: #848484;
+    font-size: 28px;
+    font-family: 'AlrightSans-Medium-v3';
+    text-align: right;
+    display: none;
+}
+
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+}
+#ctImg {
+    display: none;
+}

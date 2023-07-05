@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('./fonts/Gotham-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('./fonts/Gotham-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AkzidenzGrotesk-Super';
+    src: url('./fonts/AkzidenzGrotesk-Super.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#logo {
+	position: absolute;
+	top: 585px;
+	left: 1225px;
+	display: none;
+	width: 120px;
+}
+/* Dados */
+div#titulo {
+    position: absolute;
+    left: 665px;
+    top: 550px;
+    font-family: 'Gotham-Bold';
+    color: #fff;
+    font-size: 35px;
+    width: 660px;
+    display: none;
+}
+div#complemento, div#preco, div#cents {
+    position: absolute;
+    left: 665px;
+    top: 600px;
+    font-family: 'Gotham-Light';
+    color: #fff;
+    font-size: 30px;
+    width: 595px;
+    text-align: left;
+    display: none;
+}
+div#preco, div#cents {
+    top: 310px;
+    left: 710px;
+    font-size: 120px;
+    text-align: left;
+    color: #F5A625;
+    font-family: 'AkzidenzGrotesk-Super';
+    letter-spacing: -5px;
+}
+div#cents {
+    left: 850px;
+    font-size: 70px;
+    top: 320px;
+    letter-spacing: 0;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    width: 530px;
+}
+
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 800ms;
+}
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+.exibir-retangulo {
+    animation-name: exibir-retangulo;
+    animation-duration: 800ms;
+}
+@keyframes exibir-nome {
+    from {
+        opacity: 0;
+        left: 610px;
+    }
+    to {
+        opacity: 1;
+        left: 630px;
+    }
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}
+@keyframes exibir-retangulo {
+    from {
+        opacity: 0;
+        left: 410px;
+    }
+    to {
+        opacity: 1;
+        left: 510px;
+    }
+}

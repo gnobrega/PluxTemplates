@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url('./fonts/Myriad Pro Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Myriad Pro Semibold';
+    src: url('./fonts/Myriad Pro Semibold.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+#topo {
+    height: 49px;
+    width: 1360px;
+    position: absolute;
+    left: 0;
+    background: url("./media/topo-azul.png");
+    text-align: center;
+    color: #fff;
+    font-size: 34px;
+    font-family: 'Myriad Pro Regular';
+    padding-top: 56px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+}
+div#boxes {
+    position: absolute;
+    top: 170px;
+    left: 80px;
+    width: 1000px;
+    display: none;
+}
+div.box {
+    float: left;
+    width: 313px;
+    height: 163px;
+    margin: 0 10px 10px 0;
+}
+div.box div {
+    color: #fff;
+    font-family: 'Myriad Pro Semibold';
+    width: 244px;
+    float: left;
+}
+div.box.positivo {
+    background: #2769B5;
+}
+div.box.negativo {
+    background: #C91200;
+}
+div.box.neutro {
+    background: #999;
+}
+div.box div.titulo {
+    font-size: 21px;
+    margin: 15px 0 0 10px;
+}
+div.box div.valor {
+    font-size: 34px;
+    margin: 5px 0 0 10px;
+}
+div.box div.periodo {
+    font-family: 'Myriad Pro Regular';
+    font-size: 18px;
+    margin: 5px 0 0 10px;
+}
+div.box div.detalhes {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    margin: 5px 0 0 10px;
+    width: 200px;
+}
+div.box img.icone {
+    float: right;
+    margin: 10px 10px 0 0;
+}
+div#atualizacao {
+    position: absolute;
+    top: 696px;
+    left: 1160px;
+    color: #565558;
+    font-family: 'Myriad Pro Regular';
+    font-size: 27pt;
+    display: none;
+}

@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'Uni Sans Heavy';
+    src: url('./fonts/Uni Sans Heavy.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Uni Sans Semi Bold';
+    src: url('./fonts/Uni Sans Semi Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+    position: absolute;
+}
+/* Dados */
+#conteudo { 
+}
+#tempHoje {
+    position: absolute;
+    color: #fff;
+    font-family: 'Uni Sans Heavy';
+    font-size: 310px;
+    top: 190px;
+    left: 200px;
+    display: none;
+}
+#chuvaHoje, #umidHoje, #maxHoje, #minHoje {
+    position: absolute;
+    font-family: 'Uni Sans Semi Bold';
+    color: #fff;
+    font-size: 72px;
+    display: none;
+}
+#chuvaHoje {
+    top: 560px;
+    left: 310px;
+}
+#umidHoje {
+    top: 560px;
+    left: 555px;
+}
+#maxHoje {
+    top: 560px;
+    left: 1010px;
+}
+#minHoje {
+    top: 560px;
+    left: 845px;
+}
+img.icon {
+    position: absolute;
+    top: 165px;
+    display: none;
+}
+img#icon1 {
+    left: 100px;
+}
+img#icon2 {
+    left: 400px;
+}
+img#icon3 {
+    left: 700px;
+}
+img#icon4 {
+    left: 1000px;
+}
+/* animation */
+.mostrar-temp-hoje {
+    animation-name: mostrar-temp-hoje;
+    animation-duration: 1s;
+}
+.mostrar-chuva-hoje {
+    animation-name: mostrar-chuva-hoje;
+    animation-duration: 1s;
+}
+.mostrar-umid-hoje {
+    animation-name: mostrar-umid-hoje;
+    animation-duration: 1s;
+}
+.mostrar-max-hoje {
+    animation-name: mostrar-max-hoje;
+    animation-duration: 1s;
+}
+.mostrar-min-hoje {
+    animation-name: mostrar-min-hoje;
+    animation-duration: 1s;
+}
+.esconder-temp {
+    animation-name: esconder-temp;
+    animation-duration: 600ms;
+}
+.esconder-umid {
+    animation-name: esconder-umid;
+    animation-duration: 600ms;
+}
+@keyframes mostrar-temp-hoje {
+    from {
+        opacity: 0;
+        left: 250px;
+    }
+    to {
+        opacity: 1;
+        left: 200px;
+    }
+}
+@keyframes mostrar-chuva-hoje {
+    from {
+        opacity: 0;
+        left: 330px;
+    }
+    to {
+        opacity: 1;
+        left: 310px;
+    }
+}
+@keyframes mostrar-umid-hoje {
+    from {
+        opacity: 0;
+        left: 575px;
+    }
+    to {
+        opacity: 1;
+        left: 555px;
+    }
+}
+@keyframes mostrar-min-hoje {
+    from {
+        opacity: 0;
+        left: 865px;
+    }
+    to {
+        opacity: 1;
+        left: 845px;
+    }
+}
+@keyframes mostrar-max-hoje {
+    from {
+        opacity: 0;
+        left: 1030px;
+    }
+    to {
+        opacity: 1;
+        left: 1010px;
+    }
+}
+@keyframes esconder-temp {
+    from {
+        opacity: 1;
+        top: 190px;
+    }
+    to {
+        opacity: 0;
+        top: 210px;
+    }
+}
+@keyframes esconder-umid {
+    from {
+        opacity: 1;
+        top: 560px;
+    }
+    to {
+        opacity: 0;
+        top: 580px;
+    }
+}
+
+/* Próximos dias */
+div.chuva {
+    position: absolute;
+    font-size: 60px;
+    color: #fff;
+    font-family: 'Uni Sans Semi Bold';
+    top: 393px;
+    display: none;
+}
+div#chuva1 {
+    left: 200px;
+}
+div#chuva2 {
+    left: 500px;
+}
+div#chuva3 {
+    left: 800px;
+}
+div#chuva4 {
+    left: 1100px;
+}
+div.min {
+    position: absolute;
+    font-size: 90px;
+    color: #fff;
+    font-family: 'Uni Sans Semi Bold';
+    top: 588px;  
+    display: none;
+    width: 140px;
+    text-align: center;
+}
+div#min1, div#max1 {
+    left: 180px;
+}
+div#min2, div#max2 {
+    left: 480px;
+}
+div#min3, div#max3 {
+    left: 780px;
+}
+div#min4, div#max4 {
+    left: 1080px;
+}
+div.max {
+    position: absolute;
+    font-size: 90px;
+    color: #fff;
+    font-family: 'Uni Sans Semi Bold';
+    top: 485px;
+    display: none;
+    width: 140px;
+    text-align: center;
+}
+div.dia {
+    position: absolute;
+    font-family: 'Uni Sans Heavy';
+    font-size: 90px;
+    color: #fff;
+    top: 55px;
+    display: none;
+}
+div#dia1 {
+    left: 150px;
+}
+div#dia2 {
+    left: 450px;
+}
+div#dia3 {
+    left: 750px;
+}
+div#dia4 {
+    left: 1040px;
+}

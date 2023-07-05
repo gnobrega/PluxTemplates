@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'avenir-next-lt-pro-demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+    height: 768px;
+    left: -54px;
+    position: absolute;
+}
+/* Dados */
+#conteudo { 
+    width: 1360px;
+    height: 768px;
+}
+#moeda div,
+#variacao div {
+    color: #fff;
+    font-size: 76px;
+    font-family: 'avenir-next-lt-pro-demi';
+    position: absolute;
+    left: 695px;
+    display: none;
+}
+#dolar, 
+#dolarVar {
+    top: 240px;
+}
+#euro,
+#euroVar {
+    top: 385px;
+}
+#peso,
+#pesoVar {
+    top: 530px;
+}
+#variacao div#dolarVar, 
+#variacao #euroVar, 
+#variacao #pesoVar {
+    left: 1018px;
+}
+#variacao div {
+    background-repeat: no-repeat;
+    background-position: 0 32px;
+    padding-left: 50px;
+}
+#variacao div.sin-pos {
+    color: #B3F27F;
+    background-image: url(./media/pos.png);
+}
+#variacao div.sin-neg {
+    color: #B65030;
+    background-image: url(./media/neg.png);
+}
+
+/* animation */
+.show-periodo {
+    animation-name: show-periodo;
+    animation-duration: 1s;
+}
+@keyframes show-periodo{
+    from {
+        opacity: 0;
+        left: -155px;
+    }
+    to {
+        opacity: 1;
+        left: 50px;
+    }
+}

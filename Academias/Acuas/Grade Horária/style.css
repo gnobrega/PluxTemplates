@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'AvenirLTStd-Black';
+    src: url('./fonts/AvenirLTStd-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AvenirLTStd-Medium';
+    src: url('./fonts/AvenirLTStd-Medium.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+}
+#fundo-grade {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#hora {
+    position: absolute;
+    top: 30px;
+    left: 925px;
+    color: #fff;
+    font-size: 100px;
+    font-family: 'AvenirLTStd-Black';
+}
+/* Dados */
+#conteudo { 
+}
+.horario {
+    position: absolute;
+    color: #FFF;
+    font-size: 50px;
+    font-family: 'AvenirLTStd-Medium';
+    left: 59px;
+    text-align: center;
+}
+.horario div.sub {
+}
+.linha1 {
+    top: 235px;
+}
+.linha2 {
+    top: 324px;
+}
+.linha2 div.sub {
+    display: none;
+}
+.linha3 {
+    top: 413px;
+}
+.linha4 {
+    top: 499px;
+}
+.linha5 {
+    top: 588px;
+}
+.linha6 {
+    top: 675px;
+}
+.campo1 {
+    left: 320px;
+    width: 375px;
+}
+.campo2 {
+    left: 745px;
+    width: 275px;
+}
+.campo3 {
+    left: 1086px;
+    width: 275px;
+}
+.campo {
+    position: absolute;
+    height: 46px;
+    color: #fff;
+    font-size: 36px;
+    font-family: 'AvenirLTStd-Medium';
+    margin-top: 9px;
+    overflow: hidden;
+}
+
+/* animation */
+.show-grade {
+    animation-name: show-grade;
+    animation-duration: .5s;
+}
+@keyframes show-grade{
+    from {
+        top: 800px;
+    }
+    to {
+        top: 330px;
+    }
+}

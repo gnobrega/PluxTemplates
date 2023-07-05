@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Imagem -->
+            <img id="fileId" />
+
+            <!-- Video -->
+            <video id="midiaVideo" autoplay ></video>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "/CONTEUDO/CONDOMINIO/modulo_iris.xml";
+            var DURATION = 15000;
+            var ext;
+
+            $(function () {
+
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    GnLib.autoloadContent(DATA_SOURCE, function (template) {
+                        ext = $("#fileId").attr("src").substr(-3);
+                        if (ext == "mp4") {
+                            $("img#fileId").hide();
+                            $("video#midiaVideo").show();
+                            $("video#midiaVideo").attr("src", $("#fileId").attr("src"));
+                            $("video#midiaVideo").get(0).play();
+                        }
+                    });
+
+                } else { //Preview
+
+                    //Autplay
+                    GnPlay();
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+
+                //Agenda o avanço do módulo
+                loadForceAdvance();
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+
+            //Avança para o próximo template
+            function loadForceAdvance() {
+                if (ext != 'mp4') {
+                    setTimeout(function () {
+                        if (typeof (GnContentAdvance) != 'undefined') {
+                            GnContentAdvance();
+                        }
+                    }, DURATION);
+                } else {
+                    $("#midiaVideo").eq(0).on("ended", function () {
+                        if (typeof (GnContentAdvance) != 'undefined') {
+                            GnContentAdvance();
+                        }
+                    });
+                }
+            }
+
+        </script>
+    </body>
+</html>

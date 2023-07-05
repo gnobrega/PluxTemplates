@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('./fonts/Montserrat-Regular.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#fundo {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#dados {
+    position: absolute;
+    left: 545px;
+    /*top: 340px;*/
+    top: 376px;
+    width: 770px;
+    display: none;
+}
+div#titulo {
+    font-family: 'Montserrat-Regular';
+    font-weight: 700;
+    color: #1072bd;
+    font-size: 40px;
+    text-indent: 80px;
+}
+div#categoria {
+    font-family: 'Montserrat-Regular';
+    color: #94989A;
+    font-size: 35px;
+    width: 540px;
+	display: none;
+}
+div#autor {
+    font-family: 'Montserrat-Regular';
+    color: #7d7d7d;
+    font-size: 35px;
+    width: 710px;
+    margin-top: 4px;
+}
+img#fileId {
+    position: absolute;
+    top: 208px;
+    left: 140px;    
+    width: 336px;
+    height: 451px;
+}
+#ctImg {
+    display: none;
+}
+.exibir-dados {
+    animation-name: exibir-dados;
+    animation-duration: 1s;
+}
+@keyframes exibir-dados{
+    from {
+        left:850px;
+        opacity: 0;
+    }
+    to {
+        left:800px;
+        opacity: 1;
+    }
+}

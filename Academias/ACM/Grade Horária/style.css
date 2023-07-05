@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'Zurich Bold Extra Condensed BT';
+    src: url('./fonts/Zurich Bold Extra Condensed BT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Helvetica LT 67 Medium Condensed_0';
+    src: url('./fonts/Helvetica LT 67 Medium Condensed_0.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#hora {
+    position: absolute;
+    top: 675px;
+    left: 1200px;
+    color: #4D4D4D;
+    font-size: 63px;
+    font-family: 'Zurich Bold Extra Condensed BT';
+}
+/* Dados */
+#conteudo { 
+}
+.horario {
+    position: absolute;
+    color: #646464;
+    font-size: 51px;
+    font-family: 'Helvetica LT 67 Medium Condensed_0';
+    left: 59px;
+    text-align: center;
+}
+.horario div.sub {
+}
+.linha1 {
+    top: 183px;
+    display: none;
+}
+.linha2 {
+    top: 265px;
+    display: none;
+}
+.linha2 {
+    color: #fff !important;
+    display: none;
+}
+.linha2 div.sub {
+    display: none;
+    display: none;
+}
+.linha3 {
+    top: 348px;
+    display: none;
+}
+.linha4 {
+    top: 428px;
+    display: none;
+}
+.linha5 {
+    top: 508px;
+    display: none;
+}
+.linha6 {
+    top: 587px;
+    display: none;
+}
+.campo1 {
+    left: 225px;
+    width: 435px;
+}
+.campo2 {
+    left: 668px;
+    width: 232px;
+}
+.campo3 {
+    left: 906px;
+    width: 443px;
+}
+.campo {
+    position: absolute;
+    height: 60px;
+    color: #646464;
+    font-size: 51px;
+    font-family: 'Helvetica LT 67 Medium Condensed_0';
+    overflow: hidden;
+    text-align: center;
+}
+
+/* animation */
+.show-grade {
+    animation-name: show-grade;
+    animation-duration: .5s;
+}
+@keyframes show-grade{
+    from {
+        top: 800px;
+    }
+    to {
+        top: 330px;
+    }
+}

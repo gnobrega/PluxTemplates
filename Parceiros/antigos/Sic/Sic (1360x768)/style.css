@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'DINCondMedium Regular';
+    src: url('./fonts/DINCondMedium Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'DIN Light Regular';
+    src: url('./fonts/DIN Light Regular.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+html, body, .pagina {
+    width: 1360px;
+}
+html, body, .pagina, .coluna {
+    height: 768px;
+}
+.coluna, .bloco, .linha {
+    width: 1360px;
+}
+.pagina {
+    display: none;
+}
+.coluna {
+    float: left;
+}
+.item {
+    width: 670px;
+    height: 63px;
+    font-family: 'DINCondMedium Regular';
+    color: #fff;
+    font-size: 40px;
+    padding-left: 10px;
+}
+div.item .numero {
+    min-width: 61px;
+    height: 56px;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+div.item .nome {
+    float: left;    
+    /*width: 576px;*/
+    padding-top: 10px;
+    padding-left: 15px;
+    height: 40px;
+    border-left: 1px solid #202020;
+    border-right: 1px solid #202020;
+    font-size: 35px;
+    overflow: hidden;
+}
+.linha {
+    background: url(./media/fundo-sala.jpg);
+    height: 63px;
+}
+.bloco .titulo {
+    background: url(./media/bgTopo.png);
+    height: 57px;
+    font-family: 'DIN Light Regular';
+    color: #ddd;
+    font-size: 38px;
+    padding: 6px 0 0 10px;
+}
+.item {
+    float: left;
+}
+.pagina .titulo {
+    background: url(./media/bgTopo.png);
+    height: 57px;
+    font-family: 'DIN Light Regular';
+    color: #ddd;
+    font-size: 38px;
+    padding: 6px 0 0 0;
+    text-align: center;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    background: url('./media/fundo.jpg');
+}
+.bg1 {
+    background: url(./media/bg1.png);
+}
+.bg2 {
+    background: url(./media/bg2.png);
+}
+.bg3 {
+    background: url(./media/bg3.png);
+}
+.bg4 {
+    background: url(./media/bg4.png);
+}
+.bg5 {
+    background: url(./media/bg5.png);
+}
+.bg6 {
+    background: url(./media/bg6.png);
+}
+.bg7 {
+    background: url(./media/bg7.png);
+}
+.bg8 {
+    background: url(./media/bg8.png);
+}
+.bg9 {
+    background: url(./media/bg9.png);
+}
+
+/* animation */
+.show-periodo {
+    animation-name: show-periodo;
+    animation-duration: 1s;
+}
+@keyframes show-periodo{
+    from {
+        opacity: 0;
+        left: -155px;
+    }
+    to {
+        opacity: 1;
+        left: 50px;
+    }
+}

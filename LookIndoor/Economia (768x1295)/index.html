@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Abertura/fundo -->
+        <video id="fundo" src="./media/fundo.mp4?a=1"></video>
+        
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="moeda">
+                <div id="dolar"></div>
+                <div id="euro"></div>
+                <div id="peso"></div>
+            </div>
+            <div id="variacao">
+                <div id="dolarVar"></div>
+                <div id="euroVar"></div>
+                <div id="pesoVar"></div>
+            </div>
+        </div>
+        
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            
+            var DATA_SOURCE = "/CONTEUDO/ECONOMIA/economia.xml";
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    loadData(DATA_SOURCE);
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#abertura").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+			
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                video.play();
+                
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                video.ontimeupdate = function() {
+                    if( video.currentTime > 1 && !contentLoaded ) {
+                        contentLoaded = true;
+                        
+                        //Animaçao
+                        var campos = ['dolar','dolarVar','euro','euroVar','peso','pesoVar'];
+                        setTimeout(function() {$("#dolar").fadeIn()}, 100);
+                        setTimeout(function() {$("#euro").fadeIn()}, 300);
+                        setTimeout(function() {$("#peso").fadeIn()}, 700);
+                        
+                        setTimeout(function() {
+                            $("#dolar").fadeOut()
+                            $("#euro").fadeOut()
+                            $("#peso").fadeOut()
+                        }, 7400);
+                        
+                        setTimeout(function() {$("#dolarVar").fadeIn()}, 7600);
+                        setTimeout(function() {$("#euroVar").fadeIn()}, 7900);
+                        setTimeout(function() {$("#pesoVar").fadeIn()}, 8200);
+                    }
+                };
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Carrega os dados 
+            function loadData(source) {
+                var url = GnLib.getContentPath() + DATA_SOURCE + "?nocache=" + Math.random();
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+                        //Conteúdo encontrado
+                        if (typeof (GnContentFound) != 'undefined') {
+                            GnContentFound();
+                        }
+                        
+                        var dolar = formatNumber($(data).find('dolarComercial venda').attr('valor'));
+                        var dolarVar = formatNumber($(data).find('dolarComercial variacao').attr('valor'));
+                        var dolarSin = ( dolarVar.substr(0,1) == '+' ) ? 'pos' : 'neg';
+                        
+                        var euro = formatNumber($(data).find('euro venda').attr('valor'));
+                        var euroVar = formatNumber($(data).find('euro variacao').attr('valor'));
+                        var euroSin = ( euroVar.substr(0,1) == '+' ) ? 'pos' : 'neg';
+                        
+                        var peso = formatNumber($(data).find('peso venda').attr('valor'));
+                        var pesoVar = formatNumber($(data).find('peso variacao').attr('valor'));
+                        var pesoSin = ( pesoVar.substr(0,1) == '+' ) ? 'pos' : 'neg';
+                        
+                        $("#moeda div#dolar").html("R$"+dolar);
+                        $("#moeda div#euro").html("R$"+euro);
+                        $("#moeda div#peso").html("R$"+peso);
+                        
+                        $("#variacao div#dolarVar").html(dolarVar.substr(1).replace("%", "")+'%');
+                        $("#variacao div#euroVar").html(euroVar.substr(1).replace("%", "")+'%');
+                        $("#variacao div#pesoVar").html(pesoVar.substr(1).replace("%", "")+'%');
+                        
+                        $("#variacao div#dolarVar").addClass("sin-"+dolarSin);
+                        $("#variacao div#euroVar").addClass("sin-"+euroSin);
+                        $("#variacao div#pesoVar").addClass("sin-"+pesoSin);
+                    }
+                });
+            }
+            
+            //Formata o número
+            function formatNumber(val) {
+                console.log(val);
+                var params = val.split(',');
+                var rs = val;
+                var symbol = "";
+                if( params.length == 2 ) {
+                    rs = params[0]+"."+params[1].substr(0,2);
+                    var first = rs.substr(0, 1);
+                    if( isNaN(first) ) {
+                        symbol = first;
+                        rs = rs.substr(1);
+                    }
+                }
+                rs = parseFloat(rs).toFixed(2) + "";
+                rs = symbol + rs.replace(".", ",");
+                return rs;
+            }
+            
+        </script>
+    </body>
+</html>

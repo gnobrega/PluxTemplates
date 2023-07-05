@@ -1,0 +1,1 @@
+start chrome --kiosk %cd%\videowall.html

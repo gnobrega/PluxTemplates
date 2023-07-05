@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'HelveticaRounded-Bold_2';
+    src: url('./fonts/HelveticaRounded-Bold_2.otf') format('opentype');
+}
+@font-face {
+    font-family: 'akzidenz-grotesk';
+    src: url('./fonts/akzidenz-grotesk.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+
+div#nome {
+    position: absolute;
+    left: 45px;
+    top: 134px;
+    font-family: 'HelveticaRounded-Bold_2';
+    color: #FFF;
+    font-size: 40pt;
+    display: none;
+    width: 641px;
+    line-height: 40pt;
+    text-align: center;
+}
+div#descricao, div#periodo {
+    position: absolute;
+    left: 130px;
+    top: 305px;
+    font-family: 'akzidenz-grotesk';
+    color: #072936;
+    font-size: 40pt;
+    width: 580px;
+    display: none;
+}
+div#periodo {
+    top: 305px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 126px;
+    left: 750px;
+    width: 490px;
+}
+img#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    object-fit: fill;
+}
+#blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    z-index: 999;
+    background: #000;
+}

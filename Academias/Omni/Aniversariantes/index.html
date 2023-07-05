@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        
+        <!-- Fundo -->
+        <video id="fundo" src="./media/fundo3.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="ctImg"><img id="fileId" src="" /></div>
+            <div id="nome"></div>
+            <div id="data"></div>
+        </div>
+		<img src="./media/marca.png" id="marca" />
+		
+		<div id="cortina"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+			if (typeof (GnContentFound) != 'undefined') {
+                GnContentFoundTmp = GnContentFound;
+                GnContentFound = undefined;
+            }
+			
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/FITNESS/aniversariantes.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+						$("#nome").html("");
+                        $("#data").html("");
+                        $("#fileId").attr("src", "");
+						console.log(template);
+							
+                        var date = new Date();
+                        var dia = date.getDate();
+                        var mes = date.getMonth() + 1;
+						if( dia < 10 ) {
+                            dia = "0"+dia;
+                        }
+                        if( mes < 10 ) {
+                            mes = "0"+mes;
+                        }
+						var diaMes = dia+"/"+mes;
+                        var aniversariantes = [];
+                        for( i in template.registros ) {
+                            var registro = template.registros[i];
+                            if( registro.data == diaMes ) {
+                                aniversariantes.push(registro);
+                            }
+                        }
+                        if( aniversariantes.length ) {
+                            var idx = GnLib.getIndex("_idx", aniversariantes);
+                            var aniversariante = aniversariantes[idx];
+                            $("#nome").html(aniversariante.nome);
+                            $("#data").html(aniversariante.data);
+							var strIdx = GnLib.dataSource.lastIndexOf("/");
+                            var src = GnLib.dataSource.substr(0, strIdx) + "/" + GnLib.prefixImg + aniversariante.fileId + "." + aniversariante.extId;
+							$("#fileId").attr("src", src);
+                            if (typeof (GnContentFoundTmp) != 'undefined') {
+                                GnContentFoundTmp();
+                            }
+                        }
+                    });
+                    
+                } else { //Preview
+                   
+                    GnLib.loadPreview();
+				   
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+				if( $("#nome").html() != "" ) {
+					$("#cortina").hide();
+					
+					//Dá play no vídeo
+					var video = $("#fundo").get(0);
+					video.play();
+					$("#marca").show();
+					$("#marca").addClass("exibir-marca");
+					
+					//Agenda a exibição do conteúdo
+					var contentLoaded = false;
+					$("#ctImg").fadeIn();
+					setTimeout(function() {
+						$("#nome").fadeIn();
+						$("#data").fadeIn();
+					}, 1000);
+				}
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

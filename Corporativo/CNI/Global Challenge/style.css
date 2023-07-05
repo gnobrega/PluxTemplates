@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'impact';
+    src: url('./fonts/impact.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#abertura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    background: url(./media/abertura.jpg);
+}
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    background: url(./media/fundo.jpg);
+}
+#conteudo div {
+    color: #3C383F;
+    font-size: 46px;
+    font-family: 'impact';
+    position: absolute;
+    display: none;
+}
+div.cont2 {
+    display: none;
+}
+#conteudo div.distancia {
+    width: 200px;
+    text-align: center;
+    left: 939px;
+}
+#conteudo div.titulo_nome {
+    width: 700px;
+    text-align: center;
+    left: 195px;
+}
+#conteudo div.titulo {
+    font-size: 45px;
+    font-family: 'impact';
+    color: #fff;
+    top: 205px;
+}
+#conteudo div.titulo_media {
+    width: 500px;
+    text-align: center;
+    left: 793px;
+    font-size: 35px;
+    top: 210px;
+}
+#conteudo div.nome {
+    left: 240px;
+}
+#conteudo div.lin1 {
+    top: 268px;
+}
+#conteudo div.lin2 {
+    top: 334px;
+}
+#conteudo div.lin3 {
+    top: 400px;
+}
+#conteudo div.lin4 {
+    top: 468px;
+}
+#conteudo div.lin5 {
+    top: 532px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+div#texto {
+    display: none;
+}
+#abertura-titulo {
+    font-size: 80px;
+    color: #fff;
+    width: 900px;
+    font-family: 'impact';
+    text-align: center;
+    margin-left: 230px;
+    margin-top: 160px;
+    display: none;
+}
+#abertura-texto {
+    font-size: 45px;
+    color: #fff;
+    width: 460px;
+    font-family: 'impact';
+    text-align: center;
+    margin-left: 450px;
+    margin-top: 130px;
+    display: none;
+}
+div.texto {
+    position: absolute;
+    left: 213px;
+    top: 322px;
+    font-family: 'HelveticaNeueLTStd-Lt';
+    color: #000000;
+    font-size: 39px;
+    width: 1080px;
+    opacity: 1;
+    display: none;
+}
+div.texto a {
+    color: #000;
+}
+div.texto * {
+    text-decoration: none;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.esconde-abertura {
+    animation-name: esconde-abertura;
+    animation-duration: .5s;
+}
+.esconde-texto {
+    animation-name: esconde-texto;
+    animation-duration: .3s;
+}
+@keyframes esconde-abertura{
+    from {
+        top: 0;
+    }
+    to {
+        top: -768px;
+    }
+}
+@keyframes esconde-texto{
+    from {
+        top: 322px;
+        opacity: 1;
+    }
+    to {
+        top: 280px;
+        opacity: 0;
+    }
+}

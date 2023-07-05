@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4"></video>
+            
+            <!-- Dados -->
+            <div id="total_vagas">00</div>
+            <div id="itens"></div>
+        </div>
+        
+        <div id="blackout"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/CONTEUDO/estagio/estagio.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        $("#blackout").hide();
+                        
+                        //Carrega o segundo twitt
+                        GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                            console.log(template.registros[0]);
+                            for( var i = 1; i <= 8; i ++ ) {
+                                var area = template.registros[0]['area'+i];
+                                var vagas = template.registros[0]['vagas'+i];
+                                $("#itens").append("<div><div class='area'>"+area+"</div><div class='vagas'>"+vagas+"</div></div>");
+                            }
+                        });
+                    });
+                    
+                } else { //Preview
+                   GnPlay();
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("#fundo").get(0).play();
+                
+                //Esconde o texto 1
+                setTimeout(function() {
+                    var delay = 100;
+                    var idx = 0;
+                    for( var i = 1; i <= 8; i ++ ) {
+                        setTimeout(function() {
+                            $(".area").eq(idx).fadeIn();
+                            $(".vagas").eq(idx).fadeIn();
+                            idx++;
+                        }, delay);
+                        delay += 100;
+                    }
+                    setTimeout(function() {
+                        $("#total_vagas").fadeIn();
+                    }, delay);
+                } ,4000);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

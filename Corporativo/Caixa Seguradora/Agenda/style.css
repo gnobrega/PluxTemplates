@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'AlrightSans-Medium-v3';
+    src: url('./fonts/AlrightSans-Medium-v3.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+div#texto {
+    position: absolute;
+    left: 740px;
+    top: 100px;
+    font-family: 'AlrightSans-Medium-v3';
+    color: #494949;
+    font-size: 46px;
+    width: 570px;
+    text-align: center;
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 680px;
+}
+#ctImg {
+    display: none;
+}
+div#barra {
+    position: absolute;
+    top: 0;
+    width: 35px;
+    height: 704px;
+    background: #F8971D;
+    left: 650px;
+    display: none;
+}
+
+/* animacao */
+.subir-barra {
+    animation-name: subir-barra;
+    animation-duration: 800ms;
+}
+@keyframes subir-barra {
+    from {
+        top: 704px;
+    }
+    to {
+        top: 0px;
+    }
+}
+.mostrar-texto {
+    animation-name: mostrar-texto;
+    animation-duration: 800ms;
+}
+@keyframes mostrar-texto {
+    from {
+        opacity: 0;
+        top: 120px;
+    }
+    to {
+        opacity: 1;
+        top: 100px;
+    }
+}

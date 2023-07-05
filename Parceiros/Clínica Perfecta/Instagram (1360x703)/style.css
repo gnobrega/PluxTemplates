@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'BwModelica-Bold';
+    src: url('./fonts/BwModelica-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#blackout {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1360px;
+    height: 703px;
+	background: #000;
+}
+#logo {
+	position: absolute;
+	top: 580px;
+	left: 1095px;
+	display: none;
+}
+/* Dados */
+div#site {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Futura Std Bold';    
+}
+div#userLoginInstagram {
+    position: absolute;
+    left: 920px;
+    top: 616px;
+    font-family: 'BwModelica-Bold';
+    color: #000;
+    font-size: 24px;
+    display: none;
+}
+div#text {
+    position: absolute;
+    left: 990px;
+    top: 518px;
+    font-family: 'corbel';
+    color: #fff;
+    font-size: 22px;
+    width: 360px;
+    display: none;
+	line-height: 22px;
+}
+div#frase {
+    position: absolute;
+    left: 610px;
+    top: 353px;
+    font-family: 'Nexa Bold';
+    color: #fff;
+    font-size: 40px;
+    width: 635px;
+    display: none;
+    line-height: 42px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 185px;
+    left: 884px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+	height: 703px;
+	object-fit: fill;
+	width: 1360px;
+}
+
+/* animacao */
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}

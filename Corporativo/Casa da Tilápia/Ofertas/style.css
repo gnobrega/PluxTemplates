@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('./fonts/Rubik-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url('./fonts/Rubik-Regular.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#logo {
+	position: absolute;
+	top: 585px;
+	left: 1225px;
+	display: none;
+	width: 120px;
+}
+/* Dados */
+div#titulo {
+    position: absolute;
+    left: 659px;
+    top: 445px;
+    font-family: 'Rubik-Bold';
+    color: #06A346;
+    font-size: 30px;
+    width: 660px;
+    display: none;
+}
+div#complemento, div#preco, div#cents {
+    position: absolute;
+    left: 609px;
+    top: 642px;
+    font-family: 'Exo-Regular';
+    color: #2EBBDA;
+    font-size: 35px;
+    width: 660px;
+    display: none;
+}
+div#complemento {
+    left: 659px;
+    top: 485px;
+    font-size: 30px;
+    color: #201E20;
+    font-family: 'Rubik-Regular';
+}
+div#quantidade {
+    position: absolute;
+    left: 609px;
+    top: 500px;
+    font-family: 'Exo-Regular';
+    color: #783A36;
+    font-size: 30px;
+    width: 660px;
+    text-align: right;
+    display: none;
+}
+div#preco, div#cents {
+    top: 260px;
+    left: 740px;
+    font-size: 140px;
+    color: #2EBBDA;
+    letter-spacing: -5px;
+}
+div#preco {
+    font-family: 'Rubik-Bold';
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 150px;
+    left: 137px;
+}
+
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 800ms;
+}
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+.exibir-retangulo {
+    animation-name: exibir-retangulo;
+    animation-duration: 800ms;
+}
+@keyframes exibir-nome {
+    from {
+        opacity: 0;
+        left: 610px;
+    }
+    to {
+        opacity: 1;
+        left: 630px;
+    }
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}
+@keyframes exibir-retangulo {
+    from {
+        opacity: 0;
+        left: 410px;
+    }
+    to {
+        opacity: 1;
+        left: 510px;
+    }
+}

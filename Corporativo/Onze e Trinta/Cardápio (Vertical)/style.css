@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('./fonts/Gotham-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('./fonts/Gotham-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AkzidenzGrotesk-Super';
+    src: url('./fonts/AkzidenzGrotesk-Super.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 768px;
+    height: 1360px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#logo {
+	position: absolute;
+	top: 585px;
+	left: 1225px;
+	display: none;
+	width: 120px;
+}
+/* Dados */
+div#titulo {
+    position: absolute;
+    left: 55px;
+    top: 460px;
+    font-family: 'Gotham-Bold';
+    color: #fff;
+    font-size: 40px;
+    width: 660px;
+    display: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+img#bola {
+    position: absolute;
+    top: 1133px;
+    left: 190px;
+    width: 80px;
+    display: none;
+    z-index: 999;
+}
+div#complemento, div#preco, div#cents {
+    position: absolute;
+    left: 55px;
+    top: 564px;
+    font-family: 'Gotham-Light';
+    color: #fff;
+    font-size: 40px;
+    width: 660px;
+    text-align: left;
+    display: none;
+    text-align: center;
+    letter-spacing: -1px;
+}
+div#rs {
+    position: absolute;
+    top: 1151px;
+    left: 203px;
+    font-size: 40px;
+    color: #000;
+    font-family: 'AkzidenzGrotesk-Super';
+    display: none;
+    z-index: 99999;
+}
+div#preco, div#cents {
+    top: 1105px;
+    left: 288px;
+    font-size: 150px;
+    text-align: left;
+    color: #F5A625;
+    font-family: 'AkzidenzGrotesk-Super';
+    letter-spacing: -5px;
+}
+div#cents {
+    left: 470px;
+    font-size: 80px;
+    top: 1120px;
+    letter-spacing: 0;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 688px;
+    left: 180px;
+    width: 400px;
+}
+
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 800ms;
+}
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+.exibir-retangulo {
+    animation-name: exibir-retangulo;
+    animation-duration: 800ms;
+}
+@keyframes exibir-nome {
+    from {
+        opacity: 0;
+        left: 610px;
+    }
+    to {
+        opacity: 1;
+        left: 630px;
+    }
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}
+@keyframes exibir-retangulo {
+    from {
+        opacity: 0;
+        left: 410px;
+    }
+    to {
+        opacity: 1;
+        left: 510px;
+    }
+}

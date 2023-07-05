@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Abertura/fundo -->
+        <video id="fundo" src=""></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Hoje -->
+            <div id="tempHoje">00º</div>
+            <div id="chuvaHoje">00%</div>
+            <div id="umidHoje">00%</div>
+            <div id="maxHoje">00º</div>
+            <div id="minHoje">00º</div>
+
+            <!-- Próximos dias -->
+            <div id="dia1" class="dia">---</div>
+            <div id="dia2" class="dia">---</div>
+            <div id="dia3" class="dia">---</div>
+            <div id="dia4" class="dia">---</div>
+
+            <img id="icon1" class="icon" src="./media/1.png" />
+            <div id="chuva1" class="chuva">00%</div>
+            <div id="min1" class="min">00º</div>
+            <div id="max1" class="max">00º</div>
+
+            <img id="icon2" class="icon" src="./media/1.png" />
+            <div id="chuva2" class="chuva">00%</div>
+            <div id="min2" class="min">00º</div>
+            <div id="max2" class="max">00º</div>
+
+            <img id="icon3" class="icon" src="./media/1.png" />
+            <div id="chuva3" class="chuva">00%</div>
+            <div id="min3" class="min">00º</div>
+            <div id="max3" class="max">00º</div>
+
+            <img id="icon4" class="icon" src="./media/1.png" />
+            <div id="chuva4" class="chuva">00%</div>
+            <div id="min4" class="min">00º</div>
+            <div id="max4" class="max">00º</div>
+        </div>
+
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            
+            var DATA_SOURCE = "/CONTEUDO/PREVISAO/previsao.xml";
+            var objDate = new Date();
+            var NOITE = false;
+            
+            // Ícones
+            var ICONES = {
+                'sol': ['c01d'],
+                'sol-nuvem': ['s05d','s05d','a01d','a02d','a03d','a04d','a05d','a06d','c02d','c03d','c04d'],
+                'nuvem-chuva': ['t01d','t01n','t02d','t02n','t03d','t03n','t04d','t04n','t05d','t05n','d01d','d01n','d02d','d02n','d03d','d03n','r01d','r01n','r02d','r02n','r03d','r03n','f01d','f01n','r04d','r04n','r05d','r05n','r06d','r06n','s01d','s01n','s02d','s02n','s03d','s03n','s04d','s04n','s06d','s06n','u00d','u00n'],
+                'lua': ['c01n'],
+                'lua-nuvem': ['s05n','s05n','a01n','a02n','a03n','a04n','a05n','a06n','c02n','c03n','c04n']
+            }
+
+            $(function () {
+			
+				//Conteúdo encontrado
+                if (typeof (GnContentFound) != 'undefined') {
+                    GnContentFound();
+                }
+
+                //Muda o turno
+                var date = new Date();
+                if( date.getHours() > 17 ) {
+                    NOITE = true;
+                }  
+
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    loadData(DATA_SOURCE);
+					//loadData("/CONTEUDO/PREVISAO/weather.json", "/CONTEUDO/PREVISAO/forecast.json");
+
+                    //Preenche os dias
+                    var dias = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+                    var hoje = objDate.getDay();
+                    $("#dia1").html(dias[hoje]);
+                    hoje = getNextDay(hoje);
+                    $("#dia2").html(dias[hoje]);
+                    hoje = getNextDay(hoje);
+                    $("#dia3").html(dias[hoje]);
+                    hoje = getNextDay(hoje);
+                    $("#dia4").html(dias[hoje]);
+                } else { //Preview
+
+                    //Autplay
+                    $("#abertura").ready(function () {
+                        GnPlay();
+                    });
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+
+                //Ajusta o zoom até enquadrar na tela
+                var zoom = window.innerWidth / 1360;
+                $("body").css('-moz-transform', "scale("+zoom+","+zoom+")");
+                $("body").css('-moz-transform-origin', "0 0");
+                $("body").css('zoom', zoom);
+                
+				//Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                var video = $("#fundo").get(0);
+                if( video.readyState == 4 ) {
+                    video.play();
+                } else {
+                    video.addEventListener('loadeddata', function() {
+                       video.play();
+                    }, false);
+                }
+				
+				//Animaçao
+                $("#tempHoje").show();
+                $("#tempHoje").addClass('mostrar-temp-hoje');
+                $("#chuvaHoje").show();
+                $("#chuvaHoje").addClass('mostrar-chuva-hoje');
+                $("#umidHoje").show();
+                $("#umidHoje").addClass('mostrar-umid-hoje');
+                $("#maxHoje").show();
+                $("#maxHoje").addClass('mostrar-max-hoje');
+                $("#minHoje").show();
+                $("#minHoje").addClass('mostrar-min-hoje');
+
+                video.ontimeupdate = function () {
+                    if (video.currentTime > 6.7 && !contentLoaded) {
+                        contentLoaded = true;
+
+                        contentLoaded = true;
+
+                        $("#tempHoje").css('opacity', '0');
+                        $("#tempHoje").addClass('esconder-temp');
+                        $("#chuvaHoje").css('opacity', '0');
+                        $("#chuvaHoje").addClass('esconder-umid');
+                        $("#umidHoje").css('opacity', '0');
+                        $("#umidHoje").addClass('esconder-umid');
+                        $("#maxHoje").css('opacity', '0');
+                        $("#maxHoje").addClass('esconder-umid');
+                        $("#minHoje").css('opacity', '0');
+                        $("#minHoje").addClass('esconder-umid');
+                        /**/
+                        setTimeout(function () {
+                            $(".dia").fadeIn();
+                            $(".icon").fadeIn();
+                            $(".min").fadeIn();
+                            $(".max").fadeIn();
+                        }, 500);
+                        setTimeout(function () {
+                            $(".chuva").fadeIn();
+                        }, 600);
+                    }
+                };
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+
+            //Carrega os dados 
+            function loadData(source) {
+                var url = GnLib.getContentPath() + source + "?nocache=" + Math.random();
+
+                $.get(url, function (data) {
+
+					//Define o turno
+					var periodo = "night";
+					if (objDate.getHours() >= 7 && objDate.getHours() < 19) {
+						periodo = "day";
+					}
+
+                    //Tempo agora
+					var tmp = parseInt($(data).find('cc tmp').text());
+					var hmid = parseInt($(data).find('cc hmid').text());
+					var icon = getIcon($(data).find('day icone').eq(0).text()+"");
+					var ppcp = $(data).find('day ppcp').eq(0).text()+"";
+					var hi = $(data).find('day hi').eq(0).text()+"";
+					var low = $(data).find('day low').eq(0).text()+"";
+					$("#tempHoje").html(tmp + "º");
+					$("#umidHoje").html(hmid + "%");
+                    $("#chuvaHoje").html(ppcp+"%");
+                    $("#minHoje").html(hi+"°");
+                    $("#maxHoje").html(low+"°");
+
+                    // Seleciona o vídeo de fundo
+                    selecionarVideo(icon);
+
+                    //Previsão
+                    for( i = 1; i <= 4; i ++ ) {
+                        icon = getIcon($(data).find('day icone').eq(i).text()+"");
+                        ppcp = $(data).find('day ppcp').eq(i).text()+"";
+                        hi = $(data).find('day hi').eq(i).text()+"";
+                        low = $(data).find('day low').eq(i).text()+"";
+    
+                        $("#chuva"+i).html(parseInt(ppcp)+"%");
+                        $("#max"+i).html(parseInt(hi)+"º");
+                        $("#min"+i).html(parseInt(low)+"º");
+                        $("#icon"+i).attr("src", "./media/"+icon+".png");
+                    }
+                      
+                });
+            }
+
+            // Seleciona o vídeo de fundo
+            function selecionarVideo(icon) {
+
+                //Seleciona o vídeo de fundo
+                switch (icon+"") {
+                    case "sol":
+                        classeVideo = "DiaLimpo";
+                        break;
+                    case "sol-nuvem":
+                        classeVideo = "DiaNublado";
+                        break;
+                    case "nuvem-chuva":
+                        if( !NOITE ) {
+                            classeVideo = "DiaChuva";
+                        } else {
+                            classeVideo = "NoiteChuva";
+                        }
+                        break;
+                    case "lua":
+                        classeVideo = "NoiteLimpo";
+                        break;
+                    case "lua-nuvem":
+                        classeVideo = "NoiteNublado";
+                        break;
+                    default:
+                        classeVideo = "DiaNublado";
+                }
+
+                //Carrega o vídeo
+                $("video#fundo").attr("src", "./media/"+classeVideo+".mp4");
+            }
+
+            // Recupera o icone
+            function getIcon(code) {
+                if( NOITE ) {
+                    code = code.substr(0, code.length-1) + "n";
+                } else {
+                    code = code.substr(0, code.length-1) + "d";
+                }
+                for( icon in ICONES ) {
+                    if( ICONES[icon].indexOf(code) > -1 ) {
+                        return icon;
+                    }
+                }
+            }
+
+            /**
+             * Recupera o índice do icone
+             */
+            function getIconIndice(icond) {
+                var icon = "1";
+                switch (icond) {
+
+                    //1 - nuvem
+                    case 'cloudy':
+                    case 'fog':
+                        icon = "1";
+                        break;
+
+                        //3 - sol
+                    case 'clear':
+                        icon = "3";
+                        break;
+
+                        //4 - sol + nuvem
+                    case 'hazy':
+                    case 'mostlycloudy':
+                    case 'mostlysunny':
+                    case 'partlycloudy':
+                    case 'partlysunny':
+                        icon = "4";
+                        break;
+
+                        //5 - nuvem + chuva
+                    case 'chanceflurries':
+                    case 'chancerain':
+                    case 'chancesleet':
+                    case 'chancesnow':
+                    case 'chancetstorms':
+                    case 'flurries':
+                    case 'sleet':
+                    case 'rain':
+                    case 'snow':
+                        icon = "5";
+                        break;
+                }
+                return icon;
+            }
+            
+            //Recupera o próximo dia da semana
+            function getNextDay(hoje) {
+                if (hoje < 6) {
+                    hoje++;
+                } else {
+                    hoje = 0;
+                }
+                return hoje;
+            }
+
+        </script>
+    </body>
+</html>

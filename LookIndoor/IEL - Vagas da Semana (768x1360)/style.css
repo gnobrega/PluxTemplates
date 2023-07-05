@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'avenir-next-lt-pro-demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+}
+#blackout {
+    width: 768px;
+    height: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+div#total_vagas {
+    position: absolute;
+    left: 575px;
+    top: 1155px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    font-size: 32px;
+    text-shadow: 2px 2px #555;
+    display: none;
+}
+#itens {
+    position: absolute;
+    left: 10px;
+    top: 554px;
+    width: 848px;
+}
+.area {
+    float: left;
+    width: 544px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    text-shadow: 2px 2px #555;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 27px;
+    display: none;
+    left: 5px;
+}
+.vagas {
+    float: left;
+    width: 223px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    text-shadow: 2px 2px #555;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 27px;
+    display: none;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mostra-texto {
+    animation-name: mostra-texto;
+    animation-duration: .5s;
+}
+.esconde-texto {
+    animation-name: esconde-texto;
+    animation-duration: .3s;
+}
+@keyframes mostra-texto{
+    from {
+        top: 382px;
+        opacity: 0;
+    }
+    to {
+        top: 322px;
+        opacity: 1;
+    }
+}
+@keyframes esconde-texto{
+    from {
+        top: 322px;
+        opacity: 1;
+    }
+    to {
+        top: 280px;
+        opacity: 0;
+    }
+}

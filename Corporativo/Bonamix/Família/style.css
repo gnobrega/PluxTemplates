@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'klavika';
+    src: url('./fonts/klavika.otf') format('opentype');
+}
+@font-face {
+    font-family: 'KlavikaBoldBold';
+    src: url('./fonts/KlavikaBoldBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+#fundoImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#bola {
+	position: absolute;
+	top: 80px;
+	left: 1010px;
+	display: none;
+}
+#abertura {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#nome {
+    position: absolute;
+    left: 600px;
+    top: 285px;
+    font-family: 'klavika';
+    color: #ED1C24;
+    font-size: 60px;
+    width: 500px;
+    line-height: 38px;
+    display: none;
+}
+div#cargo {
+    position: absolute;
+    left: 600px;
+    top: 353px;
+    font-family: 'klavika';
+    color: #6D6E70;
+    font-size: 38px;
+    display: none;
+}
+div#texto {
+    position: absolute;
+    left: 605px;
+    top: 400px;
+    font-family: 'klavika';
+    color: #6D6E70;
+    font-size: 26px;
+    width: 632px;
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 170px;
+    left: 105px;    
+    display: none;
+    width: 470px;
+}
+#ctImg {
+    display: none;
+}
+.keyframes mostra-preco {
+    animation-name: mostra-preco;
+    animation-duration: .5s;
+}
+@keyframes mostra-preco{
+    from {
+        opacity: 0;
+        top: 420px;
+    }
+    to {
+        opacity: 0;
+        top: 320px;
+    }
+}

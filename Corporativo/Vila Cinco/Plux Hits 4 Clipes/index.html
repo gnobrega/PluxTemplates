@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+        </div>
+        
+        <!-- Info -->
+        <div id="back-info"></div>
+        <img id="cover" src="" />
+        <div id="artist"></div>
+        <div id="music"></div>
+        <div id="album"></div>
+        <div id="classificacao"><img src="./media/classificacao-livre.jpg"/></div>
+        <div id="artista"><img src="./media/artista-da-semana.jpg"/></div>
+        <div id="lancamento"><img src="./media/lancamento.png"/></div>
+                
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script src="./socket.io.js"></script>
+        <script>
+
+            //Evita que o player salte a peça
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+
+            $(function () {
+
+                if (!GnLib.getParam('preview')) {
+
+                } else { //Preview
+                    //Autplay
+                    GnPlay();
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+                PluxHits.play();
+                
+                //Envia pings períodos ao player para manter a atividade
+                setInterval(function() {
+                    if( typeof(parent.callApplication) != 'undefined' ) {
+                        parent.callApplication({msg:"PluxHits - PING"});
+                    }
+                }, 60000);
+                
+                //Chamado em caso de erro
+                setInterval(function() {
+                    if( PluxHits.lazy > 300 ) {
+                        PluxHits.getNextVideo();
+                    }
+                }, 30000);
+                setInterval(function() {
+                    PluxHits.lazy ++;
+                }, 1000);
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+
+
+            /***************************************************************/
+            /************************* PLUX HITS! **************************/
+            /***************************************************************/
+            var PluxHits = {
+                SOCKET_HOST     : "http://127.0.0.1:8315",
+                CMD_GETNEXT     : "playlist_getnext",
+                CMD_REQUIRES    : "playlist_loadpedidos",
+                socket          : null,
+                socketActive    : null,
+                lastCommand     : null,
+                callback        : null,
+                ctPlayed        : 0,
+                lazy            : 0,
+                queue           : new Array(),
+                autoPlay        : false,
+                firstConnection : true,
+                
+                //Inicia o player
+                play: function () {
+                    console.log("PluxHits.play()");
+
+                    //Carrega o próximo clipe
+                    PluxHits.getNextVideo();
+                },
+                
+                //Carrega o próximo clipe
+                getNextVideo: function () {
+                    console.log("PluxHits.getNextVideo()");
+                    PluxHits.autoPlay = true;
+
+                    //Envia o comando ao servidor
+                    if( PluxHits.queue.length == 0 ) {
+                        PluxHits.sendCommand(PluxHits.CMD_GETNEXT, PluxHits.getNextVideoCallback);
+                    } else {
+                        var video = PluxHits.queue.shift();
+                        PluxHits.videoPlay(video);
+                        
+                    }
+                },
+                
+                //Recebe a resposta do comando getNextVideo
+                getNextVideoCallback: function(response) {
+                    console.log("PluxHits.getNextVideoCallback()");
+                    
+                    //Extrai os dados
+                    var video       = new PluxHits.Video();
+                    video.name      = $(response).find("nome").eq(1).text();
+                    video.album     = $(response).find("album").text();
+                    video.artist    = $(response).find("artista").text();
+                    video.file      = $(response).find("arquivo").text();
+                    video.launch    = $(response).find("lancamento").text();
+                    video.age       = $(response).find("classificacao").text();
+                    var pos         = video.file.lastIndexOf("/")+1;
+                    video.image     = video.file.substr(0, pos)+"album.jpg";
+                    if( $(response).find('artistaBean artistaDaSemana').text() ) {
+                        video.artistWeek = true;
+                    }
+                    
+                    //Exibe o vídeo
+                    if( PluxHits.autoPlay ) {
+                        PluxHits.videoPlay(video);
+                    } else {
+                        
+                        //Adiciona o vídeo à file
+                        PluxHits.queue.push(video);
+                    }
+                },
+                
+                //Envia um comando ao servidor
+                sendCommand: function (command, callback) {
+                    console.log("PluxHits.sendCommand('"+command+"')");
+                    PluxHits.callback = callback;
+
+                    //Offline
+                    if (!PluxHits.socketActive) {
+                        
+                        //Guarda o comando para ser executado após reestabelecer a conexão
+                        PluxHits.lastCommand = command;
+
+                        //Estabelece a conexão
+                        PluxHits.connect();
+
+                    } else {
+                        
+                        //Envia o comando
+                        PluxHits.send(command);
+                    }
+                },
+                
+                //Estabelece a conexão com o socket
+                connect: function() {
+                    console.log("PluxHits.connect()");
+
+                    //Inicia a conexão
+                    PluxHits.socket = io.connect(PluxHits.SOCKET_HOST, {
+                        transports: ['websocket'],
+                        rejectUnauthorized: false
+                    });
+                    
+                    //Recebe a resposta do servidor
+                    PluxHits.socket.on('message', function (response) {
+                        console.log("Socket response: ", response);
+                        if( PluxHits.callback ) {
+                            PluxHits.callback(response);
+                        }
+                    });
+                    
+                    //Estabelece a conexão
+                    PluxHits.socket.on('connect', function (data) {
+                        console.log("Socket connected! Host: " + PluxHits.SOCKET_HOST);
+                        PluxHits.socketActive = true;
+                        
+                        //Executa o comando armazenado
+                        if( PluxHits.firstConnection ) {
+                            PluxHits.send(PluxHits.lastCommand);
+                        }
+                        PluxHits.firstConnection = false;
+                    });
+                    
+                    //Erro
+                    PluxHits.socket.on('connect_error', function (data) {
+                        console.log('connect_error');
+                    });
+                    PluxHits.socket.on('connect_timeout', function (data) {
+                        console.log('connect_error');
+                    });
+		},
+                
+                //Envia o comando
+                send: function(command) {
+                    console.log("PluxHits.send('" + command + "')");
+                    PluxHits.socket.emit('send', { message:command});
+                },
+                
+                //Inicia a exibicação do vídeo
+                videoPlay: function(video) {
+                    console.log("PluxHits.videoPlay('" + video.file + "')");
+                    PluxHits.autoPlay = false;
+                    var file = GnLib.getContentPath() + video.file.replace("C:/3MIDIA", "");
+                    var image = GnLib.getContentPath() + video.image.replace("C:/3MIDIA", "");
+                    
+                    //Dados
+                    $("#music").html(video.name);
+                    $("#artist").html(video.artist);
+                    $("#album").html(video.album);
+
+                    //Classificação
+                    if( video.age == "0" ) {
+                        video.age = "livre";
+                    }
+                    $("#classificacao img").attr("src", "./media/classificacao-"+video.age+".jpg");
+                    
+                    //Artista da semana
+                    var artistWeek = false;
+                    var launch = false;
+                    if( video.artistWeek ) {
+                        artistWeek = video.artistWeek;
+                    }
+                    if( video.launch ) {
+                        launch = video.launch;
+                    }
+                    
+                    //Capa
+                    $("img#cover").attr("src", image)
+                    
+                    //Vídeo
+                    var video = $("<video id='midiaVideo'></video>");
+                    video.attr("src", file);
+                    $("#conteudo").html(video);
+                    
+                    //Video carregado
+                    video.get(0).addEventListener('loadeddata', function() {
+                        video.get(0).play();
+                        
+                        //Exibe as informações
+                        setTimeout(function() {
+                            PluxHits.exibirInfo(artistWeek, launch)
+                        }, 10000);
+                        if( video.get(0).duration > 10 ) {
+                            var delay = (video.get(0).duration - 10) * 1000;
+                            setTimeout(function() {
+                                PluxHits.exibirInfo(artistWeek);
+                            }, delay);
+                        }
+                        
+                        //Envia o comando de verificação de pedidos
+                        if( video.get(0).duration > 30 ) {
+                            var delay = (video.get(0).duration - 30) * 1000;
+                            setTimeout(function() {
+                                PluxHits.callback = null;
+                                PluxHits.sendCommand(PluxHits.CMD_REQUIRES);
+                            }, delay);
+                        }
+                        
+                        //Exibe a classificação
+                        setTimeout(function() {
+                            PluxHits.exibirClassificacao()
+                        }, 23000);
+                    }, false);
+                    
+                    //Chamado ao encerrar o vídeo
+                    video.get(0).onended = function(e) {
+                        
+                        //Salta após 4 clipes
+                        PluxHits.ctPlayed ++;
+                        if( PluxHits.ctPlayed >= 4 ) {
+                            if (typeof (GnContentAdvance) != 'undefined') {
+                                console.log("PluxHits.videoPlay - Video ENDED: Chamando a vinheta");
+                                GnContentAdvance();
+                                return false;
+                            }
+                        }
+                        
+                        PluxHits.getNextVideo();
+                    };
+                                        
+                    //Progresso
+                    video.get(0).ontimeupdate = function() {
+                        PluxHits.lazy = 0;
+                    };
+                    
+                },
+                
+                //Exibe o conteúdo
+                exibirInfo: function(artistWeek, launch) {
+
+                    //Exibe as informações (animação)
+                    setTimeout(function() {
+                        $("#back-info").removeClass("esconder-fundo");
+                        $("#back-info").css("opacity", 1);
+                        $("#back-info").show();
+                        $("#back-info").addClass("exibir-fundo");
+                        if( launch == 'true' ) {
+                            PluxHits.exibirLancamento();
+                        } else if( artistWeek ) {
+                            PluxHits.exibirArtistaSemana();
+                        }
+                    }, 400);
+                    setTimeout(function() {
+                        $("img#cover").removeClass("esconder-fundo");
+                        $("img#cover").css("opacity", 1);
+                        $("img#cover").show();
+                        $("img#cover").addClass("exibir-fundo");
+                    }, 700);
+                    setTimeout(function() {$("#artist").fadeIn();}, 800);
+                    setTimeout(function() {$("#music").fadeIn();}, 1000);
+                    setTimeout(function() {$("#album").fadeIn();}, 1200);
+                    
+                    //Agenda a saída do conteúdo
+                    PluxHits.ocultarConteudo();
+                },
+                
+                //Oculta o conteúdo
+                ocultarConteudo: function() {
+                    setTimeout(function() {
+                        $("#back-info").removeClass("exibir-fundo");
+                        $("#back-info").css("opacity", 0);
+                        $("#back-info").addClass("esconder-fundo");
+                    }, 7700);
+                    setTimeout(function() {
+                        $("img#cover").removeClass("exibir-fundo");
+                        $("img#cover").css("opacity", 0);
+                        $("img#cover").addClass("esconder-fundo");
+                    }, 8000);
+                    setTimeout(function() {$("#artist").fadeOut();}, 7400);
+                    setTimeout(function() {$("#music").fadeOut();}, 7500);
+                    setTimeout(function() {$("#album").fadeOut();}, 7600);
+                },
+                
+                //Exibe a classificação
+                exibirClassificacao: function() {
+                    $("#classificacao").show();
+                    $("#classificacao").addClass("animated");
+                    $("#classificacao").addClass("fadeIn");
+                    $("#classificacao").addClass("flipInX");
+                    
+                    //Oculta a classificação
+                    setTimeout(function() {
+                        PluxHits.ocultarClassificacao()
+                    }, 7000);
+                },
+                
+                //Oculta a classificação
+                ocultarClassificacao: function() {
+                    $("#classificacao").addClass("fadeOut");
+                    $("#classificacao").addClass("flipOutX");
+                },
+                
+                //Exibe a tag Artista da Semana
+                exibirArtistaSemana: function() {
+                    $("#artista").show();
+                    
+                    $("#artista").removeClass("fadeOut");
+                    $("#artista").removeClass("flipOutX");
+                    
+                    $("#artista").addClass("animated");
+                    $("#artista").addClass("fadeIn");
+                    $("#artista").addClass("flipInX");
+                    
+                    //Oculta a classificação
+                    setTimeout(function() {
+                        PluxHits.ocultarArtistaSemana()
+                    }, 7000);
+                },
+                
+                //Oculta a classificação
+                ocultarArtistaSemana: function() {
+                    $("#artista").removeClass("fadeIn");
+                    $("#artista").removeClass("flipInX");
+                    
+                    $("#artista").addClass("fadeOut");
+                    $("#artista").addClass("flipOutX");
+                },
+                
+                //Exibe a tag de lançamento
+                exibirLancamento: function() {
+                    $("#lancamento").show();
+                    
+                    $("#lancamento").removeClass("fadeOut");
+                    $("#lancamento").removeClass("flipOutX");
+                    
+                    $("#lancamento").addClass("animated");
+                    $("#lancamento").addClass("fadeIn");
+                    $("#lancamento").addClass("flipInX");
+                    
+                    //Oculta a classificação
+                    setTimeout(function() {
+                        PluxHits.ocultarLancamento()
+                    }, 7000);
+                },
+                
+                //Oculta a tag de lançamento
+                ocultarLancamento: function() {
+                    $("#lancamento").removeClass("fadeIn");
+                    $("#lancamento").removeClass("flipInX");
+                    
+                    $("#lancamento").addClass("fadeOut");
+                    $("#lancamento").addClass("flipOutX");
+                },
+                
+                /**
+                 * Entidade Vídeo
+                 */
+                Video: function() {
+                    this.name       = '',
+                    this.album      = '',
+                    this.artist     = '',
+                    this.image      = '',
+                    this.file       = '',
+                    this.launch     = '',
+                    this.year       = '',
+                    this.artistWeek = ''
+                }
+            }
+
+        </script>
+    </body>
+</html>

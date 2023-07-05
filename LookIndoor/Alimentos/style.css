@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('./fonts/Gotham-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url('./fonts/Gotham-Book.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body {
+    background: #000;
+    overflow: hidden;
+	-moz-transform-origin: 0 0;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 704px;
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    display: none;
+}
+#titulo {
+    position: absolute;
+    top: 170px;
+    left: 645px;
+    font-family: 'Gotham-Bold';
+    font-size: 38px;
+    color: #fff;
+    width: 590px;
+    text-align: center;
+    display: none;
+	line-height: 40px;
+}
+#descricao {
+    position: absolute;
+    top: 260px;
+    left: 645px;
+    font-family: 'Gotham-Book';
+    font-size: 26px;
+    color: #FCDB9A;
+    width: 590px;
+    display: none;
+    line-height: 29px;
+    text-align: center;
+	white-space: pre-line;
+}
+#fileId {
+    position: absolute;
+    top: 295px;
+    left: 95px;
+	width: 387px;
+}
+#ctImg {
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 507px;
+}

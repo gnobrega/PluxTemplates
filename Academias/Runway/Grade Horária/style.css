@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Zurich Condensed BT';
+    src: url('./fonts/Zurich Condensed BT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Panton-ExtraBold';
+    src: url('./fonts/Panton-ExtraBold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#hora {
+    position: absolute;
+    top: 685px;
+    left: 1080px;
+    color: #000;
+    font-size: 62px;
+    font-family: 'Panton-ExtraBold';
+    font-weight: bold;
+    display: none;
+}
+#hora span {
+    color: #CCCCCC;
+}
+#data {
+    font-size: 48px;
+    color: #F9F9F9;
+    font-family: 'Nexa Bold';
+    position: absolute;
+    top: 96px;
+    left: 411px;
+    display: none;
+}
+/* Dados */
+#conteudo { 
+}
+.horario {
+    position: absolute;
+    color: #000;
+    font-size: 38px;
+    font-family: 'Panton-ExtraBold';
+    left: 68px;
+    text-align: center;
+    width: 140px;
+}
+.horario div.sub {
+}
+.linha1 {
+    top: 174px;
+    display: none;
+}
+.linha2 {
+    top: 270px;
+    display: none;
+}
+.linha2 {
+    display: none;
+}
+.linha2 div.sub {
+    display: none;
+    display: none;
+}
+.linha3 {
+    top: 364px;
+    display: none;
+}
+.linha4 {
+    top: 458px;
+    display: none;
+}
+.linha5 {
+    top: 557px;
+    display: none;
+}
+.linha6 {
+    top: 603px;
+    display: none;
+}
+.campo1 {
+    left: 284px;
+    width: 373px;
+}
+.campo2 {
+    left: 662px;
+    width: 251px;
+}
+.campo3 {
+    left: 917px;
+    width: 434px;
+}
+.campo {
+    position: absolute;
+    height: 50px;
+    color: #504E4E;
+    font-size: 30px;
+    font-family: 'Panton-ExtraBold';
+    overflow: hidden;
+    text-align: center;
+    margin-top: 6px;
+}
+
+/* animation */
+.mostra-data {
+    animation-name: mostra-data;
+    animation-duration: .5s;
+}
+@keyframes mostra-data{
+    from {
+        top: 70px;
+        opacity: 0;
+    }
+    to {
+        top: 96px;
+        opacity: 1;
+    }
+}

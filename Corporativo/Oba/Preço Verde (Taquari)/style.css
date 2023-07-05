@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'bebas-neue-regular';
+    src: url('./fonts/bebas-neue-regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Raleway-Bold';
+    src: url('./fonts/Raleway-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Raleway-ExtraBold';
+    src: url('./fonts/Raleway-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Raleway-Medium';
+    src: url('./fonts/Raleway-Medium.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 290px;
+    height: 145px;
+
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 290px;
+    height: 145px;
+}
+#abertura {
+    width: 290px;
+    height: 145px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 290px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 290px;
+    height: 145px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    object-fit: fill;
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 290px;
+    height: 145px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#nome {
+    position: absolute;
+    left: 44px;
+    top: 50px;
+    font-family: 'Raleway-Bold';
+    color: #492B32;
+    font-size: 15px;
+    width: 80px;
+    line-height: 15px;
+    display: none;
+}
+div#preco {
+    position: absolute;
+    left: 15px;
+    top: 75px;
+    font-family: 'bebas-neue-regular';
+    color: #1B451D;
+    font-size: 50px;
+    text-align: right;
+    width: 70px;
+    letter-spacing: -3px;
+    display: none;
+}
+div#cents {
+	font-family: 'bebas-neue-regular';
+    position: absolute;
+    left: 90px;
+    top: 80px;
+    color: #1B451D;
+    font-size: 30px;
+    text-align: left;
+    letter-spacing: -2px;
+    display: none;
+}
+div#unidade {
+    position: absolute;
+    top: 103px;
+    font-family: 'Raleway-Bold';
+    color: #492B32;
+    font-size: 10px;
+    width: 60px;
+	left: 70px;
+	text-align: center;
+    line-height: 35px;
+    display: none;
+}
+div#validade {
+    position: absolute;
+    left: 140px;
+    top: 125px;
+    font-family: 'Raleway-Medium';
+    color: #fff;
+    font-size: 10px;
+    width: 140px;
+    text-align: right;
+    display: none;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 5px;
+    left: 150px;    
+    width: 120px;
+}
+.fechar {
+    animation-name: fechar;
+    animation-duration: .4s;
+}
+@keyframes fechar{
+    from {
+        left: -290px;
+    }
+    to {
+        left: 0;
+    }
+}

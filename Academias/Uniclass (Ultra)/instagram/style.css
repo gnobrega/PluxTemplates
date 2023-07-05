@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'FuturaStd-ExtraBold';
+    src: url('./fonts/FuturaStd-ExtraBold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'corbel';
+    src: url('./fonts/corbel.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#blackout {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1360px;
+    height: 703px;
+	background: #000;
+}
+#logo {
+	position: absolute;
+	top: 580px;
+	left: 1095px;
+	display: none;
+}
+/* Dados */
+div#site {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Futura Std Bold';    
+}
+div#userLoginInstagram {
+    position: absolute;
+    left: 1024px;
+    top: 483px;
+    font-family: 'FuturaStd-ExtraBold';
+    color: #fff;
+    font-size: 22px;
+    display: none;
+}
+div#text {
+    position: absolute;
+    left: 990px;
+    top: 518px;
+    font-family: 'corbel';
+    color: #fff;
+    font-size: 22px;
+    width: 360px;
+    display: none;
+	line-height: 22px;
+}
+div#frase {
+    position: absolute;
+    left: 610px;
+    top: 353px;
+    font-family: 'Nexa Bold';
+    color: #fff;
+    font-size: 40px;
+    width: 635px;
+    display: none;
+    line-height: 42px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 0px;
+    left: 25px;
+	height: 703px;
+	width: 940px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+	height: 703px;
+	object-fit: fill;
+	width: 1360px;
+}
+
+/* animacao */
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}

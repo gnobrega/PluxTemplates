@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Fundo -->
+        <video id="fundo" src="./media/fundo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="ctImg2"><img id="fileId2" src="" class="animate" /></div>
+            <div id="ctImg"><img id="fileId" src="" class="animate" /></div>
+            <div id="titulo"></div>
+            <img id="bg-preco" src="./media/bg-preco.png" />
+            <div id="preco"></div>
+            <div id="cents"></div>
+            <div id="quantidade"></div>
+            <div id="complemento"></div>
+        </div>
+
+        <!-- Logo -->
+        <img src="./media/logo.png" id="logo">
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var comImagem = true;
+            var ext;
+            var DATA_SOURCE = "/toca/oferta.xml";
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) { 
+                    });
+                    
+                } else { //Preview
+                   
+                    GnLib.loadPreview();
+				   
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                var src = $('#fileId').attr('src');
+                src = src.replace('"', '');
+                $('#fileId2').attr('src', src);
+                
+                //Agenda a exibição do conteúdo
+                setTimeout(function() {
+                    $("#bg-preco").fadeIn();
+                    $("#bg-preco").addClass("exibir-retangulo");
+                }, 500);
+                setTimeout(function() {
+                    $("#titulo").fadeIn();
+                }, 100);
+                setTimeout(function() {
+                    $("#preco").fadeIn();
+                }, 1000);
+                setTimeout(function() {
+                    $("#complemento").fadeIn();
+                }, 1200);
+                setTimeout(function() {
+                    $("#complemento").fadeIn();
+                }, 1700);                
+                
+                //Troca o conteúdo
+                if( !GnLib.getParam('preview') ) {
+                    setTimeout(function() {
+
+                        //Carrega o conteúdo
+                        $("#titulo").hide();
+                        $("#preco").hide();
+                        $("#complemento").hide();
+                        GnLib.autoloadContent(DATA_SOURCE, function(template) { 
+                            $("#titulo").fadeIn();
+                            $("#preco").fadeIn();
+                            $("#complemento").fadeIn();
+                            $('#ctImg').fadeIn();
+                        });
+                    }, 5700);
+                }
+
+                //Fechamento
+                setTimeout(function() {
+                    $("#titulo").hide();
+                    $("#preco").hide();
+                    $("#complemento").hide();
+                    $("#ctImg").hide();
+                    $("#ctImg2").hide();
+                    $("#bg-preco").hide();
+                    $("#logo").hide();
+
+                    //Dá play no vídeo
+                    var video = $("#fundo").get(0);
+                    video.play();
+                }, 11500);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

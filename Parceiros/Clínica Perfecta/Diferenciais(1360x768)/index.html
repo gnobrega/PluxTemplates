@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        
+        <!-- Fundo -->
+        <video id="fundo" src="./media/fundo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="ctImg"><img id="fileId" src="" /></div>
+            <div id="nome">Nome</div>
+            <div id="subtitulo"></div>
+            <div id="texto"></div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/diferenciais.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+                   
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+
+                //Ajusta o zoom até enquadrar na tela
+                var zoom = window.innerWidth / 1360;
+                $("body").css('-moz-transform', "scale("+zoom+","+zoom+")");
+                $("body").css('-moz-transform-origin', "0 0");
+                $("body").css('zoom', zoom);
+                
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                video.play();
+                
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                video.ontimeupdate = function() {
+                    setTimeout(function() {
+                        $("#ctImg").show();
+                        $("#fileId").addClass("animated zoomIn");
+                    }, 500);
+                    setTimeout(function() {
+                        $("#nome").show();
+                        $("#nome").addClass("exibir-nome");
+                    }, 1600);
+                    setTimeout(function() {
+                        $("#subtitulo").show();
+                        $("#subtitulo").addClass("exibir-nome");
+                    }, 1800);
+                    setTimeout(function() {
+                        $("#texto").show();
+                        $("#texto").addClass("exibir-texto");
+                    }, 1900);
+                   
+                };
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

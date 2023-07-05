@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'avenir-next-lt-pro-demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 768px;
+    height: 1360px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+}
+#blackout {
+    width: 768px;
+    height: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+div#curso {
+    position: absolute;
+    left: 45px;
+    top: 415px;
+    font-family: 'AvenirNextLTPro-Bold';
+    color: #A0BFCB;
+    font-size: 52px;
+    text-shadow: 2px 2px #555;
+    width: 682px;
+    text-align: center;
+}
+div#semestre {
+    position: absolute;
+    left: 45px;
+    top: 510px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #A0BFCB;
+    font-size: 47px;
+    text-shadow: 2px 2px #555;
+    width: 682px;
+    text-align: center;
+}
+div#turno {
+    position: absolute;
+    left: 45px;
+    top: 630px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    font-size: 53px;
+    text-shadow: 2px 2px #555;
+    width: 682px;
+    text-align: center;
+}
+div#remuneracao {
+    position: absolute;
+    left: 45px;
+    top: 730px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    font-size: 53px;
+    text-shadow: 2px 2px #555;
+    width: 682px;
+    text-align: center;
+}
+div#beneficios {
+    position: absolute;
+    left: 45px;
+    top: 930px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    font-size: 53px;
+    text-shadow: 2px 2px #555;
+    width: 682px;
+    text-align: center;
+}
+div#codigo {
+    position: absolute;
+    left: 45px;
+    top: 1040px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #0097CF;
+    font-size: 53px;
+    width: 682px;
+    text-align: center;
+}
+div#email {
+    position: absolute;
+    left: 45px;
+    top: 1208px;
+    font-family: 'AvenirNextLTPro-Bold';
+    color: #fff;
+    font-size: 25px;
+    width: 682px;
+    text-align: center;
+}
+.campo {
+    display: none;
+}
+#itens {
+    position: absolute;
+    left: 256px;
+    top: 263px;
+    width: 848px;
+}
+.area {
+    float: left;
+    width: 539px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    text-shadow: 2px 2px #555;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 18.5px;
+    display: none;
+}
+.vagas {
+    float: left;
+    width: 308px;
+    font-family: 'avenir-next-lt-pro-demi';
+    color: #FFF;
+    text-shadow: 2px 2px #555;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 18.5px;
+    display: none;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mostra-texto {
+    animation-name: mostra-texto;
+    animation-duration: .5s;
+}
+.esconde-texto {
+    animation-name: esconde-texto;
+    animation-duration: .3s;
+}
+@keyframes mostra-texto{
+    from {
+        top: 382px;
+        opacity: 0;
+    }
+    to {
+        top: 322px;
+        opacity: 1;
+    }
+}
+@keyframes esconde-texto{
+    from {
+        top: 322px;
+        opacity: 1;
+    }
+    to {
+        top: 280px;
+        opacity: 0;
+    }
+}

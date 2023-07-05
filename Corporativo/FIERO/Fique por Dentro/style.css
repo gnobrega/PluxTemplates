@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'HelveticaRounded-Bold_2';
+    src: url('./fonts/HelveticaRounded-Bold_2.otf') format('opentype');
+}
+@font-face {
+    font-family: 'akzidenz-grotesk';
+    src: url('./fonts/akzidenz-grotesk.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+#topo {
+    position: absolute;
+    top: 0;
+    left: 638px;
+    display: none;
+}
+#moldura { 
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 1360px;
+    height: 768px;
+    background: url(./media/moldura.png);
+}
+div#titulo {
+    position: absolute;
+    left: 50px;
+    top: 515px;
+    font-family: 'HelveticaRounded-Bold_2';
+    color: #fff;
+    font-size: 45pt;
+    display: none;
+}
+div#containerTexto {
+    position: absolute;
+    left: 50px;
+    top: 600px;
+    font-family: 'akzidenz-grotesk';
+    color: #fff;
+    font-size: 30pt;
+    width: 1280px;
+    z-index: 10;
+    display: none;
+    line-height: 38px;
+}
+#degrade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:1360px;
+    height: 768px;
+    background: url(./media/degrade.png);
+}
+img#fileId {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1360px;
+    height: 768px;
+}
+.mostrar-topo {
+    animation-name: mostrar-topo;
+    animation-duration: .8s;
+}
+@keyframes mostrar-topo{
+    from {
+        opacity: 0;
+        left: 838px;
+    }
+    to {
+        opacity: 1;
+        left: 638px;
+    }
+}

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Abertura/fundo -->
+        <video id="fundo" src="./media/fundo.mp4"></video>
+        
+        <!-- Boxes -->
+        <div id="boxes"></div>
+        <div id="atualizacao"></div>
+                
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            
+            var DATA_SOURCE = "/EMPRESAS/termometro.xml";
+            GnLib.noDump();
+            
+            $(function () {
+                
+                //Cria os boxes
+                var b = 0;
+                for( i = 1; i <= 3; i++ ) {
+                    for( j = 1; j <= 3; j++ ) {
+                        b++;
+                        var box = $("<div id='box"+b+"' class='box lin"+i+" col"+j+"'></div>");
+                        box.append("<img src='./media/icons/1.png' class='icone' />");
+                        box.append("<div class='titulo'>Título</div>");
+                        box.append("<div class='valor'>Valor</div>");
+                        box.append("<div class='periodo'>Período</div>");
+                        box.append("<div class='detalhes'>Detalhes</div>");
+                        $("#boxes").append(box);
+                    }
+                }
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    loadData(DATA_SOURCE);
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#abertura").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                video.play();
+                
+                //Animação
+                setTimeout(function() {
+                    $("#boxes").fadeIn();
+                }, 1000);
+                setTimeout(function() {
+                    $("#atualizacao").fadeIn();
+                }, 2000);
+
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Carrega os dados 
+            function loadData(source) {
+                var url = GnLib.getContentPath() + DATA_SOURCE + "?nocache=" + Math.random();
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+                        var itens = [];
+                        var list = $(data).find("item");
+                        $(list).each(function(i) {
+                            var item = {
+                                titulo  	: $(this).find("titulo").text(),
+                                valor  		: $(this).find("valor").text(),
+                                periodo  	: $(this).find("periodo").text(),
+                                detalhes  	: $(this).find("detalhes").text(),
+                                icone  		: $(this).find("icone").text(),
+                                fundo  		: $(this).find("fundo").text(),
+                                chave  		: $(this).find("chave").text(),
+                            }
+                            itens.push(item);
+                            
+                            var key = i + 1;
+                            $("#box"+key).find("div.titulo").html(item.titulo);
+                            $("#box"+key).find("div.valor").html(item.valor);
+                            $("#box"+key).find("div.periodo").html(item.periodo);
+                            $("#box"+key).find("div.detalhes").html(item.detalhes);
+                            $("#box"+key).addClass(item.fundo);
+                            switch( item.icone ) {
+                                case "ascendente":
+                                    $("#box"+key).find("img").attr("src", "./media/icons/2.png");
+                                    break;
+                                case "descendente":
+                                    $("#box"+key).find("img").attr("src", "./media/icons/3.png");
+                                    break;
+                                default:
+                                    $("#box"+key).find("img").attr("src", "./media/icons/1.png");
+                            }
+                        });
+                        
+                        //Preenche os boxes
+                        var producao = itens[0];
+                        var horasTrabalhadas = itens[1];
+                        var emprego = itens[2];
+                        var faturamento = itens[3];
+                        var exportacoes = itens[4];
+                        var intencaoInvestimento = itens[5];
+                        var icei = itens[6];
+                        var uci = itens[7];
+                        var estoque = itens[8];
+                        
+                        $('#atualizacao').html(itens[9].titulo);
+                    }
+                });
+            }
+            
+            /**
+            * Preenche os boxes
+            */
+            function setBox(dados, box, key) {
+                box.txtTitulo.text = dados.titulo;
+                box.dados.txtValor.text = dados.valor;
+                box.dados.txtPeriodo.text = dados.periodo;
+
+//                if( key >= 6 ) {
+//                        box.dados.descricao.text = "Índice mês";	
+//                }
+//
+//
+//                switch( dados.fundo ) {
+//                        case "positivo":
+//                                box.gotoAndStop(2);
+//                                break;
+//                        case "negativo":
+//                                box.gotoAndStop(3);
+//                                break;
+//                        default:
+//                                box.gotoAndStop(1);
+//                }
+//                switch( dados.icone ) {
+//                        case "ascendente":
+//                                box.icone.gotoAndStop(2);
+//                                break;
+//                        case "descendente":
+//                                box.icone.gotoAndStop(3);
+//                                break;
+//                        default:
+//                                box.icone.gotoAndStop(1);
+//                }
+            }
+
+       </script>
+    </body>
+</html>

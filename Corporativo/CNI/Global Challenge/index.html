@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div class="cont1 titulo_nome titulo lin0">NOME</div>
+            <div class="cont1 titulo_media titulo lin0">MÉDIA DE PASSOS</div>
+
+            <div id="ind_nome_1" class="cont1 individual nome lin1"></div>
+            <div id="ind_nome_2" class="cont1 individual nome lin2"></div>
+            <div id="ind_nome_3" class="cont1 individual nome lin3"></div>
+            <div id="ind_nome_4" class="cont1 individual nome lin4"></div>
+            <div id="ind_nome_5" class="cont1 individual nome lin5"></div>
+
+            <div id="ind_distancia_1" class="cont1 individual distancia lin1"></div>
+            <div id="ind_distancia_2" class="cont1 individual distancia lin2"></div>
+            <div id="ind_distancia_3" class="cont1 individual distancia lin3"></div>
+            <div id="ind_distancia_4" class="cont1 individual distancia lin4"></div>
+            <div id="ind_distancia_5" class="cont1 individual distancia lin5"></div>
+            
+            
+            <div class="cont2 titulo_nome titulo lin0">NOME DA EQUIPE</div>
+            <div class="cont2 titulo_media titulo lin0">TOTAL DE PASSOS</div>
+            
+            <div id="equipe_nome_1" class="cont2 individual nome lin1"></div>
+            <div id="equipe_nome_2" class="cont2 individual nome lin2"></div>
+            <div id="equipe_nome_3" class="cont2 individual nome lin3"></div>
+            <div id="equipe_nome_4" class="cont2 individual nome lin4"></div>
+            <div id="equipe_nome_5" class="cont2 individual nome lin5"></div>
+
+            <div id="equipe_distancia_1" class="cont2 individual distancia lin1"></div>
+            <div id="equipe_distancia_2" class="cont2 individual distancia lin2"></div>
+            <div id="equipe_distancia_3" class="cont2 individual distancia lin3"></div>
+            <div id="equipe_distancia_4" class="cont2 individual distancia lin4"></div>
+            <div id="equipe_distancia_5" class="cont2 individual distancia lin5"></div>
+        </div>
+        
+        <!-- Abertura -->
+        <div id="abertura">
+            <div id="abertura-titulo">RANKING GLOBAL CHALLENGE, QUAL É O SEU LUGAR?</div>
+            <div id="abertura-texto">Faça sua parte, mobilize sua equipe e ocupe os primeiros lugares.</div>
+        </div>
+        
+        
+        <div id="blackout"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/global_challenge.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        $("#texto1").html($("#texto").html());
+                        $("#blackout").hide();
+                        
+                        //Carrega o segundo twitt
+                        GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                            $("#texto2").html($("#texto").html());
+                        });
+                    });
+                    
+                } else { //Preview
+                   GnPlay();
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("#abertura-titulo").fadeIn();
+                setTimeout(function() {
+                    $("#abertura-texto").fadeIn();
+                }, 100);
+                setTimeout(function() {
+                    $("#abertura").css("top", "-768px");
+                    $("#abertura").addClass("esconde-abertura");
+                }, 5500);
+                
+                //Conteúdo
+                var delay = 5500;
+                for( i = 5; i >= 0; i-- ) {
+                    showLine(i, delay)
+                    delay += 100;
+                } 
+                setTimeout(function() {
+                    $(".cont1").fadeOut();
+                    delay = 500;
+                    for( i = 5; i >= 0; i-- ) {
+                        showLine2(i, delay)
+                        delay += 100;
+                    }
+                }, 12500);
+            }
+            
+            function showLine(i, delay) {
+                setTimeout(function() {
+                    $(".cont1.lin"+i).fadeIn();
+                }, delay);
+            }
+            
+            function showLine2(i, delay) {
+                setTimeout(function() {
+                    $(".cont2.lin"+i).fadeIn();
+                }, delay);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

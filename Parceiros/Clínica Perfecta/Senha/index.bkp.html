@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        <iframe id="frmSenha"></iframe>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var FRAME_LOADED = false;
+            
+            // Dá o Ok sobre o carregamento com sucesso
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+
+            // Confirmação do frame carregado
+            $('#frmSenha').on('load', function() {
+                FRAME_LOADED = true;
+            });
+            
+            function GnPlay() {
+
+                // Checa se tem conexão
+                if( navigator.onLine ) {
+                    //var src = 'http://sga.gnplay.com.br/play/FIP8P'
+                    var src = 'http://sga.gnplay.com.br/templates/monitor/generico/index.html?id=4&textura=2&cor1=5C936A&cor2=245F32&cor3=247C00&cor4=FFFFFF&corFundo=&logo=%2Fupload%2Flogo%2F2020-08%2F1597326214.png&alerts=1';
+                    $('#frmSenha').attr('src', src);    
+                }
+
+                // Verifica após 30 segundos se o frame foi carregado, se não, carrega novamente
+                setTimeout(function() {
+                    if( !navigator.onLine || !FRAME_LOADED ) {
+                        console.log('Erro no carregamento do frame. Nova tentativa');
+                        GnPlay();
+                    }
+                }, 30000);
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'amsiprocond-black';
+    src: url('./fonts/amsiprocond-black.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+#cortina {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    background: #000;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+#bolha {
+    position: absolute;
+    top: 90px;
+    left: 1120px;
+    display: none;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#abertura {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#selo {
+    position: absolute;
+    top: 211px;
+    left: 104px;
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#nome {
+    position: absolute;
+    left: 730px;
+    top: 605px;
+    font-family: 'amsiprocond-black';
+    color: #fff;
+    font-size: 45px;
+    text-align: center;
+    width: 630px;
+    display: none;
+	line-height: 45px;
+}
+div#preco {
+    position: absolute;
+    left: 986px;
+    top: 105px;
+    font-family: 'amsiprocond-black';
+    color: #fff;
+    font-size: 110px;
+    text-align: right;
+    letter-spacing: -2px;
+    display: none;
+    width: 250px;
+    text-align: right;
+}
+div#cents {
+    position: absolute;
+    left: 1240px;
+    top: 100px;
+    font-family: 'amsiprocond-black';
+    color: #fff;
+    font-size: 45px;
+    text-align: left;
+    display: none;
+	padding-top: 34px;
+}
+div#unidade {
+    position: absolute;
+    left: 1094px;
+    top: 185px;
+    font-family: 'amsiprocond-black';
+    color: #fff;
+    font-size: 22px;
+    text-align: right;
+    width: 200px;
+    display: none;
+}
+div#validade {
+    position: absolute;
+    left: 0px;
+    top: 700px;
+    font-family: 'amsiprocond-black';
+    color: #074c8d;
+    font-size: 25px;
+    width: 1360px;
+    text-align: center;
+    display: none;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+img#fileId {
+    position: absolute;
+    top: 60px;
+    left: 800px;    
+    width: 540px;
+    display: none;
+}
+#ctImg {
+    display: none;
+}
+
+.selo-anim {
+    animation-name: selo-anim;
+    animation-duration: 1s;
+}
+@keyframes selo-anim {
+    from {left: -400px}
+    to {left: 104px;}
+  }

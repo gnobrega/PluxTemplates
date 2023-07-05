@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Abertura -->
+        <video id="abertura" src="./media/abertura.mp4"></video>
+        
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="nome">Nome</div>
+            <div id="departamento">Departamento</div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/aniversariantes.xml";
+                    GnLib.autoloadContent(DATA_SOURCE);
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#abertura").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                
+                //Dá play no vídeo
+                var video = $("#abertura").get(0);
+                video.play();
+                
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                video.ontimeupdate = function() {
+                    if( video.currentTime > 6.2 && !contentLoaded ) {
+                        contentLoaded = true;
+                        
+                        $("#nome").show();
+                        $("#nome").addClass("animated zoomIn");
+                        //$("#nome").addClass("fade-in");
+                    }
+                };
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

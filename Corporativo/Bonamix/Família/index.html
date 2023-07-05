@@ -1,0 +1,96 @@
+﻿    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo2.mp4"></video>
+            <!-- Imagem -->
+            <div id="ctImg"><img id="fileId" /></div>
+            <img id="fundoImg" src="./media/fundo.png" />
+                        
+            
+            
+            <!-- Dados -->
+            <div id="dados">
+                <div id="nome"></div>
+                <div id="cargo"></div>
+                <div id="local"></div>
+                <div id="texto"></div>                
+                <div id="validade"></div>                
+            </div>
+            
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/familia.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(tempalte) {
+                    });
+                    
+                } else { //Preview
+					GnLib.loadPreview();
+
+					//Autplay
+					setTimeout(function() {
+						GnPlay();
+					}, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("#fundo").get(0).play();
+                
+                setTimeout(function() {  
+                    $("#fundoImg").fadeIn();
+                }, 2800);
+                setTimeout(function() {  
+                    $("#fileId").show();
+                    $("#ctImg").fadeIn();
+                }, 2900);
+                setTimeout(function() {  
+                    $("#local").fadeIn();
+                    $("#cargo").fadeIn();
+                }, 3100);
+                setTimeout(function() {  
+                    $("#nome").fadeIn();
+                }, 3200);
+                setTimeout(function() {  
+                    $("#texto").fadeIn();
+                }, 3600);
+
+                setTimeout(function() {  
+                    $("#fundo").hide();
+                    $("#fundo").css('z-index', '10');
+                    $("#fundo").fadeIn();
+                }, 11000);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

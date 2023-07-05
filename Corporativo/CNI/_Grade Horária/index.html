@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Abertura/fundo -->
+            <video id="fundo" src="./media/fundo.mp4"></video>
+            
+            <!-- Topo -->
+            <div id="topo">
+                <!--<div class="dia0">Horário</div>
+                <div class="dia1">Segunda-feira</div>
+                <div class="dia2">Terça-feira</div>
+                <div class="dia3">Quarta-feira</div>
+                <div class="dia4">Quinta-feira</div>
+                <div class="dia5">Sexta-feira</div>-->
+            </div>
+        
+            <!-- Aulas -->
+            <div id="horarios">
+                <div id="horario1" class="horario linha1"></div>
+                <div id="horario2" class="horario linha2"></div>
+                <div id="horario3" class="horario linha3"></div>
+                <div id="horario4" class="horario linha4"></div>
+                <div id="horario5" class="horario linha5"></div>
+                <div id="horario6" class="horario linha6"></div>
+                <div id="horario6" class="horario linha7"></div>
+                <!--<div id="horario6" class="horario linha7">00:00</div>-->
+            </div>
+            
+            <!-- Aulas -->
+            <div id="aulas"></div>
+			
+        </div>
+		
+		<!-- Relógio -->
+		<div id="hora">00:00:00</div>
+		<div id="data2">30 de novembro de 2019</div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            
+            var DATA_SOURCE = "/EMPRESAS/grade_horaria.xml";
+            $(function () {
+                
+                //Monta os campos
+                for( i = 1; i <= 5; i++ ) {
+                    for( j = 1; j <= 7; j++ ) {
+                        var aulaHtml = $("<div class='aula dia"+i+" linha"+j+"'>Aula "+j+"</div>");
+                        $("#aulas").append(aulaHtml);
+                    }
+                }
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    loadData(DATA_SOURCE);
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#abertura").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                video.play();
+                
+                //Animação
+                setTimeout(function() {
+                    $("#fundo-grade").show();
+                    $("#fundo-grade").addClass('show-grade');
+                }, 3700);
+                setTimeout(function() {
+                    $("#topo div").fadeIn();
+                    $(".horario").fadeIn();
+                    $(".aula").fadeIn();
+                }, 1500);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            var aulas;
+            var dias_semana = ['domingo', 'segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+            
+            //Carrega os dados 
+            function loadData(source) {
+                var url = GnLib.getContentPath() + DATA_SOURCE + "?nocache=" + Math.random();
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+                        $(".aula").html("");
+                        
+                        //Conteúdo encontrado
+                        if (typeof (GnContentFound) != 'undefined') {
+                            GnContentFound();
+                        }
+                        
+                        //Extrai os itens
+                        var date = new Date();
+                        var day = date.getDay();
+                        aulas = $(data).find("item");
+                        var arrDias = getAulas();
+						console.log(arrDias);
+                        arrayHorarios = getHorario();
+                        
+                        for( var i = 0; i < arrDias.length; i++ ) {
+                            var dia = arrDias[i];
+
+                            //Percorre as aulas
+                            for( var k = 0; k < dia.length; k++ ) {
+                                var aula = dia[k];
+
+                                var aulaHorario = Number( limpaHorario(aula.inicio) )
+                                var totalHorarios = arrayHorarios.length;
+                                if( totalHorarios > 5 ) {
+                                        totalHorarios = 5;
+                                }
+
+                                //Identifica a posição da aula (1, 2, 3 ou 4)
+                                for( var j = 0; j < totalHorarios; j++ ) {
+
+                                    var horario = arrayHorarios[j];
+                                    var hora = horario;
+                                    $("#horarios .horario").eq(j).html(formataHorario(hora));
+                                    if( aulaHorario == horario ) {
+                                        var x = i + 1;
+                                        var y = j + 1;
+                                        $("div.dia"+x+".linha"+y).html(aula.nome);
+                                        console.log(x + "-" + y + "  " +aula.nome);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            function getAulas() {
+                var arrDias = new Array();
+                for (var j = 1; j <= 6; j++ ) {
+                        var arrAulasDia = new Array();
+                        for (var i = 0, tamanho = aulas.length; i < tamanho; i++){
+                                var d = $(aulas[i]).find('dias').text();
+                                var arrayDia = d.split(",");
+                                if( arrayDia[j] == 1 ) {
+                                    var aulaObj         = {};
+                                    aulaObj.nome        = $(aulas[i]).find('nome').text();
+                                    aulaObj.inicio      = $(aulas[i]).find('inicio').text();
+                                    aulaObj.dias        = $(aulas[i]).find('dias').text();
+                                    aulaObj.horaNumeric = limpaHorario($(aulas[i]).find('inicio').text());
+                                    
+                                    arrAulasDia.push(aulaObj);
+                                }
+                        }
+                        arrDias.push(arrAulasDia);
+                }
+                console.log(arrDias);
+                return arrDias;
+            }
+            
+            function limpaHorario(hora){
+                return hora.substr(0,2)+ hora.substr(3,2); 
+            }
+            
+            function getHorario(){
+                var arrayHorario = new Array();
+                for (var i = 0, tamanho = aulas.length; i < tamanho; i++){
+                    var horaNumeric	= Number( limpaHorario($(aulas[i]).find('inicio').text()) );
+                    if(arrayHorario.indexOf(horaNumeric) == -1){
+                        arrayHorario.push(Number(horaNumeric));
+                    }
+                }	
+                return arrayHorario.sort(function(a, b){return a - b});
+            }
+            
+            function formataHorario(hora){
+                hora = hora+"";
+                if(hora.length < 4){
+                    hora = "0" + hora.substr(0,1) + "h" + hora.substr(1,2);
+                } else{
+                    hora = hora.substr(0,2) + "h" + hora.substr(2,3);
+                }
+                return hora; 
+            }
+			
+			setInterval(function() {
+				var meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto',
+				'setembro','outubro','novembro','dezembro'];
+				var dt = new Date();
+				var seg = dt.getSeconds();
+				var min = dt.getMinutes();
+				var hor = dt.getHours();
+				seg = ( seg < 10 ) ? "0"+seg : ""+seg;
+				min = ( min < 10 ) ? "0"+min : ""+min;
+				hor = ( hor < 10 ) ? "0"+hor : ""+hor;
+				$("#hora").html(hor+":"+min+":"+seg);
+				$("#data2").html(dt.getDate()+" de "+meses[dt.getMonth()]+" de "+dt.getFullYear());
+			}, 1000);
+
+       </script>
+    </body>
+</html>

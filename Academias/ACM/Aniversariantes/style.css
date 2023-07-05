@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Futura Std Bold';
+    src: url('./fonts/Futura Std Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Futura Std Book';
+    src: url('./fonts/Futura Std Book.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #395F9C;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+}
+div#nome {
+    position: absolute;
+    font-family: 'Futura Std Bold';
+    color: #fff;
+    top: 400px;
+    left: 0px;
+    font-size: 61px;
+    width: 1000px;
+    text-align: center;
+    text-shadow: 4px 4px #CF4602;
+    line-height: 60px;
+    display: none;
+}
+div#departamento {
+    position: absolute;
+    font-family: 'Futura Std Book';
+    color: #fff;
+    top: 470px;
+    left: 515px;
+    font-size: 32px;
+    width: 800px;
+    text-align: center;
+    text-shadow: 2px 2px #CF4602;
+    line-height: 60px;
+    display: none;
+    display:none;
+}
+img#fileId {
+    position: absolute;
+    width: 435px;
+    top: 0;
+    left: 0;
+}
+.fade-in {
+    animation-name: show;
+    animation-duration: 1.5s;
+}
+@keyframes show{
+    from {
+        left: 450px;
+        opacity: 0;
+    }
+    to {
+        left: 515px;
+        opacity: 1;
+    }
+}

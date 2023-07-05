@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'HelveticaNeueLTStd-Lt';
+    src: url('./fonts/HelveticaNeueLTStd-Lt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+#ctImg {
+    display: none;
+}
+#fileId {
+    position: absolute;
+    height: 60%;
+    width: 30%;
+    top: 20%;
+    left: 10%;
+    z-index: 9999;
+    -webkit-animation: fade_on_off 10.5s 1s forwards;
+}
+div#texto {
+    display: none;
+}
+div.texto {
+    position: absolute;
+    left: 730px;
+    top: 250px;
+    font-family: 'Montserrat-Regular';
+    color: #555555;
+    font-size: 22pt;
+    width: 600px;
+    opacity: 1;
+    display: none;
+    line-height: 39px;
+}
+div.texto a {
+    color: #000;
+}
+div.texto * {
+    text-decoration: none;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mostra-texto {
+    animation-name: mostra-texto;
+    animation-duration: .5s;
+}
+.esconde-texto {
+    animation-name: esconde-texto;
+    animation-duration: .3s;
+}

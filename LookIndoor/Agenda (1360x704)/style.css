@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Neo Sans Std Medium TR';
+    src: url('./fonts/Neo Sans Std Medium TR.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Agenda Medium';
+    src: url('./fonts/Agenda Medium.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body {
+    background: #00376d;
+    overflow: hidden;
+	-moz-transform-origin: 0 0;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 704px;
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    display: none;
+}
+#titulo {
+    position: absolute;
+    top: 130px;
+    left: 765px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 45px;
+    color: #000;
+    width: 550px;
+    text-align: right;
+    display: none;
+}
+#descricao {
+    position: absolute;
+    top: 240px;
+    left: 765px;
+    font-family: 'Agenda Medium';
+    font-size: 40px;
+    color: #000;
+    width: 550px;
+    text-align: right;
+    display: none;
+}
+#periodo {
+    position: absolute;
+    top: 500px;
+    left: 765px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 34px;
+    color: #fff;
+    width: 550px;
+    text-align: right;
+    display: none;
+}
+#lugar {
+    position: absolute;
+    top: 575px;
+    left: 765px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 34px;
+    color: #000;
+    width: 550px;
+    text-align: right;
+    display: none;
+}
+#classificacao {
+    position: absolute;
+    top: 630px;
+    left: 765px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 35px;
+    color: #000;
+    width: 550px;
+    text-align: right;
+    display: none;
+}
+#credito {
+    position: absolute;
+    top: 160px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 14px;
+    text-align: right;
+    transform: rotate(-90deg);
+    width: 300px;
+    left: 1180px;
+}
+#fileId {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+#ctImg {
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 507px;
+}

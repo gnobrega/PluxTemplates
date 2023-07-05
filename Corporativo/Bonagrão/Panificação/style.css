@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'klavika-medium';
+    src: url('./fonts/klavika-medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'klavika';
+    src: url('./fonts/klavika.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#bola {
+	position: absolute;
+	top: 40px;
+	left: 1050px;
+	display: none;
+}
+#abertura {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#ctFechamento {
+    display: none;
+}
+div#titulo {
+    position: absolute;
+    left: 120px;
+    top: 435px;
+    font-family: 'klavika-medium';
+    color: #D14B19;
+    font-size: 60px;
+    text-align: right;
+    width: 500px;
+    display: none;
+}
+div#complemento {
+    position: absolute;
+    left: 120px;
+    top: 505px;
+    font-family: 'klavika';
+    color: #4B3F40;
+    font-size: 34px;
+    text-align: right;
+    width: 500px;
+    display: none;
+    line-height: 35px;
+}
+div#ctPreco2 {
+	position: absolute;
+    left: 380px;
+    top: 580px;
+	width: 220px;
+}
+div#ctPreco {
+	display: none;
+	height: 140px;
+}
+div#preco {
+    font-family: 'klavika';
+    color: #D14B19;
+    font-size: 110px;
+    text-align: right;
+    letter-spacing: -2px;
+	float: left;
+	min-width: 120px;
+}
+div#cents {
+    font-family: 'klavika';
+    color: #D14B19;
+    font-size: 55px;
+    text-align: left;
+	float: left;
+	margin-top: 13px;
+	padding-left: 5px;
+}
+div#unidade {
+    font-family: 'klavika';
+    color: #D14B19;
+    font-size: 30px;
+    text-align: left;
+    display: none;
+	float: right;
+    margin-right: 25px;
+    margin-top: -13px;
+}
+div#validade {
+    position: absolute;
+    left: 350px;
+    top: 720px;
+    font-family: 'Roboto-Bold';
+    color: #538538;
+    font-size: 19px;
+    width: 600px;
+    text-align: center;
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 70px;
+    left: 640px;    
+    display: none;
+}
+#ctImg {
+    display: none;
+}
+.mostra-titulo {
+    animation-name: mostra-titulo;
+    animation-duration: .5s;
+}
+@keyframes mostra-titulo{
+    from {
+        left: 135px;
+        opacity: 0;
+    }
+    to {
+        left: 120px;
+        opacity: 1;
+    }
+}

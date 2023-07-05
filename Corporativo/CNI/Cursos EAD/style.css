@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('./fonts/Lato-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'lato-regular';
+    src: url('./fonts/lato-regular.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+#ctImg {
+    display: none;
+}
+#fileId {
+    position: absolute;
+    height: 360px;
+    width: 510px;
+    top: 200px;
+    left: 100px;
+    z-index: 9999;
+    -webkit-animation: fade_on_off 10.5s 1s forwards;
+}
+#icon-ep {
+    position: absolute;
+    top: 321px;
+    left: 951px;
+    display: none;
+}
+div#nome, div#classificacao, #horas, #descricao {
+    position: absolute;
+    left: 717px;
+    top: 160px;
+    font-family: 'Lato-Black';
+    color: #0071bc;
+    font-size: 40px;
+    width: 630px;
+    opacity: 1;
+    line-height: 35px;
+    display: none;
+}
+div#classificacao {
+    top: 109px;
+    font-family: 'lato-regular';
+    font-size: 36px;
+    display: none;
+}
+#horas {
+    top: 430px;
+    left: 795px;
+    font-size: 40px;
+    font-family: 'lato-regular';
+}
+#descricao {
+    top: 266px;
+    font-family: 'lato-regular';
+    font-size: 30px;
+    line-height: 35px;
+    height: 140px;
+    overflow: hidden;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    object-fit: fill;
+}
+.mostra-texto {
+    animation-name: mostra-texto;
+    animation-duration: .5s;
+}
+.esconde-texto {
+    animation-name: esconde-texto;
+    animation-duration: .3s;
+}

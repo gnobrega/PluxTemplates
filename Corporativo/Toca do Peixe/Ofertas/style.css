@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'lato-heavy';
+    src: url('./fonts/lato-heavy.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'lato-bold-2';
+    src: url('./fonts/lato-bold-2.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BrushHandNew';
+    src: url('./fonts/BrushHandNew.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    width: 1360px;
+    height: 704px;
+    object-fit: fill;
+}
+#logo {
+	position: absolute;
+	top: 45px;
+	left: 1115px;
+}
+/* Dados */
+div#titulo {
+    position: absolute;
+    left: 50px;
+    top: 45px;
+    font-family: 'BrushHandNew';
+    color: #FFF;
+    font-size: 128px;
+    display: none;
+}
+div#complemento {
+    position: absolute;
+    left: 50px;
+    top: 641px;
+    font-size: 30px;
+    font-family: 'lato-bold-2';
+    color: #FFF;
+    width: 1160px;
+    display: none;
+}
+div#quantidade {
+    position: absolute;
+    left: 609px;
+    top: 500px;
+    font-family: 'Exo-Regular';
+    color: #783A36;
+    font-size: 30px;
+    width: 660px;
+    text-align: right;
+    display: none;
+}
+img#bg-preco {
+    position: absolute;
+    top: 430px;
+    left: 0px;
+    display: none;
+}
+div#preco {
+    position: absolute;
+    top: 473px;
+    left: 140px;
+    font-size: 122px;
+    color: #FAF702;
+    letter-spacing: -5px;
+    font-family: 'lato-heavy';
+    display: none;
+}
+#ctImg {
+}
+img#fileId,
+img#fileId2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1360px;
+    height: 704px;
+}
+
+
+/* animacao */
+.exibir-retangulo {
+    animation-name: exibir-retangulo;
+    animation-duration: 500ms;
+}
+@keyframes exibir-retangulo {
+    from {
+        left: -480px;
+    }
+    to {
+        left: 0px;
+    }
+}

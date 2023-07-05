@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Zurich Condensed BT';
+    src: url('./fonts/Zurich Condensed BT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url('./fonts/Myriad Pro Regular.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+div#pg-titulo {
+    position: absolute;
+    top: 10px;
+    left: 48px;
+    font-size: 36px;
+    color: #fff;
+    font-family: 'Zurich Condensed BT';
+    z-index: 10;
+    display: none;
+    font-weight: bold;
+}
+div#titulo {
+    position: absolute;
+    left: 0;
+    top: 150px;
+    font-family: 'Myriad Pro Regular';
+    color: #fff;
+    font-size: 86px;
+    text-shadow: 1px 1px #2a3947;
+    text-align: center;
+    width: 1360px;
+    display: none;
+}
+div#local, div#data, div#horario {
+    position: absolute;
+    left: 0;
+    top: 400px;
+    font-family: 'Myriad Pro Regular';
+    color: #fff;
+    font-size: 50px;
+    text-shadow: 1px 1px #2a3947;
+    text-align: center;
+    width: 1360px;
+    display: none;
+}
+div#data {
+    top: 480px;
+}
+div#horario {
+    top: 560px;
+}
+div#obs {
+    position: absolute;
+    left: 0;
+    top: 680px;
+    font-family: 'Myriad Pro Regular';
+    color: #333333;
+    font-size: 30px;
+    text-align: center;
+    width: 1360px;
+}
+
+/* animation */
+.exibir-local {
+    animation-name: exibir-local;
+    animation-duration: .5s;
+}
+@keyframes exibir-local{
+    from {
+        opacity: 0;
+        top: 320px;
+    }
+    to {
+        opacity: 1;
+        top: 400px;
+    }
+}
+.exibir-data {
+    animation-name: exibir-data;
+    animation-duration: .5s;
+}
+@keyframes exibir-data{
+    from {
+        opacity: 0;
+        top: 400px;
+    }
+    to {
+        opacity: 1;
+        top: 480px;
+    }
+}
+.exibir-horario {
+    animation-name: exibir-horario;
+    animation-duration: .5s;
+}
+@keyframes exibir-horario{
+    from {
+        opacity: 0;
+        top: 480px;
+    }
+    to {
+        opacity: 1;
+        top: 560px;
+    }
+}

@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'HelveticaRounded-BoldCond_3';
+    src: url('./fonts/Montserrat-Thin.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AkzidenzGrotesk-Medium_0';
+    src: url('./fonts/AkzidenzGrotesk-Medium_0.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ufonts.com_akzidenz-grotesk-bold';
+    src: url('./fonts/ufonts.com_akzidenz-grotesk-bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'montserrat-thin';
+    src: url('./fonts/montserrat-thin.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+}
+#fundo-grade {
+    position: absolute;
+    top: 330px;
+    left: 123px;
+    display: none;
+}
+/* Dados */
+#conteudo { 
+}
+#topo div {
+    position: absolute;
+    color: #000000;
+    font-size: 30px;
+    font-family: 'AkzidenzGrotesk-Medium_0';
+    top: 261px;
+    width: 182px;
+    text-align: center;
+    display: none;
+}
+#topo .dia0 {
+    left: 130px;
+    width: auto;
+}
+.horario {
+    position: absolute;
+    color: #2A89C3;
+    font-family: 'Montserrat-SemiBold';
+    left: 76px;
+    text-align: center;
+    display: none;
+	width: 150px;
+    font-weight: bold;
+    font-size: 34px;
+    padding-top: 3px;
+}
+.linha1 {
+    top: 300px;
+}
+.linha2 {
+    top: 373px;
+}
+.linha3 {
+    top: 442px;
+}
+.linha4 {
+    top: 509px;
+}
+.linha5 {
+    top: 582px;
+}
+.linha6 {
+    top: 503px;
+}
+.linha7 {
+    top: 550px;
+}
+.dia1 {
+    left: 233px;
+}
+.dia2 {
+    left: 453px;
+}
+.dia3 {
+    left: 670px;
+}
+.dia4 {
+    left: 880px;
+}
+.dia5 {
+    left: 1084px;
+}
+.dia6 {
+    left: 1245px;
+}
+.aula {
+    position: absolute;
+    width: 220px;
+    color: #4B4C4D;
+    font-size: 27px;
+    font-family: 'Montserrat-SemiBold';
+    text-align: center;
+    display: none;
+	padding-top: 9px;
+}
+#hora, #data2 {
+	position: absolute;
+	top: 20px;
+	left: 1170px;
+	font-size: 38px;
+	color: #fff;
+	font-family: 'ufonts.com_akzidenz-grotesk-bold';
+    display: none;
+}
+#data2 {
+	top: 64px;
+	width: 500px;
+	font-size: 28px;
+	text-align: right;
+	left: 820px;
+}
+
+/* animation */
+.show-grade {
+    animation-name: show-grade;
+    animation-duration: .5s;
+}
+@keyframes show-grade{
+    from {
+        top: 800px;
+    }
+    to {
+        top: 330px;
+    }
+}

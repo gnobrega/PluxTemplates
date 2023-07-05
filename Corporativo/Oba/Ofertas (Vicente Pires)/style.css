@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'AralType BQ Light Regular';
+    src: url('./fonts/AralType BQ Light Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./fonts/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TastyMedium';
+    src: url('./fonts/TastyMedium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'aral-typebq-bold';
+    src: url('./fonts/aral-typebq-bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 384px;
+    height: 184px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+	transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 384px;
+    height: 184px;
+}
+#abertura {
+    width: 384px;
+	height: 184px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+	object-fit: fill;
+}
+#calhau {
+    width: 384px;
+	height: 184px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+	object-fit: fill;
+}
+#fundo {
+    width: 384px;
+    height: 184px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fundo.png);
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 184px;
+    height: 144px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#produto {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    font-family: 'aral-typebq-bold';
+    color: #fff;
+    font-size: 40px;
+    width: 384px;
+    text-align: center;
+}
+div#preco {
+    position: absolute;
+    left: 50px;
+    top: 57px;
+    font-family: 'TastyMedium';
+    color: #fff;
+    font-size: 80px;
+    text-align: right;
+    width: 120px;
+}
+div#cents {
+    position: absolute;
+    left: 180px;
+    top: 60px;
+    font-family: 'TastyMedium';
+    color: #fff;
+    font-size: 55px;
+    text-align: left;
+}
+div#quantidade {
+    position: absolute;
+    left: 185px;
+    top: 115px;
+    font-family: 'aral-typebq-bold';
+    color: #fff;
+    font-size: 20px;
+    width: 100px;
+}
+div#vigencia {
+    position: absolute;
+    left: 34px;
+    top: 160px;
+    font-family: 'AralType BQ Light Regular';
+    color: #137833;
+    font-size: 13px;
+    width: 450px;
+}
+img#fileId {
+    position: absolute;
+    top: 65px;
+    left: 60px;    
+    width: 325px;
+}
+.subir-abertura {
+    animation-name: subir-abertura;
+    animation-duration: .2s;
+}
+.fechar {
+    animation-name: fechar;
+    animation-duration: .4s;
+}
+@keyframes subir-abertura{
+    from {
+        top: 0px;
+    }
+    to {
+        top: -184px;
+    }
+}
+@keyframes fechar{
+    from {
+        left: -384px;
+    }
+    to {
+        left: 0;
+    }
+}

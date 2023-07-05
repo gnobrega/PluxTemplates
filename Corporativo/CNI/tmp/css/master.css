@@ -1,0 +1,84 @@
+body, html{ overflow: hidden }
+
+@font-face {
+    font-family: 'Montserrat Regular';
+    src: url('./fonts/Montserrat-Regular.ttf');
+}
+
+body {
+    position: absolute;
+    background-color: black;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#imagem img{
+    opacity: 0;
+    height: 60%;
+    width: 30%;
+    top: 20%;
+    left: 10%;
+    position: absolute;
+    -webkit-animation: fade_on_off 10.5s 1s forwards;
+}
+
+a {
+    text-decoration: none;
+    color: #555555;
+}
+
+#conteudo{
+    text-decoration:none;
+    opacity: 0;
+    position: absolute;
+    color: #555555;
+    font-size: 40pt;
+    font-family: 'Montserrat Regular';
+    left: 52%;
+    right: 5%;
+    top: 32%;
+    height: 50%;
+    -webkit-animation: fade_on_off 10.5s 1s forwards;
+}
+
+#conteudo img{
+    width: 4%;
+    height: auto;
+}
+
+#fundo{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.resize {
+    position: relative;
+    height: 100%;
+}
+
+@-webkit-keyframes fade {
+    100%{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade_on_off {
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1366px) {
+    #conteudo{
+        font-size: 20pt
+    }
+}

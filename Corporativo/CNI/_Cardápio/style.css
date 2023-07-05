@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'Rounded-Elegance';
+    src: url('./fonts/Rounded-Elegance.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'DIN Bold';
+    src: url('./fonts/DIN Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Helvetica Bold';
+    src: url('./fonts/Helvetica Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Helvetica-Light';
+    src: url('./fonts/Helvetica-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'DIN Bold';
+    src: url('./fonts/DIN Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    object-fit: fill;
+}
+/* Dados */
+#conteudo { 
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div#hora {
+    position: absolute;
+    top: 680px;
+    left: 50px;
+    font-family: 'Rounded-Elegance';
+    font-size: 41px;
+    color: #fff;
+}
+div#dt {
+    position: absolute;
+    top: 725px;
+    left: 50px;
+    font-family: 'Rounded-Elegance';
+    font-size: 25px;
+    color: #fff;
+}
+div.categoria div.tipo {
+    position: absolute;
+    width: 910px;
+    left: 225px;
+    top: 230px;
+    color: #000;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Helvetica Bold';
+    display: none;
+}
+div.categoria div.itens {
+    position: absolute;
+    width: 930px;
+    top: 290px;
+    left: 215px;
+    display: none;
+}
+div.categoria div.item {
+    text-align: center;
+    color: #000;
+    font-size: 38px;
+    font-family: 'Helvetica-Light';
+    margin-bottom: 2px;
+}
+.show-title {
+    animation-name: show-title;
+    animation-duration: 1s;
+}
+@keyframes show-title{
+    from {
+        left: -200px;
+    }
+    to {
+        left: 60px;
+    }
+}

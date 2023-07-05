@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'DIN Bold';
+    src: url('./fonts/DIN Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'akzidenz-grotesk';
+    src: url('./fonts/akzidenz-grotesk.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+
+div#total, #dose1, #dose2, #dose3 {
+    position: absolute;
+    left: 395px;
+    top: 322px;
+    font-family: 'DIN Bold';
+    color: #311149;
+    font-size: 80pt;
+    display: none;
+    text-align: center;
+    width: 560px;
+}
+#dose1, #dose2, #dose3 {
+    top: 551px;
+    font-size: 60pt;
+    width: 300px;
+}
+#dose1 {
+    left: 95px;
+}
+#dose2 {
+    left: 525px;
+}
+#dose3 {
+    left: 945px;
+}
+
+video#abertura {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

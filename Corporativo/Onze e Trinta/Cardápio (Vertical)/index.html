@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        
+        <!-- Fundo -->
+        <video id="fundo" src="./media/fundo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="ctImg"><img id="fileId" src="" class="animate" /></div>
+            <div id="titulo"></div>
+            <div id="preco"></div>
+            <div id="cents"></div>
+            <div id="complemento"></div>
+            <img src="./media/bola.png" id="bola">
+            <div id="rs">R$</div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/onze/cardapio.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        
+                    });
+                    
+                } else { //Preview
+                   
+                    GnLib.loadPreview();
+                    $('body').css('zoom', 0.247)
+				   
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                video.play();
+
+                //Corrige o campo de preço
+                var precoParams = $("#preco").text().split(",");
+                $("#preco").text(precoParams[0]);
+                if( precoParams.length > 1 )
+                {
+                    $("#cents").text(","+precoParams[1]);
+                }
+                
+                //Agenda a exibição do conteúdo
+                setTimeout(function() {
+                    $("#ctImg").fadeIn();
+                }, 700);
+                setTimeout(function() {
+                    $("#preco").fadeIn();
+                    $("#cents").fadeIn();
+                    $("#bola").fadeIn();
+                    $("#rs").fadeIn();
+                }, 2100);
+                setTimeout(function() {
+                    $("#titulo").fadeIn();
+                }, 2300);
+                setTimeout(function() {
+                    $("#complemento").fadeIn();
+                }, 2700);
+                
+                setTimeout(function() {
+                    $("#ctImg").hide();
+                    $("#titulo").hide();
+                    $("#complemento").hide();
+                    $("#preco").hide();
+                    $("#cents").hide();
+                    $("#bola").hide();
+                    $("#rs").hide();
+                }, 9500);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

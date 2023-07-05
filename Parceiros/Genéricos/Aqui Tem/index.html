@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4"></video>
+            
+            <!-- Dados -->
+            <div id="ctImg"><img id="fileId" src="" /></div>
+            <div id="empresa">Título</div>
+            <div id="descricao">Descrição</div>
+            <div id="sala">Sala</div>
+            <div id="andar">Andar</div>
+            <div id="telefone">Telefone</div>
+            <div id="site">Site</div>
+        </div>
+                
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/CONTEUDO/CONDOMINIO/aqui_tem.xml";
+                    GnLib.autoloadContent(DATA_SOURCE);
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#fundo").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                video.play();
+                
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                setTimeout(function() {
+                    $("#empresa").fadeIn();
+                }, 5100);
+                setTimeout(function() {
+                    $("#descricao").show();
+                    $("#descricao").addClass('exibir-conteudo');
+                }, 5600);
+                setTimeout(function() {
+                    $("#sala").show();
+                    $("#sala").addClass('exibir-conteudo');
+                    $("#andar").show();
+                    $("#andar").addClass('exibir-conteudo');
+                    $("#telefone").show();
+                    $("#telefone").addClass('exibir-conteudo');
+                }, 6300);
+                setTimeout(function() {
+                    $("#site").fadeIn();
+                }, 7000);
+                video.ontimeupdate = function() {
+                    if( video.currentTime >= 3 && !contentLoaded ) {
+                        contentLoaded = true;
+                        $("#ctImg").fadeIn();
+                    }
+                };
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./fonts/Montserrat-SemiBold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url('./fonts/Montserrat-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Montserrat-ExtraBold';
+    src: url('./fonts/Montserrat-ExtraBold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, video {
+    width: 1360px;
+    height: 768px;
+}
+video {
+    object-fit: fill;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#logo {
+	position: absolute;
+	top: 605px;
+	left: 1225px;
+	display: none;
+	width: 120px;
+}
+/* Dados */
+div#titulo {
+    position: absolute;
+    left: 90px;
+    top: 465px;
+    font-family: 'Montserrat-SemiBold';
+    color: #FFF;
+    font-size: 40px;
+    width: 660px;
+    display: none;
+    text-align: center;
+}
+div#complemento {
+    position: absolute;
+    left: 0;
+    top: 557px;
+    font-family: 'Montserrat-Light';
+    color: #fff;
+    font-size: 30px;
+    width: 650px;
+    text-align: right;
+    display: none;
+}
+div#preco {
+    font-family: 'Montserrat-ExtraBold';
+    position: absolute;
+    left: 330px;
+    top: 595px;
+    font-size: 97px;
+    text-align: left;
+    color: #078BCC;
+    display: none;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 100px;
+    left: 725px;
+    width: 570px;
+}
+
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 800ms;
+}
+.exibir-funcao {
+    animation-name: exibir-funcao;
+    animation-duration: 800ms;
+}
+.exibir-retangulo {
+    animation-name: exibir-retangulo;
+    animation-duration: 800ms;
+}
+@keyframes exibir-nome {
+    from {
+        opacity: 0;
+        left: 610px;
+    }
+    to {
+        opacity: 1;
+        left: 630px;
+    }
+}
+@keyframes exibir-funcao {
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+    to {
+        opacity: 1;
+        left: 680px;
+    }
+}
+@keyframes exibir-retangulo {
+    from {
+        opacity: 0;
+        left: 410px;
+    }
+    to {
+        opacity: 1;
+        left: 510px;
+    }
+}

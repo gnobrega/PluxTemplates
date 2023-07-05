@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'MonumentExtended-Regular';
+    src: url('./fonts/MonumentExtended-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MonumentExtended-Ultrabold';
+    src: url('./fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'MonumentExtended-Regular';
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+#topo {
+    position: absolute;
+    top: 0;
+    left: 638px;
+    display: none;
+}
+div#titulo {
+    position: absolute;
+    left: 400px;
+    top: 555px;
+    font-family: 'MonumentExtended-Ultrabold';
+    color: #fff;
+    font-size: 30pt;
+    display: none;
+}
+div#containerTexto {
+    position: absolute;
+    left: 310px;
+    padding-left: 90px;
+    top: 610px;
+    font-family: 'akzidenz-grotesk';
+    color: #fff;
+    font-size: 18pt;
+    width: 880px;
+    z-index: 10;
+    display: none;
+    line-height: 30px;
+    border-left: 1px solid #9d9d9d;
+    height: 125px;
+}
+span#texto {
+    display: block;
+}
+#containerTexto2 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+img#fileId {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1360px;
+    height: 768px;
+}
+.mostrar-topo {
+    animation-name: mostrar-topo;
+    animation-duration: .8s;
+}
+#fique_por_dentro {
+    width: 400px;
+    display: none;
+}
+#logo {
+    position: absolute;
+    top: 640px;
+    left: 80px;
+    width: 160px;
+    display: none;
+}
+#degrade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:1360px;
+    height: 768px;
+    background: url(./media/degrade.png);
+}
+@keyframes mostrar-topo{
+    from {
+        opacity: 0;
+        left: 838px;
+    }
+    to {
+        opacity: 1;
+        left: 638px;
+    }
+}

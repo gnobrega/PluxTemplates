@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url('./fonts/Nexa Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./fonts/Poppins-Regular.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #062A2C;
+    overflow: hidden;
+}
+/* Dados */
+div#site {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Futura Std Bold';    
+}
+div#conteudo.semImagem div#titulo {
+    left: 45px;
+    top: 270px;
+    width: 1250px;
+    font-size: 45px;
+    text-align: center;
+}
+div#conteudo.semImagem div#texto {
+    left: 45px;
+    top: 400px;
+    width: 1250px;
+    font-size: 35px;
+}
+div#titulo {
+    position: absolute;
+    left: 490px;
+    top: 275px;
+    font-family: 'Nexa Bold';
+    color: #088981;
+    font-size: 45px;
+    width: 840px;
+    display: none;
+}
+div#texto {
+    position: absolute;
+    left: 490px;
+    top: 407px;
+    font-family: 'Poppins-Regular';
+    color: #4F4F4F;
+    font-size: 40px;
+    width: 840px;
+    display: none;
+    line-height: 50px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 248px;
+    left: 22px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* animacao */
+.exibir-titulo {
+    animation-name: exibir-titulo;
+    animation-duration: 500ms;
+}
+.exibir-texto {
+    animation-name: exibir-texto;
+    animation-duration: 500ms;
+}
+.exibir-titulo-s-imagem {
+    animation-name: exibir-titulo-s-imagem;
+    animation-duration: 500ms;
+}
+.exibir-texto-s-imagem {
+    animation-name: exibir-texto-s-imagem;
+    animation-duration: 500ms;
+}
+@keyframes exibir-titulo-s-imagem {
+    from {
+        opacity: 0;
+        top: 230px;
+    }
+    to {
+        opacity: 1;
+        top: 270px;
+    }
+}
+@keyframes exibir-texto-s-imagem {
+    from {
+        opacity: 0;
+        top: 330px;
+    }
+    to {
+        opacity: 1;
+        top: 400px;
+    }
+}
+@keyframes exibir-titulo {
+    from {
+        opacity: 0;
+        top: 205px;
+    }
+    to {
+        opacity: 1;
+        top: 275px;
+    }
+}
+@keyframes exibir-texto {
+    from {
+        opacity: 0;
+        top: 350px;
+    }
+    to {
+        opacity: 1;
+        top: 407px;
+    }
+}

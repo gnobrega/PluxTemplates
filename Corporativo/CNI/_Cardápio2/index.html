@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4" ></video>
+
+            <!-- Dados -->
+            <div id="principal"></div>
+            
+            <!-- Relógio -->
+            <div id="hora">00:00:00</div>
+            <div id="dt">Data</div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>    
+            var listaPratos = [];
+            var GnContentFoundBkp = GnContentFound;
+            var GnContentFound = undefined;
+            
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    var date = new Date();
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/cardapio.xml";
+                    var currentDate = new Date();
+                    var conteudo;
+                    var itens = [];
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        
+                        //Extrai os dados do cardápio
+                        for( i in template.registros ) {
+                            var registro = template.registros[i];
+                            conteudo = null;
+                            
+                            for( j in registro ) {
+                                if( j.substr(0 ,8) == 'alimento' ) {
+                                    var alimento = registro[j];
+                                    var arrAlimento = String(alimento).split("|||");
+                                    var nomeAlimento = arrAlimento[0];
+                                    var diasSemana = arrAlimento[1];
+                                    var lstDias = diasSemana.split(',');
+                                    
+                                    //Verifica se aquele alimento está disponível para aquele dia da semana
+                                    if( lstDias[date.getDay()] == 1 ){
+                                        
+                                        //Se ainda não tiver criado, cria o obj de Conteudo
+                                        if( conteudo == null ) {
+                                            conteudo = new Conteudo();
+
+                                            //Seta a categoria
+                                            conteudo.tipo = registro.categoria;
+                                        }
+
+                                        //Adiciona o alimento lista
+                                        conteudo.alimentos.push(nomeAlimento);
+                                    }
+                                }    
+                            }
+                            
+                            //Adiciona o cardapio/categoria
+                            if( conteudo != null ) {
+                                listaPratos.push(conteudo);
+                            }
+                        }
+                        
+                        //Verifica se possui pratos pro dia
+                        if( listaPratos.length > 0 ) {
+                            for( p in listaPratos ) {
+                                listaPratos[p].render();
+                            }
+                            if( typeof(GnContentFoundBkp) != 'undefined' ) {
+                                GnContentFoundBkp();
+                            }
+                        }
+                    });
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#abertura").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            function Conteudo() {
+                this.tipo;
+                this.alimentos = [];
+                this.html;
+                this.render = function() {
+                    var categoria = $("<div class='categoria'></div>");
+                    var tipo = $("<div class='tipo'>"+this.tipo+"</div>");
+                    var itens = $("<div class='itens'></div>");
+                    for( i in this.alimentos ) {
+                        var cls = "";
+                        if( this.alimentos[i].substr(0, 1) == "*" ) {
+                            this.alimentos[i] = this.alimentos[i].substr(1);
+                            cls = "destaque";
+                        }
+                        var item = $("<div class='item "+cls+"'>"+this.alimentos[i]+"</div>");
+                        itens.append(item);
+                    }
+                    categoria.append(tipo);
+                    categoria.append(itens);
+                    this.html = categoria;
+                    $("#principal").append(categoria);
+                }
+                this.show = function() {
+                    this.html.find(".tipo").fadeIn(1000);
+                    var itens = this.html.find(".itens");
+                    setTimeout(function() {
+                        itens.fadeIn(1000);
+                    }, 400);
+                }
+                this.hide = function() {
+                    this.html.find(".itens").fadeOut(1000);
+                    var tipo = this.html.find(".tipo");
+                    setTimeout(function() {
+                        tipo.fadeOut(1000);
+                    }, 400);
+                }
+            }
+            
+            //Autoplay
+            function GnPlay() {
+                $("#fundo").get(0).play();
+
+                slide();
+            }
+            
+            var idx = 0;
+            function slide() {
+                console.log(listaPratos);
+                if( listaPratos.length ) {
+                    var atual = listaPratos[idx];
+                    atual.show();
+                    setTimeout(function() {
+                        atual.hide();
+                    }, 10000);
+                    
+                    //Próximo
+                    idx ++;
+                    if( idx >= listaPratos.length ) {
+                        idx = 0;
+                    }
+                    setTimeout(slide, 11000);
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Atualiza o relógio
+            //setInterval(atualizarRelogio, 200);
+            function atualizarRelogio() {
+                var d = new Date();
+                var horas = d.getHours();
+                var minutos = d.getMinutes();
+                var segundos = d.getSeconds();
+                if (horas < 10) {
+                    horas = "0" + horas;
+                }
+                if (minutos < 10) {
+                    minutos = "0" + minutos;
+                }
+                if (segundos < 10) {
+                    segundos = "0" + segundos;
+                }
+                $("#hora").html(horas+":"+minutos+":"+segundos);
+            }
+            
+            //Atualiza a data
+            atualizarData();
+            function atualizarData() {
+                var MESES = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+                var d = new Date();
+                var dia = d.getDate();
+                var mes = d.getMonth();
+                var ano = d.getFullYear();
+                $("#dt").html(dia + " de " + MESES[mes] + " de " + ano);
+            }
+            
+        </script>
+    </body>
+</html>

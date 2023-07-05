@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('./fonts/Montserrat-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-ExtraBold';
+    src: url('./fonts/Montserrat-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body {
+    background: #000;
+    overflow: hidden;
+	-moz-transform-origin: 0 0;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 704px;
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    display: none;
+}
+#titulo {
+    position: absolute;
+    top: 52px;
+    left: 75px;
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 38px;
+    color: #61086B;
+    width: 470px;
+    text-align: center;
+    display: none;
+	line-height: 40px;
+}
+#descricao {
+    position: absolute;
+    top: 60px;
+    left: 640px;
+    font-family: 'Montserrat-SemiBold';
+    font-size: 22px;
+    color: #61086B;
+    width: 650px;
+    display: none;
+	line-height: 29px;
+	white-space: pre-line;
+}
+#contatos {
+    position: absolute;
+    top: 200px;
+    left: 640px;
+    font-family: 'Montserrat-Bold';
+    font-size: 28px;
+    color: #61086B;
+    width: 650px;
+    display: none;
+	line-height: 44px;
+	white-space: pre-line;
+}
+#qrcode {
+    position: absolute;
+    top: 485px;
+    left: 1075px;
+	background: #FFF;
+	padding: 20px;
+    display: none;
+}
+#fileId {
+    position: absolute;
+    top: 183px;
+    left: 35px;
+	width: 535px;
+	height: 526px;
+}
+#ctImg {
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 507px;
+}

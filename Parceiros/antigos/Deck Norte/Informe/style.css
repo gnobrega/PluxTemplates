@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Zurich BT Bold';
+    src: url('./fonts/Zurich BT Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Zurich Condensed BT';
+    src: url('./fonts/Zurich Condensed BT.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #062A2C;
+    overflow: hidden;
+}
+/* Dados */
+div#site {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Futura Std Bold';    
+}
+div#conteudo.semImagem div#titulo {
+    left: 140px;
+    top: 250px;
+    width: 1100px;
+    font-size: 46px;
+}
+div#conteudo.semImagem div#texto {
+    left: 140px;
+    top: 420px;
+    width: 1100px;
+    font-size: 46px;
+    line-height: 45px;
+}
+div#titulo {
+    position: absolute;
+    left: 550px;
+    top: 238px;
+    font-family: 'Zurich BT Bold';
+    color: #1E1E1E;
+    font-size: 43px;
+    width: 700px;
+    display: none;
+}
+div#texto {
+    position: absolute;
+    left: 550px;
+    top: 440px;
+    font-family: 'Zurich Condensed BT';
+    color: #3F3F3F;
+    font-size: 40px;
+    width: 700px;
+    display: none;
+    line-height: 39px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 214px;
+    left: 85px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* animacao */
+.exibir-titulo-s-imagem {
+    animation-name: exibir-titulo-s-imagem;
+    animation-duration: 800ms;
+}
+.exibir-texto-s-imagem {
+    animation-name: exibir-texto-s-imagem;
+    animation-duration: 800ms;
+}
+.exibir-titulo {
+    animation-name: exibir-titulo;
+    animation-duration: 800ms;
+}
+.exibir-texto {
+    animation-name: exibir-texto;
+    animation-duration: 800ms;
+}
+.exibir-titulo-s-imagem {
+    animation-name: exibir-titulo-s-imagem;
+    animation-duration: 800ms;
+}
+.exibir-texto-s-imagem {
+    animation-name: exibir-texto-s-imagem;
+    animation-duration: 800ms;
+}
+@keyframes exibir-titulo-s-imagem {
+    from {
+        opacity: 0;
+        top: 280px;
+    }
+    to {
+        opacity: 1;
+        top: 250px;
+    }
+}
+@keyframes exibir-texto-s-imagem {
+    from {
+        opacity: 0;
+        top: 450px;
+    }
+    to {
+        opacity: 1;
+        top: 420px;
+    }
+}
+@keyframes exibir-titulo {
+    from {
+        opacity: 0;
+        top: 268px;
+    }
+    to {
+        opacity: 1;
+        top: 238px;
+    }
+}
+@keyframes exibir-texto {
+    from {
+        opacity: 0;
+        top: 470px;
+    }
+    to {
+        opacity: 1;
+        top: 440px;
+    }
+}

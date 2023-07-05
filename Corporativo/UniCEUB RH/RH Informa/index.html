@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Abertura -->
+        <video id="abertura" src="./media/abertura.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            <img id="fileId" src="" />
+
+            <!-- Dados -->
+            <div id="titulo">Título</div>
+            <div id="texto1">Texto 1</div>
+            <div id="texto2">Texto 2</div>
+            <div id="informacoes">Informações</div>
+            <div id="email">Email</div>
+            <div id="ramal">Ramal</div>
+            <div id="editorias">Editorias</div>
+            <img id="img0" />
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            $(function () {
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/rh_informa_com_foto.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function() {
+                        
+                        //Configura o layuot pela editoria
+                        var editoria = $("#editorias").html();
+                        switch (editoria) {
+                            case 'Capacitação':
+                                frame = 1;
+                                break;
+                            case 'Gestão de Desempenho':
+                                frame = 2;
+                                break;
+                            case 'Qualidade de Vida':
+                                frame = 3;
+                                break;
+                            case 'Talentos':
+                                frame = 4;
+                                break;
+                            case 'Benefícios':
+                                frame = 5;
+                                break;
+                            case 'Gestão de Clima':
+                                frame = 6;
+                                break;
+                            case 'Comunicação Interna':
+                                frame = 7;
+                                break;
+                            default:
+                                frame = 1;
+                        };
+                        $("#conteudo").addClass("frame"+frame);
+                    });
+
+                } else { //Preview
+                    //Autplay
+                    $("#abertura").ready(function () {
+                        GnPlay();
+                    });
+                }
+                
+                //Desenvolvimento
+                if (GnLib.getParam('autoplay')) {
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 2000);
+                }
+                
+            });
+
+            //Autoplay
+            function GnPlay() {
+
+                //Dá play no vídeo
+                var video = $("#abertura").get(0);
+                video.play();
+
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                video.ontimeupdate = function () {
+                    if (video.currentTime > 1.3 && !contentLoaded) {
+                        contentLoaded = true;
+                        
+                        //Exibe o conteúdo
+                        $("#conteudo").fadeIn();
+
+                        //Exibe o texto inicial
+                        $("#titulo").fadeIn();
+                        $("#texto1").fadeIn();
+
+                        //Substitui o texto
+                        setTimeout(function () {
+                            $("#texto1").fadeOut(function () {
+                                $("#texto2").fadeIn();
+
+                                //Exibe as demais informações
+                                setTimeout(function () {
+                                    $("#texto2").fadeOut(function () {
+                                        $("#informacoes").fadeIn();
+                                        $("#ramal").fadeIn();
+                                        $("#email").fadeIn();
+                                    });
+                                }, 9300);
+                            });
+                        }, 9100);
+                    }
+                };
+            }
+        </script>
+    </body>
+</html>

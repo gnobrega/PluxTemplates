@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('./fonts/Gotham-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GothamHTF-Book';
+    src: url('./fonts/GothamHTF-Book.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gotham-Bold';
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+#blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    background: #000;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#fundo {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#dados1 {
+    position: absolute;
+    top: 480px;
+    left: 470px;
+    width: 730px;
+}
+div#titulo {
+    color: #001F43;
+    font-size: 30pt;
+    top: 490px;
+    letter-spacing: -1px;
+    line-height: 40px;
+}
+div#texto {
+    color: #555555;
+    font-size: 24pt;
+    font-family: 'GothamHTF-Book';
+    top: 585px;
+    margin-top: 10px;
+}
+#qr {
+    position: absolute;
+    top: 530px;
+    left: 102px;
+}
+#editoria, #link {
+    display: none;
+}
+img#fileId {
+    left: 470px;
+    top: 50px;
+    height: 412px;
+    width: 53.6%;
+    position: absolute;
+    -webkit-animation: fade 1s 1s forwards;  
+}
+#ctImg, #dados {
+    display: none;
+}
+.exibir-dados {
+    animation-name: exibir-dados;
+    animation-duration: 1s;
+}
+@keyframes exibir-dados{
+    from {
+        left:850px;
+        opacity: 0;
+    }
+    to {
+        left:800px;
+        opacity: 1;
+    }
+}

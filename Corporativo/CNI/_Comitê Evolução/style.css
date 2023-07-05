@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Futura Bold';
+    src: url('./fonts/Futura Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'futura-pt-book';
+    src: url('./fonts/futura-pt-book.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, #fundo {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+}
+#moldura { 
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 1360px;
+    height: 768px;
+    background: url(./media/moldura.png);
+}
+div#titulo {
+    position: absolute;
+    left: 535px;
+    top: 434px;
+    font-family: 'Futura Bold';
+    color: #4D8A2A;
+    font-size: 32pt;
+    display: none;
+    width: 720px;
+    line-height: 48px;
+}
+div#texto {
+    position: absolute;
+    left: 539px;
+    top: 540px;
+    font-family: 'futura-pt-book';
+    color: #3A3A3A;
+    font-size: 30pt;
+    display: none;
+    width: 720px;
+    line-height: 42px;
+}
+div#leia {
+    position: absolute;
+    left: 19px;
+    top: 550px;
+    font-family: 'futura-pt-book';
+    color: #3A3A3A;
+    font-size: 26pt;
+    display: none;
+    width: 460px;
+    text-align: right;
+    line-height: 48px;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(./media/fundo.png);
+}
+img#fileId {
+    position: absolute;
+    top: 20px;
+    left: 535px;
+}
+.mostrar-topo {
+    animation-name: mostrar-topo;
+    animation-duration: .8s;
+}
+@keyframes mostrar-topo{
+    from {
+        opacity: 0;
+        left: 838px;
+    }
+    to {
+        opacity: 1;
+        left: 638px;
+    }
+}

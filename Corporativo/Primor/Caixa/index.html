@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="caixa">00</div>
+        </div>
+		
+		<audio id="voz"></audio>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+		<script src="./libs/socket.io.js"></script>
+        <script>
+			var socket;
+            GnLib.noDump();
+            
+            $(function () {
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    /*var DATA_SOURCE = "/EMPRESAS/aniversariantes.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });*/
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#abertura").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                connectSocket();
+            }
+			
+			//Se conecta ao socket
+			function connectSocket() {
+				//socket = io.connect('http://localhost:8000');
+				socket = io.connect('localhost:8181');
+			
+				socket.on('connect', function () {
+				});
+				
+				socket.on('message', function(message) {
+				});
+				
+				socket.on('sendRemoteKey', function(message) {
+					//$("h4").append("<BR>Tecla pressionada: "+message.key);
+					
+					var numero = "--";
+					var audio = "";
+					if( message.key == 'A' ) {
+						numero = "10";
+						audio = "caixa10";
+					} else if( message.key == 'B' ) {
+						numero = "11";
+						audio = "caixa11";
+					} else if( message.key == 'C' ) {
+						numero = "12";
+						audio = "caixa12";
+					} else if( message.key == 'D' ) {
+						numero = "13";
+						audio = "caixa13";
+					}
+					
+					$("#caixa").html(numero);
+					playAudio(audio);
+				})
+			}
+			
+			//Toca o áudio
+			function playAudio(audio) {
+				if( audio ) {
+					$("#voz").attr("src", "./media/"+audio+".mp3");
+					$("#voz").get(0).play();
+				}
+			}
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+			<!-- Fundo -->
+            <img id="fundo" src="./media/fundo.jpg" />
+            
+			<div id="titulo2"></div>
+			
+            <!-- Lista -->
+            <div id="lista">
+            </div>
+			
+			<!-- Fotos -->
+            <div id="fotos">
+            </div>
+            
+        </div>
+		<div id="blackground"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            var possuiConteudo = true;
+			var registros = [];
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/carnes2.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+						var limite = template.registros.length;
+						if( limite > 7 ) {
+							limite = 7;
+						}
+						for( i = 0; i < limite; i ++ ) {
+							var idx = GnLib.getIndex("carnes_idx", template.registros);
+							var registro = template.registros[idx];
+							registros.push(template.registros[idx]);
+
+						}
+                    });
+                    
+                } else { //Preview
+					GnLib.loadPreview();
+					
+					var params = GnLib.getParams();
+					if( registros.length == 0 ) {
+						registros.push(params);
+					}
+					
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+			var played = false;
+            function GnPlay() {
+				if( played ) {
+					return true;
+				}
+				played = true;
+                if( $("#titulo").html() != "" ) {
+					$("#blackground").hide();
+					console.log(registros);
+					//Exibe o conteúdo
+					for( i in registros ) {
+						var cls = "";
+						if( i == 0 ) {
+							$("#titulo2").html(registros[i].titulo+" - "+registros[i].quantidade);
+							cls = "ativo cinza";
+						} else if( i % 2 == 0 ) {
+							cls = "cinza";
+						}
+						
+						var html = "<div class='item "+cls+"'><div class='titulo'>"+registros[i].titulo+" - "+registros[i].quantidade+"</div><div class='preco'>R$ "+registros[i].preco+"</div></div>";
+						$("#lista").append(html);
+						
+						//Img
+						var clsImg = "";
+						if( i > 0 ) {
+							clsImg = "hidden";
+						}
+						var idx = GnLib.dataSource.lastIndexOf("/");
+                        var src = GnLib.dataSource.substr(0, idx) + "/" + GnLib.prefixImg + registros[i].fileId + "." + registros[i].extId;
+						var img = "<img class='foto "+clsImg+"' src='"+src+"' />";
+						$("#fotos").append(img);
+					}
+                }
+            }
+			var index = 0;
+			setInterval(toggle, 10000);
+			function toggle() {
+				if( ($("div.item").length - 1 ) <= index ) {
+					index = 0;
+				} else {
+					index ++;
+				}
+				
+				$("#titulo2").html($(".item .titulo").eq(index).html());
+				
+				$(".item").removeClass("ativo");
+				$(".item").eq(index).addClass("ativo");
+				
+				$(".foto").removeClass("hidden");
+				$(".foto").eq(index).addClass("hidden");
+			}
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
+            }
+        </script>
+    </body>
+</html>

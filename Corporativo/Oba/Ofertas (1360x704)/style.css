@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Intro Bold Regular';
+    src: url('./fonts/Intro Bold Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Raleway-ExtraBold';
+    src: url('./fonts/Raleway-ExtraBold.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 704px;
+}
+#abertura {
+    width: 1360px;
+	height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fundo.png);
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#produto {
+    position: absolute;
+    left: 77px;
+    top: 330px;
+    font-family: 'Raleway-ExtraBold';
+    color: #51272F;
+    font-size: 45px;
+    text-align: center;
+    width: 420px;
+	line-height: 45px;
+}
+div#preco {
+    position: absolute;
+    left: 0px;
+    top: 410px;
+    font-family: 'Intro Bold Regular';
+    color: #137833;
+    font-size: 210px;
+    text-align: right;
+    width: 332px;
+	letter-spacing: -15px;
+}
+div#cents {
+	font-family: 'Intro Bold Regular';
+    position: absolute;
+    left: 338px;
+    top: 422px;
+    color: #137833;
+    font-size: 140px;
+    text-align: left;
+	letter-spacing: -2px;
+}
+div#unidade {
+    position: absolute;
+    top: 565px;
+    font-family: 'Raleway-ExtraBold';
+    color: #51272F;
+    font-size: 40px;
+    width: 160px;
+	left: 310px;
+	text-align: center;
+	line-height: 35px;
+}
+div#validade {
+    position: absolute;
+    left: 450px;
+    top: 650px;
+    font-family: 'Intro Bold Regular';
+    color: #fff;
+    font-size: 20px;
+    width: 620px;
+	text-align: center;
+}
+img#fileId {
+    position: absolute;
+    top: 260px;
+    left: 560px;    
+    width: 470px;
+}
+.fechar {
+    animation-name: fechar;
+    animation-duration: .4s;
+}
+@keyframes fechar{
+    from {
+        left: -1360px;
+    }
+    to {
+        left: 0;
+    }
+}

@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/avenir-next-lt-pro.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/avenir-next-lt-pro-bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    display: none;
+}
+.frame1 {
+    background: url(./media/frame1.jpg);
+}
+.frame2 {
+    background: url(./media/frame2.jpg);
+}
+.frame3 {
+    background: url(./media/frame3.jpg);
+}
+.frame4 {
+    background: url(./media/frame4.jpg);
+}
+.frame5 {
+    background: url(./media/frame5.jpg);
+}
+.frame6 {
+    background: url(./media/frame6.jpg);
+}
+.frame7 {
+    background: url(./media/frame7.jpg);
+}
+div#titulo {
+    position: absolute;
+    font-family: 'Calibri';
+    font-size: 45px;
+    color: #fff;
+    top: 150px;
+    left: 500px;
+    width: 800px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+div#texto1, div#texto2, #informacoes, #ramal, #email {
+    position: absolute;
+    font-family: 'Calibri';
+    font-size: 40px;
+    color: #fff;
+    top: 280px;
+    left: 500px;
+    width: 800px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+#email {
+    top: 450px;
+}
+#ramal {
+    top: 530px;
+}
+#editorias {
+    display: none;
+}
+video#abertura {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

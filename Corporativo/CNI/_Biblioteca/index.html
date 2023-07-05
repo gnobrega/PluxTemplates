@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4" ></video>
+            
+            <!-- Imagem -->
+            <div id="ctImg">
+                <img id="fileId" />
+            </div>
+            
+            <!-- Dados -->
+            <div id="dados">
+                <div id="titulo">Título teste teste teste teste</div>
+                <div id="autor">Autor teste teste teste teste teste teste teste teste teste teste</div>
+                <div id="categoria">Categoria</div>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/biblioteca.xml";
+                    GnLib.autoloadContent(DATA_SOURCE);
+                    
+                } else { //Preview
+                   GnLib.loadPreview();
+
+					//Autplay
+					setTimeout(function() {
+						GnPlay();
+					}, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+
+				//Altera o ícone
+				if( $("#categoria").text() == "Ebook" ) {
+					$("#imgIcone").attr("src", "./media/ebook.png");
+				} else if( $("#categoria").text() == "DVD" ) {
+					$("#imgIcone").attr("src", "./media/cd.png");
+				} else if( $("#categoria").text() == "Revista" ) {
+					$("#imgIcone").attr("src", "./media/revista.png");
+				}
+			
+                $("#fundo").get(0).play();
+				setTimeout(function() {
+					$("#ctImg").show();
+					$("#fileId").addClass('animated zoomIn');					
+				}, 200);
+				setTimeout(function() {
+                    $("#dados").fadeIn();
+					$("#imgIcone").show();
+					$("#imgIcone").addClass('animated zoomIn');
+                }, 800);
+                setTimeout(function() {
+                    $("#dados").fadeOut();
+                    $("#fileId").fadeOut();
+                }, 6200);
+
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

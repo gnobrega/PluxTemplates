@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'BwModelica-Medium';
+    src: url('./fonts/BwModelica-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BwModelica-ExtraBold';
+    src: url('./fonts/BwModelicaSS01-ExtraBold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BwModelicaSS01-Regular';
+    src: url('./fonts/BwModelicaSS01-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BwModelicaSS01-Bold';
+    src: url('./fonts/BwModelicaSS01-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BwModelicaSS01-Black';
+    src: url('./fonts/BwModelicaSS01-Black.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, video {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+div#nome {
+    position: absolute;
+    left: 100px;
+    top: 230px;
+    color: #fff;
+    font-size: 34px;
+    width: 720px;
+    display: none;
+    text-align: center;
+    font-family: 'BwModelicaSS01-Black';
+}
+div#subtitulo {
+    position: absolute;
+    left: 100px;
+    top: 300px;
+    color: #8FBE55;
+    font-size: 29px;
+    width: 720px;
+    display: none;
+    font-family: 'BwModelicaSS01-Bold';
+    text-align: center;
+}
+div#texto {
+    position: absolute;
+    left: 100px;
+    top: 350px;
+    color: #000;
+    font-size: 29px;
+    width: 720px;
+    display: none;
+    font-family: 'BwModelicaSS01-Regular';
+    line-height: 37px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 240px;
+    left: 850px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: fill;
+}
+
+/* animacao */
+.exibir-nome {
+    animation-name: exibir-nome;
+    animation-duration: 500ms;
+}
+.exibir-subtitulo {
+    animation-name: exibir-subtitulo;
+    animation-duration: 500ms;
+}
+.exibir-texto {
+    animation-name: exibir-texto;
+    animation-duration: 500ms;
+}
+@keyframes exibir-nome {
+    from {
+        opacity: 0;
+        top: 200px;
+    }
+    to {
+        opacity: 1;
+        top: 230px;
+    }
+}
+@keyframes exibir-subtitulo {
+    from {
+        opacity: 0;
+        top: 270px;
+    }
+    to {
+        opacity: 1;
+        top: 300px;
+    }
+}
+@keyframes exibir-texto {
+    from {
+        opacity: 0;
+        left: 80px;
+    }
+    to {
+        opacity: 1;
+        left: 100px;
+    }
+}

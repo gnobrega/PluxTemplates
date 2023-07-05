@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'avenir-next-lt-pro-demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+	-moz-transform-origin: 0 0;
+}
+video#fundo {
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 0;
+    left: 768px;
+}
+/* Dados */
+#conteudo { 
+}
+#moeda div,
+#variacao div {
+    color: #fff;
+    font-size: 71px;
+    font-family: 'avenir-next-lt-pro-demi';
+    position: absolute;
+    left: 462px;
+    display: none;
+}
+#dolar, 
+#dolarVar {
+    top: 458px;
+}
+#euro,
+#euroVar {
+    top: 604px;
+}
+#peso,
+#pesoVar {
+    top: 744px;
+}
+#variacao div#dolarVar, 
+#variacao #euroVar, 
+#variacao #pesoVar {
+    left: 458px;
+    letter-spacing: -6px;
+}
+#variacao div {
+    background-repeat: no-repeat;
+    background-position: 0 32px;
+    padding-left: 50px;
+}
+#variacao div.sin-pos {
+    color: #B3F27F;
+    background-image: url(./media/pos.png);
+}
+#variacao div.sin-neg {
+    color: #B65030;
+    background-image: url(./media/neg.png);
+}
+
+/* animation */
+.show-periodo {
+    animation-name: show-periodo;
+    animation-duration: 1s;
+}
+@keyframes show-periodo{
+    from {
+        opacity: 0;
+        left: -155px;
+    }
+    to {
+        opacity: 1;
+        left: 50px;
+    }
+}

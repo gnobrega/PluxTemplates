@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'AvenirLTStd-Black';
+    src: url('./fonts/AvenirLTStd-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Rounded-Elegance';
+    src: url('./fonts/Rounded-Elegance.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    width: 1360px;
+    height: 768px;
+    background: url(./media/fundo.png);
+}
+div#textos {
+    display: none;
+}
+div#titulo {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    font-size: 68px;
+    color: #fff;
+    font-family: 'Rounded-Elegance';
+    display: none;
+}
+div#nome {
+    position: absolute;
+    font-family: 'AvenirLTStd-Black';
+    color: #000;
+    top: 350px;
+    left: 0;
+    font-size: 58px;
+    width: 1360px;
+    text-align: center;
+}
+div#departamento {
+    position: absolute;
+    font-family: 'AvenirLTStd-Black';
+    color: #000;
+    top: 440px;
+    left: 0;
+    font-size: 54px;
+    width: 1360px;
+    text-align: center;
+}
+div#data {
+    position: absolute;
+    font-family: 'AvenirLTStd-Black';
+    color: #000;
+    top: 250px;
+    left: 0;
+    font-size: 54px;
+    width: 1360px;
+    text-align: center;
+}
+div#hora {
+    position: absolute;
+    top: 680px;
+    left: 50px;
+    font-family: 'Rounded-Elegance';
+    font-size: 41px;
+    color: #fff;
+}
+div#dt {
+    position: absolute;
+    top: 725px;
+    left: 50px;
+    font-family: 'Rounded-Elegance';
+    font-size: 25px;
+    color: #fff;
+}
+.show-title {
+    animation-name: show-title;
+    animation-duration: 1s;
+}
+#cortina {
+    position: absolute;
+    width: 1360px;
+    height: 768px;
+    background: #000;
+    top: 0;
+    left: 0;
+}
+@keyframes show-title{
+    from {
+        left: -200px;
+    }
+    to {
+        left: 60px;
+    }
+}

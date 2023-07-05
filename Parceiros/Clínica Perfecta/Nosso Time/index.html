@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        
+        <!-- Fundo -->
+        <video id="fundo" src="./media/fundo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="ctImg"><img id="fileId" src="" /></div>
+            <div id="subtitulo"></div>
+            <div id="bg-titulo"></div>
+            <div id="titulo"></div>
+            <div id="descricao"></div>
+        </div>
+
+        <!-- Cortina -->
+        <div id="cortina"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/nosso_time.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+                   
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                if( $('#titulo').text() != '' ) {
+                    $('#cortina').hide();
+                }
+                
+                //Dá play no vídeo
+                var video = $("#fundo").get(0);
+                video.play();
+                
+                //Agenda a exibição do conteúdo
+                var contentLoaded = false;
+                video.ontimeupdate = function() {
+                    setTimeout(function() {
+                        $("#ctImg").show();
+                        $("#fileId").addClass("animated zoomIn");
+                    }, 500);
+                    setTimeout(function() {
+                        $("#bg-titulo").show();
+                        $("#bg-titulo").addClass("exibir-bg-titulo");
+                    }, 1700);
+                    setTimeout(function() {
+                        $("#titulo").show();
+                        $("#titulo").addClass("exibir-titulo");
+                    }, 1900);
+                    setTimeout(function() {
+                        $("#subtitulo").show();
+                        $("#subtitulo").addClass("exibir-sub-titulo");
+                    }, 2000);
+                    setTimeout(function() {
+                        $("#descricao").show();
+                        $("#descricao").addClass("exibir-titulo");
+                    }, 2400);
+                   
+                };
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

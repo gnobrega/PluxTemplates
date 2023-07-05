@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'AmsiProCond-Bold';
+    src: url('./fonts/AmsiProCond-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AmsiProCond-Regular';
+    src: url('./fonts/AmsiProCond-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#bola {
+	position: absolute;
+	top: 40px;
+	left: 1050px;
+	display: none;
+}
+#abertura {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#nome {
+    position: absolute;
+    left: 740px;
+    top: 635px;
+    font-family: 'AmsiProCond-Bold';
+    color: #64833F;
+    font-size: 37px;
+    text-align: center;
+    width: 500px;
+    display: none;
+	line-height: 38px;
+}
+div#ctPreco2 {
+	position: absolute;
+    left: 1070px;
+    top: 80px;
+	width: 220px;
+}
+div#ctPreco {
+	display: none;
+	height: 140px;
+}
+div#preco {
+    font-family: 'AmsiProCond-Bold';
+    color: #fff;
+    font-size: 110px;
+    text-align: right;
+    letter-spacing: -2px;
+	float: left;
+	min-width: 120px;
+}
+div#cents {
+    font-family: 'AmsiProCond-Bold';
+    color: #fff;
+    font-size: 60px;
+    text-align: left;
+	float: left;
+	margin-top: 55px;
+	padding-left: 5px;
+}
+div#unidade {
+    font-family: 'AmsiProCond-Regular';
+    color: #fff;
+    font-size: 35px;
+    text-align: left;
+    display: none;
+	float: right;
+    margin-right: 25px;
+    margin-top: -10px;
+}
+div#validade {
+    position: absolute;
+    left: 350px;
+    top: 720px;
+    font-family: 'Roboto-Bold';
+    color: #538538;
+    font-size: 19px;
+    width: 600px;
+    text-align: center;
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 140px;
+    left: 800px;    
+    display: none;
+}
+#ctImg {
+    display: none;
+}
+.keyframes mostra-preco {
+    animation-name: mostra-preco;
+    animation-duration: .5s;
+}
+@keyframes mostra-preco{
+    from {
+        opacity: 0;
+        top: 420px;
+    }
+    to {
+        opacity: 0;
+        top: 320px;
+    }
+}

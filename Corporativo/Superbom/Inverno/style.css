@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'asap-medium';
+    src: url('./fonts/asap-medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Asap-Bold';
+    src: url('./fonts/Asap-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Asap-Regular';
+    src: url('./fonts/Asap-Regular.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#bola {
+	position: absolute;
+	top: 150px;
+	left: 1060px;
+	display: none;
+}
+#abertura {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#nome {
+    position: absolute;
+    left: 740px;
+    top: 635px;
+    font-family: 'Asap-Bold';
+    color: #252525;
+    font-size: 37px;
+    text-align: center;
+    width: 500px;
+    display: none;
+	line-height: 38px;
+}
+div#ctPreco2 {
+	position: absolute;
+    left: 1090px;
+    top: 210px;
+	width: 160px;
+}
+div#ctPreco {
+	display: none;
+	height: 140px;
+}
+div#preco {
+    font-family: 'Asap-Bold';
+    color: #fff;
+    font-size: 85px;
+    text-align: right;
+    letter-spacing: -2px;
+	float: left;
+	min-width: 80px;
+}
+div#cents {
+    font-family: 'Asap-Bold';
+    color: #fff;
+    font-size: 46px;
+    text-align: left;
+	float: left;
+	margin-top: 5px;
+	padding-left: 5px;
+}
+div#unidade {
+    font-family: 'asap-medium';
+    color: #fff;
+    font-size: 23px;
+    text-align: left;
+    display: none;
+	float: right;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+div#validade {
+    position: absolute;
+    left: 740px;
+    top: 720px;
+    font-family: 'Roboto-Bold';
+    color: #252525;
+    font-size: 20px;
+    width: 500px;
+    text-align: center;
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 60px;
+    left: 840px;    
+    display: none;
+}
+#ctImg {
+    display: none;
+}
+.keyframes mostra-preco {
+    animation-name: mostra-preco;
+    animation-duration: .5s;
+}
+@keyframes mostra-preco{
+    from {
+        opacity: 0;
+        top: 420px;
+    }
+    to {
+        opacity: 0;
+        top: 320px;
+    }
+}

@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'BwModelica-Medium';
+    src: url('./fonts/BwModelica-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BwModelica-ExtraBold';
+    src: url('./fonts/BwModelicaSS01-ExtraBold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BwModelicaSS01-Regular';
+    src: url('./fonts/BwModelicaSS01-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Effra Regular';
+    src: url('./fonts/Effra Regular.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#cortina {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 703px;
+    background: #000;
+}
+#bg-titulo {
+    position: absolute;
+    top: 262px;
+    left: 586px;
+    width: 753px;
+    height: 163px;
+    background: #3B5AA4;
+    display: none;
+}
+/* Dados */
+div#titulo, div#subtitulo, div#descricao {
+    position: absolute;
+    left: 670px;
+    top: 276px;
+    color: #fff;
+    font-size: 75px;
+    width: 710px;
+    display: none;
+    font-family: 'Effra Regular';
+    line-height: 65px;
+}
+div#subtitulo {
+    top: 433px;
+    font-size: 54px;
+}
+div#descricao {
+    top: 520px;
+    color: #000;
+    font-size: 28px;
+    width: 550px;
+    line-height: 32px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 67px;
+    left: 70px;
+}
+video#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* animacao */
+.exibir-bg-titulo {
+    animation-name: exibir-bg-titulo;
+    animation-duration: 400ms;
+}
+.exibir-titulo {
+    animation-name: exibir-titulo;
+    animation-duration: 500ms;
+}
+.exibir-sub-titulo {
+    animation-name: exibir-sub-titulo;
+    animation-duration: 600ms;
+}
+.exibir-descricao {
+    animation-name: exibir-descricao;
+    animation-duration: 500ms;
+}
+@keyframes exibir-bg-titulo {
+    from {
+        width: 10px;
+    }
+    to {
+        width: 753px;
+    }
+}
+@keyframes exibir-titulo {
+    from {
+        left: 640px;
+        opacity: 0;
+    }
+    to {
+        left: 670px;
+        opacity: 1;
+    }
+}
+@keyframes exibir-sub-titulo {
+    from {
+        top: 360px;
+    }
+    to {
+        top: 433px;
+    }
+}
+@keyframes exibir-descricao {
+    from {
+        opacity: 0;
+        top: 340px;
+    }
+    to {
+        opacity: 1;
+        top: 370px;
+    }
+}

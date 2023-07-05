@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'ZurichBT-BoldCondensed';
+    src: url('./fonts/ZurichBT-BoldCondensed.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ZurichBT-RomanCondensed';
+    src: url('./fonts/ZurichBT-RomanCondensed.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Zurich Condensed BT';
+    src: url('./fonts/Zurich Condensed BT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('./fonts/BebasNeue.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, #content {
+    width: 1024px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#content {
+    background: url(./media/fundo.jpg);
+}
+div#hora {
+    color: #FFF;
+    font-family: 'BebasNeue';
+    font-size: 56px;
+    position: absolute;
+    top: 13px;
+    left: 10px;
+}
+div#hora span {
+    color: #B5B5B5;
+}
+div.zona *{
+    float: left;
+}
+div.zona span {
+    margin-top: 3px;
+}
+div.zona img.icon-sol {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+div.zona img.icon-gota {
+    margin-right: 4px;
+}
+div.zona img.icon-chuva {
+    margin-right: 6px;
+    margin-top: -4px;
+}
+div.zona img.icon-term {
+    margin-right: 8px;
+}
+div#zona1 {
+    width: 320px;
+    margin: auto;
+}
+div#zona2 {
+    width: 320px;
+    margin: auto;
+    display: none;
+}
+div#zona3 {
+    margin: auto;
+    width: 275px;
+    display: none;
+}
+div#zona4 {
+    margin: auto;
+    width: 395px;
+    display: none;
+}
+div#zona5 {
+    width: 270px;
+    margin: auto;
+    display: none;
+}
+div#zona6 {
+    width: 315px;
+    margin: auto;
+    display: none;
+}
+div#zona7 {
+    margin: auto;
+    width: 440px;
+    display: none;
+}
+div#tempo span.txtUmid {
+    font-family: 'ZurichBT-RomanCondensed';
+}
+span.subtext {
+    color: #FF9C00;
+    font-size: 25px;
+    font-family: 'Zurich Condensed BT';
+    margin-right: 5px;
+    margin-left: 5px;
+}
+div#tempo {
+    position: absolute;
+    top: 654px;
+    left: 0;
+    width: 760px;
+    color: #fff;
+    font-family: 'ZurichBT-BoldCondensed';
+    font-size: 25px;
+    text-align: center;
+}
+div#tempo span.val {
+    font-family: 'Zurich Condensed BT';
+}

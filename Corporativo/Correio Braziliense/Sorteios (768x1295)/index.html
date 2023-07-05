@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Abertura/fundo -->
+            <video id="fundo" src="./media/fundo.mp4"></video>
+        
+            <!-- Dados -->
+            <div id="titulo">Título</div>
+            <div id="local">Local</div>
+            <div id="data_resultado" class="dados1">Data Evento</div>
+            <div id="hora_resultado" class="dados1">Hora Evento</div>
+            <div id="linha"></div>
+            <div id="linha2"></div>
+            <div id="local"></div>
+            <div id="site">www.diariosassociados.net/intranetwp</div>
+            <div id="data_sorteio" class="dados2">Data Sorteio</div>
+            <div id="hora_sorteio" class="dados2">Data Sorteio</div>
+        </div>
+        <div id="cortina"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/sorteios.xml";
+                    GnLib.autoloadContent(DATA_SOURCE);
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#abertura").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                if( $("#titulo").html() != "Título" ) {
+                    $("#cortina").hide();
+                    
+                    //Dá play no vídeo
+                    var video = $("#fundo").get(0);
+                    video.play();
+
+                    //Título
+                    setTimeout(function() {$("#titulo").fadeIn()}, 1000);
+                    setTimeout(function() {$(".dados1").fadeIn()}, 1200);
+                    setTimeout(function() {$("#local").fadeIn()}, 1600);
+                    setTimeout(function() {$("#site").fadeIn()}, 3700);
+                    setTimeout(function() {$(".dados2").fadeIn()}, 5000);
+                }   
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
+            }
+        </script>
+    </body>
+</html>

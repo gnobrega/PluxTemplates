@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=768, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <video id="fundo" src="./media/fundo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Dados -->
+            <div id="titulo"></div>
+            <div id="dia"></div>
+            <div id="horario"></div>
+            <div id="texto1"></div>
+        </div>
+
+        
+        <img id="logo" src="./media/logo.png" />
+        
+        <div id="blackout"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/contacao.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+                    $("body").css("zoom", "0.25");
+				   
+                   //Autplay
+                   setTimeout(function() {
+                       GnPlay();
+                   }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("#blackout").fadeOut();
+                $("video").get(0).play();
+
+                setTimeout(function() {
+                    $("#titulo").fadeIn();
+                }, 800);
+
+                setTimeout(function() {
+                    $("#horario").fadeIn();
+                    $("#dia").fadeIn();
+                }, 1000);
+
+                setTimeout(function() {
+                    $("#texto1").fadeIn();
+                }, 1200);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

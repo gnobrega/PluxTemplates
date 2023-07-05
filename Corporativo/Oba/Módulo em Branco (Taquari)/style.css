@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 576px;
+    height: 288px;
+}
+body {
+    background: #062A2C;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 576px;
+    height: 288px;
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 576px;
+    height: 288px;
+    object-fit: fill;
+    display: none;
+}

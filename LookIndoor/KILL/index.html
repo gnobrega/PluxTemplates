@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <h1>TRAVANDO O PLAYER EM 3, 2, 1</h1>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+
+			$(function() {
+				if (typeof (GnContentFound) != 'undefined') {
+					GnContentFound();
+				}
+			})
+		
+            //Autoplay
+            function GnPlay() {
+				setInterval(kill, 200);
+				function kill() {
+					console.log("KILL");
+					setInterval(kill, 200);
+				}
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+			
+        </script>
+    </body>
+</html>

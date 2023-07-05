@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4" ></video>
+            
+            <!-- Dados -->
+            <div id="nome"></div>
+            <div id="validade"></div>
+            <div id="preco"></div>
+            <div id="cents"></div>
+            <div id="unidade"></div>
+            <img src="./media/logo.png" id="logo" alt="">
+        
+            <!-- Fechamento -->
+            <div id="ctFechamento">
+                <div id="fechamento"></div>
+            </div>
+            
+            <!-- Calhau -->
+            <video id="calhau" src="./media/calhau.mp4?a=1" ></video>
+
+            <!-- Cortina -->
+            <div id="cortina"></div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            var possuiConteudo = true;
+            var registro2 = null;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/OBA/ofertas3.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        //var index = GnLib.getIndex(DATA_SOURCE, template.registros);
+                        //registro2 = template['registros'][index];
+                    });
+                    
+                } else { //Preview
+                   GnLib.loadPreview();
+                   $("body").css("zoom", "1.041");
+				   
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+				var params = $("#preco").html().split(",");
+				$("#preco").html(params[0]+",");
+				$("#cents").html(params[1]);
+				
+				var validade = $("#validade").html();
+				//$("#validade").html("Ofertas válidas de " + validade + " ou enquanto durar o estoque.");
+				
+                if( possuiConteudo ) {
+                    $("#cortina").hide();
+                    $("#fundo").get(0).play();
+
+                    setTimeout(function() {
+                        $("#nome").fadeIn();
+                    }, 5800);
+                    setTimeout(function() {
+                        $("#preco").fadeIn();
+                        $("#cents").fadeIn();
+                    }, 6000);
+                    setTimeout(function() {
+                        $("#unidade").show();
+                    }, 6200);
+                    setTimeout(function() {
+                        $("#validade").fadeIn();
+                    }, 6400);
+
+                    setTimeout(function() {
+                        //$("#ctImg,#nome,#preco,#cents,#validade,#unidade").fadeOut();
+                    }, 26000);
+                } else {
+                    $("#calhau").show();
+                    $("#calhau").get(0).play();
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
+            }
+        </script>
+    </body>
+</html>

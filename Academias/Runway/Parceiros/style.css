@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Zurich Condensed BT';
+    src: url('./fonts/Zurich Condensed BT.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 703px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+/* Dados */
+div#texto {
+    position: absolute;
+    left: 660px;
+    top: 200px;
+    font-family: 'Zurich Condensed BT';
+    color: #000;
+    font-size: 40px;
+    display: none;
+    width: 650px;
+	line-height: 45px;
+}
+#ctImg {
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+}
+
+/* animacao */
+.exibir-conteudo {
+    animation-name: exibir-conteudo;
+    animation-duration: 600ms;
+}
+@keyframes exibir-conteudo {
+    from {
+        opacity: 0;
+        left: 560px;
+    }
+    to {
+        opacity: 1;
+        left: 660px;
+    }
+}

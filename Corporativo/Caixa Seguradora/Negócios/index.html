@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+        
+        <!-- Fundo -->
+        <video id="fundo" src="./media/fundo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Dados -->
+            <div id="negocios_editoria"></div>
+            <div id="mes"></div>
+            <div id="propostas_anterior"></div>
+            <div id="contrados_anterior"></div>
+            <div id="conversao_anterior"></div>
+            <div id="propostas_atual"></div>
+            <div id="contrados_atual"></div>
+            <div id="conversao_atual"></div>
+            <div id="conversao_atual"></div>
+            <div id="tela2">
+                <div id="norte_anterior"></div>
+                <div id="norte_atual"></div>
+                <div id="nordeste_anterior"></div>
+                <div id="nordeste_atual"></div>
+                <div id="co_anterior"></div>
+                <div id="co_atual"></div>
+                <div id="sudeste_anterior"></div>
+                <div id="sudeste_atual"></div>
+                <div id="sul_anterior"></div>
+                <div id="sul_atual"></div>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            $(function () {
+                $("#fundo").get(0).play();
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/negocios_conversao.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
+                    
+                } else { //Preview
+                   
+                    //Autplay
+                    $("#fundo").ready(function() {
+                        GnPlay();
+                    });
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                setTimeout(function() {
+                    $("div#negocios_editoria").fadeIn();
+                    $("div#propostas_anterior").fadeIn();
+                    $("div#propostas_atual").fadeIn();
+                    $("div#mes").fadeIn();
+                }, 2800);
+                setTimeout(function() {
+                    $("div#contrados_anterior").fadeIn();
+                    $("div#contrados_atual").fadeIn();
+                }, 3700);
+                setTimeout(function() {
+                    $("div#conversao_anterior").fadeIn();
+                    $("div#conversao_atual").fadeIn();
+                }, 4500);
+                setTimeout(function() {
+                    $("div#propostas_anterior").fadeOut();
+                    $("div#propostas_atual").fadeOut();
+                    $("div#contrados_anterior").fadeOut();
+                    $("div#contrados_atual").fadeOut();
+                    $("div#conversao_anterior").fadeOut();
+                    $("div#conversao_atual").fadeOut();
+                }, 15300);
+                /**/
+                setTimeout(function() {
+                    $("div#tela2").fadeIn();                    
+                }, 16000);
+                setTimeout(function() {
+                    $("div#contrados_anterior").css("color", "#F8971D");
+                    $("div#contrados_anterior").css("font-size", "39px");
+                    $("div#contrados_anterior").css("width", "150px");
+                    $("div#contrados_anterior").css("left", "86px");
+                    $("div#contrados_anterior").css("top", "409px");
+                    $("div#contrados_anterior").fadeIn();
+                    
+                    $("div#contrados_atual").css("color", "#F8971D");
+                    $("div#contrados_atual").css("font-size", "39px");
+                    $("div#contrados_atual").css("width", "150px");
+                    $("div#contrados_atual").css("left", "234px");
+                    $("div#contrados_atual").css("top", "409px");
+                    $("div#contrados_atual").fadeIn();
+                }, 18000);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>

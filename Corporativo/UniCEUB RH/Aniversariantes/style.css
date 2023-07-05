@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/avenir-next-lt-pro.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/avenir-next-lt-pro-bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #E7B70F;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+}
+div#nome {
+    position: absolute;
+    font-family: 'Calibri';
+    color: #000000;
+    top: 270px;
+    left: 170px;
+    font-size: 60px;
+    width: 1000px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+div#setor {
+    position: absolute;
+    font-family: 'Calibri';
+    color: #000;
+    top: 460px;
+    left: 120px;
+    font-size: 45px;
+    width: 1100px;
+    line-height: 55px;
+    text-align: left;
+    letter-spacing: -1px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    width: 435px;
+    top: 0;
+    left: 0;
+}

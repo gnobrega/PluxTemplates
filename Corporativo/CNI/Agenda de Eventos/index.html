@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="media/fundo.mp4" ></video>
+            
+            <div id="pg-titulo">AGENDA DE EVENTOS</div>
+            
+            <!-- Imagem -->
+            <img id="fileId" />
+            
+            <!-- Dados -->
+            <div id="titulo">Título</div>
+            <div id="horario">Horário</div>
+            <div id="data">Data</div>
+            <div id="local">Local</div>
+            
+            <div id="obs">Para saber mais, acesse a Agenda de Eventos na Intranet.</div>
+        </div>
+        
+        <div id="blackout"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var comImagem = true;
+            var ext;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/agenda_de_eventos.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        $("#blackout").hide();
+                        
+                    });
+                    
+                } else { //Preview
+                   GnPlay();
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("#fundo").get(0).play()
+                setTimeout(function() {
+                    $("#pg-titulo").fadeIn();
+                }, 500);
+                
+                $("#titulo").fadeIn();
+                setTimeout(function() {
+                    $("#local").show();
+                    $("#local").addClass('exibir-local');
+                }, 100);
+                setTimeout(function() {
+                    $("#data").show();
+                    $("#data").addClass('exibir-data');
+                }, 200);
+                setTimeout(function() {
+                    $("#horario").show();
+                    $("#horario").addClass('exibir-horario');
+                }, 300);
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+           
+        </script>
+    </body>
+</html>

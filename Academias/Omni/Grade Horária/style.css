@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url('./fonts/Nexa Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+video#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#hora {
+    position: absolute;
+    top: 35px;
+    left: 85px;
+    color: #FFF;
+    font-size: 79px;
+    font-family: 'Nexa Bold';
+    display: none;
+}
+#hora span {
+    color: #CCCCCC;
+}
+#data {
+    font-size: 48px;
+    color: #F9F9F9;
+    font-family: 'Nexa Bold';
+    position: absolute;
+    top: 96px;
+    left: 411px;
+    display: none;
+}
+/* Dados */
+#conteudo { 
+}
+.horario {
+    position: absolute;
+    color: #504E4E;
+    font-size: 38px;
+    font-family: 'Nexa Bold';
+    left: 68px;
+    text-align: center;
+}
+.horario div.sub {
+}
+.linha1 {
+    top: 245px;
+    display: none;
+}
+.linha2 {
+    top: 334px;
+    display: none;
+}
+.linha2 {
+    color: #fff !important;
+    display: none;
+}
+.linha2 div.sub {
+    display: none;
+    display: none;
+}
+.linha3 {
+    top: 425px;
+    display: none;
+}
+.linha4 {
+    top: 508px;
+    display: none;
+}
+.linha5 {
+    top: 598px;
+    display: none;
+}
+.linha6 {
+    top: 687px;
+    display: none;
+}
+.campo1 {
+    left: 268px;
+    width: 408px;
+}
+.campo2 {
+    left: 698px;
+    width: 305px;
+}
+.campo3 {
+    left: 1025px;
+    width: 321px;
+}
+.campo {
+    position: absolute;
+    height: 40px;
+    color: #504E4E;
+    font-size: 30px;
+    font-family: 'Nexa Bold';
+    overflow: hidden;
+    text-align: center;
+    margin-top: 6px;
+}
+
+/* animation */
+.mostra-data {
+    animation-name: mostra-data;
+    animation-duration: .5s;
+}
+@keyframes mostra-data{
+    from {
+        top: 70px;
+        opacity: 0;
+    }
+    to {
+        top: 96px;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "/EMPRESAS/sic.xml";
+            var ANDARES = [];
+            var PAGINAS = [];
+            var TOTAL_LINHAS = 23;
+            var LINHA_ATUAL = 0;
+
+            $(function () {
+
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    loadData(DATA_SOURCE);
+                } else { //Preview
+
+                    //Autplay
+                    GnPlay();
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+
+                //Inicia a transição
+                exibirProximaPagina();
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 3000);
+            }
+
+            //Exibe as paginas
+            var pagInd = 0;
+            function exibirProximaPagina() {
+
+                //Oculta o conteúdo
+                $(".pagina").hide();
+                $(".pagina .linha").hide();
+
+                //Exibe a página
+                $(".pagina").eq(pagInd).show();
+                $(".pagina").eq(pagInd).find('.coluna').each(function (col) {
+                    setTimeout(exibirColuna, 0, $(this), col);
+                });
+
+                //Agenda a transição
+                setTimeout(exibirProximaPagina, 25000);
+
+                //Altera o índice
+                pagInd++;
+                if (pagInd >= PAGINAS.length) {
+                    pagInd = 0;
+                    //window.location = "?autoplay=true";
+                    setTimeout(toAdvance, 13000);
+                }
+            }
+
+            //Exibe o conteudo de uma coluna
+            function exibirColuna($coluna, col) {
+                delay = 0;
+                $coluna.find('.linha').each(function (lin) {
+                    var linha = $(this);
+                    setTimeout(function () {
+                        $coluna.find('.linha').eq(lin).fadeIn();
+                    }, delay);
+                    delay += 100;
+                });
+            }
+
+            //Monta as telas
+            function montarTelas() {
+                var andarAtual = null;
+                var blocoInd = 0;
+
+                //Carrega o conteúdo
+                for (a in ANDARES) {
+                    for (s in ANDARES[a].salas) {
+                        var sala = ANDARES[a].salas[s];
+                        var pagina;
+                        var coluna;
+                        var bloco;
+
+                        //Cria a página
+                        if (!pagina) {
+                            adicionarPagina();
+                            pagina = paginaAtual();
+                        }
+                        
+                        //Verifica se irá iniciar um novo bloco
+                        if( andarAtual != sala.andarId ) {
+                            TOTAL_LINHAS_TMP = TOTAL_LINHAS - 1;
+                        } else {
+                            TOTAL_LINHAS_TMP = TOTAL_LINHAS;
+                        }
+
+                        //Cria a coluna
+                        if (pagina.colunas.length == 0
+                                || LINHA_ATUAL >= TOTAL_LINHAS_TMP) {
+
+                            //Verifica a necessidade de uma nova página
+                            if (pagina.colunas.length >= 2) {
+                                adicionarPagina();
+                                pagina = paginaAtual();
+                            }
+
+                            pagina.adicionarColuna();
+                            coluna = pagina.colunaAtual();
+                            LINHA_ATUAL = 0;
+                        }
+
+                        //Cria o bloco
+                        if (coluna.blocos.length == 0           //Primeiro bloco
+                                || andarAtual != sala.andarId) {    //Trocou de andar
+                            coluna.adicionarBloco(sala.andarNome);
+                            if( andarAtual != sala.andarId ) {
+                                blocoInd++;
+                            }
+                            andarAtual = sala.andarId;
+                            coluna.blocoAtual().bgNumero = "bg" + blocoInd;
+                            if (blocoInd > 9) {
+                                blocoInd = 1;
+                            }
+                        }
+                        bloco = coluna.blocoAtual();
+
+                        //Adiciona a sala ao bloco
+                        bloco.adicionar(sala.numero, sala.nome);
+                    }
+                }
+
+                //Exibe o html
+                for (p in PAGINAS) {
+                    var pagina = PAGINAS[p];
+                    pagina.exibir();
+                }
+            }
+
+            //Carrega os dados 
+            function loadData(source) {
+                var url = GnLib.getContentPath() + DATA_SOURCE + "?nocache=" + Math.random();
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+
+                        //Conteúdo encontrado
+                        if (typeof (GnContentFound) != 'undefined') {
+                            GnContentFound();
+                        }
+
+                        //Extrai os dados
+                        var itens = $(data).find('item');
+                        itens.each(function () {
+                            var andar = new Andar();
+                            andar.id = $(this).attr('andares_id');
+                            andar.posicao = $(this).find('andares_posicao').text();
+                            andar.nome = $(this).find('andares_label').text();
+                            adicionarAndar(andar);
+
+                            var sala = new Sala();
+                            sala.numero = $(this).find('salas_label').text();
+                            sala.nome = $(this).find('nome').text();
+                            sala.andarId = andar.id;
+                            sala.andarNome = $(this).find('andares_label').text();
+                            adicionarSala(sala, andar.id);
+                        });
+
+                        //Monta as telas
+                        montarTelas();
+
+                        //Autoplay
+                        if (GnLib.getParam("autoplay")) {
+                            GnPlay();
+                        }
+                    }
+                });
+            }
+
+            //Andar
+            function Andar() {
+                this.id = null;
+                this.posicao = null;
+                this.nome = null;
+                this.salas = [];
+            }
+
+            //Sala
+            function Sala() {
+                this.numero = null;
+                this.nome = null;
+                this.andarId = null;
+                this.andarNome = null;
+            }
+
+            //Adiciona um andar
+            function adicionarAndar(andar) {
+                if (!ANDARES[andar.posicao]) {
+                    ANDARES[andar.posicao] = andar;
+                }
+            }
+
+            //Adiciona uma sala
+            function adicionarSala(sala, andarId) {
+                for (i in ANDARES) {
+                    if (ANDARES[i].id == andarId) {
+                        ANDARES[i].salas.push(sala);
+                    }
+                }
+            }
+
+            //Página
+            function Pagina() {
+                this.colunas = [];
+
+                //Recupera a coluna atual
+                this.colunaAtual = function () {
+
+                    //Inicia o array
+                    if (this.colunas.length == 0) {
+                        return null;
+                    }
+
+                    //Retorna a última página
+                    var idx = this.colunas.length - 1;
+                    return this.colunas[idx];
+                }
+
+                //Exibi o conteúdo em html
+                this.exibir = function () {
+                    var pagHtml = $("<div class='pagina'><div class='titulo'></div></div>");
+
+                    //Recupera o html das colunas
+                    for (c in this.colunas) {
+                        var coluna = this.colunas[c];
+                        var colHtml = coluna.gerarHtml();
+                        pagHtml.append(colHtml);
+                    }
+                    $("#conteudo").append(pagHtml);
+                }
+
+                //Adiciona uma nova coluna
+                this.adicionarColuna = function () {
+                    var coluna = new Coluna();
+                    this.colunas.push(coluna);
+                }
+            }
+
+            //Coluna
+            function Coluna() {
+                this.blocos = [];
+
+                //Recupera o bloco atual
+                this.blocoAtual = function () {
+
+                    //Inicia o array
+                    if (this.blocos.length == 0) {
+                        return null;
+                    }
+
+                    //Retorna a última página
+                    var idx = this.blocos.length - 1;
+                    return this.blocos[idx];
+                }
+
+                //Gera o html da coluna
+                this.gerarHtml = function () {
+                    var colHtml = $("<div class='coluna'></div>");
+
+                    //Recupera o html dos blocos
+                    for (b in this.blocos) {
+                        var bloco = this.blocos[b];
+                        var blocoHtml = bloco.gerarHtml();
+                        colHtml.append(blocoHtml);
+                    }
+
+                    return colHtml;
+                }
+
+                //Adiciona um novo bloco
+                this.adicionarBloco = function (andar) {
+                    var bloco = new Bloco(andar);
+                    this.blocos.push(bloco);
+                    LINHA_ATUAL++;
+                }
+            }
+
+            //Bloco
+            function Bloco(andar) {
+                this.linhas = [];
+                this.bgNumero = 'bg1';
+                this.andar = andar;
+
+                //Recupera a linha atual
+                this.linhaAtual = function () {
+
+                    //Inicia o array
+                    if (this.linhas.length == 0) {
+                        return null;
+                    }
+
+                    //Retorna a última página
+                    var idx = this.linhas.length - 1;
+                    return this.linhas[idx];
+                }
+
+                //Adiciona 1 item ao bloco
+                this.adicionar = function (numero, nome) {
+
+                    //Cria a primeira linha
+                    if (this.linhas.length == 0) {
+                        this.adicionarLinha();
+                    }
+
+                    //Recupera a linha atual
+                    var linha = this.linhaAtual();
+
+                    //Verifica se já possui os 2 itens (máximo)
+                    if (linha.itens.length >= 2) {
+                        this.adicionarLinha(this.bgNumero);
+                        linha = this.linhaAtual();
+                    }
+
+                    //Adiciona o item a linha
+                    linha.adicionar(numero, nome);
+                }
+
+                //Adiciona uma nova linha
+                this.adicionarLinha = function () {
+                    this.linhas.push(new Linha(this.bgNumero));
+                    LINHA_ATUAL++;
+                }
+
+                //Gera o html do bloco
+                this.gerarHtml = function () {
+                    var blocoHtml = $("<div class='bloco'><div class='titulo linha'>" + this.andar + "</div></div>");
+
+                    //Recupera o html das linhas
+                    for (l in this.linhas) {
+                        var linha = this.linhas[l];
+                        var linhaHtml = linha.gerarHtml();
+                        blocoHtml.append(linhaHtml);
+                    }
+
+                    return blocoHtml;
+                }
+            }
+
+            //Linha
+            function Linha(bgNumero) {
+                this.itens = [];
+                this.bgNumero = bgNumero;
+
+                //Adiciona um item à linha
+                this.adicionar = function (numero, nome) {
+                    this.itens.push({
+                        numero: numero,
+                        nome: nome
+                    });
+                }
+
+                //Gera o html da linha
+                this.gerarHtml = function () {
+                    var linhaHtml = $("<div class='linha'></div>");
+
+                    //Monta o html dos itens
+                    for (i in this.itens) {
+                        var item = this.itens[i];
+                        var itemHtml = $("<div class='item'><table><tr></tr></table></div>");
+                        var numeroHtml = $("<td class='numero " + this.bgNumero + "'>" + item.numero + "</td>");
+                        itemHtml.find("tr").append(numeroHtml);
+                        var nomeHtml = $("<td class='nome'>" + item.nome + "</td>");
+                        itemHtml.find("tr").append(nomeHtml);
+                        linhaHtml.append(itemHtml);
+                    }
+
+                    return linhaHtml;
+                }
+            }
+
+            //Recupera a página atual
+            function paginaAtual() {
+
+                //Inicia o array
+                if (PAGINAS.length == 0) {
+                    return null;
+                }
+
+                //Retorna a última página
+                var idx = PAGINAS.length - 1;
+                return PAGINAS[idx];
+            }
+
+            //Adiciona uma nova página
+            function adicionarPagina() {
+                PAGINAS.push(new Pagina());
+            }
+            
+            //Avança para o próximo template
+            function toAdvance() {
+                console.log('toAdvance');
+                if (typeof (GnContentAdvance) != 'undefined') {
+                    GnContentAdvance();
+                }
+            }
+            
+            //Envia pings ao player para manter a atividade
+            setInterval(function() {
+                if( typeof(parent.callApplication) != 'undefined' ) {
+                    parent.callApplication({msg:"Sic - PING"});
+                }
+            }, 10000);
+
+        </script>
+    </body>
+</html>

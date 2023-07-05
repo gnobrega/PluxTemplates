@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <video src="./media/fundo.mp4" id="fundo"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Dados -->
+            <div id="selic" class="indicador">0,00</div>
+            <div id="ipca" class="indicador">0,00</div>
+            <div id="igp" class="indicador">0,00</div>
+           
+        </div>
+        
+        <div id="blackout"></div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            var ext;
+            GnLib.noDump();
+
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    /*var DATA_SOURCE = "/EMPRESAS/fique_por_dentro.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });*/
+                } else { //Preview
+                    GnLib.loadPreview();
+				   
+                   //Autplay
+                   setTimeout(function() {
+                       GnPlay();
+                   }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+
+                var url = GnLib.getContentPath() + "/empresas/indicadores.json";
+                $.get(url, function(rs) {
+                    $('#selic').text(rs.selic);
+                    $('#ipca').text(rs.ipca);
+                    $('#igp').text(rs.igp);
+
+                    setTimeout(function() {$('#selic').fadeIn()}, 1800);
+                    setTimeout(function() {$('#ipca').fadeIn()}, 2000);
+                    setTimeout(function() {$('#igp').fadeIn()}, 2200);
+                }, 'json');
+
+                $("#blackout").fadeOut();
+                $("#fundo").get(0).play();
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>
