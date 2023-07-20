@@ -13,7 +13,7 @@
         <div id="conteudo">
             
             <!-- Abertura/fundo -->
-            <video id="fundo" src="./media/fundo.mp4"></video>
+            <video id="fundo" src="./media/background.mp4"></video>
             
             <!-- Topo -->
             <div id="topo">
@@ -26,7 +26,7 @@
             </div>
         
             <!-- Aulas -->
-            <div id="horarios">
+           <!-- <div id="horarios">
                 <div id="horario1" class="horario linha1"></div>
                 <div id="horario2" class="horario linha2"></div>
                 <div id="horario3" class="horario linha3"></div>
@@ -34,8 +34,9 @@
                 <div id="horario5" class="horario linha5"></div>
                 <div id="horario6" class="horario linha6"></div>
                 <div id="horario6" class="horario linha7"></div>
-                <!--<div id="horario6" class="horario linha7">00:00</div>-->
-            </div>
+                <!--<div id="horario6" class="horario linha7">00:00</div>
+                    
+            </div> -->
             
             <!-- Aulas -->
             <div id="aulas"></div>
@@ -56,7 +57,7 @@
                 
                 //Monta os campos
                 for( i = 1; i <= 5; i++ ) {
-                    for( j = 1; j <= 7; j++ ) {
+                    for( j = 1; j <= 5; j++ ) {
                         var aulaHtml = $("<div class='aula dia"+i+" linha"+j+"'>Aula "+j+"</div>");
                         $("#aulas").append(aulaHtml);
                     }
@@ -85,15 +86,25 @@
                 video.play();
                 
                 //Animação
+                // setTimeout(function() {
+                //    $("#fundo-grade").show();
+                //    $("#fundo-grade").addClass('show-grade');
+            //    }, 3700);
                 setTimeout(function() {
-                    $("#fundo-grade").show();
-                    $("#fundo-grade").addClass('show-grade');
-                }, 3700);
+                    $(".dia1").fadeIn(1100);
+                }, 1400);
                 setTimeout(function() {
-                    $("#topo div").fadeIn();
-                    $(".horario").fadeIn();
-                    $(".aula").fadeIn();
-                }, 1500);
+                    $(".dia2").fadeIn(1200);
+                }, 3000);
+                setTimeout(function() {
+                    $(".dia3").fadeIn(1300);
+                }, 4700);
+                setTimeout(function() {
+                    $(".dia4").fadeIn(1400);
+                }, 6500);
+                setTimeout(function() {
+                    $(".dia5").fadeIn(1500);
+                }, 8000);
             }
             
             //Autoplay - localhost

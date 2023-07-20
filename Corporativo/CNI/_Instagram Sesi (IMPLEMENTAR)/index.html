@@ -13,13 +13,25 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4"></video>
+            <video id="fundo" src="./media/sesibackground.mp4"></video>
 
             <!-- Imagem -->
             <div id="ctImg">
                 <img id="fileId" />
             </div>
             
+            <div id="retangulo">
+                <img src="./media/branco1.png">
+            </div>
+
+            <div id="msg">
+                <img src="./media/aponte1.png">
+            </div>
+
+            <div id="qrcode">
+                <img src="./media/qrcode1.png">
+            </div>
+
             <!-- Dados -->
             <div id="texto1" class="texto">Texto</div>
             <div id="texto2" class="texto"></div>
@@ -64,13 +76,25 @@
             //Autoplay
             function GnPlay() {
                 var texto = $("#texto").html();
-                if( texto.length > 300 ) {
-                    texto = texto.substr(0, 300) + "...";
+                if( texto.length > 225 ) {
+                    texto = texto.substr(0, 225) + "...";
                 }
                 $("#texto1").html(texto);
-                        
+                $("#qrcode").hide();
+                $("#msg").hide();        
                 $("#blackout").hide();
                 $("#fundo").get(0).play();
+                setTimeout(function() {
+                    $("#retangulo").show(); 
+                } ,0);
+                setTimeout(function() {
+                    $("#msg").show();
+                    $("#msg").addClass('slide-in-fwd-left');
+                } ,2500);
+                setTimeout(function() {
+                    $("#qrcode").show();
+                    $("#qrcode").addClass('animated zoomInRight');
+                } ,2800);
                 setTimeout(function() {
                     $("#ctImg").fadeIn();
                     $("#texto1").fadeIn();
@@ -78,7 +102,10 @@
                 setTimeout(function() {
                     $("#texto1").fadeOut();
                     $("#ctImg").fadeOut();
-                } ,11500);
+                    $("#retangulo").fadeOut();
+                    $("#qrcode").fadeOut();
+                    $("#msg").fadeOut();
+                } ,9500);
 
                 //Esconde o texto 1
                 /*setTimeout(function() {

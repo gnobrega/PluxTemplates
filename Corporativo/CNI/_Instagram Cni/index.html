@@ -13,11 +13,23 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4"></video>
+            <video id="fundo" src="./media/backgroundcni.mp4"></video>
 
             <!-- Imagem -->
             <div id="ctImg">
                 <img id="fileId" />
+            </div>
+
+            <div id="retangulo">
+                <img src="./media/branco1.png">
+            </div>
+
+            <div id="msg">
+                <img src="./media/aponte1.png">
+            </div>
+
+            <div id="qrcode">
+                <img src="./media/qrcode1.png">
             </div>
             
             <!-- Dados -->
@@ -70,15 +82,31 @@
                 $("#texto1").html(texto);
                         
                 $("#blackout").hide();
+                $("#qrcode").hide();
+                $("#msg").hide();
                 $("#fundo").get(0).play();
                 setTimeout(function() {
-                    $("#ctImg").fadeIn();
+                    $("#retangulo").show(); 
+                } ,0);
+                setTimeout(function() {
+                    $("#msg").show();
+                    $("#msg").addClass('slide-in-fwd-left');
+                } ,2500);
+                setTimeout(function() {
+                    $("#qrcode").show();
+                    $("#qrcode").addClass('animated zoomInRight');
+                } ,2800);
+                setTimeout(function() {
+                    $("#ctImg").fadeIn(1000);
                     $("#texto1").fadeIn();
-                } ,1200);
+                } ,1000);
                 setTimeout(function() {
                     $("#texto1").fadeOut();
                     $("#ctImg").fadeOut();
-                } ,10000);
+                    $("#retangulo").fadeOut();
+                    $("#qrcode").fadeOut();
+                    $("#msg").fadeOut();
+                } ,9500);
 
                 //Esconde o texto 1
                 /*setTimeout(function() {

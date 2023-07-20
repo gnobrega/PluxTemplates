@@ -2,6 +2,14 @@
     font-family: 'Montserrat-Regular';
     src: url('./fonts/Montserrat-Regular.otf') format('opentype');
 }
+@font-face {
+    font-family: 'MonumentExtended-Regular';
+    src: url('./fonts/MonumentExtended-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MonumentExtended-Ultrabold';
+    src: url('./fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+}
 * {
     margin: 0;
     padding: 0;
@@ -31,37 +39,45 @@ body {
 }
 #dados {
     position: absolute;
-    left: 545px;
-    /*top: 340px;*/
-    top: 376px;
-    width: 770px;
+    display: none;
+}
+#showautor {
+    position: absolute;
     display: none;
 }
 div#titulo {
-    font-family: 'Montserrat-Regular';
+    font-family: 'MonumentExtended-Ultrabold';
+    position: absolute;
     font-weight: 700;
-    color: #1072bd;
-    font-size: 40px;
-    text-indent: 80px;
+    color: #000000;
+    font-size: 30px;
+    top: 345px;
+    left: 83px;
+    width: 770px;
 }
 div#categoria {
-    font-family: 'Montserrat-Regular';
-    color: #94989A;
+    /* font-family: 'Montserrat-Regular';
+    color: #000000;
     font-size: 35px;
     width: 540px;
-	display: none;
+	display: none; */
+    opacity: 0;
 }
 div#autor {
-    font-family: 'Montserrat-Regular';
-    color: #7d7d7d;
-    font-size: 35px;
-    width: 710px;
+    font-family: 'MonumentExtended-Regular';
+    position: absolute;
+    color: #000000;
+    font-size: 30px;
+    top: 510px;
     margin-top: 4px;
+    left: 135px;
+    width: 680px;
 }
 img#fileId {
     position: absolute;
-    top: 208px;
-    left: 140px;    
+    border-radius: 20px;
+    top: 190px;
+    left: 880px;    
     width: 336px;
     height: 451px;
 }

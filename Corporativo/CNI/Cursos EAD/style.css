@@ -6,6 +6,14 @@
     font-family: 'lato-regular';
     src: url('./fonts/lato-regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('./fonts/MonumentExtended-Regular.otf') format('truetype');
+}
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('./fonts/MonumentExtended-Ultrabold.otf') format('truetype');
+}
 * {
     margin: 0;
     padding: 0;
@@ -40,10 +48,12 @@ body {
 }
 #fileId {
     position: absolute;
-    height: 360px;
-    width: 510px;
-    top: 200px;
-    left: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 341px;
+    width: 1139px;
+    top: 135px;
+    left: 108px;
     z-index: 9999;
     -webkit-animation: fade_on_off 10.5s 1s forwards;
 }
@@ -53,36 +63,46 @@ body {
     left: 951px;
     display: none;
 }
-div#nome, div#classificacao, #horas, #descricao {
+div#nome{
     position: absolute;
-    left: 717px;
-    top: 160px;
+    left: 141px;
+    top: 483px;
     font-family: 'Lato-Black';
-    color: #0071bc;
-    font-size: 40px;
-    width: 630px;
+    color: #ffffff;
+    font-size: 35px;
+    width: 1100px;
+    height: 37px;
     opacity: 1;
     line-height: 35px;
+    overflow: hidden;
     display: none;
 }
 div#classificacao {
     top: 109px;
-    font-family: 'lato-regular';
+    font-family: 'MonumentExtended-Ultrabold';
     font-size: 36px;
     display: none;
 }
 #horas {
-    top: 430px;
-    left: 795px;
-    font-size: 40px;
+    position: absolute;
+    line-height: 30px;
+    width: 120px;
+    top: 663px;
+    left: 213px;
+    font-size: 30px;
     font-family: 'lato-regular';
+    color: #104c74;
 }
 #descricao {
-    top: 266px;
+    position: absolute;
+    left: 135px;
+    top: 536px;
     font-family: 'lato-regular';
-    font-size: 30px;
+    font-size: 25px;
     line-height: 35px;
-    height: 140px;
+    height: 110px; 
+    width: 56%;
+    color: #104c74;
     overflow: hidden;
 }
 #fundo {

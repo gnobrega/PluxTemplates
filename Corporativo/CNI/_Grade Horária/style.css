@@ -31,12 +31,11 @@ body {
     overflow: hidden;
 }
 video#fundo {
-}
-#fundo-grade {
     position: absolute;
-    top: 330px;
-    left: 123px;
-    display: none;
+    width: 1360px;
+    height: 768px;
+    top: 0px;
+    left: 0px;
 }
 /* Dados */
 #conteudo { 
@@ -55,7 +54,7 @@ video#fundo {
     left: 130px;
     width: auto;
 }
-.horario {
+/* .horario {
     position: absolute;
     color: #2A89C3;
     font-family: 'Montserrat-SemiBold';
@@ -66,21 +65,21 @@ video#fundo {
     font-weight: bold;
     font-size: 34px;
     padding-top: 3px;
-}
+} */
 .linha1 {
     top: 300px;
 }
 .linha2 {
-    top: 373px;
+    top: 370px;
 }
 .linha3 {
-    top: 442px;
+    top: 459px;
 }
 .linha4 {
-    top: 509px;
+    top: 529px;
 }
 .linha5 {
-    top: 582px;
+    top: 620px;
 }
 .linha6 {
     top: 503px;
@@ -89,16 +88,16 @@ video#fundo {
     top: 550px;
 }
 .dia1 {
-    left: 233px;
+    left: 200px;
 }
 .dia2 {
-    left: 453px;
+    left: 425px;
 }
 .dia3 {
-    left: 670px;
+    left: 640px;
 }
 .dia4 {
-    left: 880px;
+    left: 860px;
 }
 .dia5 {
     left: 1084px;
@@ -109,8 +108,27 @@ video#fundo {
 .aula {
     position: absolute;
     width: 220px;
-    color: #4B4C4D;
-    font-size: 27px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Montserrat-SemiBold';
+    text-align: center;
+    display: none;
+}
+.linha2 {
+    position: absolute;
+    width: 220px;
+    color: #0056da;
+    font-size: 20px;
+    font-family: 'Montserrat-SemiBold';
+    text-align: center;
+    display: none;
+	padding-top: 9px;
+}
+.linha4 {
+    position: absolute;
+    width: 220px;
+    color: #0056da;
+    font-size: 20px;
     font-family: 'Montserrat-SemiBold';
     text-align: center;
     display: none;

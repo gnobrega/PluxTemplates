@@ -40,22 +40,42 @@ body {
 }
 #fileId {
     position: absolute;
-    height: 400px;
-    width: 400px;
-    top: 200px;
-    left: 100px;
-    z-index: 9999;
+    border-radius: 10px;
+    height: 440px;
+    width: 520px;
+    top: 155px;
+    left: 36px;
+    z-index: 2;
     -webkit-animation: fade_on_off 10.5s 1s forwards;
+}
+#retangulo {
+    position: absolute;
+    top: 532px;
+    left: 36px;
+    z-index: 5;
+}
+#msg {
+    position: absolute;
+    top: 536px;
+    left: 36px;
+    z-index: 15;
+}
+#qrcode {
+    position: absolute;
+    top: 440px;
+    left: 440px;
+    border-radius: 10px;
+    z-index: 10;
 }
 div#texto {
     display: none;
 }
 div.texto {
     position: absolute;
-    left: 730px;
-    top: 250px;
+    left: 675px;
+    top: 335px;
     font-family: 'Montserrat-Regular';
-    color: #555555;
+    color: #000000;
     font-size: 22pt;
     width: 600px;
     opacity: 1;

@@ -66,27 +66,22 @@
             function GnPlay() {
 
                 $("#horas").html("Duração: <b>" + $("#horas").text() + "</b>");
-
+                $("#descricao").hide();
+                $("#horas").hide();
                 $("#blackout").hide();
                 $("#fundo").get(0).play();
                 setTimeout(function() {
                     $("#ctImg").fadeIn();
-                } ,5000);
+                } ,5500);
                 setTimeout(function() {
-                    //$("#classificacao").fadeIn();
-                } ,5200);
+                    $("#nome").fadeIn(500);
+                } ,7000);
                 setTimeout(function() {
-                    $("#nome").fadeIn();
-                } ,5400);
+                    $("#descricao").fadeIn(1000);
+                } ,7500);
                 setTimeout(function() {
-                    $("#horas").fadeIn();
-                    $("#descricao").fadeIn();
-                } ,5600);
-
-                setTimeout(function() {
-                    //$("#texto1").fadeOut();
-                    //$("#ctImg").fadeOut();
-                } ,11500);
+                    $("#horas").fadeIn(1000);
+                } ,8200);
             }
             
             //Autoplay - localhost

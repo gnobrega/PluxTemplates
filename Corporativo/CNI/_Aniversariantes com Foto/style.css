@@ -6,6 +6,14 @@
     font-family: 'Montserrat-Regular';
     src: url('./fonts/Montserrat-Regular.otf') format('opentype');
 }
+@font-face {
+    font-family: 'MonumentExtended-Regular';
+    src: url('./fonts/MonumentExtended-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MonumentExtended-Ultrabold';
+    src: url('./fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+}
 * {
     margin: 0;
     padding: 0;
@@ -28,34 +36,36 @@ body {
 }
 div#nome {
     font-family: 'Montserrat-Bold';
-    color: #1c64b3;
-    font-size: 50pt;
+    color: #ffffff;
+    font-size: 28pt;
 	display: none;
-	width: 715px;
+    position: absolute;
+    text-align: center;
+    top: 560px;
+    left: 905px;
+	width: 333px;
     overflow: hidden;
-    line-height: 65px;
-    margin-bottom: 15px;
+    line-height: 35px;
 }
 div#departamento {
     font-family: 'Montserrat-Regular';
-    color: #666666;
-    font-size: 40pt;
+    color: #fbfbfb;
+    font-size: 20pt;
 	display: none;
-    width: 720px;
-    line-height: 55px;
-}
-#textos {
     position: absolute;
-    top: 340px;
-    left: 605px;
-    width: 740px;
+    top: 635px;
+    left: 870px;
+    width: 720px;
+    padding-right: 800px;
 }
 #fileId {
     position: absolute;
-    left: 140px;
-    top: 199px;
-    width: 361px;
-    height: 372px;
+    border-radius: 50%;
+    border: 10px solid white;
+    left: 875px;
+    top: 185px;
+    width: 350px;
+    height: 350px;
 }
 #hora, #data2 {
 	position: absolute;
@@ -90,14 +100,7 @@ div#data {
     animation-name: show-title;
     animation-duration: 1s;
 }
-#cortina {
-    position: absolute;
-    width: 1360px;
-    height: 768px;
-    background: #000;
-    top: 0;
-    left: 0;
-}
+
 @keyframes show-title{
     from {
         left: -200px;

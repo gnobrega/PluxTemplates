@@ -44,9 +44,9 @@ body {
 }
 #dados1 {
     position: absolute;
-    top: 480px;
-    left: 470px;
-    width: 730px;
+    top: 584px;
+    left: 389px;
+    width: 70%;
 }
 div#titulo {
     color: #001F43;
@@ -56,11 +56,9 @@ div#titulo {
     line-height: 40px;
 }
 div#texto {
-    color: #555555;
-    font-size: 24pt;
-    font-family: 'GothamHTF-Book';
-    top: 585px;
-    margin-top: 10px;
+    color: #000000;
+    font-size: 15pt;
+    font-family: 'Gotham-Bold';
 }
 #qr {
     position: absolute;
@@ -72,7 +70,8 @@ div#texto {
 }
 img#fileId {
     left: 470px;
-    top: 50px;
+    border-radius: 30px;
+    top: 80px;
     height: 412px;
     width: 53.6%;
     position: absolute;

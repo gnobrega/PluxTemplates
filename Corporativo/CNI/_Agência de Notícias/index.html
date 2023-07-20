@@ -11,7 +11,7 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4" ></video>
+            <video id="fundo" src="./media/backgroundnoticias.mp4" ></video>
             
             <!-- Imagem -->
             <div id="ctImg">
@@ -55,11 +55,11 @@
             function GnPlay() {
                 $("#fundo").get(0).play();
                 setTimeout(function() {
-                    $("#ctImg").fadeIn();
-                }, 1200);
+                    $("#ctImg").fadeIn(1000);
+                }, 500);
                 setTimeout(function() {
                     $("#dados").fadeIn();
-                }, 1600);
+                }, 2500);
             }
             
             //Autoplay - localhost

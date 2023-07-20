@@ -11,7 +11,7 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4" ></video>
+            <video id="fundo" src="./media/background.mp4" ></video>
             
             <!-- Imagem -->
             <div id="ctImg">
@@ -20,9 +20,11 @@
             
             <!-- Dados -->
             <div id="dados">
-                <div id="titulo">Título teste teste teste teste</div>
-                <div id="autor">Autor teste teste teste teste teste teste teste teste teste teste</div>
+                <div id="titulo"></div>
                 <div id="categoria">Categoria</div>
+            </div>
+            <div id="showautor">
+                <div id="autor"></div>
             </div>
         </div>
         
@@ -56,13 +58,13 @@
             function GnPlay() {
 
 				//Altera o ícone
-				if( $("#categoria").text() == "Ebook" ) {
-					$("#imgIcone").attr("src", "./media/ebook.png");
-				} else if( $("#categoria").text() == "DVD" ) {
-					$("#imgIcone").attr("src", "./media/cd.png");
-				} else if( $("#categoria").text() == "Revista" ) {
-					$("#imgIcone").attr("src", "./media/revista.png");
-				}
+			//	if( $("#categoria").text() == "Ebook" ) {
+			//		$("#imgIcone").attr("src", "./media/ebook.png");
+			//	} else if( $("#categoria").text() == "DVD" ) {
+			//		$("#imgIcone").attr("src", "./media/cd.png");
+			//	} else if( $("#categoria").text() == "Revista" ) {
+			//		$("#imgIcone").attr("src", "./media/revista.png"); 
+			//	} 
 			
                 $("#fundo").get(0).play();
 				setTimeout(function() {
@@ -70,14 +72,18 @@
 					$("#fileId").addClass('animated zoomIn');					
 				}, 200);
 				setTimeout(function() {
-                    $("#dados").fadeIn();
-					$("#imgIcone").show();
-					$("#imgIcone").addClass('animated zoomIn');
-                }, 800);
+                    $("#dados").show();
+                    $("#titulo").addClass('animated zoomIn'); 
+                }, 1000);
+                setTimeout(function() {
+                    $("#showautor").show();
+                    $("#autor").addClass('animated fadeIn');
+                }, 1200);
                 setTimeout(function() {
                     $("#dados").fadeOut();
+                    $("#autor").fadeOut(); 
                     $("#fileId").fadeOut();
-                }, 6200);
+                }, 7600);
 
             }
             

@@ -11,18 +11,18 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/compliance.mp4" ></video>
+            <video id="fundo" src="./media/lgpd.mp4" ></video>
             
             <!-- Imagem -->
             <div id="ctImg">
                 <img id="fileId" />
-                <div id="qr"></div>
+                <div id="qr" hidden></div>
             </div>
             
             <!-- Dados -->
             <div id="dados">
                 <div id="dados1">
-                    <div id="titulo"></div>
+                    <div id="titulo" hidden></div>
                     <div id="texto"></div>    
                 </div>
                 <div id="editoria"></div>
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div id="blackout"></div>
+    <!--    <div id="blackout"></div>	-->
         
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
@@ -47,7 +47,8 @@
                     
                     //Carrega o conteúdo
                     var DATA_SOURCE = "/EMPRESAS/evolucao_com_conformidade.xml";
-                    GnLib.autoloadContent(DATA_SOURCE);
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
                     
                 } else { //Preview
                     GnLib.loadPreview();
@@ -61,7 +62,6 @@
             
             //Autoplay
             function GnPlay() {
-                
                 if( $("#titulo").text() != "" ) {
                     $("#blackout").hide();
                 }
@@ -70,6 +70,17 @@
                 var editoria = $('#editoria').text();
                 $("#fundo").attr("autoplay", "true");
                 $("#fundo").attr("src", "./media/"+editoria+".mp4");
+                // Altera a posicao do texto de acordo com o fundo
+                if( $('#editoria').text() == "lgpd" ) {
+                        $("#dados1").css('top', '550px');
+                        $("#dados1").css('left', '399px');
+                    } else if( $('#editoria').text() == "compliance" ) {
+                        $("#dados1").css('left', '400px');
+                        $("#dados1").css('top', '580px');
+                    } else if( $('#editoria').text() == "seguranca_da_informacao" ) {
+                        $("#dados1").css('left', '403px');
+                        $("#dados1").css('top', '577px');
+                    } 
 
                 // Qrcode
                 new QRCode("qr", {
@@ -78,27 +89,29 @@
                     height: 200
                 });
 
-                //$("#fundo").get(0).play();
-                $("#ctImg").fadeIn();
+                $("#fundo").get(0).play();
                 setTimeout(function() {
-                    $("#dados").fadeIn();
+                    $("#ctImg").fadeIn(2500);
+                }, 1000);
+                setTimeout(function() {
+                    $("#dados").fadeIn(1000);
 
                     // Ajusta o tamanho da fonte
                     if( $('#dados1').text().length > 360 ) {
                         $("#titulo").css('font-size', '25pt');
-                        $("#texto").css('font-size', '20pt');
+                        $("#texto").css('font-size', '15pt');
                     } else if( $('#dados1').text().length > 280 ) {
                         $("#titulo").css('font-size', '25pt');
-                        $("#texto").css('font-size', '20pt');
+                        $("#texto").css('font-size', '19pt');
                     }
 
-                }, 400);
+                }, 3300);
 
-                setTimeout(function() {
+            /*    setTimeout(function() {
                     $("#ctImg").fadeOut();
                     $("#dados").fadeOut();
                     $("#qr").fadeOut();
-                }, 10000);
+                }, 10000);  */
 
             }
             

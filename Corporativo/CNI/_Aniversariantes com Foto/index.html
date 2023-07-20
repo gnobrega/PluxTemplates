@@ -8,7 +8,7 @@
     </head>
     <body>
         <h2 id="console"></h2>
-		<video id="fundo" src="./media/fundo.mp4" ></video>
+		<video id="fundo" src="./media/aniversariobg.mp4" ></video>
 
         <!-- Conteúdo -->
         <div id="conteudo">
@@ -19,7 +19,7 @@
                 <div id="departamento"></div>
             </div>
             <div id="data"></div>
-			
+
 			<!-- Imagem -->
             <div id="ctImg">
                 <img id="fileId" />
@@ -30,7 +30,7 @@
             <div id="data2">Data</div>
         </div>
         
-        <div id="cortina"></div>
+ 
 		
 
         <!-- Scripts -->
@@ -63,7 +63,7 @@
             function GnPlay() {
 				
 				//Trata a data
-				var data = $("#data").html();
+				/* var data = $("#data").html();
 				var params = data.split("/");
 				if( params.length > 1 ) {
 					var mes = parseInt(params[1]);
@@ -71,11 +71,10 @@
 					var nmMes = meses[mes];
 					var data = params[0] + " de " + nmMes;
 					$("#data").html(data.toUpperCase());
-				}
+				} */
 				
 				$("#fundo").get(0).play();
                 if( $("#nome").html() != "" ) {
-					setTimeout(function() {$("#data").fadeIn()}, 1200);
 					setTimeout(function() {$("#nome").fadeIn()}, 1300);
 					setTimeout(function() {$("#ctImg").fadeIn()}, 1300);
 					setTimeout(function() {$("#departamento").fadeIn()}, 1400);
