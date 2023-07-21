@@ -67,6 +67,14 @@ div#departamento {
     width: 350px;
     height: 350px;
 }
+#cortina {
+    position: absolute;
+    width: 1360px;
+    height: 768px;
+    background: #000;
+    top: 0;
+    left: 0;
+}
 #hora, #data2 {
 	position: absolute;
 	top: 20px;
