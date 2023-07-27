@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"  />
-        <meta name="viewport" content="width=1280, user-scalable=no">
+        <meta name="viewport" content="width=1360, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="./style.css">
         <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
     </head>
@@ -75,6 +75,16 @@
             
             //Autoplay
             function GnPlay() {
+			
+				//Ajusta o zoom até enquadrar na tela
+                var zoom = $(window).width() / 1280;
+                $("body").css("transform-origin", "0 0");
+                $("body").css('zoom', zoom);
+				if( navigator.userAgent.toLowerCase().indexOf('chrome') == -1 ) {
+					$("body").css("-moz-transform", "scale("+zoom+","+zoom+")");
+					$("body").css("-moz-transform-origin", "0 0");				
+				}
+				
                 var texto = $("#texto").html();
                 if( texto.length > 300 ) {
                     texto = texto.substr(0, 300) + "...";
