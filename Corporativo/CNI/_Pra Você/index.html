@@ -60,24 +60,29 @@
             
             //Autoplay
             function GnPlay() {
-                if( $('#editoria').text() == '' ) {
-                    $('#editoria').text('PRA VOCÊ');
-                }
-                
                 //Dá play no vídeo
                 var video = $("#fundo").get(0).play();
 
-                setTimeout(function() {
-                    $("#editoria").fadeIn();
-                }, 800);
-                setTimeout(function() {
-                    $("#ctImg").fadeIn();
-                    $("#titulo").fadeIn();
-                    setTimeout(function() {
-                        $("#texto").fadeIn();
-                    }, 100);
-                }, 1200);
-            }
+                // Altera o fundo (editoria)
+                var editoria = $('#editoria').text();
+                $("#fundo").attr("autoplay", "true");
+                $("#fundo").attr("src", "./media/"+editoria+".mp4");
+ 
+                }
+                
+                
+
+            //    setTimeout(function() {
+            //        $("#editoria").fadeIn();
+            //    }, 800);
+            //    setTimeout(function() {
+            //        $("#ctImg").fadeIn();
+            //        $("#titulo").fadeIn();
+            //        setTimeout(function() {
+            //            $("#texto").fadeIn();
+            //        }, 100);
+            //    }, 1200);
+            
             
             //Autoplay - localhost
             if( window.location.href.indexOf("localhost/html5") > -1 ) {

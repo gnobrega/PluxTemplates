@@ -30,6 +30,7 @@ div#editoria {
     display: none;
     width: 560px;
     text-align: right;
+    opacity: 0;
 }
 div#titulo {
     position: absolute;
@@ -41,6 +42,7 @@ div#titulo {
     display: none;
     width: 560px;
     line-height: 40pt;
+    opacity: 0;
 }
 div#texto {
     position: absolute;
@@ -51,6 +53,7 @@ div#texto {
     font-size: 32pt;
     width: 560px;
     display: none;    
+    opacity: 0;
 }
 #ctImg {
     display: none;
@@ -61,6 +64,7 @@ img#fileId {
     left: 130px;
     height: 420px;
     width: 586px;
+    opacity: 0;
 }
 video#abertura {
     position: absolute;
