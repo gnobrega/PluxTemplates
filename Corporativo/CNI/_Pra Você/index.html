@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"  />
-        <meta name="viewport" content="width=1280, user-scalable=no">
+        <meta name="viewport" content="width=1360, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="./style.css">
         <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
     </head>
@@ -10,21 +10,14 @@
         <h2 id="console"></h2>
         
         <!-- Fundo -->
-        <video id="fundo" src="./media/fundo.mp4"></video>
+        <video id="fundo" src="./media/1.mp4"></video>
         
         <!-- Conteúdo -->
         <div id="conteudo">
             
             <!-- Dados -->
-            <div id="ctImg"><img id="fileId" src="" /></div>
-            <div id="editoria">PRA VOCÊ</div>
-            <div id="titulo">Nome</div>
-            <div id="texto">Texto</div>
         </div>
         
-        <!-- Fundo -->
-        <video id="abertura" src="./media/fundo2.mp4"></video>
-
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
         <script src="../../lib/js/GnLib.js"></script>
@@ -38,15 +31,9 @@
                 if( !GnLib.getParam('preview') ) {
                     
                     //Carrega o conteúdo
-                    var DATA_SOURCE = "/EMPRESAS/pra_voce.xml";
+                    /*var DATA_SOURCE = "/EMPRESAS/pra_voce.xml";
                     GnLib.autoloadContent(DATA_SOURCE, function(template) {
-                        if( $("#fileId").attr("src") ) {
-                            comImagem = true;
-                        } else {
-                            comImagem = false;
-                            $("#conteudo").addClass("semImagem");
-                        }
-                    });
+                    });*/
                     
                 } else { //Preview
                    
@@ -61,29 +48,24 @@
             
             //Autoplay
             function GnPlay() {
+			
+				// Seleciona o vídeo
+				var videos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
+				var idx = GnLib.getIndex("pra_voce", videos);
+				$("#fundo").attr("src", "./media/"+idx+".mp4");
+			
+				//Ajusta o zoom até enquadrar na tela
+                var zoom = $(window).width() / 1360;
+                $("body").css("transform-origin", "0 0");
+                $("body").css('zoom', zoom);
+				if( navigator.userAgent.toLowerCase().indexOf('chrome') == -1 ) {
+					$("body").css("-moz-transform", "scale("+zoom+","+zoom+")");
+					$("body").css("-moz-transform-origin", "0 0");				
+				}
+				
                 //Dá play no vídeo
                 var video = $("#fundo").get(0).play();
-
-                // Altera o fundo (editoria)
-                var editoria = $('#editoria').text();
-                $("#fundo").attr("autoplay", "true");
-                $("#fundo").attr("src", "./media/"+editoria+".mp4");
- 
-                }
-                
-                
-
-            //    setTimeout(function() {
-            //        $("#editoria").fadeIn();
-            //    }, 800);
-            //    setTimeout(function() {
-            //        $("#ctImg").fadeIn();
-            //        $("#titulo").fadeIn();
-            //        setTimeout(function() {
-            //            $("#texto").fadeIn();
-            //        }, 100);
-            //    }, 1200);
-            
+			}
             
             //Autoplay - localhost
             if( window.location.href.indexOf("localhost/html5") > -1 ) {
