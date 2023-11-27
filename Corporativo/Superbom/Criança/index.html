@@ -18,15 +18,17 @@
             
             <!-- Dados -->
             <div id="dados">
-                <div id="nome">Nome</div>
-                <div id="validade"></div>                
+                <div id="nome"></div>
+                <div id="validade"></div>
             </div>
-			<img id="bola" src="./media/bola.png" />
+			<img id="quadrado" src="./media/qazul.png" />
+            <img id="quadrado2" src="./media/qbranco.png" />
+            <h1 id="reais2">R$</h1>
 			<div id="ctPreco2">
 				<div id="ctPreco">
 					<div id="preco"></div>
 					<div id="cents"></div>
-					<div id="unidade"></div>                
+					<div id="unidade"></div>
 				</div>
 			</div>
             
@@ -38,7 +40,7 @@
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
         <script src="../../lib/js/GnLib.js"></script>
-        <script>           
+        <script>
             if (typeof (GnContentFound) != 'undefined') {
                 GnContentFound();
             }
@@ -69,42 +71,51 @@
             //Autoplay
             function GnPlay() {
                 $("#fundo").get(0).play();
+                $("#reais2").hide();
                 
-                if( possuiConteudo ) {
+                 if( possuiConteudo ) {
 				
 					   var params = $("#preco").html().split(",");
                        $("#preco").html(params[0]);
 					   $("#cents").html(","+params[1]);
-                       //var validade = $("#validade").html();
-                       //$("#validade").html("Ofertas válidas de " + validade + " ou enquanto durar o estoque.");
-				
+                       var validade = $("#validade").html();
+                       $("#validade").html("OFERTAS VÁLIDAS DE " + validade + "");
+                    
+                       
                     setTimeout(function() {  
-                        $("#fileId").show();
-                        $("#ctImg").fadeIn();
-                        $("#fileId").addClass("animated");
-						$("#fileId").addClass("zoomIn");
-                    }, 3100);
+                        $("#ctImg").show();
+                        $("#fileId").fadeIn(500);
+                    }, 1700);
                     setTimeout(function() {  
-                        $("#nome").fadeIn();
-                        $("#bola").show();
-						$("#bola").addClass("animated");
-						$("#bola").addClass("zoomIn");
-                    }, 3600);
+                        $("#nome").show();
+                        $("#nome").addClass("animated slideInDown");
+                        $("#quadrado").show();
+						$("#quadrado").addClass("animated slideInDown");
+                    }, 1500);
                     setTimeout(function() {  
-                        $("#ctPreco").fadeIn();
-                        $("#unidade").fadeIn();
-                    }, 3900);
+                        $("#quadrado2").show();
+                        $("#ctPreco").show();
+                        $("#unidade").show();
+
+						$("#quadrado2").addClass("animated slideInUp");
+                        $("#ctPreco").addClass("animated slideInUp");
+                        $("#unidade").addClass("animated slideInUp");
+                    }, 1500);
+                    setTimeout(function() {  
+                        $("#reais2").show();
+                        $("#reais2").addClass("animated fadeIn")
+                    }, 2300);
                     setTimeout(function() {  
                         $("#validade").fadeIn();
-                    }, 4300);
+                    }, 2800);
                     
-                    setTimeout(function() {  
+                    /* setTimeout(function() {  
                         $("#ctImg").hide();
                         $("#nome").hide();
                         $("#bola").hide();
                         $("#ctPreco").hide();
                         $("#unidade").hide();
-                    }, 11000);
+                    }, 11000); */
                 } else {
                     $("#calhau").show();
                     $("#calhau").get(0).play();

@@ -43,27 +43,27 @@ body {
     border-radius: 10px;
     height: 440px;
     width: 520px;
-    top: 155px;
-    left: 36px;
+    top: 120px;
+    left: 63px;
     z-index: 2;
     -webkit-animation: fade_on_off 10.5s 1s forwards;
 }
 #retangulo {
     position: absolute;
-    top: 532px;
-    left: 36px;
+    top: 527px;
+    left: 63px;
     z-index: 5;
 }
 #msg {
     position: absolute;
-    top: 536px;
-    left: 36px;
+    top: 532px;
+    left: 63px;
     z-index: 15;
 }
 #qrcode {
     position: absolute;
     top: 440px;
-    left: 440px;
+    left: 470px;
     border-radius: 10px;
     z-index: 10;
 }

@@ -31,12 +31,21 @@ body {
     width: 1360px;
     height: 768px;
 }
-#bola {
+#quadrado {
 	position: absolute;
-	top: 40px;
-    left: 1050px;
-    width: 265px;
-	display: none;
+    top: 187px;
+    left: 612px;
+    width: 406px;
+    display: none;
+    z-index: 30;
+}
+#quadrado2 {
+	position: absolute;
+    top: 353px;
+    left: 669px;
+    width: 310px;
+    display: none;
+    z-index: 32;
 }
 #abertura {
     width: 1360px;
@@ -69,22 +78,33 @@ body {
     background: url(./media/fechamento.jpg);
 }
 div#nome {
+    height: 150px;
     position: absolute;
-    left: 710px;
-    top: 595px;
+    left: 620px;
+    top: 222px;
     font-family: 'AmsiProCond-Bold';
-    color: #C73341;
-    font-size: 37px;
+    color: #ffffff;
+    font-size: 60px;
     text-align: center;
-    width: 500px;
+    width: 388px;
     display: none;
-	line-height: 38px;
+    line-height: 50px;
+    z-index: 40;
+}
+#reais2 {
+    position: fixed;
+    top: 409px;
+    left: 690px;
+    z-index: 35;
+    color: #1666ba;
+    font-family: 'AmsiProCond-Bold';
 }
 div#ctPreco2 {
 	position: absolute;
-    left: 1070px;
-    top: 40px;
+    left: 735px;
+    top: 310px;
 	width: 220px;
+    z-index: 40;
 }
 div#ctPreco {
 	display: none;
@@ -92,8 +112,8 @@ div#ctPreco {
 }
 div#preco {
     font-family: 'AmsiProCond-Bold';
-    color: #fff;
-    font-size: 110px;
+    color: #1666ba;
+    font-size: 150px;
     text-align: right;
     letter-spacing: -2px;
 	float: left;
@@ -101,43 +121,46 @@ div#preco {
 }
 div#cents {
     font-family: 'AmsiProCond-Bold';
-    color: #fff;
-    font-size: 60px;
+    color: #1666ba;
+    font-size: 40px;
     text-align: left;
 	float: left;
-	margin-top: 55px;
+	margin-top: 100px;
 	padding-left: 5px;
 }
 div#unidade {
     font-family: 'AmsiProCond-Regular';
-    color: #fff;
-    font-size: 35px;
+    color: #1666ba;
+    font-size: 30px;
     text-align: left;
     display: none;
 	float: right;
-    margin-right: 25px;
+    margin-right: 20px;
     margin-top: -10px;
 }
 div#validade {
     position: absolute;
-    left: 350px;
-    top: 720px;
-    font-family: 'Roboto-Bold';
-    color: #C73341;
-    font-size: 19px;
-    width: 600px;
+    left: 400px;
+    top: 715px;
+    font-family: 'AmsiProCond-Bold';
+    color: #1666ba;
+    font-size: 35px;
+    width: 551px;
     text-align: center;
     display: none;
 }
 img#fileId {
     position: absolute;
-    top: 50px;
-    left: 800px;    
+    height: 350px;
+    width: 343px;
+    top: 262px;
+    left: 933px;
     display: none;
+    z-index: 20;
 }
-#ctImg {
+div #ctImg {
     display: none;
-}
+} 
 .keyframes mostra-preco {
     animation-name: mostra-preco;
     animation-duration: .5s;

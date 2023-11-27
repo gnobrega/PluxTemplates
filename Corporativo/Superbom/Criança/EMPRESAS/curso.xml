@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="1" userId="5">
+			<titulo><![CDATA[Inteligência Emocional]]></titulo>
+			<conteudo><![CDATA[Autoconhecimento e controle emocional, importância das emoções, relacionamentos inteligentes e as emoções dos outros.]]></conteudo>
+			<carga><![CDATA[20 horas]]></carga>
+			<data><![CDATA[2020-05-08 13:39:53]]></data>
+		</item>
+		<item id="4" userId="30">
+			<titulo><![CDATA[Flexibilidade Cognitiva]]></titulo>
+			<conteudo><![CDATA[Flexibilizar a mente para se adaptar a um mundo dinâmico, porque precisamos sair da zona de conforto para exercitar a mente, flexibilidade e liberdade, dentre outros!]]></conteudo>
+			<carga><![CDATA[20 horas]]></carga>
+			<data><![CDATA[2020-05-12 18:25:06]]></data>
+		</item>
+		<item id="5" userId="30">
+			<titulo><![CDATA[Mudanças são Bem-vindas]]></titulo>
+			<conteudo><![CDATA[Cultura organizacional, mudando padrões e comportamentos, a arte da perseverança e faça o que deve ser feito!]]></conteudo>
+			<carga><![CDATA[20 horas]]></carga>
+			<data><![CDATA[2020-05-12 18:25:35]]></data>
+		</item>
+		<item id="6" userId="30">
+			<titulo><![CDATA[Os 7 Hábitos da Criatividade]]></titulo>
+			<conteudo><![CDATA[Porque entramos na era da criatividade e o que isso significa, planejamento, flexibilidade, curiosidade, pensamento analógico, restrições criativas e incubação de ideias]]></conteudo>
+			<carga><![CDATA[36 horas]]></carga>
+			<data><![CDATA[2020-05-12 18:26:19]]></data>
+		</item>
+		<item id="7" userId="30">
+			<titulo><![CDATA[Proatividade]]></titulo>
+			<conteudo><![CDATA[Esteja disposto a mudar, como enfrentar desafios, importância de ter um plano B, como vencer o medo, lidando com a frustração, como perceber o seu potencial! ]]></conteudo>
+			<carga><![CDATA[32 horas]]></carga>
+			<data><![CDATA[2020-05-12 18:26:46]]></data>
+		</item>
+		<item id="8" userId="30">
+			<titulo><![CDATA[Resolução de Problemas Complexos no Trabalho    ]]></titulo>
+			<conteudo><![CDATA[Tipos de complexidade, como solucionar problemas, árvore de questões, matriz GUT, como criar e estruturar hipóteses e visualizar oportunidades, analisar, estruturar e executar!]]></conteudo>
+			<carga><![CDATA[28 horas]]></carga>
+			<data><![CDATA[2020-05-12 18:27:26]]></data>
+		</item>
+	</module>
+</modules>

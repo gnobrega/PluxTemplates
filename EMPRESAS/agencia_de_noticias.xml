@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="5720" fileId="180670" userId="12" extId="jpg">
+			<titulo><![CDATA[Entrevistas]]></titulo>
+			<nota_info><![CDATA[Sem segurança não existe vida social organizada, afirma Ricardo Lewandowski]]></nota_info>
+		</item>
+		<item id="5721" fileId="180702" userId="12" extId="jpg">
+			<titulo><![CDATA[SESI Lab]]></titulo>
+			<nota_info><![CDATA[Físico Marcelo Knobel debate luz e cor na 4ª edição do Night Lab, em Brasília]]></nota_info>
+		</item>
+		<item id="5722" fileId="180714" userId="12" extId="jpg">
+			<titulo><![CDATA[Internacional]]></titulo>
+			<nota_info><![CDATA[CNI e comunidade diplomática se reúnem para debater temas de interesse comum]]></nota_info>
+		</item>
+	</module>
+</modules>

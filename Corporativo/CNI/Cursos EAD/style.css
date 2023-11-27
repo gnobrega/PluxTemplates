@@ -48,15 +48,24 @@ body {
 }
 #fileId {
     position: absolute;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 341px;
-    width: 1139px;
-    top: 135px;
-    left: 108px;
+    border-radius: 10px;
+    height: 373px;
+    width: 433px;
+    top: 155px;
+    left: 155px;
     z-index: 9999;
-    -webkit-animation: fade_on_off 10.5s 1s forwards;
+    animation: growUp 1s;
+    width: 433px; height: 373px;
 }
+@keyframes growUp {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
 #icon-ep {
     position: absolute;
     top: 321px;
@@ -65,12 +74,12 @@ body {
 }
 div#nome{
     position: absolute;
-    left: 141px;
-    top: 483px;
+    left: 636px;
+    top: 142px;
     font-family: 'Lato-Black';
-    color: #ffffff;
+    color: #000000;
     font-size: 35px;
-    width: 1100px;
+    width: 50%;
     height: 37px;
     opacity: 1;
     line-height: 35px;
@@ -85,23 +94,21 @@ div#classificacao {
 }
 #horas {
     position: absolute;
-    line-height: 30px;
-    width: 120px;
-    top: 663px;
-    left: 213px;
-    font-size: 30px;
-    font-family: 'lato-regular';
+    top: 413px;
+    left: 725px;
+    font-size: 25px;
+    font-family: 'Lato-Black';
     color: #104c74;
 }
 #descricao {
     position: absolute;
-    left: 135px;
-    top: 536px;
-    font-family: 'lato-regular';
-    font-size: 25px;
+    left: 637px;
+    top: 187px;
+    font-family: 'Lato-Black';
+    font-size: 20px;
     line-height: 35px;
-    height: 110px; 
-    width: 56%;
+    height: 170px; 
+    width: 48%;
     color: #104c74;
     overflow: hidden;
 }

@@ -15,8 +15,8 @@
     padding: 0;
 }
 html, body {
-    width: 768px;
-    height: 1296px;
+    width: 340px;
+    height: 690px;
 }
 body {
     background: #00376d;
@@ -27,44 +27,45 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 768px;
-    height: 1296px;
+    width: 340px;
+    height: 690px;
 }
 #midiaVideo { 
     position: absolute;
     top: 0;
     left: 0;
-    width: 768px;
-    height: 1296px;
+    width: 340px;
+    height: 690px;
     display: none;
 }
 #titulo {
     position: absolute;
-    top: 995px;
-    left: 15px;
+    top: 534px;
+    left: 10px;
     font-family: 'AvenirNextLTPro-Demi';
-    font-size: 27px;
+    font-size: 20px;
     color: #90B2FF;
+    width: 335px;
 }
 #texto {
     position: absolute;
-    top: 1038px;
-    left: 15px;
+    top: 568px;
+    left: 10px;
     font-family: 'AvenirNextLTPro-Bold';
-    font-size: 48px;
+    font-size: 18px;
     color: #fff;
-    width: 741px;
+    width: 320px;
 }
 #credito {
     position: absolute;
     top: 231px;
     color: #fff;
     font-family: 'AvenirNextLTPro-Regular';
-    font-size: 14px;
+    font-size: 12px;
     text-align: right;
     transform: rotate(-90deg);
     width: 300px;
-    left: 596px;
+    left: 170px;
 }
 #editoria {
     position: absolute;

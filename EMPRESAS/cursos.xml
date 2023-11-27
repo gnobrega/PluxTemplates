@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="242724" userId="12" fileId="97417" extId="jpg">
+			<nome><![CDATA[Insônia, como lidar (T1/2022)]]></nome>
+			<classificacao><![CDATA[Saúde e Segurança na Indústria]]></classificacao>
+			<horas><![CDATA[1h
+                                                
+                                             ]]></horas>
+			<descricao><![CDATA[Neste minicurso falaremos sobre os distúrbios de sono, sobre a insônia e seus tipos, sintomas e causas, além de abordar a relação entre trabalho e sono; estratégias e orientações para melhorar a qualidade do sono.]]></descricao>
+			<codigo><![CDATA[1094]]></codigo>
+			<data><![CDATA[2022-04-18 13:04:43]]></data>
+		</item>
+		<item id="242734" userId="35" fileId="108234" extId="png">
+			<nome><![CDATA[A experiência do cliente]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Temos como objetivo desenvolver em todos os colaboradores, o conceito de prestação de serviço interno como um elo em uma cadeia de valor, ciente de seu impacto na prestação de serviço final.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 17:43:57]]></data>
+		</item>
+		<item id="242735" userId="35" fileId="108235" extId="png">
+			<nome><![CDATA[A ideia de um milhão de dólares]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Entenda como montar uma apresentação como um pitch de negócios, como utilizar a estatística para vender uma ideia e como desenvolver uma estratégia de guerra para enfrentar a competitividade.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 17:53:17]]></data>
+		</item>
+		<item id="242736" userId="35" fileId="108236" extId="jpg">
+			<nome><![CDATA[Ajustamento criativo: como inovar diante de cenários adversos]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[O ajustamento criativo é a capacidade de interagir com o ambiente na fronteira de contato, adaptando, sempre que necessário, a demanda das necessidades às possibilidades de atendimento do ambiente.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 18:00:26]]></data>
+		</item>
+		<item id="242737" userId="35" fileId="108248" extId="png">
+			<nome><![CDATA[Alta performance e produtividade]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[6 h]]></horas>
+			<descricao><![CDATA[Neste curso, em formato de websérie, vamos apresentar técnicas e ferramentas para melhorar seu foco, performance e produtividade, conquistando bons resultados e melhorando a sua qualidade de vida.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 18:05:20]]></data>
+		</item>
+		<item id="242738" userId="35" fileId="108249" extId="jpg">
+			<nome><![CDATA[Ansiedade: o que é e o que fazer em uma crise]]></nome>
+			<classificacao><![CDATA[Saúde e Segurança na Indústria]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Segundo a Organização Mundial da Saúde (OMS), o Brasil é o país mais ansioso do mundo. O psicólogo Vitor Luz ensina a identificar os sinais e a utilizar ferramentas para administrar a ansiedade.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 18:12:32]]></data>
+		</item>
+		<item id="242739" userId="35" fileId="108250" extId="png">
+			<nome><![CDATA[Ao Infinito e Além]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[O curso oferece informações fundamentais aos líderes e pessoas dispostas a ocupar cargos de liderança, para o desenvolvimento de equipes equilibradas e motivadas. O objetivo é ir "ao infinito e além"!]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 18:16:50]]></data>
+		</item>
+		<item id="242740" userId="35" fileId="108252" extId="jpg">
+			<nome><![CDATA[Apresentações de Sucesso]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Conheça os principais conceitos para transmitir mensagens consistentes e dicas de como utilizar o corpo como a principal ferramenta para se apresentar ao público com segurança e eficiência.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 18:30:24]]></data>
+		</item>
+		<item id="242741" userId="35" fileId="108253" extId="jpg">
+			<nome><![CDATA[Autocuidado: uma jornada necessária na era digital]]></nome>
+			<classificacao><![CDATA[Saúde e Segurança na Indústria]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[O autocuidado é o comportamento que a pessoa deliberada e responsável eficazmente desempenha em seu próprio benefício para assegurar a vida, e manter e promover a saúde.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 18:36:51]]></data>
+		</item>
+		<item id="242742" userId="35" fileId="108261" extId="png">
+			<nome><![CDATA[Barreiras Invisíveis: os vieses inconscientes ]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Conheça o que são vieses no mundo do trabalho e o impactonas organizações e como podemos reconhecê-los e neutralizá-los para a atuação em um ambiente de trabalho mais diverso e colaborativo.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 19:04:05]]></data>
+		</item>
+		<item id="242743" userId="35" fileId="108278" extId="jpg">
+			<nome><![CDATA[Bom senso e tomada de decisão]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Entenda qual é o papel da razão, da experiência e da intuição e como o ser humano elabora e reelabora as próprias situações para organizar de maneira positiva os acontecimentos da sua vida.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-03 20:10:12]]></data>
+		</item>
+		<item id="242744" userId="18" fileId="109094" extId="jpg">
+			<nome><![CDATA[Layout code - potencialize suas apresentações]]></nome>
+			<classificacao><![CDATA[Formação continuada]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Neste curso são abordados alguns vieses cognitivos que podem impactar a absorção de conteúdos e como é possível potencializar a apresentação para o alcance dos objetivos definidos.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 19:32:02]]></data>
+		</item>
+		<item id="242745" userId="18" fileId="109095" extId="jpg">
+			<nome><![CDATA[LGPD: lei geral de proteção de dados]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[O curso é disponibilizado em formato interativo, em que o aluno conhece o que é o tratamento de dados e entende quais são as exigências dessa nova lei para proteger as informações.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 19:35:09]]></data>
+		</item>
+		<item id="242746" userId="18" fileId="109096" extId="jpg">
+			<nome><![CDATA[Lidando com sintomas da depressão]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Neste minicurso você aprenderá a reconhecer as diferenças entre tristeza e depressão e conhecerá técnicas para lidar com os sintomas da depressão.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 19:39:50]]></data>
+		</item>
+		<item id="242747" userId="18" fileId="109097" extId="jpg">
+			<nome><![CDATA[Liderança]]></nome>
+			<classificacao><![CDATA[Liderança]]></classificacao>
+			<horas><![CDATA[20 h]]></horas>
+			<descricao><![CDATA[Qualquer profissional pode aprender técnicas para se tornar um bom líder. Neste curso você aprenderá ferramentas de gestão para ajudar a desenvolver o líder que existe em cada indivíduo.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 19:44:13]]></data>
+		</item>
+		<item id="242748" userId="18" fileId="109098" extId="jpg">
+			<nome><![CDATA[Liderança exponencial]]></nome>
+			<classificacao><![CDATA[Liderança]]></classificacao>
+			<horas><![CDATA[6 h]]></horas>
+			<descricao><![CDATA[Expanda o mindset sobre o mundo atual e a visão de futuro e reflita sobre quais são as novas posturas do líder e das organizações para gerar resultados extraordinários.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 19:48:26]]></data>
+		</item>
+		<item id="242749" userId="18" fileId="109099" extId="jpg">
+			<nome><![CDATA[Lifelong learning: construa um mindset para a aprendizagem]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[O curso explora a importância de desenvolver um mindset de Lifelong Learning no atual contexto de mudanças em velocidade exponencial e apresenta dicas e boas práticas para estimulá-lo. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 19:54:02]]></data>
+		</item>
+		<item id="242750" userId="18" fileId="109101" extId="jpg">
+			<nome><![CDATA[Moonshot Thinking: o método de inovação do Google]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[A metodologia de inovação é conectada com o mindset de transformações exponencial e mudanças tecnológicas. Nesse curso você conhecerá os pilares dessa metodologia e como aplicá-la nas empresas.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 19:59:42]]></data>
+		</item>
+		<item id="242751" userId="18" fileId="109109" extId="jpg">
+			<nome><![CDATA[Nada se cria, tudo se copia!]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[O curso explica de onde vem a criatividade, o processo criativo e quais são as suas fontes. O objetivo de aprendizagem é entender como ser mais criativo e elevar o talento para criar. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:03:05]]></data>
+		</item>
+		<item id="242752" userId="18" fileId="109111" extId="jpg">
+			<nome><![CDATA[Negociação baseada no relacionamento]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[40 h]]></horas>
+			<descricao><![CDATA[Você vai entender sobre a importância de criar bons relacionamentos e aprender que, antes de começar a negociar qualquer coisa, é necessário entender o ambiente.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:09:25]]></data>
+		</item>
+		<item id="242753" userId="18" fileId="109112" extId="jpg">
+			<nome><![CDATA[Neurociência aplicada à liderança]]></nome>
+			<classificacao><![CDATA[Liderança]]></classificacao>
+			<horas><![CDATA[4 h]]></horas>
+			<descricao><![CDATA[Neste curso, entenderemos como a neurociência pode contribuir para que a gestão de um líder auxilie nos grandes desafios, na criação de um ambiente de segurança, autonomia bons relacionamentos.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:14:07]]></data>
+		</item>
+		<item id="242754" userId="18" fileId="109113" extId="jpg">
+			<nome><![CDATA[Neurociência da aprendizagem]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[O curso vai contribuir com conhecimentos que podem ser fundamentais para que outros treinamentos sejam aproveitados ao máximo considerando diferentes tipos de memórias que nosso cérebro pode formar.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:18:08]]></data>
+		</item>
+		<item id="242755" userId="18" fileId="109114" extId="jpg">
+			<nome><![CDATA[O cérebro na tomada de decisão]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Conheça os sistemas que fazem parte da tomada de decisão e que ajudam nesse processo aumentando a chance de decisões mais rápidas e sem erros.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:22:30]]></data>
+		</item>
+		<item id="242756" userId="18" fileId="109115" extId="jpg">
+			<nome><![CDATA[O valor da boa comunicação e o custo da má comunicação]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Neste curso, você poderá entender como usar o valor da comunicação para contagiar, engajar e melhorar a produtividade. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:28:09]]></data>
+		</item>
+		<item id="242757" userId="18" fileId="109119" extId="jpg">
+			<nome><![CDATA[Pensamento crítico nas empresas]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[20 h]]></horas>
+			<descricao><![CDATA[O curso vai te preparar para que você esteja apto a fazer perguntas certas,  separar fatos de pressuposições, compreender o problema em questão e avaliá-lo para propor a melhor solução.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:45:58]]></data>
+		</item>
+		<item id="242758" userId="18" fileId="109120" extId="jpg">
+			<nome><![CDATA[Por trás das câmeras e dos slides]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Você aprenderá sobre storytelling, a arte de contar histórias e a sua utilidade na criação de slides para desenvolver apresentações atrativas e interessantes.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 20:50:17]]></data>
+		</item>
+		<item id="242759" userId="35" fileId="109124" extId="png">
+			<nome><![CDATA[Como avaliar o futuro e antecipar soluções ]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Conhece o termo foresight estratégico? Entenda como avaliar as mudanças rápidas de cenários, entender os futuros possíveis e influenciar os próximos passos para conseguir os resultados esperados.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 21:02:33]]></data>
+		</item>
+		<item id="242760" userId="35" fileId="109129" extId="jpg">
+			<nome><![CDATA[Como elaborar correspondências e documentos no Sistema Indústria]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Preparamos este curso para que você possa se familiarizar rapidamente com os padrões para elaboração dos documentos da nossa entidade. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-06 21:22:14]]></data>
+		</item>
+		<item id="242761" userId="35" fileId="109307" extId="jpg">
+			<nome><![CDATA[Como liderar em tempos de ruptura: mudança de sistemas com base na consciência]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Palestra do Otto Scharmer, professor titular do MIT Management Sloan School e fundador do Presencing Institute. PhD pela Witten/Herdecke University, na Alemanha.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 15:27:18]]></data>
+		</item>
+		<item id="242762" userId="35" fileId="109308" extId="jpg">
+			<nome><![CDATA[Como planejar apresentações eficientes ]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Entenda as maneiras possíveis de se iniciar uma apresentação, como agir diante de cada público, ganhar o ouvinte, refutar objeções e encerrar com brilhantismo, fazendo da apresentação um sucesso.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 15:34:23]]></data>
+		</item>
+		<item id="242763" userId="35" fileId="109310" extId="png">
+			<nome><![CDATA[Comunicação é comportamento ]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Você aprenderá como suas atitudes podem fortalecer a comunicação com seus pares, influenciar pessoas e gerar confiança a partir do seu discurso.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 15:39:08]]></data>
+		</item>
+		<item id="242764" userId="35" fileId="109311" extId="jpg">
+			<nome><![CDATA[Consultoria em Eficiência Energética]]></nome>
+			<classificacao><![CDATA[Inovação e Serviços Tecnológicos]]></classificacao>
+			<horas><![CDATA[140 h]]></horas>
+			<descricao><![CDATA[A eficiência energética é fundamental para garantir um sistema energético seguro, confiável e sustentável para todos. As ações reduzem os custos com energia e diminuem os impactos ao meio ambiente.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 15:47:31]]></data>
+		</item>
+		<item id="242765" userId="35" fileId="109312" extId="jpg">
+			<nome><![CDATA[Conversas Difíceis]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Conheça as saídas para situações delicadas e que precisam ser tratadas com muita atenção para evitar conflitos desnecessários, promovendo uma melhor gestão de equipes, projetos e pessoas.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 15:53:06]]></data>
+		</item>
+		<item id="242766" userId="35" fileId="109313" extId="jpg">
+			<nome><![CDATA[Criatividade como solucionadora de problemas]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Como utilizar a habilidade criativa para a solução de problemas do dia a dia, desmistificando o senso comum de que criatividade é sempre geradora de ideias inéditas e dom exclusivo de seres dotados.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 15:59:51]]></data>
+		</item>
+		<item id="242767" userId="35" fileId="109324" extId="png">
+			<nome><![CDATA[Cultura de Mudança: como fazer que ela seja permanente]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Estar na vanguarda de qualquer segmento exige flexibilidade e capacidade de se adaptar rapidamente às mudanças no mercado. Descubra como incorporar essa forma de pensar no seu dia a dia de trabalho.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 16:02:51]]></data>
+		</item>
+		<item id="242768" userId="35" fileId="109325" extId="png">
+			<nome><![CDATA[Cultura Maker - Seja um Fazedor]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[O curso apresenta a dicas e técnicas para desenvolver uma cultura maker (hands-on) no ambiente de trabalho. Entenda a importância de colocar ideias em prática e desenvolva um mindset de prototipagem.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 16:06:15]]></data>
+		</item>
+		<item id="242769" userId="18" fileId="109364" extId="jpg">
+			<nome><![CDATA[Precisamos falar sobre depressão]]></nome>
+			<classificacao><![CDATA[Formação continuada]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Neste curso, vamos falar sobre depressão, sintomas, causas e manifestações e ainda sobre formas de ajudar pessoas com o transtorno.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 20:01:42]]></data>
+		</item>
+		<item id="242770" userId="18" fileId="109376" extId="jpg">
+			<nome><![CDATA[Princípios de coaching para gestores e líderes]]></nome>
+			<classificacao><![CDATA[liderança]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Você descobrirá habilidades e competências essenciais para realizar conversas inspiradoras com base nos princípios e técnicas de Coaching. Também aprenderá técnicas que irão ajudar com a equipe]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-07 20:06:42]]></data>
+		</item>
+		<item id="242771" userId="35" fileId="109654" extId="jpg">
+			<nome><![CDATA[Desafios da Primeira Liderança]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[6 h ]]></horas>
+			<descricao><![CDATA[No curso, discutiremos quais são as mudanças que ocorrem de colaborador para líder, e como superar os desafios desse novo papel, tão complexo e desafiador, porém muito nobre e recompensador.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-08 21:39:08]]></data>
+		</item>
+		<item id="242772" userId="35" fileId="109655" extId="jpg">
+			<nome><![CDATA[Dicas de Comunicação Oral]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Para se comunicar adequadamente, é preciso se certificar de que a linguagem é adequada ao público para o qual você fala. Assim, vamos ensinar técnicas para desenvolver e aprimorar a comunicação oral. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-08 21:44:40]]></data>
+		</item>
+		<item id="242773" userId="35" fileId="109656" extId="jpg">
+			<nome><![CDATA[Educação Financeira]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[4 h]]></horas>
+			<descricao><![CDATA[A Educação Financeira busca a autonomia financeira, baseada no comportamento, e visa a construção de um modelo mental que promova sustentabilidade, crie hábitos saudáveis e proporcione equilíbrio.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-08 21:50:14]]></data>
+		</item>
+		<item id="242774" userId="35" fileId="109657" extId="png">
+			<nome><![CDATA[Empowerment (empoderamento)]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[8 h]]></horas>
+			<descricao><![CDATA[Empoderar os colaboradores não significa dar o poder para tomar decisões, mas sim, que a opinião de todos passa a ser válida, tornando a tomada de decisão mais ágil e efetiva.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-08 21:54:18]]></data>
+		</item>
+		<item id="242775" userId="18" fileId="109835" extId="jpg">
+			<nome><![CDATA[Proatividade]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[32 h]]></horas>
+			<descricao><![CDATA[Você entenderá o que é necessário para assumir as rédeas da sua carreira e se tornar um profissional de sucesso, com alto nível de atuação e preparado para tomar decisões.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 13:57:19]]></data>
+		</item>
+		<item id="242776" userId="18" fileId="109848" extId="jpg">
+			<nome><![CDATA[Resiliência]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Você verá como os componentes da resiliência facilitam a superação das adversidades, conhecerá características atribuídas a pessoas resilientes e receberá modelo para a construção da resiliência.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:03:07]]></data>
+		</item>
+		<item id="242777" userId="18" fileId="109852" extId="jpg">
+			<nome><![CDATA[Reskilling: aprendendo a aprender]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Para desenvolver competências, é importante desaprender, aprender e reaprender, todos os dias. No curso, você verá como o cérebro funciona no aprendizado e técnicas para aproveitar novos conhecimentos]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:08:14]]></data>
+		</item>
+		<item id="242778" userId="18" fileId="109853" extId="jpg">
+			<nome><![CDATA[Resolução de problemas complexos no trabalho]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[28 h]]></horas>
+			<descricao><![CDATA[No curso, você compreenderá tipos de problemas complexos para identificar situações que os envolvem e aplicar métodos que auxiliam na resolução de questões complexas.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:14:10]]></data>
+		</item>
+		<item id="242779" userId="18" fileId="109854" extId="jpg">
+			<nome><![CDATA[Rápido e devagar: dois mindsets para a resolução de problemas]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[O curso explora 2 mindsets (rápido e devagar) e a relevância de cada um para o tipo de decisão a ser tomada. O entendimento dessas duas formas de pensar ajudará nas decisões pessoais e profiissionais]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:18:56]]></data>
+		</item>
+		<item id="242780" userId="18" fileId="109855" extId="jpg">
+			<nome><![CDATA[Segmentação de mercado e gestão de carteira]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[4 h]]></horas>
+			<descricao><![CDATA[Este curso aborda temas como planejamento comercial e de marketing, formulação de metas, gestão de resultados e muito mais. Faz parte da Trilha de Conhecimentos para a Função Mercado.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:24:15]]></data>
+		</item>
+		<item id="242781" userId="18" fileId="109856" extId="jpg">
+			<nome><![CDATA[Segurança da informação]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Este curso foi desenvolvido para apresentar de forma rápida, lúdica e divertida os riscos mais comuns de segurança de informação.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:27:14]]></data>
+		</item>
+		<item id="242782" userId="18" fileId="109858" extId="jpg">
+			<nome><![CDATA[Segurança e recepção nas unidades]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[O curso prepara agentes de segurança, porteiros, vigias e recepcionistas para o desempenho de suas funções.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:32:32]]></data>
+		</item>
+		<item id="242783" userId="18" fileId="109861" extId="jpg">
+			<nome><![CDATA[Segurança psicológica em tempos de crise]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Você sabia que uma das chaves para o sucesso é ter segurança psicológica? Neste minicurso, você entenderá o que é segurança psicológica, como construí-la e mantê-la em tempos de crise.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:37:57]]></data>
+		</item>
+		<item id="242784" userId="18" fileId="109863" extId="jpg">
+			<nome><![CDATA[Ser um ótimo comunicador]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Você aprenderá técnicas para se tornar um comunicador, como aprimoramento e improviso, estudo de adequação da linguagem e mecanismos de utilização do humor como ferramenta de suporte à apresentação. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:44:15]]></data>
+		</item>
+		<item id="242785" userId="18" fileId="109865" extId="jpg">
+			<nome><![CDATA[Telemedicina SESI: módulo cadastral e relatórios]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[3 h]]></horas>
+			<descricao><![CDATA[O treinamento foi desenvolvido por especialistas do SESI para apresentar uma visão geral das funcionalidades e operacionalização da plataforma de Telemedicina do SESI.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 14:57:42]]></data>
+		</item>
+		<item id="242786" userId="18" fileId="109879" extId="jpg">
+			<nome><![CDATA[Telemedicina SESI: módulo de consulta de atendimento ao beneficiário]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[3 h]]></horas>
+			<descricao><![CDATA[O treinamento foi desenvolvido por especialistas do SESI para apresentar uma visão geral das funcionalidades e operacionalização da plataforma de Telemedicina do SESI.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 15:08:18]]></data>
+		</item>
+		<item id="242787" userId="18" fileId="109880" extId="jpg">
+			<nome><![CDATA[Tem dias que a gente ganha, tem dias que a gente aprende]]></nome>
+			<classificacao><![CDATA[Liderança]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[O curso é voltado para líderes e pessoas que almejam cargos de liderança. Possui conteúdo sobre individualização nas relações e colaboração no contexto de metas e de exigências organizações.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 15:14:58]]></data>
+		</item>
+		<item id="242788" userId="35" fileId="109901" extId="jpg">
+			<nome><![CDATA[Empowerment - Protagonismo e Maturidade no Mundo VUCA]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Como ser um profissional empoderado pode contribuir nos resultados da empresa e melhorar a reputação com os clientes. Entenda o contexto do mundo VUCA e sua atuação como protagonista de suas decisões.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 17:30:34]]></data>
+		</item>
+		<item id="242789" userId="35" fileId="109902" extId="jpg">
+			<nome><![CDATA[Engajamento Eficaz]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[No curso Engajamento Eficaz, o conteúdo entrega conhecimento ao participante por meio de vídeos com perspectivas e informações relacionadas ao tema, sob a ótica de dois reconhecidos especialistas.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 17:35:06]]></data>
+		</item>
+		<item id="242790" userId="35" fileId="109903" extId="jpg">
+			<nome><![CDATA[Estagiário Extraordinário]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[4 h]]></horas>
+			<descricao><![CDATA[O Programa de Formação Estagiário Extraordinário, desenvolvido em parceira com o IEL, explora as competências essenciais para quem está iniciando sua carreira no Sistema Indústria.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 17:42:07]]></data>
+		</item>
+		<item id="242791" userId="35" fileId="109904" extId="jpg">
+			<nome><![CDATA[Etiqueta Digital: Aprenda a se relacionar digitalmente]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Etiquetas digitais são regras que regulam o nosso comportamento e comunicação na web. Com este curso você aprende quais são, a importância da ética no uso da internet e o que não fazer nesse ambiente.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 17:51:19]]></data>
+		</item>
+		<item id="242792" userId="35" fileId="109905" extId="jpg">
+			<nome><![CDATA[Excel Básico]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[10 h]]></horas>
+			<descricao><![CDATA[Será abordada a parte básica do Excel (entendimento da ferramenta, formatações, fórmulas básicas), com exemplos e exercícios práticos para impulsionar a melhoria no desenvolvimento de suas atividades.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 17:59:28]]></data>
+		</item>
+		<item id="242793" userId="35" fileId="109916" extId="jpg">
+			<nome><![CDATA[Excel Avançado]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[10 h]]></horas>
+			<descricao><![CDATA[Serão abordados conhecimentos avançados em Excel que te permitirão resolver qualquer problema com planilhas, aprendendo fórmulas importantes, tabelas, gráficos e inclusive Dashboard.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:03:11]]></data>
+		</item>
+		<item id="242794" userId="35" fileId="109917" extId="jpg">
+			<nome><![CDATA[ Excel - Dashboards ]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[5 h ]]></horas>
+			<descricao><![CDATA[Neste curso você entenderá sobre gráficos e Dashboards do Excel, utilizando exemplos e exercícios práticos de operação para impulsionar a melhoria da eficiência no desenvolvimento de suas atividades. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:19:47]]></data>
+		</item>
+		<item id="242795" userId="35" fileId="109918" extId="jpg">
+			<nome><![CDATA[Falar bem]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Para desenvolver sua comunicação e falar bem, dentre outros mecanismos, é importante adotar algumas técnicas de comunicação para que haja compreensão e êxito nas apresentações. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:24:49]]></data>
+		</item>
+		<item id="242796" userId="35" fileId="109919" extId="jpg">
+			<nome><![CDATA[Feedback para Lideranças]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[6 h]]></horas>
+			<descricao><![CDATA[O feedback é uma das mais poderosas ferramentas de desenvolvimento de pessoas. Aprenda uma maneira revolucionária que o ajudará a receber e dar feedback de uma forma natural, constante e permanente.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:29:17]]></data>
+		</item>
+		<item id="242797" userId="35" fileId="109920" extId="jpg">
+			<nome><![CDATA[Ferramentas Essenciais na Gestão de Pessoas]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Não importa se falamos de gestores de primeira viagem ou mais experientes. Gerir pessoas é, sem dúvida, o principal desafio que esta população enfrenta, e é sobre isso que falaremos neste curso.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:35:51]]></data>
+		</item>
+		<item id="242798" userId="35" fileId="109921" extId="jpg">
+			<nome><![CDATA[Flexibilidade Cognitiva]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[20 h]]></horas>
+			<descricao><![CDATA[A flexibilidade cognitiva é uma das habilidades mais valorizadas pelo mercado, mas o que significa esse conceito? É a capacidade de adaptação à fluidez das informações e à resolução de problemas.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:48:47]]></data>
+		</item>
+		<item id="242799" userId="35" fileId="109922" extId="jpg">
+			<nome><![CDATA[Foco no Resultado]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Para ter foco em resultado é importante conhecer os conceitos de planejamento, execução e operação em nosso papel como líder. Assim, o participante poderá tomar decisões mais conscientes no trabalho.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:52:08]]></data>
+		</item>
+		<item id="242800" userId="35" fileId="109923" extId="jpg">
+			<nome><![CDATA[Formação de Mentores Lean]]></nome>
+			<classificacao><![CDATA[Inovação e Serviços Tecnológicos]]></classificacao>
+			<horas><![CDATA[200 h]]></horas>
+			<descricao><![CDATA[Desenvolvida com o propósito de capacitar profissionais do SENAI na metodologia Mentoria Lean, com o objetivo de aumentar a produtividade das empresas por meio da otimização de seus processos.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 18:57:30]]></data>
+		</item>
+		<item id="242801" userId="35" fileId="109933" extId="jpg">
+			<nome><![CDATA[Fundamentos da Comunicação Não Violenta]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Neste curso você verá conceitos e elementos encontrados em uma comunicação não-violenta, e sobre como melhorar os diálogos e relacionamentos com as pessoas, sejam nos ambientes corporativo ou social.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 19:02:37]]></data>
+		</item>
+		<item id="242802" userId="18" fileId="109934" extId="jpg">
+			<nome><![CDATA[Tomada de decisões e antecipação de decisões críticas]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Este minicurso foi desenvolvido para te ajudar a tomar decisões de forma assertiva e cooperativa e antecipar situações críticas, de forma a avaliá-las e se preparar para enfrentá-las da melhor maneira]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 19:54:45]]></data>
+		</item>
+		<item id="242803" userId="18" fileId="109935" extId="jpg">
+			<nome><![CDATA[Trabalho remoto: como se manter produtivo e gerir o tempo]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Aprenda técnicas e ferramentas que permitirão às equipes atuarem a distância com produtividade e foco na entrega. No curso, você receberá dicas de gestão do tempo, planejamento para trabalhar de casa]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 20:01:19]]></data>
+		</item>
+		<item id="242804" userId="18" fileId="109945" extId="jpg">
+			<nome><![CDATA[Transformação digital]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Neste curso, você verá como transformações fazem parte da nossa rotina, tornando-a mais fácil, inteligente, integrada e digital e aprenderá a se adaptar a essa realidade, tendo insights que podem ser]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-09 20:56:41]]></data>
+		</item>
+		<item id="242805" userId="18" fileId="110106" extId="jpg">
+			<nome><![CDATA[Treinamento eSocial]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[3 h]]></horas>
+			<descricao><![CDATA[O treinamento desenvolvido por especialistas do SESI vai auxiliar no preenchimento dos campos origem e formas de envio das informações ao governo.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:14:19]]></data>
+		</item>
+		<item id="242806" userId="18" fileId="110107" extId="jpg">
+			<nome><![CDATA[Trilha de Aprendizagem: programa de treinamento em Compliance]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Esteja em conformidade com as regras, normas e procedimentos institucionais. Entenda as ferramentas e políticas que visam garantir a integridade das atividades desenvolvidas por CNI, SESI, SENAI e IEL]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:20:24]]></data>
+		</item>
+		<item id="242807" userId="18" fileId="110108" extId="jpg">
+			<nome><![CDATA[Trilha de estudos prospectivos]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[8 h]]></horas>
+			<descricao><![CDATA[Entender o cenário para compreender riscos futuros, permite a gestores e técnicos estabelecer estratégias antecipadas. No curso, você vai aprender o método Delphi, construção de cenários, entre outros]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:25:01]]></data>
+		</item>
+		<item id="242808" userId="18" fileId="110109" extId="jpg">
+			<nome><![CDATA[Tudo o que você sempre quis saber sobre tecnologia e nunca teve coragem de perguntar]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Neste curso, você conhecerá tecnologias, aprenderá a lidar com mudanças e transformação digital. O conteúdo traz temas como inteligência artificial, realidade aumentada, 5G, internet das coisas.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:31:11]]></data>
+		</item>
+		<item id="242809" userId="18" fileId="110110" extId="jpg">
+			<nome><![CDATA[Técnicas de extração de informação de mercado]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[O curso foi desenvolvido pela Unidade de Relações com o Mercado com o foco no desenvolvimento dos integrantes do Grupo Colaborativo de Inteligência de Mercado. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:36:35]]></data>
+		</item>
+		<item id="242810" userId="18" fileId="110111" extId="jpg">
+			<nome><![CDATA[Técnicas de mindfulness para lidar com ansiedade e estresse]]></nome>
+			<classificacao><![CDATA[Saúde e segurança da indústria]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Quantas atividades realizamos sem estarmos com atenção plena no momento? Neste minicurso, veremos como praticar mindfulness e alguns dos efeitos das práticas.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:42:24]]></data>
+		</item>
+		<item id="242811" userId="18" fileId="110112" extId="jpg">
+			<nome><![CDATA[Use seu cérebro e mude seus hábitos: mudança de comportamento]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[Neste curso, você conhecerá os mecanismos comportamentais que permitem alcançar novas potências construídas por nosso comportamento.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:47:13]]></data>
+		</item>
+		<item id="242812" userId="18" fileId="110113" extId="jpg">
+			<nome><![CDATA[Violência autoprovocada e suas implicações no espaço social da escola]]></nome>
+			<classificacao><![CDATA[Formação continuada]]></classificacao>
+			<horas><![CDATA[40 h ]]></horas>
+			<descricao><![CDATA[A violência autoprovocada constituída pelos comportamentos suicidas é um fenômeno e um sério problema de saúde pública, que demanda atenção na prevenção e no controle. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 14:52:41]]></data>
+		</item>
+		<item id="242813" userId="18" fileId="110116" extId="jpg">
+			<nome><![CDATA[Visão do cliente ]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Neste curso, você entenderá melhor a importância da experiência do cliente e aspectos essenciais ao sucesso de uma venda, sua importância e como colocar em prática. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 15:01:54]]></data>
+		</item>
+		<item id="242814" userId="35" fileId="110127" extId="jpg">
+			<nome><![CDATA[Gestão da Produtividade]]></nome>
+			<classificacao><![CDATA[Saúde e Segurança na Indústria]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Neste minicurso falaremos sobre como estar engajado nos projetos de sua equipe, mantendo a produtividade através de ferramentas que ajudem a acompanhar e melhorar o desempenho das suas atividades.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 15:24:49]]></data>
+		</item>
+		<item id="242815" userId="35" fileId="110128" extId="jpg">
+			<nome><![CDATA[Gestão de Negócios para Tomada de Decisão]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Os participantes conhecerão competências para agir de forma proativa e colaborativa, com mais troca entre os pares, protagonizando sua carreira e adotando a avaliação do impacto das suas decisões.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 15:28:54]]></data>
+		</item>
+		<item id="242816" userId="35" fileId="110146" extId="jpg">
+			<nome><![CDATA[Gestão do Tempo]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[4 h]]></horas>
+			<descricao><![CDATA[No curso, você encontra conteúdos para desenvolver a sua habilidade de cumprir prazos e tarefas com agilidade e qualidade nas entregas, além de promover o equilíbrio entre vida profissional e pessoal.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 17:46:03]]></data>
+		</item>
+		<item id="242817" userId="18" fileId="110147" extId="jpg">
+			<nome><![CDATA[Visão do Sistema Indústria]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[A pílula de conhecimento possui conteúdo que proporciona conhecimentos a respeito da visão global e missão do Sistema Indústria e suas respectivas entidades.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 17:47:47]]></data>
+		</item>
+		<item id="242818" userId="35" fileId="110151" extId="jpg">
+			<nome><![CDATA[HOUSTON, WE HAVE A SITUATION]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Esse curso oferece os conhecimentos necessários para lidar com as situações em que as crises da equipe entrarão pela porta dos problemas e sairão pelo caminho das soluções da inteligência emocional.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 17:50:25]]></data>
+		</item>
+		<item id="242819" userId="18" fileId="110152" extId="jpg">
+			<nome><![CDATA[Você é importante para a educação dos seus filhos ]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[2 h]]></horas>
+			<descricao><![CDATA[Este curso aborda os relacionamentos familiares e interpessoais no contexto de avanço tecnológico, novas formas de pensar e agir e prepara os pais para novas jeitos de ensinar e de aprender. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 17:58:47]]></data>
+		</item>
+		<item id="242820" userId="35" fileId="110153" extId="jpg">
+			<nome><![CDATA[Iniciativa - Aja Agora]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[O curso trata da importância do conhecimento de nossa liberdade e de nossos limites em momentos de dificuldade e de como, neste contexto, a iniciativa é a diferença entre sobreviventes e vencidos.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 17:59:14]]></data>
+		</item>
+		<item id="242821" userId="18" fileId="110161" extId="jpg">
+			<nome><![CDATA[Ética: como ser bem-sucedido em nossas escolhas]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado]]></classificacao>
+			<horas><![CDATA[1 h]]></horas>
+			<descricao><![CDATA[A todo momento, nos confrontamos com a necessidade de escolher. A vida bem-sucedida depende de escolhas adequadas de princípios e valores. E ética é justamente a atividade de escolher o melhor caminho]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 18:04:01]]></data>
+		</item>
+		<item id="242822" userId="35" fileId="110162" extId="png">
+			<nome><![CDATA[Inovação Aberta]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Neste curso, você conhecerá um pouco mais sobre esse caminho que diversas empresas estão trilhando para avançar no campo de novas tecnologias e processos.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 18:26:48]]></data>
+		</item>
+		<item id="242823" userId="35" fileId="110163" extId="png">
+			<nome><![CDATA[Inovação para Resultado]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1 h ]]></horas>
+			<descricao><![CDATA[Neste curso, você conhecerá um pouco mais sobre esse caminho que diversas empresas estão trilhando para avançar no campo de novas tecnologias e processos. ]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 18:33:23]]></data>
+		</item>
+		<item id="242824" userId="35" fileId="110164" extId="jpg">
+			<nome><![CDATA[Insônia, como lidar]]></nome>
+			<classificacao><![CDATA[Saúde e Segurança na Indústria]]></classificacao>
+			<horas><![CDATA[2 h ]]></horas>
+			<descricao><![CDATA[Neste curso falaremos sobre os distúrbios de sono, sobre a insônia, sintomas e causas, além de abordar a relação entre trabalho e sono; estratégias e orientações para melhorar a qualidade do seu sono.]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 18:43:59]]></data>
+		</item>
+		<item id="242825" userId="35" fileId="110165" extId="jpg">
+			<nome><![CDATA[Inteligência Emocional]]></nome>
+			<classificacao><![CDATA[Liderança ]]></classificacao>
+			<horas><![CDATA[20 h]]></horas>
+			<descricao><![CDATA[Neste curso você aprenderá que desenvolver inteligência emocional é um caminho fundamental para ter controle sobre emoções e ações, vencer obstáculos e conseguir um ótimo desempenho profissional. 
+]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 18:56:39]]></data>
+		</item>
+		<item id="242826" userId="35" fileId="110168" extId="jpg">
+			<nome><![CDATA[Inteligência Social]]></nome>
+			<classificacao><![CDATA[Gestão e Mercado ]]></classificacao>
+			<horas><![CDATA[1h ]]></horas>
+			<descricao><![CDATA[Este curso te ajudará a se relacionar melhor com as pessoas, a partir do entendimento de como as relações humanas funcionam. Tudo isso faz bem a sua saúde e carreira!]]></descricao>
+			<codigo><![CDATA[]]></codigo>
+			<data><![CDATA[2022-06-10 19:02:04]]></data>
+		</item>
+	</module>
+</modules>

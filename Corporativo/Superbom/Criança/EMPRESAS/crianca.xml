@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="1" fileId="855" extId="PNG">
+			<nome><![CDATA[FILÉ DE TILÁPIA COPA]]></nome>
+			<validade><![CDATA[01/10 A 29/10]]></validade>
+			<preco><![CDATA[55,50]]></preco>
+			<unidade><![CDATA[500g]]></unidade>
+			<data><![CDATA[2023-09-29 15:28:24]]></data>
+		</item>
+	</module>
+</modules>

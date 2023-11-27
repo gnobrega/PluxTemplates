@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="1097" fileId="180363" extId="jpg">
+			<titulo><![CDATA[Diversidade e inclusão : e suas dimensões]]></titulo>
+			<autor><![CDATA[Coordenação editorial Luciano Amato ]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:02:22]]></data>
+			<schedule_start><![CDATA[2023-06-29 09:30:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-06 23:55:00]]></schedule_end>
+		</item>
+		<item id="1098" fileId="180364" extId="jpg">
+			<titulo><![CDATA[ Tem lugar ai pra mim?]]></titulo>
+			<autor><![CDATA[Fátima Mesquita ; ilustrações Fábio Sgroi]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:03:50]]></data>
+			<schedule_start><![CDATA[2023-06-29 10:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-06 23:55:00]]></schedule_end>
+		</item>
+		<item id="1099" fileId="180365" extId="jpg">
+			<titulo><![CDATA[Ideias rebeldes : o poder de pensar diferente]]></titulo>
+			<autor><![CDATA[Matthew Syed]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:05:17]]></data>
+			<schedule_start><![CDATA[2023-06-29 10:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-06 23:55:00]]></schedule_end>
+		</item>
+		<item id="1100" fileId="180367" extId="jpg">
+			<titulo><![CDATA[Inclusifique : como a inclusão e a diversidade podem trazer mais inovação à sua empresa]]></titulo>
+			<autor><![CDATA[Stefanie K. Johnson]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:07:14]]></data>
+			<schedule_start><![CDATA[2023-06-29 10:05:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-06 23:55:00]]></schedule_end>
+		</item>
+		<item id="1101" fileId="180368" extId="jpg">
+			<titulo><![CDATA[Como ser um líder inclusivo : fuja do diversitywashing]]></titulo>
+			<autor><![CDATA[Liliane Rocha]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:08:13]]></data>
+			<schedule_start><![CDATA[2023-06-29 10:05:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-06 23:55:00]]></schedule_end>
+		</item>
+		<item id="1102" fileId="180369" extId="jpg">
+			<titulo><![CDATA[The resistance : o emocionante jogo de blefe e dedução]]></titulo>
+			<autor><![CDATA[Criado por Don Eskridge's]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:09:21]]></data>
+			<schedule_start><![CDATA[2023-06-29 10:05:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-06 23:55:00]]></schedule_end>
+		</item>
+		<item id="1103" fileId="180370" extId="jpg">
+			<titulo><![CDATA[ Os funcionários]]></titulo>
+			<autor><![CDATA[Olga Ravn]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:10:17]]></data>
+			<schedule_start><![CDATA[2023-07-07 00:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-14 23:55:00]]></schedule_end>
+		</item>
+		<item id="1104" fileId="180371" extId="jpg">
+			<titulo><![CDATA[ Amor além da vida]]></titulo>
+			<autor><![CDATA[Richard Matheson]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:11:18]]></data>
+			<schedule_start><![CDATA[2023-07-07 00:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-14 23:55:00]]></schedule_end>
+		</item>
+		<item id="1105" fileId="180372" extId="jpg">
+			<titulo><![CDATA[ A pena mágica de Gwendy]]></titulo>
+			<autor><![CDATA[Richard Chizmar]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:12:45]]></data>
+			<schedule_start><![CDATA[2023-07-07 00:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-14 23:55:00]]></schedule_end>
+		</item>
+		<item id="1106" fileId="180373" extId="jpg">
+			<titulo><![CDATA[ Conto de fadas]]></titulo>
+			<autor><![CDATA[Stephen King]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:14:02]]></data>
+			<schedule_start><![CDATA[2023-07-07 00:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-14 23:55:00]]></schedule_end>
+		</item>
+		<item id="1107" fileId="180374" extId="jpg">
+			<titulo><![CDATA[ A longa marcha]]></titulo>
+			<autor><![CDATA[Stephen King sob o pseudônimo de Richard Bachman]]></autor>
+			<categoria><![CDATA[Livro]]></categoria>
+			<data><![CDATA[2023-06-29 13:15:19]]></data>
+			<schedule_start><![CDATA[2023-07-07 00:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-14 23:55:00]]></schedule_end>
+		</item>
+	</module>
+</modules>

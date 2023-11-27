@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="14" grade_horariaId="9">
+			<inicio><![CDATA[12h20]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,1,0,1,0,0,0]]></dias>
+			<sala><![CDATA[0]]></sala>
+			<professor><![CDATA[0]]></professor>
+			<nome><![CDATA[Jump]]></nome>
+		</item>
+		<item id="31" grade_horariaId="18">
+			<inicio><![CDATA[18h30]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,1,0,1,0,1,0]]></dias>
+			<sala><![CDATA[0]]></sala>
+			<professor><![CDATA[0]]></professor>
+			<nome><![CDATA[Abdominal]]></nome>
+		</item>
+		<item id="36" grade_horariaId="19">
+			<inicio><![CDATA[07h20]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,0,1,0,1,0,0]]></dias>
+			<sala><![CDATA[0]]></sala>
+			<professor><![CDATA[0]]></professor>
+			<nome><![CDATA[Mobilidade]]></nome>
+		</item>
+		<item id="37" grade_horariaId="20">
+			<inicio><![CDATA[19h15]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,1,0,1,0,0,0]]></dias>
+			<sala><![CDATA[ ]]></sala>
+			<professor><![CDATA[ ]]></professor>
+			<nome><![CDATA[Pilates]]></nome>
+		</item>
+		<item id="38" grade_horariaId="20">
+			<inicio><![CDATA[12h50]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,0,1,0,1,0,0]]></dias>
+			<sala><![CDATA[ ]]></sala>
+			<professor><![CDATA[ ]]></professor>
+			<nome><![CDATA[Pilates]]></nome>
+		</item>
+		<item id="39" grade_horariaId="21">
+			<inicio><![CDATA[07h20]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,1,0,1,0,0,0]]></dias>
+			<sala><![CDATA[0]]></sala>
+			<professor><![CDATA[0]]></professor>
+			<nome><![CDATA[Spinning]]></nome>
+		</item>
+		<item id="40" grade_horariaId="21">
+			<inicio><![CDATA[12h15]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,0,1,0,1,0,0]]></dias>
+			<sala><![CDATA[0]]></sala>
+			<professor><![CDATA[0]]></professor>
+			<nome><![CDATA[Spinning]]></nome>
+		</item>
+		<item id="41" grade_horariaId="21">
+			<inicio><![CDATA[18h30]]></inicio>
+			<fim><![CDATA[00h00]]></fim>
+			<dias><![CDATA[0,0,1,0,1,0,0]]></dias>
+			<sala><![CDATA[0]]></sala>
+			<professor><![CDATA[0]]></professor>
+			<nome><![CDATA[Spinning]]></nome>
+		</item>
+	</module>
+</modules>

@@ -43,22 +43,26 @@ body {
     left: 0;
 }
 #dados1 {
-    position: absolute;
-    top: 584px;
-    left: 389px;
-    width: 70%;
+    
 }
 div#titulo {
-    color: #001F43;
+    color: #3a6181;
     font-size: 30pt;
-    top: 490px;
     letter-spacing: -1px;
     line-height: 40px;
+    top: 530px;
+    left: 389px;
+    width: 70%;
+    position: absolute;
 }
 div#texto {
     color: #000000;
     font-size: 15pt;
     font-family: 'Gotham-Bold';
+    position: absolute;
+    top: 587px;
+    left: 389px;
+    width: 70%;
 }
 #qr {
     position: absolute;
@@ -69,11 +73,11 @@ div#texto {
     display: none;
 }
 img#fileId {
-    left: 470px;
+    left: 388px;
     border-radius: 30px;
     top: 80px;
     height: 412px;
-    width: 53.6%;
+    width: 67.6%;
     position: absolute;
     -webkit-animation: fade 1s 1s forwards;  
 }

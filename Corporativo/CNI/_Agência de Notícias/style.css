@@ -40,7 +40,7 @@ div#titulo {
     border-bottom: 25px;
     left: 82px;
     color: #ffffff;
-    font-size: 23pt;
+    font-size: 30pt;
     font-family: 'Montserrat-Bold';
     -webkit-animation: fade 1s 1s forwards;  
     top: 501px;
@@ -49,7 +49,8 @@ div#nota_info {
     position: relative;
     left: 78px;
     color: #ffffff;
-    font-size: 18pt;
+    font-size: 23pt;
+    margin-right: 130px;
     font-family: 'Montserrat-Regular';
     -webkit-animation: fade 1s 1s forwards;
     top: 510px;

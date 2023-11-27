@@ -44,25 +44,25 @@ body {
     height: 420px;
     width: 470px;
     top: 155px;
-    left: 125px;
+    left: 59px;
     -webkit-animation: fade_on_off 10.5s 1s forwards;
 }
 #retangulo {
     position: absolute;
-    top: 562px;
-    left: 125px;
+    top: 538px;
+    left: 58px;
     z-index: 5;
 }
 #msg {
     position: absolute;
-    top: 566px;
-    left: 125px;
+    top: 547px;
+    left: 65px;
     z-index: 15;
 }
 #qrcode {
     position: absolute;
-    top: 515px;
-    left: 525px;
+    top: 490px;
+    left: 460px;
     border-radius: 10px;
     z-index: 10;
 }

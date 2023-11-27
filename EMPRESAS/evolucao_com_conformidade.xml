@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="110" fileId="181562" extId="jpg">
+			<titulo><![CDATA[Quantos apps de redes sociais estão no seu celular? ]]></titulo>
+			<texto><![CDATA[O Brasil é o terceiro país do mundo que mais utiliza as redes sociais. Por fazerem parte das nossas rotinas, os perigos que elas podem trazer acabam passando despercebidos. Fique atento e navegue com segurança!]]></texto>
+			<link><![CDATA[https://intranet.cni.com.br/institucional/comites-internos/seguranca-da-informacao/]]></link>
+			<editoria><![CDATA[seguranca_da_informacao]]></editoria>
+			<data><![CDATA[2023-07-04 20:11:01]]></data>
+			<schedule_start><![CDATA[2023-07-04 17:15:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-10 19:00:00]]></schedule_end>
+		</item>
+	</module>
+	<module>
+		<item id="110" fileId="181562" extId="jpg">
+			<titulo><![CDATA[Quantos apps de redes sociais estão no seu celular? ]]></titulo>
+			<texto><![CDATA[O Brasil é o terceiro país do mundo que mais utiliza as redes sociais. Por fazerem parte das nossas rotinas, os perigos que elas podem trazer acabam passando despercebidos. Fique atento e navegue com segurança!]]></texto>
+			<link><![CDATA[https://intranet.cni.com.br/institucional/comites-internos/seguranca-da-informacao/]]></link>
+			<editoria><![CDATA[compliance]]></editoria>
+			<data><![CDATA[2023-07-04 20:11:01]]></data>
+			<schedule_start><![CDATA[2023-07-04 17:15:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-10 19:00:00]]></schedule_end>
+		</item>
+	</module>
+	<module>
+		<item id="110" fileId="181562" extId="jpg">
+			<titulo><![CDATA[Quantos apps de redes sociais estão no seu celular? ]]></titulo>
+			<texto><![CDATA[O Brasil é o terceiro país do mundo que mais utiliza as redes sociais. Por fazerem parte das nossas rotinas, os perigos que elas podem trazer acabam passando despercebidos. Fique atento e navegue com segurança!]]></texto>
+			<link><![CDATA[https://intranet.cni.com.br/institucional/comites-internos/seguranca-da-informacao/]]></link>
+			<editoria><![CDATA[etica]]></editoria>
+			<data><![CDATA[2023-07-04 20:11:01]]></data>
+			<schedule_start><![CDATA[2023-07-04 17:15:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-10 19:00:00]]></schedule_end>
+		</item>
+	</module>
+	<module>
+		<item id="110" fileId="181562" extId="jpg">
+			<titulo><![CDATA[Quantos apps de redes sociais estão no seu celular? ]]></titulo>
+			<texto><![CDATA[O Brasil é o terceiro país do mundo que mais utiliza as redes sociais. Por fazerem parte das nossas rotinas, os perigos que elas podem trazer acabam passando despercebidos. Fique atento e navegue com segurança!]]></texto>
+			<link><![CDATA[https://intranet.cni.com.br/institucional/comites-internos/seguranca-da-informacao/]]></link>
+			<editoria><![CDATA[lgpd]]></editoria>
+			<data><![CDATA[2023-07-04 20:11:01]]></data>
+			<schedule_start><![CDATA[2023-07-04 17:15:00]]></schedule_start>
+			<schedule_end><![CDATA[2024-07-10 19:00:00]]></schedule_end>
+		</item>
+	</module>
+</modules>

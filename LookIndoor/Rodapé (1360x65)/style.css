@@ -10,6 +10,10 @@
     font-family: 'Zurich Condensed BT';
     src: url('./fonts/Zurich Condensed BT.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+}
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +26,8 @@ body {
     background: #000;
     overflow: hidden;
 }
-#content {
+div#fundo {
+    
 }
 #logo {
     position: absolute;
@@ -36,22 +41,19 @@ img#relogio {
 }
 div#hora {
     color: #FFF;
-    font-weight: bold;
-    font-family: 'ZurichBT-BoldCondensed';
-    font-size: 32px;
+    font-family: 'Poppins-Regular';
+    font-size: 26.4px;
     position: absolute;
-    top: 13px;
-    left: 50px;
+    top: 15px;
+    left: 1156px;
 }
-div#hora span {
-    color: #B5B5B5;
-}
-div.zona *{
+/* div.zona *{
     float: left;
 }
 div.zona span {
+    left: 200px;
     margin-top: 3px;
-}
+} 
 div.zona img.icon-sol {
     margin-left: 8px;
     margin-right: 8px;
@@ -69,52 +71,43 @@ div.zona img.icon-term {
 div#zona1 {
     width: 320px;
     margin: auto;
-}
+}*/
 div#zona2 {
-    margin: auto;
-    width: 275px;
-    display: none;
-}
-div#zona3 {
-    margin: auto;
-    width: 395px;
-    display: none;
-}
-div#zona4 {
-    width: 270px;
-    margin: auto;
-    display: none;
-}
-div#zona5 {
-    width: 315px;
-    margin: auto;
-    display: none;
-}
-div#zona6 {
-    margin: auto;
-    width: 440px;
-    display: none;
-}
-div#tempo span.txtUmid {
-    font-family: 'ZurichBT-RomanCondensed';
-}
-span.subtext {
-    color: #FF9C00;
-    font-size: 25px;
-    font-family: 'Zurich Condensed BT';
-    margin-right: 5px;
-    margin-left: 5px;
-}
-div#tempo {
     position: absolute;
-    top: 17px;
-    left: 190px;
-    width: 915px;
+    top: 15px;
+    left: 1262px;
+    width: 34px;
     color: #fff;
-    font-family: 'ZurichBT-BoldCondensed';
-    font-size: 25px;
+    font-family: 'Poppins-Regular';
+    font-size: 26.4px;
+    font-style: normal;
     text-align: center;
 }
-div#tempo span.val {
-    font-family: 'Zurich Condensed BT';
+/*div#tempo span.txtUmid {
+    font-family: 'ZurichBT-RomanCondensed';
+} */
+span.subtext {
+    position: absolute;
+    top: 15px;
+    left: 1270px;
+    width: 34px;
+    color: #fff;
+    font-family: 'Poppins-Regular';
+    font-size: 26.4px;
+    font-style: normal;
+    text-align: center;
+} */
+div#tempo {
+    position: absolute;
+    top: 15px;
+    left: 1270px;
+    width: 34px;
+    color: #fff;
+    font-family: 'Poppins-Regular';
+    font-size: 26.4px;
+    font-style: normal;
+    text-align: center;
 }
+/* div#tempo span.val {
+    font-family: 'Zurich Condensed BT';
+} */

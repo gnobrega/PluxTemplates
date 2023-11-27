@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="107041">
+			<categoria><![CDATA[Saladas]]></categoria>
+			<alimento0><![CDATA[Aipo picado, coco em lascas, batata palha, sunomono, parmesão ralado, tiras de bacon, croûtons, uvas-passas, palmito, azeitona e amendoim|||0,1,1,1,1,1,0]]></alimento0>
+			<alimento1><![CDATA[Beterraba ralada, pepino, ovo cozido, brócolis, vinagrete, antepasto de berinjela e tomate cereja|||0,1,1,1,1,1,0]]></alimento1>
+			<alimento2><![CDATA[Salada grega; Vinagrete de abacaxi|||0,1,0,0,0,0,0]]></alimento2>
+			<alimento3><![CDATA[Frutas: Morango e kiwi|||0,1,0,0,0,0,0]]></alimento3>
+			<alimento4><![CDATA[Salada Niçoise; Salada de rúcula com cenoura e queijo branco|||0,0,1,0,0,0,0]]></alimento4>
+			<alimento5><![CDATA[Frutas: Abacaxi e uva|||0,0,1,0,0,0,0]]></alimento5>
+			<alimento6><![CDATA[Salada Waldorf;  Vinagrete de soja|||0,0,0,1,0,0,0]]></alimento6>
+			<alimento7><![CDATA[Frutas: Melão e laranja|||0,0,0,1,0,0,0]]></alimento7>
+			<alimento8><![CDATA[Salada de abóbora e beterraba assada com alecrim, cebola roxa e ricota;  Salada de feijão fradinho com cebola, pimentão e milho|||0,0,0,0,1,0,0]]></alimento8>
+			<alimento9><![CDATA[Frutas: Manga e kiwi|||0,0,0,0,1,0,0]]></alimento9>
+			<alimento10><![CDATA[Salada de rúcula com frango desfiado, tomate cereja e cenoura ralada e Salada de berinjela e pimentões assados com cebola, alho e azeitonas pretas |||0,0,0,0,0,1,0]]></alimento10>
+			<alimento11><![CDATA[Frutas: Abacaxi e melancia|||0,0,0,0,0,1,0]]></alimento11>
+			<schedule_start><![CDATA[2023-07-03 08:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-07 14:00:00]]></schedule_end>
+		</item>
+		<item id="107042">
+			<categoria><![CDATA[Prato Principal]]></categoria>
+			<alimento0><![CDATA[Pernil assado com redução de balsâmico |||0,1,0,0,0,0,0]]></alimento0>
+			<alimento1><![CDATA[Coxa e sobrecoxa assada na cerveja |||0,1,0,0,0,0,0]]></alimento1>
+			<alimento2><![CDATA[Boeuf bourguignon|||0,1,0,0,0,0,0]]></alimento2>
+			<alimento3><![CDATA[Filé de merluza à milanesa|||0,1,0,0,0,0,0]]></alimento3>
+			<alimento4><![CDATA[Filetes de carne bovina acebolados com queijo coalho|||0,0,1,0,0,0,0]]></alimento4>
+			<alimento5><![CDATA[Filé de frango ao shoyu de coco|||0,0,1,0,0,0,0]]></alimento5>
+			<alimento6><![CDATA[Cozido à mineira|||0,0,1,0,0,0,0]]></alimento6>
+			<alimento7><![CDATA[Linguiça toscana|||0,0,1,0,0,0,0]]></alimento7>
+			<alimento8><![CDATA[Lagarto assado com molho campanha |||0,0,0,1,0,0,0]]></alimento8>
+			<alimento9><![CDATA[Iscas de frango grelhadas com salsa |||0,0,0,1,0,0,0]]></alimento9>
+			<alimento10><![CDATA[Almôndegas de carne ao molho sugo|||0,0,0,1,0,0,0]]></alimento10>
+			<alimento11><![CDATA[Costelinha suína |||0,0,0,1,0,0,0]]></alimento11>
+			<alimento12><![CDATA[Escalope suíno ao molho ferrugem |||0,0,0,0,1,0,0]]></alimento12>
+			<alimento13><![CDATA[Filé de frango grelhado |||0,0,0,0,1,0,0]]></alimento13>
+			<alimento14><![CDATA[Estrogonofe de carne|||0,0,0,0,1,0,0]]></alimento14>
+			<alimento15><![CDATA[.|||0,0,0,0,0,0,0]]></alimento15>
+			<alimento16><![CDATA[Filé de tilápia com molho tártaro (à parte)|||0,0,0,0,0,1,0]]></alimento16>
+			<alimento17><![CDATA[Bife à cavalo|||0,0,0,0,0,1,0]]></alimento17>
+			<alimento18><![CDATA[ Feijoada|||0,0,0,0,0,1,0]]></alimento18>
+			<alimento19><![CDATA[ Frango à passarinho|||0,0,0,0,0,1,0]]></alimento19>
+			<schedule_start><![CDATA[2023-07-03 08:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-07 14:00:00]]></schedule_end>
+		</item>
+		<item id="107043">
+			<categoria><![CDATA[Guarnições ]]></categoria>
+			<alimento0><![CDATA[Arroz: branco, integral e com ervilhas|||0,1,0,0,0,0,0]]></alimento0>
+			<alimento1><![CDATA[Feijão: carioca e preto com calabresa|||0,1,0,0,0,0,0]]></alimento1>
+			<alimento2><![CDATA[Espaguete ao alho e óleo|||0,1,0,0,0,0,0]]></alimento2>
+			<alimento3><![CDATA[Palito de cenoura e batata baroa assada com páprica|||0,1,0,0,0,0,0]]></alimento3>
+			<alimento4><![CDATA[Suflê de milho|||0,1,0,0,0,0,0]]></alimento4>
+			<alimento5><![CDATA[Espinafre refogado|||0,1,0,0,0,0,0]]></alimento5>
+			<alimento6><![CDATA[Abacaxi grelhado|||0,1,0,0,0,0,0]]></alimento6>
+			<alimento7><![CDATA[ Farofa de cebola|||0,1,0,0,0,0,0]]></alimento7>
+			<alimento8><![CDATA[Arroz: branco, integral e com alho frito|||0,0,1,0,0,0,0]]></alimento8>
+			<alimento9><![CDATA[Feijão: preto e tutu de feijão|||0,0,1,0,0,0,0]]></alimento9>
+			<alimento10><![CDATA[Batata assada com especiarias|||0,0,1,0,0,0,0]]></alimento10>
+			<alimento11><![CDATA[Quiabo refogado |||0,0,1,0,0,0,0]]></alimento11>
+			<alimento12><![CDATA[Creme de abóbora |||0,0,1,0,0,0,0]]></alimento12>
+			<alimento13><![CDATA[Beterraba assada ao vinagre balsâmico |||0,0,1,0,0,0,0]]></alimento13>
+			<alimento14><![CDATA[Manga grelhada|||0,0,1,0,0,0,0]]></alimento14>
+			<alimento15><![CDATA[Farofa dourada|||0,0,1,0,0,0,0]]></alimento15>
+			<alimento16><![CDATA[Arroz: branco, integral e com açafrão|||0,0,0,1,0,0,0]]></alimento16>
+			<alimento17><![CDATA[Feijão: carioca e preto com cebolinha |||0,0,0,1,0,0,0]]></alimento17>
+			<alimento18><![CDATA[Penne com tomate seco e rúcula |||0,0,0,1,0,0,0]]></alimento18>
+			<alimento19><![CDATA[Bolinho de arroz |||0,0,0,1,0,0,0]]></alimento19>
+			<alimento20><![CDATA[Gratinado de batata doce|||0,0,0,1,0,0,0]]></alimento20>
+			<alimento21><![CDATA[ Vagem à francesa |||0,0,0,1,0,0,0]]></alimento21>
+			<alimento22><![CDATA[Ratatouille|||0,0,0,1,0,0,0]]></alimento22>
+			<alimento23><![CDATA[Farofa de torresmo com cebola|||0,0,0,1,0,0,0]]></alimento23>
+			<alimento24><![CDATA[Arroz: branco e integral|||0,0,0,0,1,0,0]]></alimento24>
+			<alimento25><![CDATA[Feijão: preto e carioca com calabresa|||0,0,0,0,1,0,0]]></alimento25>
+			<alimento26><![CDATA[Batata palito frita |||0,0,0,0,1,0,0]]></alimento26>
+			<alimento27><![CDATA[Seleta de legumes|||0,0,0,0,1,0,0]]></alimento27>
+			<alimento28><![CDATA[Gratinado de couve-flor|||0,0,0,0,1,0,0]]></alimento28>
+			<alimento29><![CDATA[Abóbora grelhada|||0,0,0,0,1,0,0]]></alimento29>
+			<alimento30><![CDATA[Farofa simples |||0,0,0,0,1,0,0]]></alimento30>
+			<alimento31><![CDATA[.|||0,0,0,0,0,0,0]]></alimento31>
+			<alimento32><![CDATA[Arroz: branco, integral e com milho|||0,0,0,0,0,1,0]]></alimento32>
+			<alimento33><![CDATA[Feijão: preto|||0,0,0,0,0,1,0]]></alimento33>
+			<alimento34><![CDATA[Cenoura com vagem |||0,0,0,0,0,1,0]]></alimento34>
+			<alimento35><![CDATA[Pastel de queijo |||0,0,0,0,0,1,0]]></alimento35>
+			<alimento36><![CDATA[Suflê de alho-poró|||0,0,0,0,0,1,0]]></alimento36>
+			<alimento37><![CDATA[Couve manteiga|||0,0,0,0,0,1,0]]></alimento37>
+			<alimento38><![CDATA[ Abobrinha grelhada|||0,0,0,0,0,1,0]]></alimento38>
+			<alimento39><![CDATA[Farofa de calabresa|||0,0,0,0,0,1,0]]></alimento39>
+			<schedule_start><![CDATA[2023-07-03 08:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-07 14:00:00]]></schedule_end>
+		</item>
+		<item id="107044">
+			<categoria><![CDATA[Sobremesa]]></categoria>
+			<alimento0><![CDATA[Frutas Laminadas|||0,1,1,1,1,1,0]]></alimento0>
+			<alimento1><![CDATA[Pudim de leite |||0,1,0,0,0,0,0]]></alimento1>
+			<alimento2><![CDATA[Sonho com creme |||0,1,0,0,0,0,0]]></alimento2>
+			<alimento3><![CDATA[Doce de goiaba|||0,1,0,0,0,0,0]]></alimento3>
+			<alimento4><![CDATA[Gelatina normal e diet de morango|||0,1,0,0,0,0,0]]></alimento4>
+			<alimento5><![CDATA[Pudim de chocolate|||0,0,1,0,0,0,0]]></alimento5>
+			<alimento6><![CDATA[Pavê de ameixa com coco|||0,0,1,0,0,0,0]]></alimento6>
+			<alimento7><![CDATA[Doce de leite |||0,0,1,0,0,0,0]]></alimento7>
+			<alimento8><![CDATA[Gelatina normal e diet de uva|||0,0,1,0,0,0,0]]></alimento8>
+			<alimento9><![CDATA[Pudim de baunilha |||0,0,0,1,0,0,0]]></alimento9>
+			<alimento10><![CDATA[Torta de brigadeiro com cerejas|||0,0,0,1,0,0,0]]></alimento10>
+			<alimento11><![CDATA[Doce de abóbora com coco|||0,0,0,1,0,0,0]]></alimento11>
+			<alimento12><![CDATA[Gelatina normal e diet de limão|||0,0,0,1,0,0,0]]></alimento12>
+			<alimento13><![CDATA[Pudim de leite|||0,0,0,0,1,0,0]]></alimento13>
+			<alimento14><![CDATA[Cocadas baianas|||0,0,0,0,1,0,0]]></alimento14>
+			<alimento15><![CDATA[Doce de queijo com calda|||0,0,0,0,1,0,0]]></alimento15>
+			<alimento16><![CDATA[Gelatina normal e diet de cereja|||0,0,0,0,1,0,0]]></alimento16>
+			<alimento17><![CDATA[Pudim de laranja|||0,0,0,0,0,1,0]]></alimento17>
+			<alimento18><![CDATA[Mousse de baunilha com calda de frutas vermelhas |||0,0,0,0,0,1,0]]></alimento18>
+			<alimento19><![CDATA[Doce de banana|||0,0,0,0,0,1,0]]></alimento19>
+			<alimento20><![CDATA[Gelatina normal e diet de abacaxi|||0,0,0,0,0,1,0]]></alimento20>
+			<schedule_start><![CDATA[2023-07-03 08:00:00]]></schedule_start>
+			<schedule_end><![CDATA[2023-07-07 14:00:00]]></schedule_end>
+		</item>
+	</module>
+</modules>

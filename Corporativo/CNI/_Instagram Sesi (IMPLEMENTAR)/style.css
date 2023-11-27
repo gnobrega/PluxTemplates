@@ -6,10 +6,6 @@
     font-family: 'Montserrat-Regular';
     src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
 }
-@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url('./fonts/Montserrat-Bold.otf') format('truetype');
-}
 * {
     margin: 0;
     padding: 0;
@@ -48,25 +44,25 @@ body {
     height: 420px;
     width: 470px;
     top: 155px;
-    left: 103px;
+    left: 68px;
     -webkit-animation: fade_on_off 10.5s 1s forwards;
 }
 #retangulo {
     position: absolute;
-    top: 552px;
-    left: 103px;
+    top: 536px;
+    left: 67px;
     z-index: 5;
 }
 #msg {
     position: absolute;
-    top: 560px;
-    left: 124px;
+    top: 547px;
+    left: 65px;
     z-index: 15;
 }
 #qrcode {
     position: absolute;
-    top: 515px;
-    left: 525px;
+    top: 490px;
+    left: 460px;
     border-radius: 10px;
     z-index: 10;
 }
@@ -75,9 +71,9 @@ div#texto {
 }
 div.texto {
     position: absolute;
-    left: 700px;
+    left: 735px;
     top: 335px;
-    font-family: 'Montserrat-Bold';
+    font-family: 'Montserrat-Regular';
     color: #000000;
     font-size: 18pt;
     width: 500px;

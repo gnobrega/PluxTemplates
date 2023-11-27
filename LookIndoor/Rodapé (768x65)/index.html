@@ -7,25 +7,27 @@
         <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
     </head>
     <body>
+        
+        
         <h2 id="console"></h2>
         <div id="content">
-            <img id="relogio" src="./media/relogio.png" />
+            <!-- Fundo -->
+            <video id="fundo1" src="./media/rodape.mp4" autoplay width="768px" >/</video>
             <div id="hora">00:00</div>
             <div id="tempo">
                 
-                <!-- Tempo agora Humidade -->
+                <!-- Tempo agora umidade  
                 <div id="zona1" class="zona"><span>TEMPO AGORA</span>
                     <img class="icon-sol" src="./media/ico-sol.png" />
                     <img src="./media/ico-gota.png" class="icon-gota" /> <span class="txtUmid val">UR 00%</span>
-                </div>
+                </div>  -->
                 
                 <!-- Tempo agora Temperatura -->
-                <div id="zona2" class="zona"><span>TEMPO AGORA</span>
-                    <img class="icon-sol" src="./media/ico-sol.png" />
-                    <img src="./media/ico-term.png" class="icon-term" /> <span class="txtTmp val">00º</span>
+                <div id="zona2" class="zona">
+                    <span class="txtTmp val">00</span>
                 </div>
                 
-                <!-- Tempo Hoje MAX e MIN -->
+                <!-- Tempo Hoje MAX e MIN 
                 <div id="zona3" class="zona"><span>TEMPO HOJE</span>
                     <img class="icon-sol" src="./media/ico-sol.png" />
                     <img class="icon-term" src="./media/ico-term.png" />
@@ -33,23 +35,23 @@
                     <span class="val max">00º</span>
                     <span class="subtext">MIN</span>
                     <span class="val min">00º</span>
-                </div>
+                </div>  -->
                 
-                <!-- Tempo hoje chuva -->
+                <!-- Tempo hoje chuva
                 <div id="zona4" class="zona"><span>TEMPO HOJE</span>
                     <img class="icon-sol" src="./media/ico-sol.png" />
                     <img src="./media/ico-chuva.png" class="icon-chuva" /> 
                     <span class="txtChuva val">0%</span>
-                </div>
+                </div> -->
                 
-                <!-- Tempo amanha chuva -->
+                <!-- Tempo amanha chuva 
                 <div id="zona5" class="zona"><span>TEMPO AMANHÃ</span>
                     <img class="icon-sol" src="./media/ico-sol.png" />
                     <img src="./media/ico-chuva.png" class="icon-chuva" /> 
                     <span class="txtChuva val">0%</span>
-                </div>
-                
-                <!-- Tempo Amanha MAX e MIN -->
+                </div>  -->
+              
+                <!-- Tempo Amanha MAX e MIN
                 <div id="zona6" class="zona"><span>TEMPO AMANHÃ</span>
                     <img class="icon-sol" src="./media/ico-sol.png" />
                     <img class="icon-term" src="./media/ico-term.png" />
@@ -57,17 +59,21 @@
                     <span class="val max">00º</span>
                     <span class="subtext">MIN</span>
                     <span class="val min">00º</span>
-                </div>
+                </div>  -->
             </div>
             
-            <img id="logo" src="./media/logo_look.png" />
+            
         </div>
+        <div id="bloco"></div>
 
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
         <script src="../../lib/js/GnLib.js"></script>
         <script>
             var DATA_SOURCE = "/CONTEUDO/PREVISAO/previsao.xml";
+
+            $("#tempo").hide();
+            $("#hora").hide();
             
             //Dá o Ok sobre o carregamento com sucesso
             if (typeof (GnContentFound) != 'undefined') {
@@ -75,7 +81,7 @@
             }
             
             function GnPlay() {
-                
+                $("#fundo1").get(0).play();
             }
 
             //Recupera a hora
@@ -92,9 +98,9 @@
                 loadData();
                 
                 //Inicia o carrossel
-                setInterval(function() {
-                    toggle();
-                }, 9000);
+            //    setInterval(function() {
+            //        toggle();
+            //    }, 9000);
             }
             
             //Atualiza o relógio
@@ -103,7 +109,6 @@
                 var d = new Date();
                 var horas = d.getHours();
                 var minutos = d.getMinutes();
-                        var segundos = d.getSeconds();
                 var dia = d.getDate();
                 var mes = d.getMonth();
                 var ano = d.getFullYear();
@@ -113,13 +118,10 @@
                 if (minutos < 10) {
                     minutos = "0" + minutos;
                 }
-                        if (segundos < 10) {
-                    segundos = "0" + segundos;
-                }
                 if (dia < 10) {
                     dia = "0" + dia;
                 }
-                $("#hora").html(horas + ":" + minutos + "<span>:"+segundos+"</span>");
+                $("#hora").html(horas + ":" + minutos);
             }
             
             //Carrega os dados
@@ -139,7 +141,7 @@
                         var min2 = $(data).find("dayf day").eq(1).find('low').text();
 
                         $("#zona1 .txtUmid").html("UR " + hmid + "%");
-                        $("#zona2 .txtTmp").html(tmp + "º");
+                        $("#zona2 .txtTmp").html(tmp);
                         $("#zona3 .max").html(max1 + "º");
                         $("#zona3 .min").html(min1 + "º");
                         $("#zona4 .txtChuva").html(chuv1 + "%");
@@ -150,25 +152,21 @@
                 });
             }
             
-            //Recupera o indice da zona
-            var zonaIndex = 1;
-            function getNextZone() {
-                if( zonaIndex < $(".zona").length ) {
-                    zonaIndex++;
-                } else {
-                    zonaIndex = 1;
-                }
-                return zonaIndex;
-            }
             
-            //Troca a zona
-            function toggle() {
-                $(".zona").fadeOut();
-                var idx = getNextZone();
+            
+        //    Troca a zona
+        //     function toggle() {
+            //    $(".zona").fadeOut();
+            //    var idx = getNextZone();
                 setTimeout(function() {
-                    $("#zona"+idx).fadeIn();
+                    $("#tempo").show();
+                    $("#tempo").addClass('animated fadeIn');
+                }, 900);
+                setTimeout(function() {
+                    $("#hora").show();
+                    $("#hora").addClass('animated fadeIn');
                 }, 500);
-            }
+    //    }
 
         </script>
     </body>

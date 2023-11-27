@@ -75,37 +75,47 @@
             
             //Autoplay
             function GnPlay() {
+                //Ajusta o zoom até enquadrar na tela
+                var zoom = $(window).width() / 1280;
+                $("body").css("transform-origin", "0 0");
+                $("body").css('zoom', zoom);
+				if( navigator.userAgent.toLowerCase().indexOf('chrome') == -1 ) {
+					$("body").css("-moz-transform", "scale("+zoom+","+zoom+")");
+					$("body").css("-moz-transform-origin", "0 0");				
+				}
+                
                 var texto = $("#texto").html();
-                if( texto.length > 225 ) {
-                    texto = texto.substr(0, 225) + "...";
+                if( texto.length > 220 ) {
+                    texto = texto.substr(0, 220) + "...";
                 }
                 $("#texto1").html(texto);
                 $("#qrcode").hide();
-                $("#msg").hide();        
+                $("#msg").hide();           
                 $("#blackout").hide();
                 $("#fundo").get(0).play();
-                setTimeout(function() {
+				setTimeout(function() {
                     $("#retangulo").show(); 
                 } ,0);
                 setTimeout(function() {
                     $("#msg").show();
-                    $("#msg").addClass('slide-in-fwd-left');
-                } ,2500);
+                    $("#msg").addClass('animated slideInLeft');
+                } ,1200);
                 setTimeout(function() {
                     $("#qrcode").show();
-                    $("#qrcode").addClass('animated zoomInRight');
-                } ,2800);
+                    $("#qrcode").addClass('animated fadeIn');
+                } ,1400);
                 setTimeout(function() {
-                    $("#ctImg").fadeIn();
+                    $("#ctImg").show();
+                    $("#ctImg").addClass('animated bounceInDown');
                     $("#texto1").fadeIn();
-                } ,1200);
+                } ,0);
                 setTimeout(function() {
                     $("#texto1").fadeOut();
                     $("#ctImg").fadeOut();
                     $("#retangulo").fadeOut();
                     $("#qrcode").fadeOut();
                     $("#msg").fadeOut();
-                } ,8500);
+                } ,9000);
 
                 //Esconde o texto 1
                 /*setTimeout(function() {
@@ -114,6 +124,13 @@
                     //Exibe o texto 2
                     $("#texto2").fadeIn();
                 } ,15000);*/
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
             }
             
             //Autoplay - localhost

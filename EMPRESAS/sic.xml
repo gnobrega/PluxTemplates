@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item salas_id="701" andares_id="41">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Observatório Nacional da Indústria ]]></nome>
+			<andares_label><![CDATA[2º Subsolo ]]></andares_label>
+			<andares_posicao><![CDATA[0]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="702" andares_id="41">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Espaço de Promoção da Saúde ]]></nome>
+			<andares_label><![CDATA[2º Subsolo ]]></andares_label>
+			<andares_posicao><![CDATA[0]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="795" andares_id="41">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Espaço de Convivência]]></nome>
+			<andares_label><![CDATA[2º Subsolo ]]></andares_label>
+			<andares_posicao><![CDATA[0]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="697" andares_id="39">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Gerência de Promoção da Saúde]]></nome>
+			<andares_label><![CDATA[1º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[1]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="796" andares_id="39">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Ação Nordeste Forte]]></nome>
+			<andares_label><![CDATA[1º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[1]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="797" andares_id="39">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Ação Pró Amazônia]]></nome>
+			<andares_label><![CDATA[1º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[1]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="703" andares_id="40">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Superintendência Administrativa ]]></nome>
+			<andares_label><![CDATA[2º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[2]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="704" andares_id="40">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Apoio Administrativo e Patrimônio ]]></nome>
+			<andares_label><![CDATA[2º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[2]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="705" andares_id="40">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência de Compras ]]></nome>
+			<andares_label><![CDATA[2º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[2]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="700" andares_id="40">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Engenharia ]]></nome>
+			<andares_label><![CDATA[2º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[2]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="706" andares_id="40">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência de Arquitetura]]></nome>
+			<andares_label><![CDATA[2º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[2]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="699" andares_id="40">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Biblioteca ]]></nome>
+			<andares_label><![CDATA[2º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[2]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="712" andares_id="42">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Inovação e Tecnologia do SENAI]]></nome>
+			<andares_label><![CDATA[3º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[3]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="707" andares_id="42">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Educação Profissional e Tecnológica]]></nome>
+			<andares_label><![CDATA[3º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[3]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="708" andares_id="42">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Projetos Especiais ]]></nome>
+			<andares_label><![CDATA[3º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[3]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="709" andares_id="42">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Inovação e tecnologia ]]></nome>
+			<andares_label><![CDATA[3º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[3]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="710" andares_id="42">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Educação Profissional e Superior ]]></nome>
+			<andares_label><![CDATA[3º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[3]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="711" andares_id="42">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Tecnologias Educacionais  ]]></nome>
+			<andares_label><![CDATA[3º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[3]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="713" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Compliance e Integridade ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="714" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Controle e Suporte à Gestão ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="715" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Conformidade e Desenvolvimento de Processos]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="716" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Segurança e Saúde do Trabalho ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="717" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Saúde e Segurança da Indústria ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="718" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Saúde e Segurança da Indústria ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="719" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência do Centro de Formação em Educação ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="720" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[7]]></salas_posicao>
+			<nome><![CDATA[Gerência de Educação Básica ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="721" andares_id="43">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[8]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Educação ]]></nome>
+			<andares_label><![CDATA[4º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[4]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="722" andares_id="44">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Educação e Tecnologia - DIRET]]></nome>
+			<andares_label><![CDATA[5º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[5]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="723" andares_id="44">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Negócios Internacionais ]]></nome>
+			<andares_label><![CDATA[5º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[5]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="724" andares_id="44">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência de Negócios Internacionais]]></nome>
+			<andares_label><![CDATA[5º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[5]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="725" andares_id="44">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Inovação]]></nome>
+			<andares_label><![CDATA[5º Andar ]]></andares_label>
+			<andares_posicao><![CDATA[5]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="726" andares_id="45">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Tecnologia da Informação]]></nome>
+			<andares_label><![CDATA[6º Andar]]></andares_label>
+			<andares_posicao><![CDATA[6]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="727" andares_id="45">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência de Soluções de Negócios ]]></nome>
+			<andares_label><![CDATA[6º Andar]]></andares_label>
+			<andares_posicao><![CDATA[6]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="728" andares_id="45">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência de Relacionamentos com Negócios ]]></nome>
+			<andares_label><![CDATA[6º Andar]]></andares_label>
+			<andares_posicao><![CDATA[6]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="729" andares_id="45">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Governança]]></nome>
+			<andares_label><![CDATA[6º Andar]]></andares_label>
+			<andares_posicao><![CDATA[6]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="730" andares_id="45">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Desenvolvimento Humano]]></nome>
+			<andares_label><![CDATA[6º Andar]]></andares_label>
+			<andares_posicao><![CDATA[6]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="731" andares_id="45">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência de Carreira e Performance]]></nome>
+			<andares_label><![CDATA[6º Andar]]></andares_label>
+			<andares_posicao><![CDATA[6]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="732" andares_id="45">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência de Remuneração e Administração de Pessoas]]></nome>
+			<andares_label><![CDATA[6º Andar]]></andares_label>
+			<andares_posicao><![CDATA[6]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="733" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Serviços Corporativos ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="734" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Planejamento, Estudos e Orçamento ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="735" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência de Operações Financeiras ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="736" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Arrecadação e Fiscalização ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="737" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência de Contabilidade ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="738" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Finanças ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="739" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência de Orçamentos e Custos ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="740" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[7]]></salas_posicao>
+			<nome><![CDATA[Gerência de Gestão de Recursos e Investimento ]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="741" andares_id="46">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[8]]></salas_posicao>
+			<nome><![CDATA[Gerência de Planejamento, Projetos e Processos]]></nome>
+			<andares_label><![CDATA[7º andar]]></andares_label>
+			<andares_posicao><![CDATA[7]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="788" andares_id="47">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Superintendência do SESI]]></nome>
+			<andares_label><![CDATA[8º andar]]></andares_label>
+			<andares_posicao><![CDATA[8]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="789" andares_id="47">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Operações do SESI ]]></nome>
+			<andares_label><![CDATA[8º andar]]></andares_label>
+			<andares_posicao><![CDATA[8]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="790" andares_id="47">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Operações SENAI ]]></nome>
+			<andares_label><![CDATA[8º andar]]></andares_label>
+			<andares_posicao><![CDATA[8]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="791" andares_id="47">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Diretoria Geral do SENAI Nacional ]]></nome>
+			<andares_label><![CDATA[8º andar]]></andares_label>
+			<andares_posicao><![CDATA[8]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="792" andares_id="47">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Superintendência do IEL Nacional ]]></nome>
+			<andares_label><![CDATA[8º andar]]></andares_label>
+			<andares_posicao><![CDATA[8]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="793" andares_id="47">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Educação ]]></nome>
+			<andares_label><![CDATA[8º andar]]></andares_label>
+			<andares_posicao><![CDATA[8]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="794" andares_id="47">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Cultura ]]></nome>
+			<andares_label><![CDATA[8º andar]]></andares_label>
+			<andares_posicao><![CDATA[8]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="784" andares_id="48">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Gestão Estratégica]]></nome>
+			<andares_label><![CDATA[9º andar]]></andares_label>
+			<andares_posicao><![CDATA[9]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="785" andares_id="48">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência de Estratégia e Planejamento ]]></nome>
+			<andares_label><![CDATA[9º andar]]></andares_label>
+			<andares_posicao><![CDATA[9]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="786" andares_id="48">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Relações com Mercado ]]></nome>
+			<andares_label><![CDATA[9º andar]]></andares_label>
+			<andares_posicao><![CDATA[9]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="787" andares_id="48">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Inteligência Competitiva de Mercado ]]></nome>
+			<andares_label><![CDATA[9º andar]]></andares_label>
+			<andares_posicao><![CDATA[9]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="776" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Economia ]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="777" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência de Política Econômica]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="778" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Análise Econômica]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="779" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência de Estatística]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="780" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Assuntos Legislativos ]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="781" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência de Articulação - Câmara dos Deputados ]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="782" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[7]]></salas_posicao>
+			<nome><![CDATA[Gerência de Articulação - Senado Federal]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="783" andares_id="49">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[8]]></salas_posicao>
+			<nome><![CDATA[Gerência de Informação e Comunicação Legislativa]]></nome>
+			<andares_label><![CDATA[10º andar]]></andares_label>
+			<andares_posicao><![CDATA[10]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="770" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Relações Institucionais ]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="771" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Relacionamento com o Poder Executivo ]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="772" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Relações do Trabalho]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="773" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Infraestrutura ]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="774" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Meio Ambiente e Sustentabilidade ]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="775" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência de Articulação e Controle ]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="800" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência de Clima e Energia]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="801" andares_id="50">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[7]]></salas_posicao>
+			<nome><![CDATA[Gerência de Recursos Naturais]]></nome>
+			<andares_label><![CDATA[11º andar]]></andares_label>
+			<andares_posicao><![CDATA[11]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="763" andares_id="51">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Serviços Corporativos ]]></nome>
+			<andares_label><![CDATA[12º andar]]></andares_label>
+			<andares_posicao><![CDATA[12]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="764" andares_id="51">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Finanças ]]></nome>
+			<andares_label><![CDATA[12º andar]]></andares_label>
+			<andares_posicao><![CDATA[12]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="765" andares_id="51">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Planejamento, Estudos e Orçamento]]></nome>
+			<andares_label><![CDATA[12º andar]]></andares_label>
+			<andares_posicao><![CDATA[12]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="766" andares_id="51">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Orçamentos e Custos]]></nome>
+			<andares_label><![CDATA[12º andar]]></andares_label>
+			<andares_posicao><![CDATA[12]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="767" andares_id="51">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência de Orçamentos e Custos]]></nome>
+			<andares_label><![CDATA[12º andar]]></andares_label>
+			<andares_posicao><![CDATA[12]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="768" andares_id="51">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência de Operações Financeiras ]]></nome>
+			<andares_label><![CDATA[12º andar]]></andares_label>
+			<andares_posicao><![CDATA[12]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="769" andares_id="51">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência de Gestão de Recursos e Investimento]]></nome>
+			<andares_label><![CDATA[12º andar]]></andares_label>
+			<andares_posicao><![CDATA[12]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="756" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Diretoria Jurídica ]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="757" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Estratégia Jurídica ]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="758" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Operações Jurídicas ]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="759" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Contratos e Licitações]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="760" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência de Consultoria ]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="761" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência de Contencioso]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="762" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Gerência de Assuntos Jurídicos de Representação]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="802" andares_id="52">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[7]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Controle Externo]]></nome>
+			<andares_label><![CDATA[13º andar]]></andares_label>
+			<andares_posicao><![CDATA[13]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="744" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Diretoria de Comunicação ]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="745" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Relações Públicas]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="746" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[2]]></salas_posicao>
+			<nome><![CDATA[Gerência de Eventos]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="747" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[3]]></salas_posicao>
+			<nome><![CDATA[Gerência de Comunicação Interna ]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="748" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[4]]></salas_posicao>
+			<nome><![CDATA[Gerência de Comunicação Externa]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="749" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[5]]></salas_posicao>
+			<nome><![CDATA[Gerência de Consultoria e Gestão de Projetos]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="750" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[6]]></salas_posicao>
+			<nome><![CDATA[Superintendência de Jornalismo]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="751" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[7]]></salas_posicao>
+			<nome><![CDATA[Gerência Executiva de Jornalismo]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="752" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[8]]></salas_posicao>
+			<nome><![CDATA[Gerência de Conteúdos Multimídia ]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="753" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[9]]></salas_posicao>
+			<nome><![CDATA[Gerência de Design e Conteúdo Web]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="754" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[10]]></salas_posicao>
+			<nome><![CDATA[Gerência de Imprensa]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="755" andares_id="53">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[11]]></salas_posicao>
+			<nome><![CDATA[Gerência de Publicidade e Propaganda]]></nome>
+			<andares_label><![CDATA[14º andar]]></andares_label>
+			<andares_posicao><![CDATA[14]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="742" andares_id="54">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[0]]></salas_posicao>
+			<nome><![CDATA[Gabinete da Presidência CNI]]></nome>
+			<andares_label><![CDATA[16º andar]]></andares_label>
+			<andares_posicao><![CDATA[15]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+		<item salas_id="743" andares_id="54">
+			<salas_label><![CDATA[]]></salas_label>
+			<salas_posicao><![CDATA[1]]></salas_posicao>
+			<nome><![CDATA[Presidência ]]></nome>
+			<andares_label><![CDATA[16º andar]]></andares_label>
+			<andares_posicao><![CDATA[15]]></andares_posicao>
+			<empresa><![CDATA[CNI]]></empresa>
+		</item>
+	</module>
+</modules>

@@ -100,14 +100,15 @@
                 } ,0);
                 setTimeout(function() {
                     $("#msg").show();
-                    $("#msg").addClass('slide-in-fwd-left');
+                    $("#msg").addClass('animated slideInLeft');
                 } ,2500);
                 setTimeout(function() {
                     $("#qrcode").show();
-                    $("#qrcode").addClass('animated zoomInRight');
+                    $("#qrcode").addClass('animated fadeIn');
                 } ,2800);
                 setTimeout(function() {
-                    $("#ctImg").fadeIn(1000);
+                    $("#ctImg").show();
+                    $("#ctImg").addClass('animated slideInDown');
                     $("#texto1").fadeIn();
                 } ,1000);
                 setTimeout(function() {
@@ -116,7 +117,7 @@
                     $("#retangulo").fadeOut();
                     $("#qrcode").fadeOut();
                     $("#msg").fadeOut();
-                } ,8500);
+                } ,9000);
 
                 //Esconde o texto 1
                 /*setTimeout(function() {

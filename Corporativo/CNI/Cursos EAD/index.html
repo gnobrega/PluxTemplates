@@ -13,8 +13,8 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4"></video>
-            <img id="icon-ep" src="./media/icon-ep.png">
+            <video id="fundo" src="./media/fundo1.mp4"></video>
+        <!--    <img id="icon-ep" src="./media/icon-ep.png">    -->
 
             <!-- Imagem -->
             <div id="ctImg">
@@ -65,23 +65,26 @@
             //Autoplay
             function GnPlay() {
 
-                $("#horas").html("Duração: <b>" + $("#horas").text() + "</b>");
+                $("#horas").html("<b>" + $("#horas").text() + "</b>");
                 $("#descricao").hide();
                 $("#horas").hide();
                 $("#blackout").hide();
                 $("#fundo").get(0).play();
                 setTimeout(function() {
-                    $("#ctImg").fadeIn();
+                    $("#ctImg").show();
+                    $("#ctImg").addClass('animated growUp');
                 } ,5500);
                 setTimeout(function() {
-                    $("#nome").fadeIn(500);
-                } ,7000);
+                    $("#nome").show();
+                    $("#nome").addClass('animated slideInRight')
+                } ,5500);
                 setTimeout(function() {
-                    $("#descricao").fadeIn(1000);
-                } ,7500);
+                    $("#descricao").show();
+                    $("#descricao").addClass('animated slideInDown');
+                } ,5500);
                 setTimeout(function() {
                     $("#horas").fadeIn(1000);
-                } ,8200);
+                } ,5900);
             }
             
             //Autoplay - localhost

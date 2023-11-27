@@ -13,7 +13,7 @@
         <div id="conteudo">
             
             <!-- Abertura/fundo -->
-            <video id="fundo" src="./media/background.mp4"></video>
+            <video id="fundo" src="./media/background2.mp4"></video>
             
             <!-- Topo -->
             <div id="topo">
@@ -91,20 +91,25 @@
                 //    $("#fundo-grade").addClass('show-grade');
             //    }, 3700);
                 setTimeout(function() {
-                    $(".dia1").fadeIn(1100);
-                }, 1400);
+                    $(".linha1").show();
+                    $(".linha1").addClass('animated slideInLeft')
+                }, 330);
                 setTimeout(function() {
-                    $(".dia2").fadeIn(1200);
-                }, 3000);
+                    $(".linha2").show();
+                    $(".linha2").addClass('animated slideInLeft')
+                }, 580);
                 setTimeout(function() {
-                    $(".dia3").fadeIn(1300);
-                }, 4700);
+                    $(".linha3").show();
+                    $(".linha3").addClass('animated slideInLeft')
+                }, 640);
                 setTimeout(function() {
-                    $(".dia4").fadeIn(1400);
-                }, 6500);
+                    $(".linha4").show();
+                    $(".linha4").addClass('animated slideInLeft')
+                }, 870);
                 setTimeout(function() {
-                    $(".dia5").fadeIn(1500);
-                }, 8000);
+                    $(".linha5").show();
+                    $(".linha5").addClass('animated slideInLeft');
+                }, 970);
             }
             
             //Autoplay - localhost

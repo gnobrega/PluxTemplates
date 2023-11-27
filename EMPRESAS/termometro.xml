@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modules>
+	<module>
+		<item id="1">
+			<titulo><![CDATA[Produção]]></titulo>
+			<valor><![CDATA[-0,6 %]]></valor>
+			<periodo><![CDATA[Abr. 2023 ]]></periodo>
+			<detalhes><![CDATA[Variação referente ao mês anterior (dessazonalizada)]]></detalhes>
+			<icone><![CDATA[estavel]]></icone>
+			<fundo><![CDATA[negativo]]></fundo>
+			<chave><![CDATA[1]]></chave>
+		</item>
+		<item id="2">
+			<titulo><![CDATA[Horas trabalhadas]]></titulo>
+			<valor><![CDATA[2,7 %]]></valor>
+			<periodo><![CDATA[Mai. 2023 ]]></periodo>
+			<detalhes><![CDATA[Variação referente ao mês anterior (dessazonalizada)]]></detalhes>
+			<icone><![CDATA[ascendente]]></icone>
+			<fundo><![CDATA[positivo]]></fundo>
+			<chave><![CDATA[2]]></chave>
+		</item>
+		<item id="3">
+			<titulo><![CDATA[Emprego]]></titulo>
+			<valor><![CDATA[-0,3 %]]></valor>
+			<periodo><![CDATA[Mai. 2023 ]]></periodo>
+			<detalhes><![CDATA[Variação referente ao mês anterior (dessazonalizada)]]></detalhes>
+			<icone><![CDATA[descendente]]></icone>
+			<fundo><![CDATA[negativo]]></fundo>
+			<chave><![CDATA[3]]></chave>
+		</item>
+		<item id="4">
+			<titulo><![CDATA[Faturamento]]></titulo>
+			<valor><![CDATA[0,9 %]]></valor>
+			<periodo><![CDATA[Mai. 2023 ]]></periodo>
+			<detalhes><![CDATA[Variação referente ao mês anterior (dessazonalizada)]]></detalhes>
+			<icone><![CDATA[ascendente]]></icone>
+			<fundo><![CDATA[positivo]]></fundo>
+			<chave><![CDATA[4]]></chave>
+		</item>
+		<item id="5">
+			<titulo><![CDATA[Exportações]]></titulo>
+			<valor><![CDATA[7,2 %]]></valor>
+			<periodo><![CDATA[Mai. 2023 ]]></periodo>
+			<detalhes><![CDATA[Variação referente ao mês anterior (dessazonalizada)]]></detalhes>
+			<icone><![CDATA[ascendente]]></icone>
+			<fundo><![CDATA[positivo]]></fundo>
+			<chave><![CDATA[5]]></chave>
+		</item>
+		<item id="6">
+			<titulo><![CDATA[Intenção de investimento]]></titulo>
+			<valor><![CDATA[54,0 pontos]]></valor>
+			<periodo><![CDATA[Jun. 2023 ]]></periodo>
+			<detalhes><![CDATA[Índice do mês]]></detalhes>
+			<icone><![CDATA[estavel]]></icone>
+			<fundo><![CDATA[positivo]]></fundo>
+			<chave><![CDATA[6]]></chave>
+		</item>
+		<item id="7">
+			<titulo><![CDATA[ICEI]]></titulo>
+			<valor><![CDATA[50,4 pontos]]></valor>
+			<periodo><![CDATA[Jun. 2023 ]]></periodo>
+			<detalhes><![CDATA[Índice do mês]]></detalhes>
+			<icone><![CDATA[estavel]]></icone>
+			<fundo><![CDATA[neutro]]></fundo>
+			<chave><![CDATA[7]]></chave>
+		</item>
+		<item id="8">
+			<titulo><![CDATA[UCI efetiva-usual]]></titulo>
+			<valor><![CDATA[43,7 pontos]]></valor>
+			<periodo><![CDATA[Mai. 2023 ]]></periodo>
+			<detalhes><![CDATA[Índice do mês]]></detalhes>
+			<icone><![CDATA[descendente]]></icone>
+			<fundo><![CDATA[negativo]]></fundo>
+			<chave><![CDATA[8]]></chave>
+		</item>
+		<item id="9">
+			<titulo><![CDATA[Estoque efetivo-planejado]]></titulo>
+			<valor><![CDATA[51,3 pontos]]></valor>
+			<periodo><![CDATA[Mai. 2023 ]]></periodo>
+			<detalhes><![CDATA[Índice do mês]]></detalhes>
+			<icone><![CDATA[estavel]]></icone>
+			<fundo><![CDATA[negativo]]></fundo>
+			<chave><![CDATA[9]]></chave>
+		</item>
+		<item id="10">
+			<titulo><![CDATA[03/07/2023]]></titulo>
+			<valor><![CDATA[]]></valor>
+			<periodo><![CDATA[]]></periodo>
+			<detalhes><![CDATA[]]></detalhes>
+			<icone><![CDATA[]]></icone>
+			<fundo><![CDATA[]]></fundo>
+			<chave><![CDATA[10]]></chave>
+		</item>
+	</module>
+</modules>

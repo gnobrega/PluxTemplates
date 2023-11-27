@@ -51,10 +51,11 @@ div#departamento {
     font-family: 'Montserrat-Regular';
     color: #fbfbfb;
     font-size: 20pt;
+    text-align: center;
 	display: none;
     position: absolute;
-    top: 635px;
-    left: 870px;
+    top: 665px;
+    left: 710px;
     width: 720px;
     padding-right: 800px;
 }

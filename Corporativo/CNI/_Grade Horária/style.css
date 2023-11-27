@@ -67,19 +67,19 @@ video#fundo {
     padding-top: 3px;
 } */
 .linha1 {
-    top: 300px;
+    top: 311px;
 }
 .linha2 {
-    top: 370px;
+    top: 376px;
 }
 .linha3 {
-    top: 459px;
+    top: 463px;
 }
 .linha4 {
-    top: 529px;
+    top: 534px;
 }
 .linha5 {
-    top: 620px;
+    top: 626px;
 }
 .linha6 {
     top: 503px;
@@ -88,22 +88,23 @@ video#fundo {
     top: 550px;
 }
 .dia1 {
-    left: 200px;
+    left: 234px;
 }
 .dia2 {
-    left: 425px;
+    left: 449px;
 }
 .dia3 {
-    left: 640px;
+    left: 661px;
 }
 .dia4 {
-    left: 860px;
+    left: 882px;
 }
 .dia5 {
-    left: 1084px;
+    left: 1103px;
 }
 .dia6 {
     left: 1245px;
+    display: none;
 }
 .aula {
     position: absolute;

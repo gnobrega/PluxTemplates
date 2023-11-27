@@ -13,11 +13,23 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4"></video>
+            <video id="fundo" src="./media/senaitwt.mp4"></video>
 
             <!-- Imagem -->
             <div id="ctImg">
                 <img id="fileId" />
+            </div>
+			
+			<div id="retangulo">
+                <img src="./media/branco1.png">
+            </div>
+
+            <div id="msg">
+                <img src="./media/aponte1.png">
+            </div>
+
+            <div id="qrcode">
+                <img src="./media/qrcode1.png">
             </div>
             
             <!-- Dados -->
@@ -27,9 +39,6 @@
         </div>
         
         <div id="blackout"></div>
-
-        <!-- Calhau -->
-        <video src="./media/calhau.mp4" id="calhau"></video>
         
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
@@ -46,6 +55,7 @@
                     //Carrega o conteúdo
                     var DATA_SOURCE = "/EMPRESAS/twitter_senainacional.xml";
                     GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                        
                         
                         //Carrega o segundo twitt
                         /*GnLib.autoloadContent(DATA_SOURCE, function(template) {
@@ -65,36 +75,56 @@
             
             //Autoplay
             function GnPlay() {
-                $("#texto1").html($("#texto").html());
+
+                //Ajusta o zoom até enquadrar na tela
+                var zoom = $(window).width() / 1280;
+                $("body").css("transform-origin", "0 0");
+                $("body").css('zoom', zoom);
+				if( navigator.userAgent.toLowerCase().indexOf('chrome') == -1 ) {
+					$("body").css("-moz-transform", "scale("+zoom+","+zoom+")");
+					$("body").css("-moz-transform-origin", "0 0");				
+				}
                 
-                if( $("#texto1").text() != '' ) {
+                var texto = $("#texto").html();
+                if( texto.length > 220 ) {
+                    texto = texto.substr(0, 220) + "...";
+                }
+                $("#texto1").html(texto);
+                $("#qrcode").hide();
+                $("#msg").hide();           
+                $("#blackout").hide();
+                $("#fundo").get(0).play();
+				setTimeout(function() {
+                    $("#retangulo").show(); 
+                } ,0);
+                setTimeout(function() {
+                    $("#msg").show();
+                    $("#msg").addClass('animated slideInLeft');
+                } ,1200);
+                setTimeout(function() {
+                    $("#qrcode").show();
+                    $("#qrcode").addClass('animated fadeIn');
+                } ,1400);
+                setTimeout(function() {
+                    $("#ctImg").show();
+                    $("#ctImg").addClass('animated bounceInDown');
+                    $("#texto1").fadeIn();
+                } ,0);
+                setTimeout(function() {
+                    $("#texto1").fadeOut();
+                    $("#ctImg").fadeOut();
+                    $("#retangulo").fadeOut();
+                    $("#qrcode").fadeOut();
+                    $("#msg").fadeOut();
+                } ,9000);
 
-                    $("#blackout").hide();
-                    $("#fundo").get(0).play();
-                    setTimeout(function() {
-                        $("#ctImg").fadeIn();
-                        $("#texto1").fadeIn();
-                    } ,1200);
-                    setTimeout(function() {
-                        $("#texto1").fadeOut();
-                        $("#ctImg").fadeOut();
-                    } ,10000);
-
-                    //Esconde o texto 1
-                    /*setTimeout(function() {
-                        $("#texto1").css("opacity", "0");
-                        
-                        //Exibe o texto 2
-                        $("#texto2").fadeIn();
-                    } ,15000);*/
-
-                } else {
+                //Esconde o texto 1
+                /*setTimeout(function() {
+                    $("#texto1").css("opacity", "0");
                     
-                    // Calhau
-                    $("#blackout").hide();
-                    $("#calhau").show();
-                    $("#calhau").get(0).play();
-                } 
+                    //Exibe o texto 2
+                    $("#texto2").fadeIn();
+                } ,15000);*/
             }
             
             //Autoplay - localhost
