@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('./fonts/Montserrat-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'InterstateBlackCondensed';
+    src: url('./fonts/InterstateBlackCondensed.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AmsiProCond-Regular';
+    src: url('./fonts/AmsiProCond-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#abertura {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#blackout {
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background-color: #000000;
+}
+#fundo {
+    width: 1360px;
+    height: 707px;
+    position: absolute;
+    top: 0px;
+    object-fit: cover;
+    left: 0;
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#nome {
+    height: 120px;
+    position: absolute;
+    left: 770px;
+    top: 365px;
+    font-family: 'InterstateBlackCondensed';
+    color: #993c18;
+    font-size: 50px;
+    text-align: left;
+    width: 295px;
+    display: none;
+    line-height: 55px;
+    z-index: 40;
+    display: flex;
+    align-items: end;
+}
+div#reais2 {
+    font-size: 40px;
+    width: 100px;
+    line-height: 35px;
+    margin-right: 10px;
+    z-index: 35;
+    color: #993c18;
+    font-family: 'Montserrat-Bold';
+}
+div#ctPreco2 {
+    display: flex;
+    height: 122px;
+    align-items: center;
+	position: relative;
+    left: 870px;
+    top: 495px;
+	width: 387px;
+    z-index: 40;
+}
+div#ctPreco {
+	display: flex;
+	height: 128px;
+}
+div#preco {
+    font-family: 'Montserrat-Bold';
+    color: #993c18;
+    font-size: 100px;
+    letter-spacing: -2px;
+	float: left;
+}
+div#container {
+    flex-direction: column;
+    display: flex;
+}
+div#cents {
+    font-family: 'Montserrat-Bold';
+    color: #993c18;
+    font-size: 100px;
+    text-align: left;
+}
+div#unidade {
+    font-family: 'Montserrat-Bold';
+    color: #d57244;
+    font-size: 30px;
+    position: relative;
+    width: 300px;
+    top: 498px;
+    left: 770px;
+    animation-duration: 2.5s;
+}
+div#validade {
+    position: absolute;
+    left: 400px;
+    top: 715px;
+    font-family: 'Montserrat-Bold';
+    color: #1666ba;
+    font-size: 35px;
+    width: 551px;
+    text-align: center;
+    display: none;
+}
+img#fileId {
+    position: absolute;
+    height: 307px;
+    width: 510px;
+    left: 705px;
+    top: 44px;
+    display: none;
+    z-index: 20;
+    animation-duration: 1.5s;
+}
+div #ctImg {
+    display: none;
+} 
+
+.FadeInVertical {
+    animation-name: FadeInVertical;
+  }
+  
+  @keyframes FadeInVertical {
+    from {
+        transform: translateX(0) translateY(100px);
+      }
+    
+      to {
+        transform: translateX(100px) translateY(0);
+      }
+  }
+

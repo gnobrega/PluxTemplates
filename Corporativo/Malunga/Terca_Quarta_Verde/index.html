@@ -1,0 +1,111 @@
+﻿    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/malungabg.mp4"></video>
+                        
+            <!-- Imagem -->
+            <div id="ctImg"><img id="fileId" /></div>
+            
+            <!-- Dados -->
+            <div id="dados">
+                <div id="nome"></div>
+                <div id="validade" hidden></div>
+            </div>
+            <div id="unidade"></div>
+			<div id="ctPreco2">
+                <div id=reais2 hidden>POR R$</div>
+				<div id="ctPreco">
+					<div id="preco"></div>
+                        <div id="cents"></div>
+				</div>
+			</div>
+            <div id="blackout"></div>
+            
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            
+            var comImagem = true;
+            var ext;
+            var possuiConteudo = true;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/ter_qua_verde.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(tempalte) {
+                    });
+                    
+                } else { //Preview
+					GnLib.loadPreview();
+
+					//Autplay
+					setTimeout(function() {
+						GnPlay();
+					}, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                
+                $("#fundo").get(0).play();
+                $("#reais2").hide();
+                $("#nome").hide();
+                $("#ctPreco2").hide();
+                $("#unidade").hide();
+                
+                if( possuiConteudo ) {
+                    $("#blackout").hide();
+					var params = $("#preco").html().split(",");
+                    var unidade = $("#unidade").html();
+                    $("#preco").html(params[0]);
+					$("#cents").html(","+params[1]);
+                    var validade = $("#validade").html();
+                    $("#validade").html("OFERTAS VÁLIDAS DE " + validade + "");
+                    
+                    
+                    setTimeout(function() {
+                        $("#ctImg").show();
+                        $("#fileId").show();
+                        $("#fileId").addClass("animated fadeInLeft");
+                        $("#nome").show();
+                        $("#nome").addClass("animated fadeInRight");
+                        $("#unidade").show();
+                        $("#unidade").addClass("animated fadeIn");
+                    }, 1300);
+                    setTimeout(function() {
+                        $("#ctPreco2").show();
+                        $("#reais2").show();
+                        $("#reais2").addClass("animated fadeInUp")
+                        $("#ctPreco").show();
+                        $("#ctPreco").addClass("animated fadeInUp");
+                    }, 2400);
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+        </script>
+    </body>
+</html>
