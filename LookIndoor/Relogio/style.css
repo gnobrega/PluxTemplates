@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'ZurichBT-BoldCondensed';
+    src: url('./fonts/ZurichBT-BoldCondensed.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Acumin-BdItPro';
+    src: url('./fonts/Acumin-BdItPro.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BAHNSCHRIFT';
+    src: url('./fonts/BAHNSCHRIFT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TransatBold';
+    src: url('./fonts/TransatBold.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, #content {
+    width: 97px;
+    height: 97px;
+}
+body {
+    background: #000000;
+    overflow: hidden;
+}
+
+    #logo {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    img#relogio {
+        position: absolute;
+        top: 19px;
+        left: 15px;
+    }
+    div#hora {
+        text-align: center;
+        width: 65px;
+        color: #0c4093;
+        font-family: 'TransatBold';
+        font-size: 20px;
+        position: absolute;
+        top: 31px;
+        left: 16px;
+    }
+    /* div.zona *{
+        float: left;
+    }
+    div.zona span {
+        left: 200px;
+        margin-top: 3px;
+    } 
+    div.zona img.icon-sol {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    div.zona img.icon-gota {
+        margin-right: 4px;
+    }
+    div.zona img.icon-chuva {
+        margin-right: 6px;
+        margin-top: -4px;
+    }
+    div.zona img.icon-term {
+        margin-right: 8px;
+    }
+    div#zona1 {
+        width: 320px;
+        margin: auto;
+    }*/
+    div#zona2 {
+        position: absolute;
+        top: 54px;
+        left: 32px;
+        width: 34px;
+        color: #090036;
+        font-family: 'Acumin-BdItPro';
+        font-size: 7px;
+        font-style: normal;
+        text-align: center;
+    }
+    div#diaMes {
+        position: absolute;
+        top: 24px;
+        left: 17px;
+        width: 63px;
+        color: #090036;
+        font-family: 'BAHNSCHRIFT';
+        font-size: 6px;
+        font-style: normal;
+        text-align: center;
+    }
+    /*div#tempo span.txtUmid {
+        font-family: 'ZurichBT-RomanCondensed';
+    } */
+    span.subtext {
+        position: absolute;
+        top: 13px;
+        left: 708px;
+        width: 34px;
+        color: #fff;
+        font-family: 'Poppins-Regular';
+        font-size: 18px;
+        font-style: normal;
+        text-align: center;
+    } */
+    div#tempo {
+        position: absolute;
+        top: 13px;
+        left: 708px;
+        width: 34px;
+        color: #fff;
+        font-family: 'Poppins-Regular';
+        font-size: 18px;
+        font-style: normal;
+        text-align: center;
+    }

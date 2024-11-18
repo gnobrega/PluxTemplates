@@ -46,7 +46,7 @@ body {
 #calhau {
     width: 1360px;
     position: absolute;
-    top: 0px;
+    top: -1px;
     left: 0;
     display: none;
 }
@@ -72,7 +72,7 @@ div#nome {
     left: 770px;
     top: 630px;
     font-family: 'Barlow-Bold';
-    color: #621603;
+    color: #752711;
     font-size: 37px;
     text-align: center;
     width: 500px;
@@ -125,7 +125,7 @@ div#validade {
     left: 310px;
     top: 726px;
     font-family: 'Barlow-Bold';
-    color: #621603;
+    color: #651704;
     font-size: 20px;
     width: 850px;
     text-align: center;

@@ -24,9 +24,10 @@ body {
 }
 #bolha {
     position: absolute;
-    top: 90px;
-    left: 1120px;
+    top: 58px;
+    left: 1068px;
     display: none;
+    height: 290px;
 }
 /* Dados */
 #conteudo { 
@@ -45,7 +46,7 @@ body {
 #calhau {
     width: 1360px;
     position: absolute;
-    top: 0px;
+    top: -1px;
     left: 0;
     display: none;
 }
@@ -71,7 +72,7 @@ div#nome {
     left: 730px;
     top: 605px;
     font-family: 'amsiprocond-black';
-    color: #004500;
+    color: #004711;
     font-size: 45px;
     text-align: center;
     width: 630px;
@@ -119,7 +120,7 @@ div#validade {
     left: 730px;
     top: 715px;
     font-family: 'amsiprocond-black';
-    color: #004500;
+    color: #054905;
     font-size: 25px;
     width: 630px;
     text-align: center;

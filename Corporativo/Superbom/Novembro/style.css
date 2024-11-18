@@ -51,7 +51,7 @@ body {
 #calhau {
     width: 1360px;
     position: absolute;
-    top: 0px;
+    top: -1px;
     left: 0;
     display: none;
 }
@@ -77,7 +77,7 @@ div#nome {
     left: 710px;
     top: 595px;
     font-family: 'AmsiProCond-Bold';
-    color: #025095;
+    color: #383838;
     font-size: 37px;
     text-align: center;
     width: 500px;
@@ -91,21 +91,11 @@ div#nome {
     display: none;
     width: 629px;
 }
-#complemento {
-    position: absolute;
-    top: 656px;
-    left: 640px;
-    color: #DC4D28;
-    font-family: 'Asap-Bold';
-    font-size: 30px;
-    width: 629px;
-    text-align: center;
-    display: none;
-}
+
 div#ctPreco2 {
 	position: absolute;
-    left: 1070px;
-    top: 40px;
+    left: 1045px;
+    top: 110px;
 	width: 220px;
 }
 div#ctPreco {
@@ -127,8 +117,16 @@ div#cents {
     font-size: 60px;
     text-align: left;
 	float: left;
-	margin-top: 55px;
+	margin-top: 22px;
 	padding-left: 5px;
+}
+div#reais {
+    font-family: 'AmsiProCond-Bold';
+    color: #fff;
+    font-size: 40px;
+    top: 77px;
+    left: 1160px;
+    position: absolute;
 }
 div#unidade {
     font-family: 'AmsiProCond-Regular';
@@ -142,12 +140,12 @@ div#unidade {
 }
 div#validade {
     position: absolute;
-    left: 350px;
-    top: 730px;
+    left: 802px;
+    top: 710px;
     font-family: 'Roboto-Bold';
-    color: #025095;
+    color: #ffffff;
     font-size: 22px;
-    width: 600px;
+    width: 385px;
     text-align: center;
     display: none;
 }

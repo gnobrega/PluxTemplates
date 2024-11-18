@@ -9,7 +9,7 @@
     <body>
         <h2 id="console"></h2>
 
-        <video id="fundo" src="./media/fundo.mp4"></video>
+        <video id="fundo" src="./media/fundo1.mp4"></video>
 
         <!-- Conteúdo -->
         <div id="conteudo">
@@ -24,14 +24,20 @@
         
         <img id="logo" src="./media/logo.png" />
         
-        <div id="blackout"></div>
+        <div id="blackout" hidden><!-- Calhau -->
+            <img id="calhau" src="./media/calhau.jpeg" ></img>
+        </div>
         
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
         <script src="../../lib/js/GnLib.js"></script>
         <script>           
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
             
             var ext;
+            var possuiConteudo = true;
             $(function () {
                 
                 //GnPlayer
@@ -55,21 +61,23 @@
             
             //Autoplay
             function GnPlay() {
-                $("#blackout").fadeOut();
                 $("video").get(0).play();
+                if( possuiConteudo ) {
+                    setTimeout(function() {
+                        $("#titulo").fadeIn();
+                    }, 800);
 
-                setTimeout(function() {
-                    $("#titulo").fadeIn();
-                }, 800);
+                    setTimeout(function() {
+                        $("#horario").fadeIn();
+                        $("#dia").fadeIn();
+                    }, 1000);
 
-                setTimeout(function() {
-                    $("#horario").fadeIn();
-                    $("#dia").fadeIn();
-                }, 1000);
-
-                setTimeout(function() {
-                    $("#texto1").fadeIn();
-                }, 1200);
+                    setTimeout(function() {
+                        $("#texto1").fadeIn();
+                    }, 1200);
+                } else {
+                    $("#blackout").show();
+                }
             }
             
             //Autoplay - localhost
@@ -77,6 +85,11 @@
                 setTimeout(function() {
                     GnPlay();
                 }, 1000);
+            }
+            
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
             }
             
         </script>

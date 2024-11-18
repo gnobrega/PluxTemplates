@@ -1,0 +1,204 @@
+﻿    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo -->
+            <video id="fundo" src="./media/fundo.mp4"></video>
+                        
+            <!-- Imagem -->
+            <div id="ctImg"><img id="fileId" /></div>
+            
+            <!-- Dados -->
+            <div id="dados">
+                <div id="nome"></div>
+            </div>
+
+            <div id="quadrado1"><img id="quadrado1" src="./media/quadrado1.png" /></div>
+            <div id="quadrado2"><img id="quadrado2" src="./media/quadrado2.png" /></div>
+
+			<div id="ctPreco2">
+                <div id=reais2>R$</div>
+				<div id="ctPreco">
+					<div id="preco"></div>
+                    <div id="container">
+                        <div id="cents"></div>
+					</div>
+				</div>
+			</div>
+            <div id="seta1"><img id="seta1" src="./media/seta.png" /></div>
+            <div id="seta2"><img id="seta2" src="./media/seta.png" /></div>
+            <div id="logobigbox"><img id="logobigbox" src="./media/meubigbox.png" /></div>
+            <div id="unidade"></div>
+            <div id="ctPrecoVarejo">
+                <div id=reaisVarejo>R$</div>
+				<div id="ctPreco3">
+                    <div id="validade"></div>
+                    <div id="container1">
+                        <div id="centsVarejo"></div>
+					</div>
+				</div>
+			</div>
+            <div id="unidadevarejo"></div>
+            <div id="varejo">NO VAREJO</div>
+            
+            <!-- Calhau -->
+            <video id="calhau" src="./media/calhau.mp4?a=1" hidden></video>
+            
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+            
+            var comImagem = true;
+            var ext;
+            var possuiConteudo = true;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/meubigbox.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(tempalte) {
+                    });
+                    
+                } else { //Preview
+					GnLib.loadPreview();
+
+					//Autplay
+					setTimeout(function() {
+						GnPlay();
+					}, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("#fundo").get(0).play();
+                $("#reais2").hide();
+                $("#nome").hide();
+                $("#ctPreco2").hide();
+                $("#ctPrecoVarejo").hide();
+                $("#reaisVarejo").hide();
+                $("#seta1").hide();
+                $("#seta2").hide();
+                $("#unidade").hide();
+                $("#unidadevarejo").hide();
+                $("#logobigbox").hide();
+                $("#quadrado1").hide();
+                $("#quadrado2").hide();
+                $("#varejo").hide();
+                $("#fileId").hide();
+
+
+                
+                 if( possuiConteudo ) {
+				
+					   var params = $("#preco").html().split(",");
+                       var unidade = $("#unidade").html();
+                       $("#unidadevarejo").html(unidade);
+                       $("#preco").html(params[0]);
+					   $("#cents").html(","+params[1]);
+                       var paramsv = $("#validade").html().split(",");
+                       $("#validade").html(paramsv[0]);
+					   $("#centsVarejo").html(","+paramsv[1]);
+                    
+                    // Animação da Imagem
+                    setTimeout(function() {  
+                        $("#ctImg").show();
+                        $("#nome").show();
+                        $("#nome").addClass("animated slideInRightNome");
+                        $("#fileId").show();
+                        $("#fileId").addClass("animated slideInLeftImg");
+                    }, 0);
+                    
+                    setTimeout(function() {  
+                        $("#nome").addClass("animated slideInLeftNome");
+                        $("#fileId").addClass("animated slideInRightImg");
+                    }, 8000);
+
+                    // Animação de entrada dos elementos do primeiro quadrado
+                    setTimeout(function() {  
+                        $("#quadrado1").show();
+                        $("#quadrado1").addClass("animated slideInRightQuadrado")
+                        $("#reais2").show();
+                        $("#reais2").addClass("animated slideInRightPerson")
+                        $("#ctPreco2").show();
+                        $("#ctPreco2").addClass("animated slideInRightPerson")
+                        $("#seta2").show();
+                        $("#seta2").addClass("animated slideInRightSetaq1")
+                        $("#unidade").show();
+                        $("#unidade").addClass("animated slideInRightSetaq1")
+                        $("#logobigbox").show();
+                        $("#logobigbox").addClass("animated slideInRightLogo")
+                    }, 0);
+                    // Animação de saída dos elementos do primeiro quadrado
+                    setTimeout(function() {  
+                        $("#ctPreco2").addClass("animated slideInLeftPerson")
+                        $("#seta2").addClass("animated slideInLeftSetaq1")
+                        $("#unidade").addClass("animated slideInLeftSetaq1")
+                        $("#logobigbox").addClass("animated slideInLeftLogo")
+                        $("#quadrado1").addClass("animated slideInLeftQuadrado")
+                    }, 8000);
+
+                    // Animação de entrada dos elementos do segundo quadrado
+                    setTimeout(function() {  
+                        $("#quadrado2").show();
+                        $("#quadrado2").addClass("animated slideInRightQuadrado2")
+                        $("#seta1").show();
+                        $("#seta1").addClass("animated slideInRightSetaq2")
+                        $("#unidadevarejo").show();
+                        $("#unidadevarejo").addClass("animated slideInRightSetaq2")
+                        $("#varejo").show();
+                        $("#varejo").addClass("animated slideInRightNovarejo")
+                        $("#reaisVarejo").show();
+                        $("#reaisVarejo").addClass("animated slideInRightVarejo")
+                        $("#ctPrecoVarejo").show();
+                        $("#ctPrecoVarejo").addClass("animated slideInRightVarejo")
+                    }, 0);
+                    
+                    // Animação de saída dos elementos do segundo quadrado
+                    setTimeout(function() {  
+                        $("#ctPrecoVarejo").addClass("animated slideInLeftVarejo")
+                        $("#seta1").addClass("animated slideInLeftSetaq2")
+                        $("#varejo").addClass("animated slideInLeftNovarejo")
+                        $("#unidadevarejo").addClass("animated slideInLeftSetaq2")
+                        $("#quadrado2").addClass("animated slideInLeftQuadrado2")
+                    }, 8000);
+                    setTimeout(function() {  
+                        $("#validade").show();
+                        $("#validade").addClass("animated slideInRightPerson");
+                    }, 0);
+                } else {
+                    $("#calhau").show();
+                    $("#calhau").get(0).play();
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
+            }
+        </script>
+    </body>
+</html>

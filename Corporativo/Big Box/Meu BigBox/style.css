@@ -1,0 +1,904 @@
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('./fonts/Montserrat-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('./fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('./fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #fff;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+}
+#quadrado {
+	position: absolute;
+    top: 69px;
+    left: 809px;
+    width: 350px;
+    display: none;
+    z-index: 30;
+}
+#abertura {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#calhau {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: none;
+}
+#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+#ctFechamento {
+    display: none;
+}
+#fechamento {
+    width: 1360px;
+    height: 704px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: url(./media/fechamento.jpg);
+}
+div#nome {
+  height: 106px;
+  position: absolute;
+  left: 803px;
+  top: 204px;
+  font-family: 'OpenSans-Bold';
+  color: #ffffff;
+  font-size: 35px;
+  text-align: center;
+  width: 470px;
+  display: none;
+  line-height: 45px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 10px;
+  animation-duration: 6s;
+}
+div#reais2 {
+    font-size: 35px;
+    top: 182px;
+    left: 940px;
+    z-index: 35;
+    color: #ffffff;
+    font-family: 'Montserrat-Bold';
+}
+div#ctPreco2 {
+    display: flex;
+    height: 122px;
+    align-items: center;
+    position: relative;
+    left: 905px;
+    top: 449px;
+    width: 387px;
+    justify-content: center;
+    z-index: 40;
+    animation-duration: 7s;
+}
+div#ctPreco {
+	display: flex;
+	height: 134px;
+}
+div#preco {
+    margin-top: 10px;
+    font-family: 'Montserrat-Bold';
+    color: #ffffff;
+    font-size: 80px;
+    letter-spacing: -2px;
+    float: left;
+}
+div#container {
+    flex-direction: column;
+    display: flex;
+}
+div#cents {
+    font-family: 'Montserrat-Bold';
+    color: #ffffff;
+    font-size: 45px;
+    text-align: left;
+    float: left;
+    margin-top: 40px;
+    padding-left: 5px;
+}
+div#unidade {
+    top: 533px;
+    position: absolute;
+    left: 1158px;
+    width: 80px;
+    font-family: 'Montserrat-Bold';
+    color: #ffffff;
+    z-index: 40;
+    animation-duration: 7s;
+}
+img#fileId {
+  position: absolute;
+  height: 270px;
+  width: 350px;
+  top: 373px;
+  left: 187px;
+  z-index: 20;
+  animation-duration: 8s;
+}
+div #ctImg {
+    display: none;
+} 
+div#reaisVarejo {
+    font-size: 30px;
+    top: 182px;
+    left: 940px;
+    z-index: 35;
+    color: #ffffff;
+    font-family: 'Montserrat-Bold';
+}
+div#ctPrecoVarejo {
+    display: flex;
+    height: 122px;
+    align-items: center;
+    position: relative;
+    left: 699px;
+    top: 374px;
+    width: 387px;
+    justify-content: center;
+    z-index: 40;
+    animation-duration: 7s;
+}
+div#ctPreco3 {
+	display: flex;
+	height: 134px;
+}
+div#validade {
+    margin-top: 33px;
+    font-family: 'Montserrat-Bold';
+    color: #ffffff;
+    font-size: 47px;
+    letter-spacing: -2px;
+    float: left;
+}
+div#container1 {
+    flex-direction: column;
+    display: flex;
+}
+div#centsVarejo {
+    font-family: 'Montserrat-Bold';
+    color: #ffffff;
+    font-size: 37px;
+    text-align: left;
+    float: left;
+    margin-top: 40px;
+}
+div#unidadevarejo {
+    top: 570px;
+    position: absolute;
+    left: 925px;
+    width: 80px;
+    font-family: 'Montserrat-Bold';
+    color: #ffffff;
+    z-index: 40;
+    animation-duration: 7s;
+}
+div#varejo{
+  top: 588px;
+  position: absolute;
+  left: 860px;
+  width: 100px;
+  font-family: 'Montserrat-Bold';
+  color: #ffffff;
+  font-size: 15px;
+  animation-duration: 7s;
+}
+div#seta1{
+  position: absolute;
+  z-index: 2;
+  top: 543px;
+  left: 905px;
+  animation-duration: 7s;
+}
+#seta1{
+  height: 50px;
+  width: 80px;
+}
+div#seta2{
+  position: absolute;
+  z-index: 2;
+  top: 505px;
+  left: 1137px;
+  animation-duration: 7s;
+}
+#seta2{
+  height: 50px;
+  width: 80px;
+  
+}
+div#logobigbox{
+  position: absolute;
+  z-index: 999;
+  top: 416px;
+  left: 1175px;
+  animation-duration: 7s;
+}
+#logobigbox{
+  height: 200px;
+  width: 155px;
+}
+div#quadrado1{
+  position: absolute;
+  width: 1365px;
+    height: 693px;
+    top: 185px;
+    left: 441px;
+    z-index: 2;
+    animation-duration: 7s;
+}
+#quadrado1{
+  width: 100%;
+  height: 100%;
+}
+div#quadrado2{
+  position: absolute;
+  left: 212px;
+    top: 220px;
+    height: 697px;
+    width: 1358px;
+    animation-duration: 7s;
+}
+#quadrado2{
+  width: 100%;
+  height: 100%;
+}
+/* CSS Animação Seta Quadrado 1 */
+@-webkit-keyframes slideInRightSetaq1 {
+  from {
+    -webkit-transform: translate3d(180%, 0, 0);
+    transform: translate3d(180%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-65%, 0, 0);
+    transform: translate3d(-65%, 0, 0);
+  }
+}
+
+@keyframes slideInRightSetaq1 {
+  from {
+    -webkit-transform: translate3d(180%, 0, 0);
+    transform: translate3d(180%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-65%, 0, 0);
+    transform: translate3d(-65%, 0, 0);
+  }
+}
+
+.slideInRightSetaq1 {
+  -webkit-animation-name: slideInRightSetaq1;
+  animation-name: slideInRightSetaq1;
+}
+@-webkit-keyframes slideInLeftSetaq1 {
+  from {
+    -webkit-transform: translate3d(-65%, 0, 0);
+    transform: translate3d(-65%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(5%, 0, 0);
+    transform: translate3d(5%, 0, 0);
+  }
+}
+
+@keyframes slideInLeftSetaq1 {
+  from {
+    -webkit-transform: translate3d(-65%, 0, 0);
+    transform: translate3d(-65%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(5%, 0, 0);
+    transform: translate3d(5%, 0, 0);
+  }
+}
+
+.slideInLeftSetaq1 {
+  -webkit-animation-name: slideInLeftSetaq1;
+  animation-name: slideInLeftSetaq1;
+}
+/* CSS Animação Logo */
+@-webkit-keyframes slideInRightLogo {
+  from {
+    -webkit-transform: translate3d(90%, 0, 0);
+    transform: translate3d(90%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+
+@keyframes slideInRightLogo {
+  from {
+    -webkit-transform: translate3d(90%, 0, 0);
+    transform: translate3d(90%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+
+.slideInRightLogo {
+  -webkit-animation-name: slideInRightLogo;
+  animation-name: slideInRightLogo;
+}
+@-webkit-keyframes slideInLeftLogo {
+  from {
+    -webkit-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(2%, 0, 0);
+    transform: translate3d(2%, 0, 0);
+  }
+}
+
+@keyframes slideInLeftLogo {
+  from {
+    -webkit-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(2%, 0, 0);
+    transform: translate3d(2%, 0, 0);
+  }
+}
+
+.slideInLeftLogo {
+  -webkit-animation-name: slideInLeftLogo;
+  animation-name: slideInLeftLogo;
+}
+/* CSS Animação Quadrado */
+@-webkit-keyframes slideInRightQuadrado {
+  from {
+    -webkit-transform: translate3d(10%, 0, 0);
+    transform: translate3d(10%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-3%, 0, 0);
+    transform: translate3d(-3%, 0, 0);
+  }
+}
+
+@keyframes slideInRightQuadrado {
+  from {
+    -webkit-transform: translate3d(10%, 0, 0);
+    transform: translate3d(10%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-3%, 0, 0);
+    transform: translate3d(-3%, 0, 0);
+  }
+}
+
+.slideInRightQuadrado {
+  -webkit-animation-name: slideInRightQuadrado;
+  animation-name: slideInRightQuadrado;
+}
+@-webkit-keyframes slideInLeftQuadrado {
+  from {
+    -webkit-transform: translate3d(-3%, 0, 0);
+    transform: translate3d(-3%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(1%, 0, 0);
+    transform: translate3d(1%, 0, 0);
+  }
+}
+
+@keyframes slideInLeftQuadrado {
+  from {
+    -webkit-transform: translate3d(-3%, 0, 0);
+    transform: translate3d(-3%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(1%, 0, 0);
+    transform: translate3d(1%, 0, 0);
+  }
+}
+
+.slideInLeftQuadrado {
+  -webkit-animation-name: slideInLeftQuadrado;
+  animation-name: slideInLeftQuadrado;
+}
+
+/* CSS Animação Quadrado 2*/
+@-webkit-keyframes slideInRightQuadrado2 {
+  from {
+    -webkit-transform: translate3d(10%, 0, 0);
+    transform: translate3d(10%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-5%, 0, 0);
+    transform: translate3d(-5%, 0, 0);
+  }
+}
+
+@keyframes slideInRightQuadrado2 {
+  from {
+    -webkit-transform: translate3d(10%, 0, 0);
+    transform: translate3d(10%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-5%, 0, 0);
+    transform: translate3d(-5%, 0, 0);
+  }
+}
+
+.slideInRightQuadrado2 {
+  -webkit-animation-name: slideInRightQuadrado2;
+  animation-name: slideInRightQuadrado2;
+}
+@-webkit-keyframes slideInLeftQuadrado2 {
+  from {
+    -webkit-transform: translate3d(-5%, 0, 0);
+    transform: translate3d(-5%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(1%, 0, 0);
+    transform: translate3d(1%, 0, 0);
+  }
+}
+
+@keyframes slideInLeftQuadrado2 {
+  from {
+    -webkit-transform: translate3d(-5%, 0, 0);
+    transform: translate3d(-5%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(1%, 0, 0);
+    transform: translate3d(1%, 0, 0);
+  }
+}
+
+.slideInLeftQuadrado2 {
+  -webkit-animation-name: slideInLeftQuadrado2;
+  animation-name: slideInLeftQuadrado2;
+}
+
+
+/* CSS Animação Preço do Quadrado 1 */
+@-webkit-keyframes slideInRightPerson {
+    from {
+      -webkit-transform: translate3d(39%, 0, 0);
+      transform: translate3d(39%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-13%, 0, 0);
+      transform: translate3d(-13%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightPerson {
+    from {
+      -webkit-transform: translate3d(39%, 0, 0);
+      transform: translate3d(39%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-13%, 0, 0);
+      transform: translate3d(-13%, 0, 0);
+    }
+  }
+  
+  .slideInRightPerson {
+    -webkit-animation-name: slideInRightPerson;
+    animation-name: slideInRightPerson;
+  }
+
+  @-webkit-keyframes slideInLeftPerson {
+    from {
+      -webkit-transform: translate3d(-13%, 0, 0);
+      transform: translate3d(-13%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(2%, 0, 0);
+      transform: translate3d(2%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInLeftPerson {
+    from {
+      -webkit-transform: translate3d(-13%, 0, 0);
+      transform: translate3d(-13%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(2%, 0, 0);
+      transform: translate3d(2%, 0, 0);
+    }
+  }
+  
+  .slideInLeftPerson {
+    -webkit-animation-name: slideInLeftPerson;
+    animation-name: slideInLeftPerson;
+  }
+
+  /* CSS Animação Preços Quadrado 2 */
+  @-webkit-keyframes slideInRightVarejo {
+    from {
+      -webkit-transform: translate3d(30%, 0, 0);
+      transform: translate3d(30%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-20%, 0, 0);
+      transform: translate3d(-20%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightVarejo {
+    from {
+      -webkit-transform: translate3d(30%, 0, 0);
+      transform: translate3d(30%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-20%, 0, 0);
+      transform: translate3d(-20%, 0, 0);
+    }
+  }
+  
+  .slideInRightVarejo {
+    -webkit-animation-name: slideInRightVarejo;
+    animation-name: slideInRightVarejo;
+  }
+
+  @-webkit-keyframes slideInLeftVarejo {
+    from {
+      -webkit-transform: translate3d(-20%, 0, 0);
+      transform: translate3d(-20%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(4%, 0, 0);
+      transform: translate3d(4%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInLeftVarejo {
+    from {
+      -webkit-transform: translate3d(-20%, 0, 0);
+      transform: translate3d(-20%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(4%, 0, 0);
+      transform: translate3d(4%, 0, 0);
+    }
+  }
+  
+  .slideInLeftVarejo {
+    -webkit-animation-name: slideInLeftVarejo;
+    animation-name: slideInLeftVarejo;
+  }
+  /* CSS Animação Seta Quadrado 2 */
+  @-webkit-keyframes slideInRightSetaq2 {
+    from {
+      -webkit-transform: translate3d(140%, 0, 0);
+      transform: translate3d(140%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-95%, 0, 0);
+      transform: translate3d(-95%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightSetaq2 {
+    from {
+      -webkit-transform: translate3d(140%, 0, 0);
+      transform: translate3d(140%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-95%, 0, 0);
+      transform: translate3d(-95%, 0, 0);
+    }
+  }
+  
+  .slideInRightSetaq2 {
+    -webkit-animation-name: slideInRightSetaq2;
+    animation-name: slideInRightSetaq2;
+  }
+
+  @-webkit-keyframes slideInLeftSetaq2 {
+    from {
+      -webkit-transform: translate3d(-95%, 0, 0);
+      transform: translate3d(-95%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(20%, 0, 0);
+      transform: translate3d(20%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInLeftSetaq2 {
+    from {
+      -webkit-transform: translate3d(-95%, 0, 0);
+      transform: translate3d(-95%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(20%, 0, 0);
+      transform: translate3d(20%, 0, 0);
+    }
+  }
+  
+  .slideInLeftSetaq2 {
+    -webkit-animation-name: slideInLeftSetaq2;
+    animation-name: slideInLeftSetaq2;
+  }
+  
+  /* CSS Animação "No Varejo" Quadrado 2 */
+  @-webkit-keyframes slideInRightNovarejo {
+    from {
+      -webkit-transform: translate3d(120%, 0, 0);
+      transform: translate3d(120%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-85%, 0, 0);
+      transform: translate3d(-85%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightNovarejo {
+    from {
+      -webkit-transform: translate3d(120%, 0, 0);
+      transform: translate3d(120%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-85%, 0, 0);
+      transform: translate3d(-85%, 0, 0);
+    }
+  }
+  
+  .slideInRightNovarejo {
+    -webkit-animation-name: slideInRightNovarejo;
+    animation-name: slideInRightNovarejo;
+  }
+
+  @-webkit-keyframes slideInLeftNovarejo {
+    from {
+      -webkit-transform: translate3d(-85%, 0, 0);
+      transform: translate3d(-85%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(5%, 0, 0);
+      transform: translate3d(5%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInLeftNovarejo {
+    from {
+      -webkit-transform: translate3d(-85%, 0, 0);
+      transform: translate3d(-85%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(5%, 0, 0);
+      transform: translate3d(5%, 0, 0);
+    }
+  }
+  
+  .slideInLeftNovarejo {
+    -webkit-animation-name: slideInLeftNovarejo;
+    animation-name: slideInLeftNovarejo;
+  }
+  /* CSS Animação Nome */
+  @-webkit-keyframes slideInRightNome {
+    from {
+      -webkit-transform: translate3d(120%, 0, 0);
+      transform: translate3d(120%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-10%, 0, 0);
+      transform: translate3d(-10%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightNome {
+    from {
+      -webkit-transform: translate3d(120%, 0, 0);
+      transform: translate3d(120%, 0, 0);
+      visibility: visible;
+      opacity: 0;
+    }
+  
+    to {
+      -webkit-transform: translate3d(-10%, 0, 0);
+      transform: translate3d(-10%, 0, 0);
+      opacity: 1;
+    }
+  }
+  
+  .slideInRightNome {
+    -webkit-animation-name: slideInRightNome;
+    animation-name: slideInRightNome;
+  }
+
+  @-webkit-keyframes slideInLeftNome {
+    from {
+      -webkit-transform: translate3d(-10%, 0, 0);
+      transform: translate3d(-10%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInLeftNome {
+    from {
+      -webkit-transform: translate3d(-10%, 0, 0);
+      transform: translate3d(-10%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInLeftNome {
+    -webkit-animation-name: slideInLeftNome;
+    animation-name: slideInLeftNome;
+  }
+
+  /* CSS Animação Imagem */
+  
+  @-webkit-keyframes slideInLeftImg {
+    from {
+      -webkit-transform: translate3d(-12%, 0, 0);
+      transform: translate3d(-12%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(55%, 0, 0);
+      transform: translate3d(55%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInLeftImg {
+    from {
+      -webkit-transform: translate3d(-12%, 0, 0);
+      transform: translate3d(-12%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(55%, 0, 0);
+      transform: translate3d(55%, 0, 0);
+    }
+  }
+  
+  .slideInLeftImg {
+    -webkit-animation-name: slideInLeftImg;
+    animation-name: slideInLeftImg;
+  }
+  @-webkit-keyframes slideInRightImg {
+    from {
+      -webkit-transform: translate3d(55%, 0, 0);
+      transform: translate3d(55%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(40%, 0, 0);
+      transform: translate3d(40%, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightImg {
+    from {
+      -webkit-transform: translate3d(55%, 0, 0);
+      transform: translate3d(55%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(40%, 0, 0);
+      transform: translate3d(40%, 0, 0);
+    }
+  }
+  
+  .slideInRightImg {
+    -webkit-animation-name: slideInRightImg;
+    animation-name: slideInRightImg;
+  }

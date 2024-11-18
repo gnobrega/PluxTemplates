@@ -1,0 +1,14 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, #content {
+    width: 200px;
+    height: 100px;
+    display: flex;
+}
+body {
+    background: #000000;
+    overflow: hidden;
+}

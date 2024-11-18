@@ -3,8 +3,8 @@
     padding: 0;
 }
 html, body {
-    width: 576px;
-    height: 288px;
+    width: 395px;
+    height: 195px;
 }
 body {
     background: #062A2C;
@@ -15,15 +15,15 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 576px;
-    height: 288px;
+    width: 395px;
+    height: 195px;
 }
 #midiaVideo { 
     position: absolute;
     top: 0;
     left: 0;
-    width: 576px;
-    height: 288px;
+    width: 395px;
+    height: 195px;
     object-fit: fill;
     display: none;
 }

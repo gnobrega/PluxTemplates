@@ -42,7 +42,7 @@ video#fundo {
 #titulo, #horario, #texto1, #dia {
     position: absolute;
     left: 40px;
-    top: 460px;
+    top: 575px;
     font-size: 78px;
     line-height: 85px;
     color: #fff;
@@ -54,7 +54,7 @@ video#fundo {
     font-style: italic;
 }
 #horario, #dia {
-    top: 680px;
+    top: 720px;
     font-weight: bold;
     font-size: 100px;
 }
@@ -68,5 +68,5 @@ video#fundo {
 }
 #texto1 {
     font-size: 70px;
-    top: 790px;
+    top: 830px;
 }

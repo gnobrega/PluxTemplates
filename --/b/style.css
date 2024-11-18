@@ -1,0 +1,214 @@
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 768px;
+    height: 1360px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+}
+#titulo {
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    font-family: 'Poppins-Regular';
+    font-size: 80px;
+    color: #FFF;
+    letter-spacing: -1px;
+    display: none;
+}
+#cidade {
+    font-family: 'Poppins-Regular';
+    font-size: 76px;
+    color: #FFF;
+    letter-spacing: -1px;
+    display: none;
+}
+#container-cidade{
+    align-items: center;
+    display: flex;
+    position: absolute;
+    left: 39px;
+    top: 53px;
+    width: 684px;
+    height: 116px;
+    justify-content: center;
+}
+#temperatura {
+    position: absolute;
+    left: 199px;
+    top: 569px;
+    font-family: 'Poppins-Regular';
+    font-size: 154.65px;
+    color: #FFF;
+    letter-spacing: -1px;
+    display: none;
+}
+#locIcon{
+    display: none;
+}
+#diaMesContainer{
+    justify-content: center;
+    display: flex;
+    width: 768px;
+    position: absolute;
+    top: 775px;
+    font-family: 'Poppins-Regular';
+    font-size: 31.65px;
+    color: #FFF;
+}
+#diaMes{
+    display: none;
+}
+#icone {
+    position: absolute;
+    top: 329px;
+    left: 159px;
+    width: 450px;
+    display: none;
+}
+#icone.sol, #icone.lua {
+    top: 261px;
+    left: 159px;
+    width: 450px;
+}
+#icone.sol-nuvem {
+    top: 176px;
+    left: 159px;
+    width: 450px;
+}
+#container-icones,
+#container-temps,
+#container-temps-max,
+#container-temps-min {
+    position: absolute;
+    width: 780px;
+    height: 100px;
+    /* left: 20px; */
+    top: 980px;
+    /* display: none; */
+
+}
+#container-temps-max {
+    font-size: 100px;
+    top: 1214px;
+    width: 767px;
+}
+#container-temps-min {
+    top: 1309px;
+    left: 51px;
+    width: 764px;
+}
+#container-temps-max .ct-temp,
+#container-temps-min .ct-temp {
+    display: inline;
+    font-size: 92px;
+    color: #FFF;
+    display: none;
+}
+#container-temps-min .ct-temp {
+    color: #6cc9ff;
+}
+
+#container-temps-min .ct-temp {
+    font-size: 34px;
+}
+#container-temps {
+    width: 775px;
+    top: 1148px;
+    left: -5px;
+    
+}
+.ct-icone, .ct-temp {
+    width: 254px;
+    height: 100px;
+    float: left;
+    /*display: none;*/
+}
+.ct-icone img {
+    width: 100%;
+    display: none;
+}
+.ct-icone img.sol {
+    width: 75%;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.ct-icone img.lua {
+    width: 70%;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.ct-icone img.nuvem-chuva {
+    width: 105%;
+    margin-left: 14px;
+    margin-top: 12px;
+}
+.ct-icone img.sol-nuvem {
+    width: 105%;
+    margin-left: 14px;
+    margin-top: -10px;
+}
+.ct-icone img.lua-nuvem {
+    margin-top: -4px;
+}
+.ct-temp {
+    font-family: 'Poppins-Regular';
+    color: #6cc9ff;
+    font-size: 55px;
+    text-align: center;
+    display: none;
+    width: 254px;
+}
+.ct-temp:nth-child(4) {
+    margin-left: 16px;
+}
+#blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+	background-color: #000;
+}
+/* Dados */
+video#fundo, #fundoImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+	object-fit: fill;
+    display: none;
+}
+#rodape {
+	position: absolute;
+    top: 1049px;
+    left: 0;
+    
+}
+
+/* animação */
+.exibir-titulo {
+    animation-name: exibir-titulo;
+    animation-duration: 1s;
+}
+@keyframes exibir-titulo {
+    from {
+        opacity: 0;
+        left: -150px;
+    }
+    to {
+        opacity: 1;
+        left: 30px;
+    }
+}

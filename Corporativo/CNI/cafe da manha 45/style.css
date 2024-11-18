@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'source-serif-pro.bold';
+    src: url('./fonts/source-serif-pro.bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SourceSansVariable-Roman';
+    src: url('./fonts/SourceSansVariable-Roman.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    object-fit: fill;
+}
+/* Dados */
+#conteudo { 
+    width: 1360px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div#categoria {
+    position: absolute;
+    left: 300px;
+    top: 145px;
+    color: #9b9b9b;
+    font-size: 45px;
+    text-align: center;
+    font-family: SourceSansVariable-Roman;
+    display: none;
+    text-transform: uppercase;
+}
+#container {
+	position: absolute;
+    width: 700px;
+	height: 520px;
+	left: 300px;
+	top: 220px;
+}
+.alimento {
+	font-size: 30px;
+	font-family: SourceSansVariable-Roman;
+}

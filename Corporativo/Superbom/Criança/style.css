@@ -78,33 +78,34 @@ body {
     background: url(./media/fechamento.jpg);
 }
 div#nome {
-    height: 150px;
+    height: 120px;
     position: absolute;
-    left: 620px;
-    top: 222px;
+    left: 655px;
+    top: 615px;
     font-family: 'AmsiProCond-Bold';
-    color: #ffffff;
-    font-size: 60px;
+    color: #f9e400;
+    font-size: 42px;
     text-align: center;
-    width: 388px;
+    width: 620px;
     display: none;
     line-height: 50px;
     z-index: 40;
 }
 #reais2 {
     position: fixed;
-    top: 409px;
-    left: 690px;
-    z-index: 35;
-    color: #1666ba;
+    font-size: 40px;
+    top: 107px;
+    left: 1154px;
+    z-index: 99;
+    color: #ffffff;
     font-family: 'AmsiProCond-Bold';
 }
 div#ctPreco2 {
 	position: absolute;
-    left: 735px;
-    top: 310px;
-	width: 220px;
-    z-index: 40;
+    left: 1056px;
+    top: 111px;
+    width: 226px;
+    z-index: 99;
 }
 div#ctPreco {
 	display: none;
@@ -112,8 +113,8 @@ div#ctPreco {
 }
 div#preco {
     font-family: 'AmsiProCond-Bold';
-    color: #1666ba;
-    font-size: 150px;
+    color: #ffffff;
+    font-size: 133px;
     text-align: right;
     letter-spacing: -2px;
 	float: left;
@@ -121,42 +122,43 @@ div#preco {
 }
 div#cents {
     font-family: 'AmsiProCond-Bold';
-    color: #1666ba;
+    color: #ffffff;
     font-size: 40px;
     text-align: left;
 	float: left;
-	margin-top: 100px;
+	margin-top: 41px;
 	padding-left: 5px;
 }
 div#unidade {
-    font-family: 'AmsiProCond-Regular';
-    color: #1666ba;
-    font-size: 30px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 23px;
     text-align: left;
     display: none;
-	float: right;
-    margin-right: 20px;
-    margin-top: -10px;
+    float: right;
+    margin-right: 41px;
+    margin-top: 14px;
 }
 div#validade {
     position: absolute;
-    left: 400px;
+    left: 685px;
     top: 715px;
     font-family: 'AmsiProCond-Bold';
-    color: #1666ba;
-    font-size: 35px;
+    color: #054905;
+    font-size: 25px;
     width: 551px;
     text-align: center;
     display: none;
 }
 img#fileId {
     position: absolute;
-    height: 350px;
-    width: 343px;
-    top: 262px;
-    left: 933px;
-    display: none;
+    height: 567px;
+    width: 705px;
+    top: 150px;
+    left: 610px;
     z-index: 20;
+    display: none;
+    
 }
 div #ctImg {
     display: none;
@@ -175,3 +177,72 @@ div #ctImg {
         top: 320px;
     }
 }
+@-webkit-keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInRightFade {
+    -webkit-animation-name: slideInRightFade;
+    animation-name: slideInRightFade;
+  }
+
+@-webkit-keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  @keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  .slideOutRightFade {
+    -webkit-animation-name: slideOutRightFade;
+    animation-name: slideOutRightFade;
+  }

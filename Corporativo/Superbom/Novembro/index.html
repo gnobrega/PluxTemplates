@@ -11,7 +11,7 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo2.mp4"></video>
+            <video id="fundo" src="./media/fundo.mp4"></video>
                         
             <!-- Imagem -->
             <div id="ctImg"><img id="fileId" /></div>
@@ -23,7 +23,10 @@
                 <div id="validade"></div>                
                 <div id="complemento"></div>
             </div>
-			<img id="bola" src="./media/bola.png" />
+			<img id="bola" src="./media/bola1.png" />
+            <div id="reais" hidden>
+                R$
+            </div>
 			<div id="ctPreco2">
 				<div id="ctPreco">
 					<div id="preco"></div>
@@ -33,7 +36,7 @@
 			</div>
             
             <!-- Calhau -->
-            <video id="calhau" src="./media/calhau.mp4?a=1" ></video>
+            <img id="calhau" src="./media/calhau.png" ></img>
             
         </div>
         
@@ -83,23 +86,24 @@
                         $("#ctImg").fadeIn();
                         $("#fileId").addClass("animated");
 						$("#fileId").addClass("zoomIn");
-                    }, 2700);
+                    }, 500);
                     setTimeout(function() {  
                         $("#nome").fadeIn();
+                        $("#reais").fadeIn();
                         $("#bola").show();
 						$("#bola").addClass("animated");
 						$("#bola").addClass("zoomIn");
-                    }, 3100);
+                    }, 300);
                     setTimeout(function() {  
                         $("#ctPreco").fadeIn();
                         $("#unidade").fadeIn();
                         $("#complemento").fadeIn();
                         $('#bg-complemento').show();
                         $('#bg-complemento').addClass('mostra-bg');
-                    }, 3400);
+                    }, 300);
                     setTimeout(function() {  
                         $("#validade").fadeIn();
-                    }, 3900);
+                    }, 500);
                     
                     setTimeout(function() {  
                         $("#ctImg").hide();
@@ -107,7 +111,9 @@
                         $("#bola").hide();
                         $("#ctPreco").hide();
                         $("#unidade").hide();
-                    }, 11000);
+                        $("#validade").hide();
+                        $("#reais").hide();
+                    }, 9800);
                 } else {
                     $("#calhau").show();
                     $("#calhau").get(0).play();

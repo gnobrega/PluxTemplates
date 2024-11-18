@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Zurich Condensed BT';
+    src: url('./fonts/Zurich Condensed BT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Panton-ExtraBold';
+    src: url('./fonts/Panton-ExtraBold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 768px;
+}
+body {
+    background: #ffffff;
+    overflow: hidden;
+}
+img#fundo {
+    width: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#hora {
+    position: absolute;
+    top: 7px;
+    left: 936px;
+    color: #ffffff;
+    font-size: 79px;
+    font-family: 'Panton-ExtraBold';
+    font-weight: bold;
+    display: none;
+}
+#hora span {
+    color: #CCCCCC;
+}
+#data {
+    font-size: 48px;
+    color: #F9F9F9;
+    font-family: 'Nexa Bold';
+    position: absolute;
+    top: 96px;
+    left: 411px;
+    display: none;
+}
+/* Dados */
+#conteudo { 
+}
+.horario {
+    position: absolute;
+    color: #000000;
+    font-size: 38px;
+    font-family: 'Panton-ExtraBold';
+    left: 230px;
+    text-align: center;
+    width: 140px;
+}
+.horario div.sub {
+}
+.linha1 {
+    top: 238px;
+    display: none;
+}
+.linha2 {
+    top: 318px;
+    display: none;
+}
+.linha2 {
+    display: none;
+}
+.linha2 div.sub {
+    display: none;
+    display: none;
+}
+.linha3 {
+    top: 396px;
+    display: none;
+}
+.linha4 {
+    top: 477px;
+    display: none;
+}
+.linha5 {
+    top: 559px;
+    display: none;
+}
+.linha6 {
+    top: 603px;
+    display: none;
+}
+.campo1 {
+    left: 542px;
+    width: 311px;
+}
+.campo2 {
+    left: 662px;
+    width: 251px;
+}
+.campo3 {
+    left: 937px;
+    width: 311px;
+}
+.campo {
+    position: absolute;
+    height: 50px;
+    color: #000000;
+    font-size: 30px;
+    font-family: 'Panton-ExtraBold';
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+}
+
+/* animation */
+.mostra-data {
+    animation-name: mostra-data;
+    animation-duration: .5s;
+}
+@keyframes mostra-data{
+    from {
+        top: 70px;
+        opacity: 0;
+    }
+    to {
+        top: 96px;
+        opacity: 1;
+    }
+}

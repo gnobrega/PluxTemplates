@@ -1,14 +1,18 @@
 @font-face {
-    font-family: 'Montserrat-Bold';
-    src: url('./fonts/Montserrat-Bold.ttf') format('truetype');
+    font-family: 'Raleway-Black';
+    src: url('./fonts/Raleway-Black.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'InterstateBlackCondensed';
-    src: url('./fonts/InterstateBlackCondensed.ttf') format('truetype');
+    font-family: 'Raleway-Bold';
+    src: url('./fonts/Raleway-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'AmsiProCond-Regular';
-    src: url('./fonts/AmsiProCond-Regular.ttf') format('truetype');
+    font-family: 'Poppins-Regular';
+    src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Raleway-Italic';
+    src: url('./fonts/Raleway-Italic.ttf') format('truetype');
 }
 
 * {
@@ -68,9 +72,9 @@ body {
 div#nome {
     height: 120px;
     position: absolute;
-    left: 770px;
+    left: 766px;
     top: 365px;
-    font-family: 'InterstateBlackCondensed';
+    font-family: 'Poppins-Regular';
     color: #993c18;
     font-size: 50px;
     text-align: left;
@@ -81,31 +85,22 @@ div#nome {
     display: flex;
     align-items: end;
 }
-div#reais2 {
-    font-size: 40px;
-    width: 100px;
-    line-height: 35px;
-    margin-right: 10px;
-    z-index: 35;
-    color: #993c18;
-    font-family: 'Montserrat-Bold';
-}
 div#ctPreco2 {
     display: flex;
     height: 122px;
     align-items: center;
 	position: relative;
-    left: 870px;
-    top: 495px;
+    left: 875px;
+    top: 497px;
 	width: 387px;
     z-index: 40;
 }
 div#ctPreco {
 	display: flex;
-	height: 128px;
+	height: 150px;
 }
 div#preco {
-    font-family: 'Montserrat-Bold';
+    font-family: 'Raleway-Bold';
     color: #993c18;
     font-size: 100px;
     letter-spacing: -2px;
@@ -116,26 +111,26 @@ div#container {
     display: flex;
 }
 div#cents {
-    font-family: 'Montserrat-Bold';
+    font-family: 'Raleway-Bold';
     color: #993c18;
     font-size: 100px;
     text-align: left;
 }
 div#unidade {
-    font-family: 'Montserrat-Bold';
+    font-family: 'Raleway-Italic';
     color: #d57244;
     font-size: 30px;
     position: relative;
     width: 300px;
     top: 498px;
-    left: 770px;
+    left: 766px;
     animation-duration: 2.5s;
 }
 div#validade {
     position: absolute;
     left: 400px;
     top: 715px;
-    font-family: 'Montserrat-Bold';
+    font-family: 'Raleway-Black';
     color: #1666ba;
     font-size: 35px;
     width: 551px;

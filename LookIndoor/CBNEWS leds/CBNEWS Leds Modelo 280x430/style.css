@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 280px;
+    height: 430px;
+}
+body {
+    background: #00376d;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 430px;
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 430px;
+    display: none;
+}
+#titulo {
+    position: absolute;
+    top: 331px;
+    left: 10px;
+    font-family: 'AvenirNextLTPro-Demi';
+    font-size: 16px;
+    color: #90B2FF;
+    width: 251px;
+}
+#texto {
+    position: absolute;
+    top: 355px;
+    left: 10px;
+    font-family: 'AvenirNextLTPro-Bold';
+    font-size: 13px;
+    color: #fff;
+    width: 251px;
+}
+#credito {
+    position: absolute;
+    top: 222px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 12px;
+    text-align: right;
+    transform: rotate(-90deg);
+    width: 300px;
+    left: 114px;
+}
+#editoria {
+    position: absolute;
+    top: 0;
+}
+#bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

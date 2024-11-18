@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=768, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Fundo -->
+        <img id="fundoImg" src="./media/fundo-dia.jpg" />
+        <img id="rodape" src="./media/rodape.png" />
+        
+        <!-- Textos -->
+        <div id="titulo">CLIMA / TEMPO</div>
+        <div id="container-cidade">
+            <img src="./media/locicon.png" id="locIcon"/>
+            <div id="cidade"></div>
+        </div>
+        <div id="temperatura">--º</div>
+        <div id="diaMesContainer">
+            <div id="diaMes"></div>
+        </div>
+        
+        
+
+        <!-- Ícone Grande -->
+        <img src="" id="icone" class="animated" />
+
+        <!-- Ícones menores -->
+        <div id="container-icones">
+            <div class="ct-icone"><img src="" class=""></div>
+            <div class="ct-icone"><img src="" class=""></div>
+            <div class="ct-icone"><img src="" class=""></div>
+        </div>
+
+        <!-- Temps menores -->
+        <div id="container-temps">
+            <div class="ct-temp">---</div>
+            <div class="ct-temp">---</div>
+            <div class="ct-temp">---</div>
+        </div>
+        <div id="container-temps-max">
+            <div class="ct-temp">--º</div>
+            <div class="ct-temp">--º</div>
+            <div class="ct-temp">--º</div>
+        </div>
+        <div id="container-temps-min">
+            <div class="ct-temp">--º</div>
+            <div class="ct-temp">--º</div>
+            <div class="ct-temp">--º</div>
+        </div>
+
+        <div id="blackout"></div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "";
+            var DURATION = 15000;
+            var ext;
+            GnLib.prefixImg = "";
+            GnLib.noDump();
+            var DIAS = ['DOM','SEG','TER','QUA','QUI','SEX','SAB'];
+            var NOITE = false;
+
+            var dt = new Date();
+            if( dt.getHours() > 18 ) {
+                NOITE = true;
+            }
+
+            const mes = dt.toLocaleString('pt-BR', { month: 'long' });
+            var ano = dt.getFullYear();
+            var dia = dt.getDate();
+            
+            const diaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+            const diaAtual = diaSemana[dt.getDay()];
+
+
+            // Ícones
+            var ICONES = {
+                'sol': ['c01d'],
+                'sol-nuvem': ['s05d','s05d','a01d','a02d','a03d','a04d','a05d','a06d','c02d','c03d','c04d'],
+                'nuvem-chuva': ['t01d','t01n','t02d','t02n','t03d','t03n','t04d','t04n','t05d','t05n','d01d','d01n','d02d','d02n','d03d','d03n','r01d','r01n','r02d','r02n','r03d','r03n','f01d','f01n','r04d','r04n','r05d','r05n','r06d','r06n','s01d','s01n','s02d','s02n','s03d','s03n','s04d','s04n','s06d','s06n','u00d','u00n'],
+                'lua': ['c01n'],
+                'lua-nuvem': ['s05n','s05n','a01n','a02n','a03n','a04n','a05n','a06n','c02n','c03n','c04n']
+            }
+           
+            $(function () {
+
+                $('#diaMes').text(diaAtual + ' | ' + dia + ' de ' + mes + ' ' + ano);
+
+                //GnPlayer
+                if ( !GnLib.getParam('preview')
+                    || navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+
+                    //Carrega o conteúdo
+                    //GnLib.autoloadContent(DATA_SOURCE, function (template) {
+                    //});
+                    var urlClima = GnLib.getContentPath()+"/previsao/data.json";
+                    var date = new Date();
+
+                    // Preenche a temperatura
+                    $.get(urlClima, function(clima) {
+                        $('#cidade').text(clima.cidade);
+                        $('#temperatura').text(clima.temperatura + 'ºC');
+                        var icone = getIcon(clima.icone);
+                        $("#icone").attr("src", "./media/"+icone+".png");
+                        $("#icone").addClass(icone);
+
+                        // Altera o fundo
+                        if(icone == 'nuvem-chuva'){
+                            $("#fundoImg").attr("src", "./media/fundo-chuvoso.jpg");
+                        } else if ( NOITE && icone != 'nuvem-chuva'){
+                            $("#fundoImg").attr("src", "./media/fundo-noite.jpg");
+                        } else {
+                            $("#fundoImg").attr("src", "./media/fundo-dia.jpg");
+                        }
+
+						// Corrige a fonte
+						if( $("#cidade").text().length > 10 ) {
+							//$("#cidade").css("font-size", "55px");
+						}
+                        
+                        // Previsão
+                        var w = date.getDay() 
+                        for( i = 1; i <= 4; i++ ) {
+                            $('#container-temps-max .ct-temp').eq(i-1).text(parseInt(clima.previsao[i].maxima) + 'ºC');
+                            $('#container-temps-min .ct-temp').eq(i-1).text(parseInt(clima.previsao[i].minima) + 'ºC');
+                            
+                            // Nome do dia
+                            w = w + 1;
+                            if( w > 6 ) {
+                                w = 0;
+                            }
+                            $('#container-temps .ct-temp').eq(i-1).text(DIAS[w]);
+                            icone = getIcon(clima.previsao[i].icone);
+                            $(".ct-icone img").eq(i-1).attr("src", "./media/"+icone+".png");
+                            $(".ct-icone img").eq(i-1).addClass(icone);
+                        }
+                        console.log(clima);
+                    }, 'json');
+
+                } else { //Preview
+					GnLib.loadPreviewGn();
+					
+                    //Autplay
+					setTimeout(function() {
+						GnPlay();
+					}, 1000);
+                    
+                }
+
+                // Autoplay Android
+                if( navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                    GnPlay();
+                }
+
+            });
+
+            //Autoplay
+            function GnPlay() {
+                var delay;
+
+                //Ajusta o zoom até enquadrar na tela
+//                var zoom =  $(window).width() / 768;
+//                $("body").css("transform-origin", "0 0");
+ //               $("body").css('zoom', zoom);
+//				if( navigator.userAgent.toLowerCase().indexOf('chrome') == -1 ) {
+//					$("body").css("-moz-transform", "scale("+zoom+","+zoom+")");
+//					$("body").css("-moz-transform-origin", "0 0");				
+//				}
+
+                // Remove o blackout
+                $("#blackout").fadeOut();
+			
+                // Play - Vídeo
+                if( true || navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                    delay = 200;
+
+                    // Android
+                    $("video#fundo").hide();
+                    $("img#fundoImg").fadeIn();
+                    $("#titulo").html("");
+                } else {
+
+                    // Windows
+                    delay = 5000;
+                    $("video#fundo").show();
+                    $("video#fundo").get(0).play();
+                }
+
+                $("#texto").html("<strong>"+$("#titulo").html()+"</strong>"+$("#texto").html());
+                setTimeout(function () {
+                    $("#icone").show();
+                    $("#icone").addClass('zoomIn');
+
+                    $('#titulo').show();
+                    $('#titulo').addClass('exibir-titulo');
+                }, delay);
+
+                setTimeout(function () {
+                    $('.ct-icone img').eq(0).fadeIn();
+                    $('#container-temps .ct-temp').eq(0).fadeIn();
+                    $('#container-temps-max .ct-temp').eq(0).fadeIn();
+                    $('#container-temps-min .ct-temp').eq(0).fadeIn();
+                }, delay + 200);
+                setTimeout(function () {
+                    $('.ct-icone img').eq(1).fadeIn();
+                    $('#container-temps .ct-temp').eq(1).fadeIn();
+                    $('#container-temps-max .ct-temp').eq(1).fadeIn();
+                    $('#container-temps-min .ct-temp').eq(1).fadeIn();
+
+                    $("#cidade").fadeIn();
+                    $("#locIcon").fadeIn();
+                    $("#diaMes").fadeIn();
+                    $("#temperatura").fadeIn();
+                    $("#celsiusTemp").fadeIn();
+                }, delay + 400);
+                setTimeout(function () {
+                    $('.ct-icone img').eq(2).fadeIn();
+                    $('#container-temps .ct-temp').eq(2).fadeIn();
+                    $('#container-temps-max .ct-temp').eq(2).fadeIn();
+                    $('#container-temps-min .ct-temp').eq(2).fadeIn();
+                }, delay + 600);
+                setTimeout(function () {
+                    $('.ct-icone img').eq(3).fadeIn();
+                    $('#container-temps .ct-temp').eq(3).fadeIn();
+                    $('#container-temps-max .ct-temp').eq(3).fadeIn();
+                    $('#container-temps-min .ct-temp').eq(3).fadeIn();
+                }, delay + 800);                
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+
+            // Recupera o icone
+            function getIcon(code) {
+                if( NOITE ) {
+                    code = code.substr(0, code.length-1) + "n";
+                } else {
+                    code = code.substr(0, code.length-1) + "d";
+                }
+                for( icon in ICONES ) {
+                    if( ICONES[icon].indexOf(code) > -1 ) {
+                        return icon;
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>
