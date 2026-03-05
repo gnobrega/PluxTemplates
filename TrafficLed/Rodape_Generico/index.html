@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=202, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+            <div id="content202" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+                <div id="hora" style="font-size: 12px;"></div>
+                <div id="data" style="font-size: 12px;"></div>
+                <div id="tempo" style="font-size: 12px;">
+                    
+                    <!-- Tempo agora Temperatura -->
+                    <div id="zona1" class="zona"><span></span>
+                        
+                        <span class="txtTmp val" style="font-size: 12px;"></span>
+                    </div>
+                    
+                </div>
+            </div>
+        
+        <div id="content270" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora2" style="font-size: 20px;"></div>
+            <div id="data2" style="font-size: 20px;"></div>
+            <div id="tempo" style="font-size: 20px;">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val" style="font-size: 20px;"></span>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div id="content280" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora3" style="font-size: 18px;"></div>
+            <div id="data3" style="font-size: 18px;"></div>
+            <div id="tempo" style="font-size: 18px;">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val" style="font-size: 18px;"></span>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+
+        <div id="content282" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora4" style="font-size: 18px;"></div>
+            <div id="data4" style="font-size: 18px;"></div>
+            <div id="tempo" style="font-size: 18px;">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val" style="font-size: 18px;"></span>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div id="content380" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora5" style="font-size: 24px;"></div>
+            <div id="data5" style="font-size: 24px;"></div>
+            <div id="tempo" style="font-size: 24px;">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val" style="font-size: 24px;"></span>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "/CONTEUDO/PREVISAO/previsao.xml";
+            
+            //Dá o Ok sobre o carregamento com sucesso
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+            
+            function GnPlay() {
+                // Recupera o tamanho do iframe
+					var arrFrames = parent.document.getElementsByTagName("IFRAME");
+					for( var i = 0; i < arrFrames.length; i++ ) {
+						if( arrFrames[i].contentWindow === window ) {
+							zoom = window.innerWidth / 768;
+                            var larguraIframe = window.innerWidth;
+                            var id = "content" + larguraIframe;
+                            // Mostra apenas o correspondente
+                            $("#" + id).css("display", "flex");
+				    	}
+					}
+            }
+
+
+            //Recupera a hora
+            autoloadFooter();
+            
+            //Carrega o rodapé
+            function autoloadFooter() {
+                
+                //Atualiza o relógio
+                updateTime();
+                setInterval(updateTime, 200);
+                
+                //Carrega os dados
+                loadData();
+                
+                
+            }
+            
+            //Atualiza o relógio
+            function updateTime () {
+                var MESES = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+                var d = new Date();
+                var horas = d.getHours();
+                var minutos = d.getMinutes();
+                        var segundos = d.getSeconds();
+                var dia = d.getDate();
+                var mes = d.getMonth();
+                var ano = d.getFullYear().toString().substr(-2);
+                var mesExtenso = MESES[mes];
+                var mes1 = ("0" + (mes + 1)).slice(-2)
+                if (horas < 10) {
+                    horas = "0" + horas;
+                }
+                if (minutos < 10) {
+                    minutos = "0" + minutos;
+                }
+                        if (segundos < 10) {
+                    segundos = "0" + segundos;
+                }
+                if (dia < 10) {
+                    dia = "0" + dia;
+                }
+                var horaFormatada = horas + ":" + minutos;
+                var dataFormatada = dia + "/" + mes1 + "/" + ano;
+                $("#hora").html(horaFormatada);
+                $("#hora2").html(horaFormatada);
+                $("#hora3").html(horaFormatada);
+                $("#hora4").html(horaFormatada);
+                $("#hora5").html(horaFormatada);
+                $("#data").html(dataFormatada);
+                $("#data2").html(dataFormatada);
+                $("#data3").html(dataFormatada);
+                $("#data4").html(dataFormatada);
+                $("#data5").html(dataFormatada);
+            }
+            
+            //Carrega os dados
+            function loadData() {
+                var url = GnLib.getContentPath() + DATA_SOURCE + "?nocache=" + Math.random();
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+                        var hmid = $(data).find('cc').find('hmid').text();
+                        var tmp = $(data).find('cc').find('tmp').text();
+                        var max1 = $(data).find("dayf day").eq(0).find('hi').text();
+                        var min1 = $(data).find("dayf day").eq(0).find('low').text();
+                        var chuv1 = $(data).find("dayf day").eq(0).find('ppcp').eq(0).text();
+                        var chuv2 = $(data).find("dayf day").eq(1).find('ppcp').eq(0).text();
+                        var max2 = $(data).find("dayf day").eq(1).find('hi').text();
+                        var min2 = $(data).find("dayf day").eq(1).find('low').text();
+
+                        //$("#zona1 .txtUmid").html("UR " + hmid + "%");
+                        $("#zona1 .txtTmp").html(tmp + "º");
+                        $("#zona2 .max").html(max1 + "º");
+                        $("#zona2 .min").html(min1 + "º");
+                        //$("#zona4 .txtChuva").html(chuv1 + "%");
+                        //$("#zona5 .txtChuva").html(chuv2 + "%");
+                        $("#zona3 .max").html(max2 + "º");
+                        $("#zona3 .min").html(min2 + "º");
+                    }
+                });
+            }
+            
+            //Recupera o indice da zona
+            //var zonaIndex = 1;
+            //function getNextZone() {
+            //    if( zonaIndex < '3' ) {
+             //       zonaIndex++;
+            //    } else {
+           //         zonaIndex = 1;
+            //    }
+             //   return zonaIndex;
+            //}
+            
+            //Troca a zona
+            //function toggle() {
+            //    $(".zona").fadeOut();
+            //    var idx = getNextZone();
+            //    setTimeout(function() {
+            //        $("#zona"+idx).fadeIn();
+            //    }, 500);
+            //}
+
+        </script>
+    </body>
+</html>

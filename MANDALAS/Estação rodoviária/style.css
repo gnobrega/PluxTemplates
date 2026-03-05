@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'ZurichBT-BoldCondensed';
+    src: url('./fonts/ZurichBT-BoldCondensed.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Acumin-BdItPro';
+    src: url('./fonts/Acumin-BdItPro.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BAHNSCHRIFT';
+    src: url('./fonts/BAHNSCHRIFT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TransatBold';
+    src: url('./fonts/TransatBold.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, #content {
+    width: 97px;
+    height: 97px;
+}
+body {
+    background: #000000;
+    overflow: hidden;
+}
+
+    
+    img#relogio {
+        position: absolute;
+        top: 19px;
+        left: 15px;
+    }
+    div#hora {
+        text-align: center;
+        width: 65px;
+        color: #0c4093;
+        font-family: 'TransatBold';
+        font-size: 20px;
+        position: absolute;
+        top: 34px;
+        left: 16px;
+    }
+    div#hora2 {
+        text-align: center;
+        width: 65px;
+        color: #0c4093;
+        font-family: 'TransatBold';
+        font-size: 20px;
+        position: absolute;
+        top: 34px;
+        left: 113px;
+    }
+
+    div#zona2 {
+        position: absolute;
+        top: 56px;
+        left: 32px;
+        width: 34px;
+        color: #090036;
+        font-family: 'Acumin-BdItPro';
+        font-size: 9px;
+        font-style: normal;
+        text-align: center;
+    }
+    div#zona3 {
+        position: absolute;
+        top: 56px;
+        left: 130px;
+        width: 34px;
+        color: #090036;
+        font-family: 'Acumin-BdItPro';
+        font-size: 9px;
+        font-style: normal;
+        text-align: center;
+    }
+    div#diaMes {
+        position: absolute;
+        top: 23px;
+        left: 17px;
+        width: 63px;
+        color: #090036;
+        font-family: 'BAHNSCHRIFT';
+        font-size: 6px;
+        font-style: normal;
+        text-align: center;
+    }
+    div#diaMes2 {
+        position: absolute;
+        top: 23px;
+        left: 114px;
+        width: 63px;
+        color: #090036;
+        font-family: 'BAHNSCHRIFT';
+        font-size: 6px;
+        font-style: normal;
+        text-align: center;
+    }
+
+    span.subtext {
+        position: absolute;
+        top: 13px;
+        left: 708px;
+        width: 34px;
+        color: #fff;
+        font-family: 'Poppins-Regular';
+        font-size: 18px;
+        font-style: normal;
+        text-align: center;
+    } */
+    div#tempo {
+        position: absolute;
+        top: 13px;
+        left: 708px;
+        width: 34px;
+        color: #fff;
+        font-family: 'Poppins-Regular';
+        font-size: 18px;
+        font-style: normal;
+        text-align: center;
+    }

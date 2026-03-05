@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Neo Sans Std Medium TR';
+    src: url('./fonts/Neo Sans Std Medium TR.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Agenda Medium';
+    src: url('./fonts/Agenda Medium.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 768px;
+    height: 529px; /* reduzido */
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 529px;
+}
+body {
+    background: #00376d;
+    overflow: hidden;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 529px; /* reduzido */
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 529px; /* reduzido */
+    display: none;
+}
+#titulo {
+    position: absolute;
+    top: 105px;
+    left: 470px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 25px; /* 45 * 0.408 */
+    color: #000;
+    width: 267px; /* 655 * 0.408 */
+    text-align: right;
+    display: none;
+}
+#descricao {
+    position: absolute;
+        top: 170px;
+    left: 420px;
+    font-family: 'Agenda Medium';
+    font-size: 22px;
+    color: #000;
+    width: 330px;
+    text-align: right;
+    display: none;
+}
+#periodo {
+    position: absolute;
+        top: 385px;
+    left: 485px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 17px;
+    color: #fff;
+    width: 267px;
+    text-align: right;
+    display: none;
+}
+#lugar {
+    position: absolute;
+    top: 425px; /* 1176 * 0.408 */
+    left: 470px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 18px;
+    color: #000;
+    width: 267px;
+    text-align: right;
+    display: none;
+}
+#classificacao {
+    position: absolute;
+    top: 455px;
+    left: 470px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 17px;
+    color: #000;
+    width: 267px;
+    text-align: right;
+    display: none;
+}
+#credito {
+    position: absolute;
+    top: 65px; /* 160 * 0.408 */
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 6px; /* 14 * 0.408 */
+    text-align: right;
+    transform: rotate(-90deg);
+    width: 122px; /* 300 * 0.408 */
+    left: 481px; /* 1180 * 0.408 */
+}
+#fileId {
+    position: absolute;
+    height: 445px;
+    width: 374px;
+    top: 49px;
+    left: 22px;
+}
+#ctImg {
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 207px; /* 507 * 0.408 */
+}

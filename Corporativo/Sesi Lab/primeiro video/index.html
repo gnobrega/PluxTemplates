@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=768, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        
+        
+        <h2 id="console"></h2>
+        <div id="content">
+            <video id="1" autoplay muted src="./media/ses.mp4" style="width: 768px; position: absolute; z-index: 99; " ></video>
+
+            
+            
+        </div>
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DURATION = 36000;
+            var comImagem = true;
+            var ext;
+            var possuiConteudo = true;
+            
+            //Dá o Ok sobre o carregamento com sucesso
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+            
+            // Autoplay Android
+            if( navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                    GnPlay();
+                }
+
+            function GnPlay() {
+                var video1 = document.getElementById("1");
+            //    var video2 = document.getElementById("2");
+            //    video1.currentTime = 0;
+            //    video2.currentTime = 0;
+                video1.play();
+            //    video2.play();
+           
+           
+            }
+            
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            //Envia pings ao player para manter a atividade
+            setInterval(function() {
+                if( typeof(parent.callApplication) != 'undefined' ) {
+                    parent.callApplication({msg:"Youtube - PING"});
+                }
+            }, 60000);
+        </script>
+    </body>
+</html>

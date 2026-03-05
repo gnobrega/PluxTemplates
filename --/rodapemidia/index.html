@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=768, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Fundo -->
+         <div id="logo"><img id="logo" src="./media/logo1.jpeg"></div>
+        <div id="fundo"></div>
+		
+		<div id="texto">
+			<div class="opcao">DÓLAR</div>
+            <div id="cotacao"></div>
+		</div>
+        <img id="variacao-up" hidden src="./media/variacaoup.png">
+        <img id="variacao-down" hidden src="./media/variacaodown.png">
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            <div id="dia">Hoje</div>
+            <div id="maxima">--</div>
+            <div id="minima">--</div>
+            <img id="icone" src="./media/icone-sol.png" />
+        </div>
+
+        <div id="conteudo1">
+            <div id="dia1">Amanhã</div>
+            <div id="maxima1">--</div>
+            <div id="minima1">--</div>
+            <img id="icone1" src="./media/icone-sol.png" />
+        </div>
+
+        <div id="conteudo2">
+            <div id="dia2"></div>
+            <div id="maxima2">--</div>
+            <div id="minima2">--</div>
+            <img id="icone2" src="./media/icone-sol.png" />
+        </div>
+
+        <div id="hora">00:00</div>
+         <div id="data"></div>
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            $(function(){
+                var mesesAbrev = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+                var hoje = new Date();
+
+                var dia = hoje.getDate();
+                if(dia < 10) dia = "0" + dia;
+
+                var mes = mesesAbrev[hoje.getMonth()];
+                var ano = hoje.getFullYear();
+
+                $("#data").text(dia + "/" + mes + "/" + ano);
+            });
+        </script>
+        <script>
+            var DATA_SOURCE = "/previsao/data.json";
+            var DATA_COTACAO = "/gn/gn_cotacao/data.xml";
+            var DURATION = 15000;
+            var ext;
+            GnLib.prefixImg = "";
+            GnLib.noDump();
+           
+            $(function () {
+
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    //GnLib.autoloadContent(DATA_SOURCE, function (template) {
+                    //});
+
+                    // Autoplay Android
+                    if( navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                        GnPlay();
+                    }
+
+                } else { //Preview
+					GnLib.loadPreviewGn();
+					
+                    //Autplay
+					setTimeout(function() {
+						GnPlay();
+					}, 1000);
+                    
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+
+                // Carrega os dados do clima
+                $.get(GnLib.getContentPath() + DATA_SOURCE, function(clima) {
+                    if( clima.previsao ) {
+
+                        var objDate = new Date();
+                        var dia = objDate.getDate();
+                        var mes = objDate.getMonth() + 1;
+                        var ano = objDate.getFullYear();
+                        var diasSemana = [
+                            "Domingo", "Segunda-feira", "Terça-feira", 
+                            "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"
+                        ];
+                        dia = ( dia < 10 ) ? "0" + dia : dia;
+                        mes = ( mes < 10 ) ? "0" + mes : mes;
+                        var data = ano + "-" + mes + "-" + dia;
+						var i = 0;
+                        
+						// Hoje
+						var hoje = clima.previsao[i];
+						$("#maxima").text(parseInt(clima.previsao[i].maxima) + "°C");
+						$("#minima").text(parseInt(clima.previsao[i].minima) + "°C");
+						var icone = getIcone(clima.icone);
+						$("#icone").attr("src", "./media/" + icone + ".png");
+                        
+                        // Futuro
+                        var amanha = clima.previsao[1];
+                        var depoisAmanha = clima.previsao[2];
+
+                        // Amanhã
+                        $("#maxima1").text(parseInt(amanha.maxima) + "°");
+                        $("#minima1").text(parseInt(amanha.minima) + "°");
+                        var iconeAmanha = getIcone(amanha.icone);
+                        $("#icone1").attr("src", "./media/" + iconeAmanha + ".png");
+
+                        // Depois de amanhã
+                        $("#maxima2").text(parseInt(depoisAmanha.maxima) + "°");
+                        $("#minima2").text(parseInt(depoisAmanha.minima) + "°");
+                        var dataDepoisAmanha = new Date(objDate);
+                        dataDepoisAmanha.setDate(objDate.getDate() + 2);
+                        var iconeDepois = getIcone(depoisAmanha.icone);
+                        $("#icone2").attr("src", "./media/" + iconeDepois + ".png");
+                        // Nome por extenso
+                        var nomeDia2 = diasSemana[dataDepoisAmanha.getDay()];
+
+                        // Atribui no HTML
+                        $("#dia2").text(nomeDia2);
+                    }
+                }, 'json');
+
+                $.get(GnLib.getContentPath() + DATA_COTACAO, function(cotacao) {
+                        
+					var dolar = $(cotacao).find('item').attr('dolar');
+                    var variacao = $(cotacao).find('item').attr('dolar_variacao');
+
+                    $("#cotacao").text(dolar);
+
+                    if (variacao) {
+                        var valor = parseFloat(variacao.replace('%', '').replace(',', '.'));
+
+                        if (valor < 0) {
+                            $("#variacao-down").show();
+                        } else if (valor > 0) {
+                            $("#variacao-up").show();
+                        }
+                    }
+                }, 'xml');
+               
+                //Ajusta o zoom até enquadrar na tela
+                //var zoom =  $(window).width() / 768;
+                //$("body").css("transform-origin", "0 0");
+                //$("body").css('zoom', zoom);
+                //if( navigator.userAgent.toLowerCase().indexOf('chrome') == -1 ) {
+				//	$("body").css("-moz-transform", "scale("+zoom+","+zoom+")");
+				//	$("body").css("-moz-transform-origin", "0 0");				
+				//}
+
+                // Atualiza a hora
+                atualizarDados();
+                setInterval(function() {
+                    atualizarDados();
+                }, 20000);
+				
+            	
+            }
+			
+			
+            // Recupera o icone
+            function getIcone(codigo) {
+
+                // Ícones
+                var ICONES = {
+                    'sol': ['c01d'],
+                    'sol-nuvem': ['s05d','s05d','a01d','a02d','a03d','a04d','a05d','a06d','c02d','c03d','c04d'],
+                    'nuvem-chuva': ['t01d','t01n','t02d','t02n','t03d','t03n','t04d','t04n','t05d','t05n','d01d','d01n','d02d','d02n','d03d','d03n','r01d','r01n','r02d','r02n','r03d','r03n','f01d','f01n','r04d','r04n','r05d','r05n','r06d','r06n','s01d','s01n','s02d','s02n','s03d','s03n','s04d','s04n','s06d','s06n','u00d','u00n'],
+                    'lua': ['c01n'],
+                    'lua-nuvem': ['s05n','s05n','a01n','a02n','a03n','a04n','a05n','a06n','c02n','c03n','c04n']
+                }
+
+                for( icone in ICONES ) {
+                    if( ICONES[icone].indexOf(codigo) > -1 ) {
+                        return "icone-"+icone;
+                    }
+                }
+            }
+
+            function atualizarDados() {
+                var objDate = new Date();
+                var hora = normalize(objDate.getHours());
+                var min = normalize(objDate.getMinutes());
+
+                $('#hora').text(hora+':'+min);
+            }
+
+            function normalize(number) {
+                if( number < 10 ) {
+                    return "0"+number;
+                } else {
+                    return ""+number;
+                }
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+
+        </script>
+    </body>
+</html>

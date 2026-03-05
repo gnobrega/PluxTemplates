@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('./fonts/Montserrat-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('./fonts/Montserrat-Bold.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./fonts/Montserrat-SemiBold.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'DS-DIGIB';
+    src: url('./fonts/DS-DIGIB.TTF') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 275px;
+    height: 384px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+	/*background: url(media/bg3.jpeg) #000 no-repeat;
+	background-size: 275px 384px; */
+}
+#blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 275px;
+    height: 384px;
+    background: #000;
+}
+.preco {
+	height: 62px;
+    color: #fff;
+    font-size: 135px;
+    padding-left: 8px;
+    padding-top: 180px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+#gasolina {
+    position: absolute;
+    z-index: 99;
+}
+#gasolina2 {
+    position: absolute;
+    z-index: 99;
+}
+#etanol {
+    position: absolute;
+    z-index: 99;
+}
+#diesel {
+    position: absolute;
+    z-index: 99;
+}
+/* Bgs */

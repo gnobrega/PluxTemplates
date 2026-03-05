@@ -8,9 +8,10 @@
     </head>
     <body>
         <h2 id="console"></h2>
-        <div id="content">
+        <div id="content202" class="contentDiv">
         <!--    <img id="relogio" src="./media/relogio.png" />  -->
             <div id="hora"></div>
+            <div id="data"></div>
             <div id="tempo">
                 
                 <!-- Tempo agora Temperatura -->
@@ -21,9 +22,74 @@
                 
             </div>
             
-            <div id="data"></div>
+            
         </div>
 
+        <div id="content270" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora2"></div>
+            <div id="data2"></div>
+            <div id="tempo">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val"></span>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div id="content280" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora3"></div>
+            <div id="data3"></div>
+            <div id="tempo">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val"></span>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+
+        <div id="content282" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora4"></div>
+            <div id="data4"></div>
+            <div id="tempo">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val"></span>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div id="content380" class="contentDiv">
+        <!--    <img id="relogio" src="./media/relogio.png" />  -->
+            <div id="hora5"></div>
+            <div id="data5"></div>
+            <div id="tempo">
+                
+                <!-- Tempo agora Temperatura -->
+                <div id="zona1" class="zona"><span></span>
+                    
+                    <span class="txtTmp val"></span>
+                </div>
+                
+            </div>
+            
+            
+        </div>
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
         <script src="../../lib/js/GnLib.js"></script>
@@ -38,6 +104,27 @@
             function GnPlay() {
                 
             }
+
+            window.onload = function () {
+                setTimeout(function () {
+                    if (window.frameElement) {
+                        var larguraIframe = window.frameElement.offsetWidth; // use offsetWidth
+                        var id = "content" + larguraIframe;
+
+                        document.querySelectorAll(".contentDiv").forEach(div => {
+                            div.style.display = "none";
+                        });
+
+                        var target = document.getElementById(id);
+                        if (target) {
+                            target.style.display = "block";
+                        } else {
+                            console.warn("Sem content para largura: " + larguraIframe);
+                        }
+                    }
+                }, 100); // pequeno delay para garantir que tudo carregou
+            };
+
 
             //Recupera a hora
             autoloadFooter();
@@ -79,8 +166,18 @@
                 if (dia < 10) {
                     dia = "0" + dia;
                 }
-                $("#hora").html(horas + ":" + minutos);
-                $("#data").html(dia + "/" + mes1 + "/" + ano );
+                var horaFormatada = horas + ":" + minutos;
+                var dataFormatada = dia + "/" + mes1 + "/" + ano;
+                $("#hora").html(horaFormatada);
+                $("#hora2").html(horaFormatada);
+                $("#hora3").html(horaFormatada);
+                $("#hora4").html(horaFormatada);
+                $("#hora5").html(horaFormatada);
+                $("#data").html(dataFormatada);
+                $("#data2").html(dataFormatada);
+                $("#data3").html(dataFormatada);
+                $("#data4").html(dataFormatada);
+                $("#data5").html(dataFormatada);
             }
             
             //Carrega os dados

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        
+        
+        <h2 id="console"></h2>
+        <div id="content">
+            <video id="1" src="./media/teste6.mp4" muted  style="position: absolute; left: 97px; z-index: 99; width: 97px; height: 97px;" ></video>
+            <img id="3" src="./media/cbdd.png" muted hidden style="position: absolute; left: 0px; z-index: 99; width: 97px; height: 97px;" ></img>
+            <img id="4" src="./media/cbdd.png" muted hidden style="position: absolute; left: 97px; z-index: 99; width: 97px; height: 97px;" ></img>
+            
+        </div>
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DURATION = 36000;
+            var comImagem = true;
+            var ext;
+            var possuiConteudo = true;
+            
+            //Dá o Ok sobre o carregamento com sucesso
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+            
+            // Autoplay Android
+            if( navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                    GnPlay();
+                }
+
+            function GnPlay() {
+                var video1 = document.getElementById("1");
+                //var video2 = document.getElementById("2");
+                video1.currentTime = 0;
+                video1.play();
+                $("#3").hide();
+                $("#4").hide();
+                setTimeout(function() {
+                    $("#3").show();
+                    $("#4").show();
+                    $("#1").hide();
+                    $("#2").hide();
+                }, 20000);
+            }
+            
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            //Envia pings ao player para manter a atividade
+            setInterval(function() {
+                if( typeof(parent.callApplication) != 'undefined' ) {
+                    parent.callApplication({msg:"Youtube - PING"});
+                }
+            }, 60000);
+        </script>
+    </body>
+</html>

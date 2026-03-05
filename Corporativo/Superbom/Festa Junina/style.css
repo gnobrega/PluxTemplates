@@ -1,19 +1,16 @@
 @font-face {
-    font-family: 'asap-medium';
-    src: url('./fonts/asap-medium.ttf') format('truetype');
+    font-family: 'AmsiProCond-Bold';
+    src: url('./fonts/AmsiProCond-Bold.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Roboto-Bold';
     src: url('./fonts/Roboto-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Asap-Bold';
-    src: url('./fonts/Asap-Bold.otf') format('opentype');
+    font-family: 'AmsiProCond-Regular';
+    src: url('./fonts/AmsiProCond-Regular.ttf') format('truetype');
 }
-@font-face {
-    font-family: 'Asap-Regular';
-    src: url('./fonts/Asap-Regular.otf') format('opentype');
-}
+
 * {
     margin: 0;
     padding: 0;
@@ -34,11 +31,21 @@ body {
     width: 1360px;
     height: 768px;
 }
-#bola {
+#quadrado {
 	position: absolute;
-	top: 150px;
-	left: 1090px;
-	display: none;
+    top: 187px;
+    left: 612px;
+    width: 406px;
+    display: none;
+    z-index: 30;
+}
+#quadrado2 {
+	position: absolute;
+    top: 353px;
+    left: 669px;
+    width: 310px;
+    display: none;
+    z-index: 32;
 }
 #abertura {
     width: 1360px;
@@ -54,7 +61,7 @@ body {
     display: none;
 }
 #fundo {
-    width: 1360px;
+    width: 1363px;
     position: absolute;
     top: 0px;
     left: 0;
@@ -71,75 +78,139 @@ body {
     background: url(./media/fechamento.jpg);
 }
 div#nome {
+    height: 85px;
     position: absolute;
-    left: 740px;
-    top: 635px;
-    font-family: 'Asap-Regular';
-    color: #000;
-    font-size: 37px;
+    left: 793px;
+    top: 600px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 35px;
     text-align: center;
-    width: 500px;
+    width: 375px;
     display: none;
-	line-height: 38px;
+    line-height: 50px;
+    z-index: 40;
+    text-shadow: 
+    /* Borda 5px ao redor do texto */
+    -1px -1px 0 #591f02,
+     0px -1px 0 #591f02,
+     1px -1px 0 #591f02,
+    -1px  0px 0 #591f02,
+     1px  0px 0 #591f02,
+    -1px  1px 0 #591f02,
+     0px  1px 0 #591f02,
+     1px  1px 0 #591f02,
+    /* Expandindo a borda */
+    -2px -2px 0 #591f02,
+     0px -2px 0 #591f02,
+     2px -2px 0 #591f02,
+    -2px  0px 0 #591f02,
+     2px  0px 0 #591f02,
+    -2px  2px 0 #591f02,
+     0px  2px 0 #591f02,
+     2px  2px 0 #591f02,
+    -3px -3px 0 #591f02,
+     0px -3px 0 #591f02,
+     3px -3px 0 #591f02,
+    -3px  0px 0 #591f02,
+     3px  0px 0 #591f02,
+    -3px  3px 0 #591f02,
+     0px  3px 0 #591f02,
+     3px  3px 0 #591f02,
+    -4px -4px 0 #591f02,
+     0px -4px 0 #591f02,
+     4px -4px 0 #591f02,
+    -4px  0px 0 #591f02,
+     4px  0px 0 #591f02,
+    -4px  4px 0 #591f02,
+     0px  4px 0 #591f02,
+     4px  4px 0 #591f02,
+    -5px -5px 0 #591f02,
+     0px -5px 0 #591f02,
+     5px -5px 0 #591f02,
+    -5px  0px 0 #591f02,
+     5px  0px 0 #591f02,
+    -5px  5px 0 #591f02,
+     0px  5px 0 #591f02,
+     5px  5px 0 #591f02;
+}
+#reais2 {
+    position: fixed;
+    font-size: 30px;
+    top: 145px;
+    left: 1196px;
+    z-index: 99;
+    color: #ffffff;
+    font-family: 'AmsiProCond-Bold';
 }
 div#ctPreco2 {
 	position: absolute;
-    left: 1110px;
-    top: 190px;
-	width: 160px;
+    left: 1108px;
+    top: 150px;
+    width: 226px;
+    z-index: 99;
 }
 div#ctPreco {
 	display: none;
 	height: 140px;
 }
 div#preco {
-    font-family: 'Asap-Bold';
-    color: #fff;
-    font-size: 80px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 105px;
     text-align: right;
     letter-spacing: -2px;
 	float: left;
-	min-width: 80px;
+	min-width: 120px;
 }
 div#cents {
-    font-family: 'Asap-Bold';
-    color: #fff;
-    font-size: 40px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 35px;
     text-align: left;
 	float: left;
-	margin-top: 5px;
+	margin-top: 41px;
 	padding-left: 5px;
 }
 div#unidade {
-    font-family: 'asap-medium';
-    color: #fff;
-    font-size: 22px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 19px;
     text-align: left;
     display: none;
-	float: right;
-	margin-right: 25px;
+    float: right;
+    margin-right: 60px;
+    margin-top: 0px;
 }
 div#validade {
     position: absolute;
-    left: 740px;
-    top: 720px;
-    font-family: 'Roboto-Bold';
-    color: #21418B;
-    font-size: 20px;
-    width: 500px;
+    left: 795px;
+    top: 701px;
+    font-family: 'AmsiProCond-Bold';
+    color: #591f02;
+    font-size: 25px;
+    width: 380px;
     text-align: center;
     display: none;
+    
 }
 img#fileId {
     position: absolute;
+    height: 500px;
+    width: 500px;
     top: 80px;
-    left: 730px;    
-    width: 520px;
+    left: 740px;
     display: none;
 }
-#ctImg {
-    display: none;
+img#valor{
+    position: absolute;
+    z-index: 99;
+    left: 1110px;
+    top: 130px;
 }
+div #ctImg {
+    
+} 
 .keyframes mostra-preco {
     animation-name: mostra-preco;
     animation-duration: .5s;
@@ -154,3 +225,142 @@ img#fileId {
         top: 320px;
     }
 }
+@-webkit-keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInRightFade {
+    -webkit-animation-name: slideInRightFade;
+    animation-name: slideInRightFade;
+  }
+
+@-webkit-keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  @keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  .slideOutRightFade {
+    -webkit-animation-name: slideOutRightFade;
+    animation-name: slideOutRightFade;
+  }
+
+  @-webkit-keyframes slideOutUpFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  @keyframes slideOutUpFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  .slideOutUpFade {
+    -webkit-animation-name: slideOutUpFade;
+    animation-name: slideOutUpFade;
+  }
+
+  @-webkit-keyframes slideInUpFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInUpFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInUpFade {
+    -webkit-animation-name: slideInUpFade;
+    animation-name: slideInUpFade;
+  }

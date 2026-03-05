@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+body {
+    background: #00376d;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+}
+#abertura,
+#fechamento {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(./media/abertura.png);
+    width: 1360px;
+    height: 704px;
+}
+#fechamento {
+    opacity: 0;
+    background: url(./media/fechamento.png);
+}
+#transicao {
+    position: absolute;
+    top: 0;
+    left: -1360px;
+    background: url(./media/transicao.jpg);
+    width: 1360px;
+    height: 704px;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 704px;
+}
+#midiaVideo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    display: none;
+}
+.titulo {
+    position: absolute;
+    top: 526px;
+    left: 218px;
+    font-family: 'AvenirNextLTPro-Demi';
+    font-size: 27px;
+    color: #90B2FF;
+}
+.texto {
+    position: absolute;
+    top: 572px;
+    left: 218px;
+    font-family: 'AvenirNextLTPro-Bold';
+    font-size: 41px;
+    color: #fff;
+    width: 1135px;
+}
+.credito {
+    position: absolute;
+    top: 160px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 14px;
+    text-align: right;
+    transform: rotate(-90deg);
+    width: 300px;
+    left: 1180px;
+}
+#titulo2, #titulo3, 
+#credito2, #credito3, 
+#texto2, #texto3,
+#fileId2, fileId3 {
+    display: none;
+}
+#editoria {
+    position: absolute;
+    top: 0;
+}
+#bar {
+    position: absolute;
+    top: 507px;
+}
+
+.fechar-abertura {
+    animation-name: fechar-abertura;
+    animation-duration: .8s;
+}
+@keyframes fechar-abertura{
+    from {
+        left: -1360px;
+    }
+    to {
+        left: 1360px;
+    }
+}
+.fechar-abertura2 {
+    animation-name: fechar-abertura2;
+    animation-duration: .8s;
+}
+.voltar-abertura2 {
+    animation-name: voltar-abertura2;
+    animation-duration: .8s;
+}
+@keyframes fechar-abertura2{
+    from {
+        left: 0px;
+        opacity: 1;
+    }
+    to {
+        left: 1360px;
+        opacity: 0;
+    }
+}
+@keyframes voltar-abertura2{
+    from {
+        left: -1360px;
+        opacity: 0;
+    }
+    to {
+        left: 0px;
+        opacity: 1;
+    }
+}

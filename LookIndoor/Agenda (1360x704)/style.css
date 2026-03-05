@@ -53,10 +53,10 @@ body {
 }
 #descricao {
     position: absolute;
-    top: 240px;
+    top: 220px;
     left: 765px;
     font-family: 'Agenda Medium';
-    font-size: 40px;
+    font-size: 38px;
     color: #000;
     width: 550px;
     text-align: right;

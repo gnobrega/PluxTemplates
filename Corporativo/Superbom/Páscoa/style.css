@@ -1,19 +1,16 @@
 @font-face {
-    font-family: 'Asap-Bold';
-    src: url('./fonts/Asap-Bold.ttf') format('truetype');
+    font-family: 'AmsiProCond-Bold';
+    src: url('./fonts/AmsiProCond-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Asap-Regular';
-    src: url('./fonts/Asap-Regular.ttf') format('truetype');
+    font-family: 'Roboto-Bold';
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Asap-Medium';
-    src: url('./fonts/Asap-Medium.ttf') format('truetype');
+    font-family: 'AmsiProCond-Regular';
+    src: url('./fonts/AmsiProCond-Regular.ttf') format('truetype');
 }
-@font-face {
-    font-family: 'Asap-Regular';
-    src: url('./fonts/Asap-Regular.ttf') format('truetype');
-}
+
 * {
     margin: 0;
     padding: 0;
@@ -34,11 +31,21 @@ body {
     width: 1360px;
     height: 768px;
 }
-#bola {
+#quadrado {
 	position: absolute;
-	top: 120px;
-	left: 1050px;
-	display: none;
+    top: 187px;
+    left: 612px;
+    width: 406px;
+    display: none;
+    z-index: 30;
+}
+#quadrado2 {
+	position: absolute;
+    top: 353px;
+    left: 669px;
+    width: 310px;
+    display: none;
+    z-index: 32;
 }
 #abertura {
     width: 1360px;
@@ -71,78 +78,114 @@ body {
     background: url(./media/fechamento.jpg);
 }
 div#nome {
+    height: 120px;
     position: absolute;
-    left: 730px;
-    top: 625px;
-    font-family: 'Asap-Medium';
-    color: #FFF;
-    font-size: 37px;
+    left: 650px;
+    top: 580px;
+    font-family: 'AmsiProCond-Bold';
+    color: #fff;
+    font-size: 42px;
     text-align: center;
-    width: 550px;
+    width: 620px;
     display: none;
+    line-height: 40px;
+    z-index: 40;
+    text-shadow: 
+    -1px -1px 0 #004182, /* Sombra no topo-esquerda */
+     1px -1px 0 #004182, /* Sombra no topo-direita */
+    -1px  1px 0 #004182, /* Sombra na parte inferior-esquerda */
+     1px  1px 0 #004182,
+    -2px  0px 0 #004182,
+    2px  0px 0 #004182,
+    0px -2px 0 #004182,
+    0px  2px 0 #004182,
+     -3px  0px 0 #004182,
+   3px  0px 0 #004182,
+   0px -3px 0 #004182,
+   0px  3px 0 #004182,
+    -4px  0px 0 #004182,
+   4px  0px 0 #004182,
+   0px -4px 0 #004182,
+   0px  4px 0 #004182,
+}
+#reais2 {
+    position: fixed;
+    font-size: 30px;
+    top: 145px;
+    left: 1196px;
+    z-index: 99;
+    color: #004182;
+    font-family: 'AmsiProCond-Bold';
 }
 div#ctPreco2 {
 	position: absolute;
-    left: 1048px;
-    top: 225px;
-	width: 260px;
+    left: 1108px;
+    top: 150px;
+    width: 226px;
+    z-index: 99;
 }
 div#ctPreco {
 	display: none;
 	height: 140px;
 }
 div#preco {
-    font-family: 'Asap-Bold';
-    color: #fff;
-    font-size: 90px;
+    font-family: 'AmsiProCond-Bold';
+    color: #004182;
+    font-size: 105px;
     text-align: right;
     letter-spacing: -2px;
-    text-align: right;
 	float: left;
-	width: 150px;
+	min-width: 120px;
 }
 div#cents {
-    font-family: 'Asap-Bold';
-    color: #fff;
-    font-size: 50px;
+    font-family: 'AmsiProCond-Bold';
+    color: #004182;
+    font-size: 35px;
     text-align: left;
 	float: left;
-	margin-top: 7px;
-	margin-left: 7px;
+	margin-top: 41px;
+	padding-left: 5px;
 }
 div#unidade {
-    position: absolute;
-    left: 1207px;
-    top: 285px;
-    font-family: 'Asap-Regular';
-    color: #fff;
-    font-size: 26px;
+    font-family: 'AmsiProCond-Bold';
+    color: #004182;
+    font-size: 23px;
     text-align: left;
-    width: 110px;
     display: none;
+    float: right;
+    margin-right: 55px;
+    margin-top: 0px;
 }
 div#validade {
     position: absolute;
-    left: 730px;
-    top: 726px;
-    font-family: 'Asap-Medium';
-    color: #FFF;
-    font-size: 20px;
-    width: 550px;
+    left: 735px;
+    top: 685px;
+    font-family: 'AmsiProCond-Bold';
+    color: #004182;
+    font-size: 25px;
+    width: 460px;
     text-align: center;
     display: none;
 }
 img#fileId {
     position: absolute;
-    top: 30px;
-    left: 730px;    
-    width: 550px;
-    height: 550px;
-    display: none;
+    height: 465px;
+    width: 465px;
+    top: 115px;
+    left: 710px;
+    
 }
-#ctImg {
-    display: none;
+div#valor{
+    position: absolute;
+    z-index: 99;
+    left: 1093px;
+    top: 125px;
 }
+img#valor{
+    width: 215px;
+    height: 215px;
+}
+
 .keyframes mostra-preco {
     animation-name: mostra-preco;
     animation-duration: .5s;
@@ -157,3 +200,72 @@ img#fileId {
         top: 320px;
     }
 }
+@-webkit-keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInRightFade {
+    -webkit-animation-name: slideInRightFade;
+    animation-name: slideInRightFade;
+  }
+
+@-webkit-keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  @keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  .slideOutRightFade {
+    -webkit-animation-name: slideOutRightFade;
+    animation-name: slideOutRightFade;
+  }

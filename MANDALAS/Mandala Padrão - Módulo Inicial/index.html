@@ -1,0 +1,315 @@
+<!-- Tipo do documento -->
+<!DOCTYPE html>
+<html>
+    <!-- Cabeçalho -->
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        
+        <!-- Corpo do documento -->
+        <h2 id="console"></h2>
+        <div id="content">
+            <!-- Aqui vai o fundo da imagem
+                A tag "img" simboliza que está chamando uma imagem
+                O atributo "src" marca de onde está vindo essa imagem. O caminho *sempre* será esse, sendo
+                a alteração somente do nome da imagem, para o nome da imagem que está salva no arquivo.
+                Note que para o vídeo será a mesma coisa.
+                O atributo "height" e "width" simbolizam a altura e largura, em px.
+                Note que todos já estão configurados em altura e largura para que se enquadro nos padroes da mandala.
+            -->
+            <img id="fundo1" src="./media/fundo.jpg" autoplay height="97px" width="194px" ></img>
+            <div id="hora"></div>
+            <div id="diaMes"></div>
+                <div id="hora2"></div>
+                <div id="diaMes2"></div>
+                
+            <div id="tempo">
+
+
+
+
+                <!-- Abaixo estão todas as mídias que passam em loop, fora o relógio. O relógio está acima, sendo decrito como "fundo1". -->
+                <div id="logo">
+                    <!-- Imagem da logo do CB, com o caminho da imagem -->
+                    <img name="logo" id="logo" style="left: -2px; position: absolute;" src="./media/cb_logo.jpg" height="97px" width="194px" >
+                    </img>
+                </div>
+                
+                <div id="mascotediv">
+                    <!-- Vídeo do mascote -->
+                    <video name="mascote" id="mascote" style="left: -2px; position: absolute;" src="./media/mascote.mp4" height="97px" width="194px" >
+                    </video>
+                </div>
+
+                <div id="guaxinimdiv">
+                    <!-- Vídeo do Guaxinim -->
+                    <video name="guaxinim" id="guaxinim" style="left: -2px; position: absolute;" src="./media/guaxinim.mp4" height="97px" width="194px" >
+                    </video>
+                </div>
+
+                <div id="cbdooh">
+                    <!-- Imagem da cbdooh -->
+                    <img name="cbdooh" id="cbdooh" style="left: -2px; position: absolute;" src="./media/cb_midia.jpg" height="97px" width="194px" >
+                    </img>
+                </div>
+                <div id="cbdooh2">
+                    <!-- Segunda imagem da cbdooh -->
+                    <img name="cbdooh2" id="cbdooh2" style="left: -2px; position: absolute;" src="./media/cb_midia1.jpg" height="97px" width="194px" >
+                    </img>
+                </div>
+
+                <!-- Para adicionar uma nova imagem ou vídeo, copie e cole abaixo o código acima, mudando todos os nomes deixando na *MESMA* padrão de configuração
+                 Troque todos os nomes em id, name, id do video e nome do video, para o caminho correto. -->
+                <div id="vulicadiv">
+                    <!-- Vídeo do vulica -->
+                    <video name="vulica" id="vulica" style="left: -2px; position: absolute;" src="./media/vulica.mp4" height="97px" width="194px" >
+                    </video>
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+        <!-- Scripts que ditam toda a configuração de como cada vídeo ou imagem acima se comporta -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            // A partir daqui os comentários serão feitos depois de "//"
+            
+            //Configuração de arquivo, etc
+            var DATA_SOURCE = "/previsao/data.json";
+            var DURATION = 15000;
+            
+            
+            //Dá o Ok sobre o carregamento com sucesso
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            }
+            
+            // Autoplay Android, usado para funcionar nas Mandalas
+            if( navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                    GnPlay();
+                }
+
+
+            // Função que dita as configurações
+            function GnPlay() {
+                //Primeiro esconde todos os vídeos e imagens
+                //Se for adicionado uma nova, adicionar aqui com o nome (exemplo: teste) e .hide para esconder,
+                //Assim como cada linha abaixo
+            $("#tempo").hide();
+            $("#hora").hide();
+            $("#diaMes").hide();
+            $("#logo").hide();
+            $("#mascote").hide();
+            $("#guaxinim").hide();
+            $("#cbdooh").hide();
+            $("#cbdooh2").hide();
+            $("#vulica").hide();
+
+                // Quando é vídeo e não imagem, é necessário selecionar eles manualmente, assim como descrito abaixo
+                //Sendo o nome o nome colocado em id e name da tag <video>. Exemplo: vulica
+            var video1 = document.getElementById("mascote"); // Seleciona o elemento de vídeo
+            var video2 = document.getElementById("guaxinim");
+            var video3 = document.getElementById("vulica");
+
+
+            // Aqui é configurado manualmente o Loop da Mandala
+            // Usaremos a partir de agora .show() para mostrar, .hide() para esconder
+            // Abaixo mostra a logo, depois de 10000 milissegundos.
+            // Cada 1000 milissegundos equivale a 1 segundo.
+            setTimeout(function() {
+                $("#logo").show(); // Mostra a Logo
+            }, 10000); // Tempo para mostrar a logo.
+            setTimeout(function() {
+                $("#fundo1").hide(); // Esconde o fundo (este fundo é o relógio)
+            }, 10500); // Após 10500 milissegundos
+
+            // Note que "fundo1" sempre é chamado, pois é a imagem do relógio. Ele é escondido 500 milissegundos
+            // Após mostrar a imagem, para que não pisque a tela preta.
+
+
+            // Função para exibir o relógio novamente
+            setTimeout(function() {
+                $("#fundo1").show(); // Mostra o relógio
+            }, 25000);
+            setTimeout(function() {
+                $("#logo").hide(); // Esconde a logo
+            }, 25500);
+
+
+            // Função para exibir o vídeo do mascote
+            setTimeout(function() {
+                $("#mascote").show(); // Mostra o mascote
+                video1.currentTime = 0; // Define o tempo do video para 0, para que comece do início
+                video1.play(); // Dá play no vídeo
+            }, 35000);
+            setTimeout(function() {
+                $("#fundo1").hide(); // Esconde o fundo
+            }, 35500);
+
+            setTimeout(function() {
+                $("#fundo1").show();
+            }, 50000);
+            setTimeout(function() {
+                $("#mascote").hide();
+                video1.pause();
+            }, 50500);
+
+            setTimeout(function() {
+                $("#guaxinim").show();
+                video2.currentTime = 0;
+                video2.play(); // Dá play no vídeo
+            }, 60000);
+            setTimeout(function() {
+                $("#fundo1").hide();
+            }, 60500);
+
+            setTimeout(function() {
+                $("#fundo1").show();
+            }, 70000);
+            setTimeout(function() {
+                $("#guaxinim").hide();
+                video2.pause();
+            }, 70500);
+
+            setTimeout(function() {
+                $("#logo").show();
+            }, 80000);
+            setTimeout(function() {
+                $("#fundo1").hide();
+            }, 80500);
+
+            setTimeout(function() {
+                $("#fundo1").show();
+            }, 95000);
+            setTimeout(function() {
+                $("#logo").hide();
+            }, 95500);
+
+            setTimeout(function() {
+                $("#cbdooh").show();
+            }, 105000);
+            setTimeout(function() {
+                $("#fundo1").hide();
+            }, 105500);
+            setTimeout(function() {
+                $("#cbdooh2").show();
+            }, 112500);
+            setTimeout(function() {
+                $("#cbdooh").hide();
+            }, 112700);
+
+            setTimeout(function() {
+                $("#fundo1").show();
+            }, 125000);
+            setTimeout(function() {
+                $("#cbdooh2").hide();
+            }, 125500);
+            //ESPAÇO PARA VIDEO VENDIDO
+            // Após todos os vídeos, passarem, o vídeo vendido deve ser colocado aqui.
+            // Copie e cole a função do vídeo caso vídeo, renomeie para o nome configurado no corpo
+            // Do documento, e defina o tempo em milissegundos
+            // Não esquecendo de configurar para esconder ou mostrar o relógio, antes.
+            setTimeout(function() {
+                $("#vulica").show();
+                video3.currentTime = 0;
+                video3.play(); // Dá play no vídeo
+            }, 135000);
+            setTimeout(function() {
+                $("#fundo1").hide();
+            }, 135500);
+
+
+            //Recupera a hora
+            autoloadFooter();
+            
+            //Carrega o rodapé
+            function autoloadFooter() {
+                
+                //Atualiza o relógio
+                updateTime();
+                setInterval(updateTime, 200);
+                
+                //Carrega os dados
+                loadWeatherData();
+                
+            }
+            
+            //Atualiza o relógio
+            function updateTime () {
+                var MESES = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+                var d = new Date();
+                var horas = d.getHours();
+                var minutos = d.getMinutes();
+                var dia = d.getDate();
+                var mes = d.getMonth();
+                var mesExtenso = MESES[mes];
+                var ano = d.getFullYear();
+                if (horas < 10) {
+                    horas = "0" + horas;
+                }
+                if (minutos < 10) {
+                    minutos = "0" + minutos;
+                }
+                if (dia < 10) {
+                    dia = "0" + dia;
+                }
+                $("#hora").html(horas + ":" + minutos);
+                $("#diaMes").html(dia + " de " + mesExtenso);
+                $("#hora2").html(horas + ":" + minutos);
+                $("#diaMes2").html(dia + " de " + mesExtenso);
+            }
+            
+
+            // Função para buscar e exibir a temperatura
+            function loadWeatherData() {
+                $.ajax({
+                url: "https://api.weatherapi.com/v1/current.json?key=478a5f138ea749a88b4192625241411&q=Brasilia&lang=pt",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    // Converte para inteiro (removendo a parte decimal)
+                    var temperatura = parseInt(data.current.temp_c);
+                    console.log("Temperatura:", temperatura);
+                    $("#zona2").html(temperatura + "ºC");
+                    $("#zona3").html(temperatura + "ºC");
+                },
+                error: function(xhr, status, error) {
+                    console.log("Erro ao carregar dados da API:", error);
+                }
+            });
+
+
+            }
+
+                setTimeout(function() {
+                    $("#tempo").show();
+                    $("#tempo").addClass('animated fadeIn');
+                    $("#diaMes").show();
+                    $("#diaMes").addClass('animated fadeIn');
+                }, 0);
+                setTimeout(function() {
+                    $("#hora").show();
+                    $("#hora").addClass('animated fadeIn');
+                }, 0);
+            }
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            //Envia pings ao player para manter a atividade
+            setInterval(function() {
+                if( typeof(parent.callApplication) != 'undefined' ) {
+                    parent.callApplication({msg:"Youtube - PING"});
+                }
+            }, 60000);
+        </script>
+    </body>
+</html>

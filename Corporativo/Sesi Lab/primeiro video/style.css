@@ -1,0 +1,17 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, #content {
+    width: 768px;
+    height: 1360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+body {
+    background: #000000;
+    overflow: hidden;
+}

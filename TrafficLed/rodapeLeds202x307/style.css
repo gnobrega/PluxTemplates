@@ -14,23 +14,46 @@
     margin: 0;
     padding: 0;
 }
-html, body, #content {
+html, body {
+    
+}
+#content202{
     width: 202px;
-    height: 22px;
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+#content270{
+    width: 270px;
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+#content280{
+    width: 280px;
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+#content282{
+    width: 282px;
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+#content380{
+    width: 282px;
+    display: flex;
+    justify-content: space-around;
+    display: none;
 }
 body {
     background: #000;
     overflow: hidden;
 }
-#content {
-}
-#data {
-    position: absolute;
-    top: 2px;
-    width: 202px;
+
+#data, #data2, #data3, #data4, #data5 {
     color: #FFF;
-    display: flex;
-    justify-content: center;
     font-weight: bold;
     font-family: 'Microsoft Yahei';
     font-size: 12px;
@@ -41,28 +64,21 @@ img#relogio {
     left: 8px;
     height: 7px;
 }
-div#hora {
+div#hora, #hora2, #hora3, #hora4, #hora5 {
     color: #FFF;
     font-weight: bold;
     font-family: 'Microsoft Yahei';
     font-size: 12px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
+    
 }
-div#hora span {
-    color: #B5B5B5;
+div#hora, #hora2, #hora3, #hora4, #hora5 span {
+    color: #ffffff;
 }
 div.zona *{
     float: left;
 }
 
 div#zona1 {
-    margin: auto;
-    width: 95px;
-    position: absolute;
-    top: 2px;
-    left: 168px;
     font-weight: bold;
 }
 

@@ -31,11 +31,21 @@ body {
     width: 1360px;
     height: 768px;
 }
-#bola {
+#quadrado {
 	position: absolute;
-	top: 40px;
-	left: 1050px;
-	display: none;
+    top: 187px;
+    left: 612px;
+    width: 406px;
+    display: none;
+    z-index: 30;
+}
+#quadrado2 {
+	position: absolute;
+    top: 353px;
+    left: 669px;
+    width: 310px;
+    display: none;
+    z-index: 32;
 }
 #abertura {
     width: 1360px;
@@ -51,7 +61,7 @@ body {
     display: none;
 }
 #fundo {
-    width: 1360px;
+    width: 1363px;
     position: absolute;
     top: 0px;
     left: 0;
@@ -68,22 +78,39 @@ body {
     background: url(./media/fechamento.jpg);
 }
 div#nome {
+    height: 85px;
     position: absolute;
-    left: 740px;
-    top: 635px;
+    left: 705px;
+    top: 580px;
     font-family: 'AmsiProCond-Bold';
-    color: #64833F;
-    font-size: 37px;
+    color: #363636;
+    font-size: 35px;
     text-align: center;
-    width: 500px;
+    width: 470px;
     display: none;
-	line-height: 38px;
+    line-height: 50px;
+    z-index: 40;
+    text-shadow: 
+    -1px -1px 0 white, /* Sombra no topo-esquerda */
+     1px -1px 0 white, /* Sombra no topo-direita */
+    -1px  1px 0 white, /* Sombra na parte inferior-esquerda */
+     1px  1px 0 white; /* Sombra na parte inferior-direita */
+}
+#reais2 {
+    position: fixed;
+    font-size: 30px;
+    top: 145px;
+    left: 1196px;
+    z-index: 99;
+    color: #ffcc1d;
+    font-family: 'AmsiProCond-Bold';
 }
 div#ctPreco2 {
 	position: absolute;
-    left: 1070px;
-    top: 80px;
-	width: 220px;
+    left: 1108px;
+    top: 150px;
+    width: 226px;
+    z-index: 99;
 }
 div#ctPreco {
 	display: none;
@@ -91,8 +118,8 @@ div#ctPreco {
 }
 div#preco {
     font-family: 'AmsiProCond-Bold';
-    color: #fff;
-    font-size: 110px;
+    color: #ffcc1d;
+    font-size: 105px;
     text-align: right;
     letter-spacing: -2px;
 	float: left;
@@ -100,43 +127,51 @@ div#preco {
 }
 div#cents {
     font-family: 'AmsiProCond-Bold';
-    color: #fff;
-    font-size: 60px;
+    color: #ffcc1d;
+    font-size: 35px;
     text-align: left;
 	float: left;
-	margin-top: 55px;
+	margin-top: 41px;
 	padding-left: 5px;
 }
 div#unidade {
-    font-family: 'AmsiProCond-Regular';
-    color: #fff;
-    font-size: 35px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffcc1d;
+    font-size: 20px;
     text-align: left;
     display: none;
-	float: right;
-    margin-right: 25px;
-    margin-top: -10px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 0px;
 }
 div#validade {
     position: absolute;
-    left: 350px;
-    top: 720px;
-    font-family: 'Roboto-Bold';
-    color: #538538;
-    font-size: 19px;
-    width: 600px;
+    left: 722px;
+    top: 680px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffcc1d;
+    font-size: 28px;
+    width: 435px;
     text-align: center;
     display: none;
 }
 img#fileId {
     position: absolute;
-    top: 140px;
-    left: 800px;    
+    height: 500px;
+    width: 500px;
+    top: 80px;
+    left: 680px;
     display: none;
 }
-#ctImg {
-    display: none;
+img#valor{
+    position: absolute;
+    z-index: 99;
+    left: 1110px;
+    top: 130px;
 }
+div #ctImg {
+    
+} 
 .keyframes mostra-preco {
     animation-name: mostra-preco;
     animation-duration: .5s;
@@ -151,3 +186,142 @@ img#fileId {
         top: 320px;
     }
 }
+@-webkit-keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInRightFade {
+    -webkit-animation-name: slideInRightFade;
+    animation-name: slideInRightFade;
+  }
+
+@-webkit-keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  @keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  .slideOutRightFade {
+    -webkit-animation-name: slideOutRightFade;
+    animation-name: slideOutRightFade;
+  }
+
+  @-webkit-keyframes slideOutUpFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  @keyframes slideOutUpFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  .slideOutUpFade {
+    -webkit-animation-name: slideOutUpFade;
+    animation-name: slideOutUpFade;
+  }
+
+  @-webkit-keyframes slideInUpFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInUpFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInUpFade {
+    -webkit-animation-name: slideInUpFade;
+    animation-name: slideInUpFade;
+  }

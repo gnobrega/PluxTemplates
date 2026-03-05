@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 380px;
+    height: 575px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+}
+
+/* Dados */
+#barra {
+    position: absolute;
+    top: 337px;
+    left: 0;
+    background: #273f53;
+    width: 380px;
+    height: 198px;
+    display: none;
+    border-top: 2px solid #218EE1;
+}
+#logo {
+        position: absolute;
+    top: 2px;
+    left: 135px;
+    display: none;
+    height: 102px;
+}
+#conteudo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 380px;
+    height: 534px;
+    background: #273f53;
+}
+#editoria {
+    position: absolute;
+    top: 238px;
+    left: 15px;
+    font-family: 'AvenirNextLTPro-Demi';
+    font-size: 16px;
+    color: #df9400;
+    display: none;
+}
+#texto {
+    position: absolute;
+    top: 375px;
+    left: 15px;
+    font-family: 'AvenirNextLTPro-Bold';
+    font-size: 26px;
+    color: #fff;
+    width: 350px;
+    display: none;
+    line-height: 29px;
+    text-align: center;
+}
+#credito {
+    position: absolute;
+    top: 350px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 13px;
+    text-align: right;
+    width: 255px;
+    left: 115px;
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 240px;
+}
+#ctImg {
+    display: none;
+}
+#fileid {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    width: 380px;
+    height: 298px;
+}
+.mostra-barra {
+    animation-name: mostra-barra;
+    animation-duration: 1s;
+}
+@keyframes mostra-barra {
+    from {
+        top: 470px;
+    }
+    to {
+        top: 337px;
+    }
+}

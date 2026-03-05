@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Neo Sans Std Medium TR';
+    src: url('./fonts/Neo Sans Std Medium TR.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Agenda Medium';
+    src: url('./fonts/Agenda Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('./fonts/proximanova_bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+}
+body {
+    background: #00376d;
+    overflow: hidden;
+	-moz-transform-origin: 0 0;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+}
+#titulo, #titulo2 {
+        position: absolute;
+    top: 260px;
+    left: 105px;
+    font-family: 'ProximaNova';
+    font-size: 70px;
+    color: #ffffff;
+        width: 625px;
+        max-width: 625px;
+        overflow: hidden;
+    /* text-align: center; */
+    max-height: 80px; 
+
+}
+#descricao, #descricao2 {
+        height: 250px;
+    position: absolute;
+    top: 762px;
+    left: 20px;
+    font-family: 'Agenda Medium';
+    font-size: 30px;
+    color: #ffffff;
+    width: 740px;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+video#calhau{
+    display: none;
+    width: 768px;
+    height: 1360px;
+}
+@keyframes revelarImagem {
+    to {
+      clip-path: inset(0 0% 0 0); /* revela tudo da esquerda pra direita */
+    }
+  }
+
+
+#contato, #contato2 {
+        height: 55px;
+    position: absolute;
+    top: 1110px;
+    color: #fff;
+    font-family: 'Agenda Medium';
+    font-size: 55px;
+    /* text-align: center; */
+    /* transform: rotate(-90deg); */
+    width: 393px;
+    left: 210px;
+    z-index: 101;
+}
+#fileId, #fileId5 {
+  position: absolute;
+      top: 375px;
+    left: 90px;
+    width: 590px;
+    height: 340px;
+    z-index: 99;
+}
+#ctImg {
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 507px;
+}

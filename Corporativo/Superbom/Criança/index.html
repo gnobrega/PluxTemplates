@@ -11,9 +11,9 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4"></video>
+            <video id="fundo" muted src="./media/fundo1.mp4"></video>
             <div id="valor" style="display: none;">
-            <img id="valor" src="./media/valor.png" style="z-index: 90; position: absolute;">          
+            <img id="valor" src="./media/valor1.png" style="z-index: 90; position: absolute;">          
             </div>
             <!-- Imagem -->
             <div id="ctImg" ><img id="fileId" /></div>
@@ -33,7 +33,7 @@
 			</div>
             
             <!-- Calhau -->
-            <video id="calhau" src="./media/calhau.mp4?a=1" ></video>
+            <video id="calhau" muted src="./media/calhau1.mp4" ></video>
             
         </div>
         
@@ -73,7 +73,7 @@
                 $("#fundo").get(0).play();
                 $("#reais2").hide();
                 $("#valor").hide();
-                $("#ctImg").hide();
+                //$("#ctImg").hide();
                 
                  if( possuiConteudo ) {
 				
@@ -86,7 +86,7 @@
                     
                     setTimeout(function() {  
                         $("#validade").fadeIn(500);
-                    }, 300);
+                    }, 1600);
 
                     setTimeout(function() {  
                         $("#valor").show();
@@ -123,7 +123,7 @@
                         $("#ctPreco").addClass("animated slideOutRightFade");
                         $("#unidade").addClass("animated slideOutRightFade");
                         $("#validade").addClass("animated slideOutRightFade");
-                    }, 12000); 
+                    }, 9600); 
                 } else {
                     $("#calhau").show();
                     $("#calhau").get(0).play();

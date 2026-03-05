@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=202, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Imagem -->
+            <div id="ctImg">
+                <img id="fileid" />
+            </div>
+            
+            <!-- Dados -->
+            <div id="editoria" class="animated"></div>
+            <div id="texto" class="animated"></div>
+            <div id="credito"></div>
+            
+            <!-- Logo -->
+			<div style="text-align:center">
+				<img id="logo" src="./media/logo2 (1).png" class="animated" />
+			</div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "/cliente/gnplay_rss/rss.xml";
+            var DURATION = 15000;
+            var ext;
+            GnLib.prefixImg = "";
+			
+			// Dá o Ok sobre o carregamento com sucesso
+            if (typeof (GnContentFound) != 'undefined') {
+                GnContentFound();
+            };
+			
+            $(function () {
+
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+
+                    //Carrega o conteúdo
+                    //GnLib.autoloadContent(DATA_SOURCE, function (template) {
+                    //});
+					
+					$.ajax({
+						url: GnLib.getContentPath() + "/cliente/gnplay_rss/rss.xml",
+						type: 'GET',
+						//dataType: 'xml',
+						success: function (data) {
+						
+							//Template
+							var template = new GnLib.Template();
+
+							//Extrai os dados dos registros
+							$(data).find("item").each(function () {
+								var registro = new GnLib.Registro();
+								var attributes = $(this).get(0).attributes;
+								$.each(attributes, function () {
+									registro[this.name] = this.value;
+								});
+								$(this).children().each(function () {
+									var tag = $(this).prop("tagName");
+									registro[tag] = $(this).text();
+								});
+								template.registros.push(registro);
+							});
+
+							// Exibe os Dados
+							var idx = GnLib.getIndex("r7", template.registros);
+							var registro = template.registros[idx];
+							$("#texto").text(registro.titulo);
+							console.log(registro);
+							
+							// Imagem
+							var imgParams = registro.imagem.split("gnplay_rss");
+							var imgSrc = GnLib.getContentPath() + "/cliente/gnplay_rss"+imgParams[1];
+							$("#fileid").attr("src", imgSrc);
+						},
+						error: function (jqXHR, textStatus, errorThrown) {
+						}
+					});
+
+                } else { //Preview
+
+                    //Autplay
+                    GnPlay();
+                }
+
+                // Autoplay Android
+                if( navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                    GnPlay();
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+	
+				//Zoom
+				if (!GnLib.getParam('preview')) {
+				}
+				
+                //Animação
+                $("#barra").show();
+                $("#logo").show();
+                $("#logo").addClass("zoomIn");
+				setTimeout(function() {
+					$("#editoria").show();
+					$("#editoria").addClass("fadeIn");
+					$("#credito").show();
+					$("#ctImg").show();
+				}, 0);
+                
+                setTimeout(function() {
+                    $("#texto").show();
+                    //$("#texto").addClass("fadeIn");    
+                }, 0);
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+			
+			//Envia pings ao player para manter a atividade
+            setInterval(function() {
+                if( typeof(parent.callApplication) != 'undefined' ) {
+                    parent.callApplication({msg:"Youtube - PING"});
+                }
+            }, 60000);
+
+        </script>
+    </body>
+</html>

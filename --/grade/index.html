@@ -13,18 +13,18 @@
         <div id="conteudo">
 
             <!-- Fundo da grade -->
-            <img id="fundo-grade" src="./media/fundo.jpg" />
-            <div id="data">01 de Janeiro de 2000</div>
-            <div id="hora">00:00</div>
+            <video id="fundo-grade" muted autoplay src="./media/fundo1.mp4" ></video>
+            <div id="data"></div>
+            <div id="hora"></div>
 
             <!-- Aulas -->
             <div id="horarios">
-                <div id="horario1" class="horario linha1">00:00</div>
-                <div id="horario2" class="horario linha2">00:00</div>
-                <div id="horario3" class="horario linha3">00:00</div>
-                <div id="horario4" class="horario linha4">00:00</div>
-                <div id="horario5" class="horario linha5">00:00</div>
-                <div id="horario6" class="horario linha6">00:00</div>
+                <div id="horario1" class="horario linha1"></div>
+                <div id="horario2" class="horario linha2"></div>
+                <div id="horario3" class="horario linha3"></div>
+                <div id="horario4" class="horario linha4"></div>
+                <div id="horario5" class="horario linha5"></div>
+                <div id="horario6" class="horario linha6"></div>
             </div>
 
             <!-- Aulas -->
@@ -37,13 +37,14 @@
         <script src="../../lib/js/GnLib.js"></script>
         <script>
 
-            var DATA_SOURCE = "/FITNESS/data.xml";
+            var DATA_SOURCE = "/cliente/grade/data.xml";
+            var jsonFile = "../../../data.json";
             $(function () {
         
                 // Monta os campos
                 for (i = 1; i <= 3; i++) {
                     for (j = 1; j <= 6; j++) {
-                        var aulaHtml = $("<div class='campo campo" + i + " linha" + j + "'>Campo " + j + "</div>");
+                        var aulaHtml = $("<div class='campo campo" + i + " linha" + j + "'></div>");
                         $("#aulas").append(aulaHtml);
                     }
                 }
@@ -53,9 +54,9 @@
         
                     // Carrega o conteúdo
                     loadData(DATA_SOURCE);
-        
+                    
                 } else { // Preview
-        
+                    
                     // Autoplay
                     $("#abertura").ready(function () {
                         GnPlay();
@@ -69,6 +70,7 @@
         
             // Autoplay - localhost
             if (window.location.href.indexOf("localhost/html5") > -1) {
+                jsonFile = "http://localhost/gncontent/data.json";
                 setTimeout(function () {
                     GnPlay();
                 }, 1000);
@@ -109,197 +111,120 @@
             var dias_semana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
             var itensHoje = new Array();
             var arrAtivAtual = new Array(); // Array com as atividades que estão em andamento
-        
+
             // Carrega os dados 
             function loadData(source) {
                 var url = GnLib.getContentPath() + DATA_SOURCE + "?nocache=" + Math.random();
+                var dataResponse = null;
+                $.ajax({
+                    url: jsonFile,
+                    type: "POST",
+                    dataType: "json",
+                    async: false,
+                    success: function(response) {
+                        dataResponse = response;
+                    }
+                });
+                
+                console.log(dataResponse.player.display.id);
                 $.ajax({
                     url: url,
                     type: 'GET',
                     success: function (data) {
                         $(".aula").html("");
-        
+                        
                         // Conteúdo encontrado
                         if (typeof (GnContentFound) != 'undefined') {
                             GnContentFound();
                         }
-        
+
+                        itensHoje = []; // zera o array a cada carga
+                        arrAtivAtual = [];
+                        
                         // Extrai os itens
                         var date = new Date();
                         var day = date.getDay();
-                        aulas = $(data).find("aula");
-        
-                        // Seleciona apenas as aulas do dia e ordena pelo horário
-                        aulas.each(function() {
-                            var aula = $(this);
-                            var horarios = aula.find("horario");
-        
-                            horarios.each(function() {
-                                var horario = $(this);
-                                var d = horario.attr("dias");
-                                var arrayDia = d.split("");
-                                var dataAgora = new Date();
-        
-                                if (arrayDia[dataAgora.getDay()] == "1") {
-                                    var aulaObj = {};
-                                    aulaObj.nome = aula.attr("nome");
-                                    aulaObj.professor = horario.attr("professor");
-                                    aulaObj.sala = horario.attr("sala");
-                                    aulaObj.inicio = horario.attr("hora_inicio").substr(0, 5);
-                                    aulaObj.fim = horario.attr("hora_fim").substr(0, 5);
-                                    aulaObj.dias = horario.attr("dias");
-                                    aulaObj.horaNumeric = parseInt(limpaHorario(horario.attr("hora_inicio")));
-                                    itensHoje.push(aulaObj);
-                                }
+                        var aulas = $(data).find("item");
+
+                        // Função para converter horário em minutos
+                        function getMinutes(horario) {
+                            var h = parseInt(horario.substr(0, 2), 10);
+                            var m = parseInt(horario.substr(3, 2), 10);
+                            return h * 60 + m;
+                        }
+                        var idDisplayAtual = dataResponse.player.display.id;
+                        // Seleciona apenas as aulas do dia e que ainda não terminaram
+                        aulas.each(function () {
+                            var item = $(this);
+
+                            var nome = item.find("aula").text();
+                            var inicio = item.find("inicio").text();
+                            var fim = item.find("fim").text();
+                            var sala = item.find("sala").text();
+                            var professor = item.find("professor").text();
+                            var dias = item.find("dias").text();
+                            var displays = item.find("displays").text();
+
+                            var arrayDia = dias.split("");
+                            var dataAgora = new Date();
+
+                            var agoraMinutos = dataAgora.getHours() * 60 + dataAgora.getMinutes();
+                            var fimMinutos = getMinutes(fim);
+
+                            // Verifica se o id do display atual está dentro da lista de displays
+                            var displaysArray = displays.split(',').map(function (id) {
+                                return id.trim(); // remove espaços
                             });
+                            var idEstaNaLista = displaysArray.includes(idDisplayAtual);
+
+                            if (idEstaNaLista && arrayDia[dataAgora.getDay()] == "1" && agoraMinutos < fimMinutos) {
+                                var aulaObj = {};
+                                aulaObj.nome = nome;
+                                aulaObj.professor = professor;
+                                aulaObj.sala = sala;
+                                aulaObj.inicio = inicio.substr(0, 5);
+                                aulaObj.fim = fim.substr(0, 5);
+                                aulaObj.dias = dias;
+                                aulaObj.horaNumeric = parseInt(limpaHorario(inicio));
+                                itensHoje.push(aulaObj);
+                            }
                         });
-        
-                        // Ordena a lista
+
+                        // Ordena a lista pelo horário de início
                         itensHoje.sort((a, b) => (a.horaNumeric > b.horaNumeric) ? 1 : ((b.horaNumeric > a.horaNumeric) ? -1 : 0));
-        
-                        // Organiza as aulas
-                        var totalAtividades = itensHoje.length; // Total de atividades
-                        var arrAtivPass = new Array(); // Array com até 1 atividade passada
-                        var arrAtivFutura = new Array(); // Array com até 2 atividades futuras
-                        var firstAtiv = 999; // Posição da primeira atividade em andamento
-                        var lastAtiv = 0; // Posição da última atividade em andamento
-                        var inicio;
-                        var fim;
-        
-                        // Verifica se a atividade está em execução
-                        for (var k = 0; k < totalAtividades; k++) {
-        
-                            // Início da aula
-                            inicio = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
-                                itensHoje[k].inicio.substr(0, 2), itensHoje[k].inicio.substr(3, 2));
-        
-                            // Hora final definida
-                            fim = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
-                                itensHoje[k].fim.substr(0, 2), itensHoje[k].fim.substr(3, 2));
-        
-                            // Atividades já iniciadas
-                            if (date.getTime() > inicio.getTime()) {
-        
-                                // Verifica se atividade ainda não acabou
-                                if (date.getTime() < fim) {
-        
-                                    // Grava as posições
-                                    if (firstAtiv == 999)
-                                        firstAtiv = k;
-                                    // Adiciona ao array de at. em andamento
-                                    arrAtivAtual.push(itensHoje[k]);
-                                }
-                                lastAtiv = k;
-                            }
-                        }
-        
-                        // Caso não tenha nenhuma atividade em andamento pega a próxima
-                        if (firstAtiv == 999) {
-                            lastAtiv++;
-                            firstAtiv = lastAtiv;
-                            vazio = true;
-                            if (itensHoje[lastAtiv] != undefined) {
-                                arrAtivAtual.push(itensHoje[lastAtiv]);
-                            }
-                        }
-        
-                        /* Busca as demais atividades */
-        
-                        // Atividades passadas
-                        if (itensHoje[(firstAtiv - 1)] != undefined) {
-                            arrAtivPass.push(itensHoje[(firstAtiv - 1)]);
-                        }
-        
-                        // Atividades futuras
-                        if (itensHoje[(lastAtiv + 1)] != undefined)
-                            arrAtivFutura.push(itensHoje[(lastAtiv + 1)]);
-                        if (itensHoje[(lastAtiv + 2)] != undefined)
-                            arrAtivFutura.push(itensHoje[(lastAtiv + 2)]);
-                        if (itensHoje[(lastAtiv + 3)] != undefined)
-                            arrAtivFutura.push(itensHoje[(lastAtiv + 3)]);
-                        if (itensHoje[(lastAtiv + 4)] != undefined)
-                            arrAtivFutura.push(itensHoje[(lastAtiv + 4)]);
-        
+
+                        var totalAtividades = itensHoje.length;
+                        var firstAtiv = 999;
+                        var lastAtiv = 0;
+
                         /******** PREENCHE OS CAMPOS ******/
-        
-                        // Passadas
-                        if (arrAtivPass.length > 0) {
-                            $("#horario1").html(arrAtivPass[0].inicio);
-                            $("div.campo1.linha1").html(arrAtivPass[0].nome);
-                            $("div.campo2.linha1").html(arrAtivPass[0].sala);
-                            $("div.campo3.linha1").html(arrAtivPass[0].professor);
+
+                        // Limpa todas as linhas antes de preencher
+                        for (var linha = 1; linha <= 6; linha++) {
+                            $("#horario" + linha).html("");
+                            $("div.campo1.linha" + linha).html("");
+                            $("div.campo2.linha" + linha).html("");
+                            $("div.campo3.linha" + linha).html("");
                         }
-        
-                        // Futuras
-                        if (arrAtivFutura.length > 0) {
-                            $("#horario3").html(arrAtivFutura[0].inicio);
-                            $("div.campo1.linha3").html(arrAtivFutura[0].nome);
-                            $("div.campo2.linha3").html(arrAtivFutura[0].sala);
-                            $("div.campo3.linha3").html(arrAtivFutura[0].professor);
+
+                        // Preenche até 6 aulas, diretamente de itensHoje
+                        for (var i = 0; i < itensHoje.length && i < 6; i++) {
+                            (function(index) {
+                                var aula = itensHoje[index];
+                                var linha = index + 1;
+
+                                setTimeout(function() {
+                                    $("#horario" + linha).hide().html(aula.inicio).fadeIn(1000);
+                                    $("div.campo1.linha" + linha).hide().html(aula.nome).fadeIn(1000);
+                                    $("div.campo2.linha" + linha).hide().html(aula.sala).fadeIn(1000);
+                                    $("div.campo3.linha" + linha).hide().html(aula.professor).fadeIn(1000);
+                                }, index * 500);
+                            })(i);
                         }
-                        if (arrAtivFutura.length > 1) {
-                            $("#horario4").html(arrAtivFutura[1].inicio);
-                            $("div.campo1.linha4").html(arrAtivFutura[1].nome);
-                            $("div.campo2.linha4").html(arrAtivFutura[1].sala);
-                            $("div.campo3.linha4").html(arrAtivFutura[1].professor);
-                        }
-                        if (arrAtivFutura.length > 2) {
-                            $("#horario5").html(arrAtivFutura[2].inicio);
-                            $("div.campo1.linha5").html(arrAtivFutura[2].nome);
-                            $("div.campo2.linha5").html(arrAtivFutura[2].sala);
-                            $("div.campo3.linha5").html(arrAtivFutura[2].professor);
-                        }
-                        if (arrAtivFutura.length > 3) {
-                            $("#horario6").html(arrAtivFutura[3].inicio);
-                            $("div.campo1.linha6").html(arrAtivFutura[3].nome);
-                            $("div.campo2.linha6").html(arrAtivFutura[3].sala);
-                            $("div.campo3.linha6").html(arrAtivFutura[3].professor);
-                        }
-        
-                        // Atividades atuais
-                        console.log(arrAtivAtual);
-                        $("#horario2").html("");
-                        $("div.campo1.linha2").html("");
-                        $("div.campo2.linha2").html("");
-                        $("div.campo3.linha2").html("");
-                        for (var j = 0; j < totalAtividades; j++) {
-                            var objAtividade = arrAtivAtual[j];
-                            if (objAtividade) {
-                                var horario = $("<div class='sub'></div>").html(objAtividade.inicio);
-                                var atividade = $("<div class='sub'></div>").html(objAtividade.nome);
-                                var sala = $("<div class='sub'></div>").html(objAtividade.sala);
-                                var professor = $("<div class='sub'></div>").html(objAtividade.professor);
-        
-                                $("#horario2").append(horario);
-                                $("div.campo1.linha2").append(atividade);
-                                $("div.campo2.linha2").append(sala);
-                                $("div.campo3.linha2").append(professor);
-                            }
-                        }
-        
-                        // Movimenta as atividades atuais
-                        var idx = -1;
-                        function trocar() {
-                            if ($("#horario2 div.sub").length) {
-                                idx++;
-                                if (idx >= $("#horario2 div.sub").length) {
-                                    idx = 0;
-                                }
-                                $("div.linha2 div.sub").fadeOut();
-                                setTimeout(function () {
-                                    $("#horario2").find(".sub").eq(idx).fadeIn();
-                                    $(".campo1.linha2").find(".sub").eq(idx).fadeIn();
-                                    $(".campo2.linha2").find(".sub").eq(idx).fadeIn();
-                                    $(".campo3.linha2").find(".sub").eq(idx).fadeIn();
-        
-                                }, 600);
-                            }
-                        }
-                        setInterval(trocar, 8000);
-                        trocar();
                     }
                 });
             }
+
         
             // Ordena o array
             function compare(a, b) {

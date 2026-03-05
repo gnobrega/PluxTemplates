@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=1280, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+            
+            <!-- Fundo  -->
+            <video id="fundo" muted ></video>
+            <img id="retangulo" src="./media/retangulo.png" />
+            <!-- Imagem -->
+            <div id="ctImg">
+                <img id="fileId" />
+            </div>
+            <div id="ctImg2">
+                <img id="fileId2" />
+            </div>
+            <div id="ctImg3">
+                <img id="fileId3" />
+            </div>
+            <div id="ctImg4">
+                <img id="fileId4" />
+            </div>
+            
+            <!-- Dados -->
+            <div id="titulo"></div>
+            <div id="descricao"></div>
+             <!-- <div id="valor"></div>    -->
+            <div id="descricaoadicional"></div>
+            <div id="tipo"></div>
+            <div id="contato"></div>
+
+            <div id="ctPreco">
+                <div id="valor" ></div>
+                <div id="containercents">
+                    <div id="cents" ></div>
+                </div>
+            </div>
+            
+
+            <!-- Dados 2 -->
+            <div id="titulo2"></div>
+            <div id="descricao2"></div>
+            
+            <div id="descricaoadicional2"></div>
+            <div id="tipo2"></div>
+            <div id="contato2"></div>
+
+            <div id="ctPreco2">
+                <div id="valor2" ></div>
+                <div id="containercents2">
+                    <div id="cents2" ></div>
+                </div>
+            </div>
+            <!-- Imagem -->
+            <div id="ctImg5">
+                <img id="fileId5" />
+            </div>
+            <div id="ctImg6">
+                <img id="fileId6" />
+            </div>
+            <div id="ctImg7">
+                <img id="fileId7" />
+            </div>
+            <div id="ctImg8">
+                <img id="fileId8" />
+            </div>
+        </div>
+
+         <!-- Calhau -->
+         <video id="calhau" muted src="./media/calhau.mp4" ></video>
+           
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>
+            var DATA_SOURCE = "/CONTEUDO/classidooh/classidooh.xml";
+            var DURATION = 30000;
+            var ext;
+            var possuiConteudo = true;
+            $("#retangulo").hide();
+            $("#tipo").hide();
+            $("#tipo2").hide();
+            $("#contato").hide();
+            $("#contato2").hide();
+            $("#descricaoadicional").hide();
+            $("#descricaoadicional2").hide();
+            $("#titulo").hide();
+            $("#titulo2").hide();
+            $("#descricao").hide();
+            $("#descricao2").hide();
+            $("#ctPreco").hide();
+            $("#ctPreco2").hide();
+            $("#ctImg1").hide();
+            $("#ctImg2").hide();
+            $("#ctImg3").hide();
+            $("#ctImg4").hide();
+            $("#ctImg5").hide();
+            $("#ctImg6").hide();
+            $("#ctImg7").hide();
+            $("#ctImg8").hide();
+            $(function () {
+                //GnPlayer
+                if (!GnLib.getParam('preview')) {
+                    //Carrega o conteúdo
+                    GnLib.autoloadContent(DATA_SOURCE, function (template) {
+                        
+                        //Registro 2
+                        var index = GnLib.getIndex(DATA_SOURCE, template.registros);
+                        $("#titulo2").html(template.registros[index].titulo);
+                        $("#descricao2").html(template.registros[index].descricao);
+                        $("#descricaoadicional2").html(template.registros[index].descricaoadicional);
+                        $("#tipo2").html(template.registros[index].tipo);
+                        $("#contato2").html(template.registros[index].contato);
+                        $("#valor2").html(template.registros[index].valor);
+                        $("#fileId5").attr("src", GnLib.getContentPath()+"/CONTEUDO/CLASSIDOOH/img_"+template.registros[index].fileId+"."+template.registros[index].extId);
+                        $("#fileId6").attr("src", GnLib.getContentPath()+"/CONTEUDO/CLASSIDOOH/img_"+template.registros[index].fileId2+"."+template.registros[index].extId);
+                        $("#fileId7").attr("src", GnLib.getContentPath()+"/CONTEUDO/CLASSIDOOH/img_"+template.registros[index].fileId3+"."+template.registros[index].extId);
+                        $("#fileId8").attr("src", GnLib.getContentPath()+"/CONTEUDO/CLASSIDOOH/img_"+template.registros[index].fileId4+"."+template.registros[index].extId);
+                        
+                        console.log(template.registros[index]);
+                        
+                    });
+                } else { //Preview
+                    GnLib.loadPreview();
+                    var src = $('#fileId').attr('src');
+                    var idx = src.lastIndexOf('.');
+                    //src = src.substr(0, idx) + "_656x626" + src.substr(idx)
+                    src = src.substr(0, idx) + '.jpg';
+                    $('#fileId').attr('src', src);
+
+                    //Autplay
+                    setTimeout(function() {
+                        GnPlay();
+                    }, 1000);
+                }
+            });
+
+            //Autoplay
+            function GnPlay() {
+
+            if( possuiConteudo ) {
+                //Carrega o vídeo de fundo
+                $("#fundo").attr("src", "./media/fundo.mp4");
+			
+				
+                var params = $("#valor").html().split(",");
+						$("#valor").html(params[0]);
+						$("#cents").html(","+params[1]);
+
+                var params2 = $("#valor2").html().split(",");
+						$("#valor2").html(params2[0]);
+						$("#cents2").html(","+params2[1]);
+                //Dá play no vídeo de fundo
+                $('#fundo').get(0).play();
+                
+                //Animação
+                //$("#ctImg").fadeIn(1000);
+                //$("#ctImg2").fadeIn(1000);
+                //$("#ctImg3").fadeIn(1000);
+                //$("#ctImg4").fadeIn(1000);
+                //$("#titulo").fadeIn();
+                
+                
+                //setTimeout(function() {$("#titulo").fadeIn()}, 1500);
+                //setTimeout(function() {$("#descricaoadicional").fadeIn()}, 1500);
+                //setTimeout(function() {$("#descricao").fadeIn()}, 2500);
+                //setTimeout(function() {$("#ctPreco").fadeIn()}, 1000);
+                setTimeout(function() {$("#tipo").fadeIn(1000)}, 1000);
+                setTimeout(function() {$("#contato").fadeIn(1000)}, 1000);
+                setTimeout(function() {$("#titulo").fadeIn(1000)}, 1500);
+                setTimeout(function() {$("#descricaoadicional").fadeIn(1000)}, 1500);
+                
+                setTimeout(function() {$("#descricao").fadeIn(1000)}, 2500);
+                
+                setTimeout(function() {$("#ctPreco").fadeIn(1000)}, 1000);
+                
+                setTimeout(function() {$("#retangulo").fadeIn(1000)}, 500);
+                
+                setTimeout(function() {$("#ctImg").fadeIn(1000)}, 500);
+                
+                setTimeout(function() {$("#ctImg2").fadeIn(1000)}, 500);
+                
+                setTimeout(function() {$("#ctImg3").fadeIn(1000)}, 500);
+                
+                setTimeout(function() {$("#ctImg4").fadeIn(1000)}, 500);
+                
+                setTimeout(function() {$("#titulo2").fadeIn(1000)}, 15500);
+
+                setTimeout(function() {$("#contato2").fadeIn(1000)}, 15500);
+                
+                setTimeout(function() {$("#descricaoadicional2").fadeIn(1000)}, 15500);
+                
+                
+                
+                
+
+                setTimeout(function() {
+                    
+                    $('#descricao2').fadeIn(1000);
+                }, 16500);
+                setTimeout(function() {
+                    
+                    $('#ctPreco2').fadeIn(1000);
+                }, 15500);
+               
+                setTimeout(function() {
+                    $('#ctImg5').fadeIn(1000);
+                    
+                }, 15500);
+                setTimeout(function() {
+                    $('#ctImg6').fadeIn(1000);
+                    
+                }, 15500);
+                setTimeout(function() {
+                    $('#ctImg7').fadeIn(1000);
+                    
+                }, 15500);
+                setTimeout(function() {
+                    $('#ctImg8').fadeIn(1000);
+                    
+                }, 15500);
+                setTimeout(function() {$("#tipo2").fadeIn()}, 15500);
+
+                // SAÍDA
+                setTimeout(function() {$("#ctImg").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#ctImg2").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#ctImg3").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#ctImg4").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#titulo").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#descricaoadicional").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#descricao").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#ctPreco").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#tipo").fadeOut(1000)}, 15000);
+                setTimeout(function() {$("#contato").fadeOut(1000)}, 15000);
+
+
+                //setTimeout(function() {$("#ctImg5").fadeOut()}, 20000);
+                //setTimeout(function() {$("#ctImg6").fadeOut()}, 20000);
+                //setTimeout(function() {$("#ctImg7").fadeOut()}, 20000);
+                //setTimeout(function() {$("#ctImg8").fadeOut()}, 20000);
+                //setTimeout(function() {$("#titulo2").fadeOut()}, 20000);
+                //setTimeout(function() {$("#descricaoadicional2").fadeOut()}, 20000);
+                //setTimeout(function() {$("#descricao2").fadeOut()}, 20000);
+                //setTimeout(function() {$("#ctPreco2").fadeOut()}, 20000);
+                //setTimeout(function() {$("#tipo2").fadeOut()}, 20000);
+                //setTimeout(function() {$("#retangulo").fadeOut()}, 20000);
+            } else {
+                    $("#calhau").show();
+                    $("#calhau").get(0).play();
+                }
+            }
+
+            //Autoplay - localhost
+            if (window.location.href.indexOf("localhost/html5") > -1) {
+                setTimeout(function () {
+                    GnPlay();
+                }, 1000);
+            }
+
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
+            }
+        </script>
+    </body>
+</html>

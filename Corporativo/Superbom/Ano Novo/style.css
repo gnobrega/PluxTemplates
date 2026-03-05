@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Montserrat-Bold';
-    src: url('./fonts/Montserrat-Bold.ttf') format('truetype');
+    font-family: 'AmsiProCond-Bold';
+    src: url('./fonts/AmsiProCond-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'InterstateBlackCondensed';
-    src: url('./fonts/InterstateBlackCondensed.ttf') format('truetype');
+    font-family: 'Roboto-Bold';
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
 }
 @font-face {
     font-family: 'AmsiProCond-Regular';
@@ -33,11 +33,19 @@ body {
 }
 #quadrado {
 	position: absolute;
-    top: 69px;
-    left: 809px;
-    width: 350px;
+    top: 187px;
+    left: 612px;
+    width: 406px;
     display: none;
     z-index: 30;
+}
+#quadrado2 {
+	position: absolute;
+    top: 353px;
+    left: 669px;
+    width: 310px;
+    display: none;
+    z-index: 32;
 }
 #abertura {
     width: 1360px;
@@ -70,96 +78,180 @@ body {
     background: url(./media/fechamento.jpg);
 }
 div#nome {
-    height: 67px;
+    height: 120px;
     position: absolute;
-    left: 829px;
-    top: 76px;
-    font-family: 'InterstateBlackCondensed';
-    color: #ffffff;
-    font-size: 30px;
+    left: 690px;
+    top: 615px;
+    font-family: 'AmsiProCond-Bold';
+    color: #363636;
+    font-size: 42px;
     text-align: center;
-    width: 315px;
+    width: 620px;
     display: none;
-    line-height: 30px;
+    line-height: 50px;
     z-index: 40;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-shadow: 
+    -1px -1px 0 white, /* Sombra no topo-esquerda */
+     1px -1px 0 white, /* Sombra no topo-direita */
+    -1px  1px 0 white, /* Sombra na parte inferior-esquerda */
+     1px  1px 0 white; /* Sombra na parte inferior-direita */
 }
-div#reais2 {
-    font-size: 50px;
-    top: 182px;
-    left: 940px;
-    margin-right: 10px;
-    z-index: 35;
-    color: #f8d400;
-    font-family: 'Montserrat-Bold';
+#reais2 {
+    position: fixed;
+    font-size: 30px;
+    top: 145px;
+    left: 1196px;
+    z-index: 99;
+    color: #ffffff;
+    font-family: 'AmsiProCond-Bold';
 }
 div#ctPreco2 {
-    display: flex;
-    height: 122px;
-    align-items: center;
-	position: relative;
-    left: 781px;
-    top: 157px;
-	width: 387px;
-    justify-content: center;
-    z-index: 40;
+	position: absolute;
+    left: 1108px;
+    top: 150px;
+    width: 226px;
+    z-index: 99;
 }
 div#ctPreco {
-	display: flex;
-	height: 134px;
+	display: none;
+	height: 140px;
 }
 div#preco {
-    font-family: 'Montserrat-Bold';
-    color: #f8d400;
-    font-size: 90px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 105px;
+    text-align: right;
     letter-spacing: -2px;
 	float: left;
-}
-div#container {
-    flex-direction: column;
-    display: flex;
+	min-width: 120px;
 }
 div#cents {
-    font-family: 'Montserrat-Bold';
-    color: #f8d400;
-    font-size: 55px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 35px;
     text-align: left;
 	float: left;
-	margin-top: 4px;
+	margin-top: 41px;
 	padding-left: 5px;
 }
 div#unidade {
-    font-family: 'Montserrat-Bold';
-    color: #f8d400;
-    font-size: 30px;
-    margin-left: 22px;
-    margin-top: -13px;
+    font-family: 'AmsiProCond-Bold';
+    color: #ffffff;
+    font-size: 23px;
+    text-align: left;
+    display: none;
+    float: right;
+    margin-right: 62px;
+    margin-top: 0px;
 }
 div#validade {
     position: absolute;
-    left: 666px;
-    top: 712px;
-    font-family: 'Montserrat-Bold';
+    left: 722px;
+    top: 701px;
+    font-family: 'AmsiProCond-Bold';
     color: #ffffff;
-    font-size: 30px;
-    width: 611px;
+    font-size: 25px;
+    width: 551px;
     text-align: center;
     display: none;
-    animation-duration: 0.5s;
 }
 img#fileId {
     position: absolute;
-    height: 480px;
-    width: 343px;
-    top: 121px;
-    left: 795px;
+    height: 450px;
+    width: 560px;
+    top: 150px;
+    left: 730px;
     display: none;
-    z-index: 20;
-    animation-duration: 1.0s;
+}
+div#valor{
+    position: absolute;
+    z-index: 99;
+    left: 1091px;
+    top: 95px;
 }
 div #ctImg {
-    display: none;
+    
 } 
+.keyframes mostra-preco {
+    animation-name: mostra-preco;
+    animation-duration: .5s;
+}
+@keyframes mostra-preco{
+    from {
+        opacity: 0;
+        top: 420px;
+    }
+    to {
+        opacity: 0;
+        top: 320px;
+    }
+}
+@-webkit-keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes slideInRightFade {
+    from {
+        opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInRightFade {
+    -webkit-animation-name: slideInRightFade;
+    animation-name: slideInRightFade;
+  }
 
+@-webkit-keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  @keyframes slideOutRightFade {
+    from {
+        opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+        opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  .slideOutRightFade {
+    -webkit-animation-name: slideOutRightFade;
+    animation-name: slideOutRightFade;
+  }

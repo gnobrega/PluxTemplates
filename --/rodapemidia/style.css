@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('./fonts/BebasNeue.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'BebasNeue';
+}
+html, body {
+    width: 768px;
+    height: 64px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 64px;
+    background-color: #000;
+    opacity: 0.50;
+}
+#logo{
+    z-index: 99;
+    position: absolute;
+}
+img#logo {
+    width: 100px;
+    height: 70px;
+    top: 0;
+    left: 20px;
+}
+/* Dados */
+#icone, #icone1, #icone2 {
+    position: absolute;
+    top: 22px;
+}
+#maxima, #minima , #hora, #maxima1, #minima1, #maxima2, #minima2 {
+    position: absolute;
+    color: #FFF;
+}
+#hora {
+    top: 5px;
+    left: 690px;
+    font-size: 35px;
+}
+#data {
+    color: #fff;
+    position: absolute;
+    top: 42px;
+    left: 685px;
+    font-size: 16px;
+}
+#maxima, #maxima1, #maxima2 {
+    left: 40px;
+}
+#minima, #minima1, #minima2 {
+    left: 40px;
+    margin-top: 20px;
+}
+
+#texto {
+    position: absolute;
+    left: 180px;
+    top: 17px;
+    width: 150px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+#conteudo {
+    position: absolute;
+    left: 330px;
+    top: 5px;
+    width: 150px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+#conteudo1 {
+    position: absolute;
+    left: 445px;
+    top: 5px;
+    width: 150px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+#conteudo2 {
+    position: absolute;
+    left: 550px;
+    top: 5px;
+    width: 150px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+#variacao-up, #variacao-down{
+    top: 20px;
+    position: absolute;
+    left: 190px;
+    width: 50px;
+}

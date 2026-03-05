@@ -15,7 +15,7 @@
     padding: 0;
 }
 html, body {
-    width: 380px;
+    width: 387px;
     height: 575px;
 }
 body {
@@ -27,14 +27,14 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 380px;
+    width: 387px;
     height: 575px;
 }
 #midiaVideo { 
     position: absolute;
     top: 0;
     left: 0;
-    width: 380px;
+    width: 387px;
     height: 575px;
     display: none;
 }

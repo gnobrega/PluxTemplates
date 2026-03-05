@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Neo Sans Std Medium TR';
+    src: url('./fonts/Neo Sans Std Medium TR.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Agenda Medium';
+    src: url('./fonts/Agenda Medium.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 1360px;
+    height: 704px;
+}
+#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+}
+body {
+    background: #00376d;
+    overflow: hidden;
+	-moz-transform-origin: 0 0;
+}
+/* Dados */
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 704px;
+}
+#titulo, #titulo2 {
+    height: 130px;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    top: 205px;
+    left: 30px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 50px;
+    color: #ffffff;
+    width: 600px;
+    /* text-align: center; */
+    max-height: 130px;
+    overflow: hidden;
+}
+#descricao, #descricao2 {
+
+    height: 360px;
+    position: absolute;
+    top: 501px;
+    left: 19px;
+    font-family: 'Agenda Medium';
+    font-size: 30px;
+    color: #ffffff;
+    width: 690px;
+    /* text-align: center; */
+    max-height: 360px;
+    overflow: hidden;
+}
+video#calhau{
+    display: none;
+    width: 768px;
+    height: 1360px;
+}
+@keyframes revelarImagem {
+    to {
+      clip-path: inset(0 0% 0 0); /* revela tudo da esquerda pra direita */
+    }
+  }
+
+
+#nomeEmpresa, #nomeEmpresa2 {
+font-weight: bold;
+    height: 48px;
+    position: absolute;
+    top: 70px;
+    left: 37px;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 35px;
+    color: #ffffff;
+    width: 720px;
+    /* text-align: right; */
+    overflow: hidden;
+    transition: clip-path 1s ease-out;
+}
+#nivel, #nivel2 {
+    height: 47px;
+    position: absolute;
+    top: 410px;
+    color: #fff;
+    font-family: 'Neo Sans Std Medium TR';
+    font-size: 35px;
+    text-align: center;
+    width: 340px;
+    font-weight: bold;
+    left: 0px;
+    text-transform: uppercase;
+    font-style: bold;
+    z-index: 101;
+}
+#contato, #contato2 {
+       height: 55px;
+    position: absolute;
+    top: 1035px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 40px;
+    /* text-align: center; */
+    /* transform: rotate(-90deg); */
+    width: 361px;
+    left: 120px;
+    z-index: 101;
+}

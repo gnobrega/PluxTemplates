@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 202px;
+    height: 307px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+}
+/* Dados */
+#barra {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    background: #273f53;
+    width: 202px;
+    height: 106px;
+    display: none;
+    border-top: 2px solid #218EE1;
+}
+#logo {
+        position: absolute;
+    top: 1px;
+    left: 68px;
+    display: none;
+    height: 57px;
+}
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 202px;
+    height: 285px;
+    background: #273f53;
+}
+#editoria {
+    position: absolute;
+    top: 127px;
+    left: 8px;
+    font-family: 'AvenirNextLTPro-Demi';
+    font-size: 9px;
+    color: #df9400;
+    display: none;
+}
+#texto {
+    position: absolute;
+    top: 200px;
+    left: 8px;
+    font-family: 'AvenirNextLTPro-Bold';
+    font-size: 14px;
+    color: #fff;
+    width: 186px;
+    display: none;
+    line-height: 16px;
+    text-align: center;
+}
+#credito {
+    position: absolute;
+    top: 187px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 6px;
+    text-align: right;
+    width: 110px;
+    left: 88px;
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 133px;
+}
+#ctImg {
+    display: none;
+}
+#fileid {
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 202px;
+    height: 163px;
+}
+.mostra-barra {
+    animation-name: mostra-barra;
+    animation-duration: 1s;
+}
+@keyframes mostra-barra {
+    from {
+        top: 253px;
+    }
+    to {
+        top: 180px;
+    }
+}

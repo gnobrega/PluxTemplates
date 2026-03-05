@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 768px;
+    height: 1360px;
+}
+#blackout {
+    position: absolute;
+    width: 1360px;
+    height: 768px;
+    background: #000;;
+}
+img.abertura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+	display: none;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+#abertura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1360px;
+    height: 768px;
+    display: none;
+    background: url(./media/abertura.png);
+}
+
+/* Dados */
+img#fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 768px;
+    height: 1360px;
+	object-fit: fill;
+}
+img#eua {
+    width: 160px;
+    position: absolute;
+    top: 486px;
+    left: 55px;
+    z-index: 99;
+}
+img#ue {
+    width: 160px;
+    position: absolute;
+    top: 637px;
+    left: 55px;
+    z-index: 99;
+}
+img#arg {
+    width: 160px;
+    position: absolute;
+    top: 790px;
+    left: 55px;
+    z-index: 99;
+}
+#titulos, #valores, #variacoes {
+    position: absolute;
+    top: 503px;
+    left: 239px;
+    z-index: 99;
+}
+#titulos .titulo, #valores .valor, #variacoes .variacao {
+	font-family: 'Montserrat-SemiBold';
+    font-size: 45px;
+    color: #FFF;
+    margin-bottom: 97px;
+    display: none;
+}
+#valores {
+    left: 382px;
+    top: 503px;
+    font-family: 'Montserrat-SemiBold';
+}
+#valores .valor, #variacoes .variacao {
+    font-size: 45px;
+    margin-bottom: 97px;
+}
+#variacoes {
+    left: 550px;
+    top: 503px;
+}
+
+#transparencia {
+    top: 438px;
+    left: 37px;
+    position: absolute;
+    width: 715px;
+    height: 485px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#variacoes .variacao {
+    padding-left: 40px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+#variacoes .variacao.down {
+    background-image: url(./media/down.png);
+    color: #aa0015;
+}
+#variacoes .variacao.up {
+    background-image: url(./media/up.png);
+    color: #009b00;
+}
+#texto {
+	position: absolute;
+	top: 330px;
+	left: 40px;
+    font-family: 'Montserrat-Regular';
+    font-size: 36px;
+    color: #8c5402;
+	width: 610px;
+}
+#fileId {
+    position: absolute;
+    left: 540px;
+    top: 0;
+}

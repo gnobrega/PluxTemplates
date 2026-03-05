@@ -16,23 +16,43 @@ body {
 }
 /* Dados */
 div#texto {
+    height: 380px;
+    max-height: 380px;
     position: absolute;
-    left: 660px;
-    top: 200px;
+    left: 719px;
+    top: 170px;
     font-family: 'Zurich Condensed BT';
     color: #000;
-    font-size: 40px;
+    font-size: 30px;
     display: none;
-    width: 650px;
-	line-height: 45px;
+    width: 625px;
+    line-height: 45px;
+    font-weight: bold;
+}
+div#descricao {
+    height: 90px;
+    max-height: 90px;
+    position: absolute;
+    left: 765px;
+    top: 530px;
+    font-family: 'Zurich Condensed BT';
+    color: #000;
+    font-size: 25px;
+    display: none;
+    width: 530px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
 }
 #ctImg {
     display: none;
 }
 img#fileId {
+        width: 706px;
     position: absolute;
-    top: 200px;
-    left: 20px;
+    top: 0px;
+    left: 0px;
+    height: 768px;
 }
 
 /* animacao */
@@ -48,5 +68,20 @@ img#fileId {
     to {
         opacity: 1;
         left: 660px;
+    }
+}
+
+.fadeinUpUp {
+    animation-name: fadeinUpUp;
+    animation-duration: 600ms;
+}
+@keyframes fadeinUpUp {
+    from {
+        opacity: 0;
+        top: 160px;
+    }
+    to {
+        opacity: 1;
+        top: 110px;
     }
 }

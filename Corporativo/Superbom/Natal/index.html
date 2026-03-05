@@ -11,31 +11,29 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo.mp4"></video>
-                        
+            <video id="fundo" muted src="./media/fundo.mp4"></video>
+            <div id="valor" style="display: none;">
+            <img id="valor" src="./media/valor.png" style="z-index: 90; position: absolute;">          
+            </div>
             <!-- Imagem -->
-            <div id="ctImg"><img id="fileId" /></div>
+            <div id="ctImg" ><img id="fileId" /></div>
             
             <!-- Dados -->
             <div id="dados">
                 <div id="nome"></div>
-                <div id="validade" hidden></div>
+                <div id="validade"></div>
             </div>
-			<img id="quadrado" src="./media/retangulo.png" />
-            
+            <h1 id="reais2" style="display: none;">R$</h1>
 			<div id="ctPreco2">
-                <div id=reais2>R$</div>
 				<div id="ctPreco">
 					<div id="preco"></div>
-                    <div id="container">
-                        <div id="cents"></div>
-                        <div id="unidade"></div>
-					</div>
+					<div id="cents"></div>
+					<div id="unidade"></div>
 				</div>
 			</div>
             
             <!-- Calhau -->
-            <video id="calhau" src="./media/calhau.mp4?a=1" hidden></video>
+            <video id="calhau" muted src="./media/calhau1.mp4" ></video>
             
         </div>
         
@@ -74,13 +72,12 @@
             function GnPlay() {
                 $("#fundo").get(0).play();
                 $("#reais2").hide();
-                $("#nome").hide();
-                $("#ctPreco2").hide();
+                $("#valor").hide();
+                $("#ctImg").hide();
                 
                  if( possuiConteudo ) {
 				
 					   var params = $("#preco").html().split(",");
-                       var unidade = $("#unidade").html();
                        $("#preco").html(params[0]);
 					   $("#cents").html(","+params[1]);
                        var validade = $("#validade").html();
@@ -88,23 +85,45 @@
                     
                     
                     setTimeout(function() {  
-                        $("#ctImg").show();
-                        $("#fileId").show();
-                        $("#fileId").addClass("animated fadeInLeft");
-                    }, 200);
+                        $("#validade").fadeIn(500);
+                    }, 1600);
+
                     setTimeout(function() {  
-                        $("#ctPreco2").show();
+                        $("#valor").show();
+                        $("#valor").addClass("animated slideInRightFade")
+                    }, 1600);
+
+                    setTimeout(function() {  
+                        $("#ctImg").show();
+                        $("#fileId").addClass("animated slideInRightFade");
+                        $("#nome").show();
+                        $("#nome").addClass("animated slideInRightFade");
                         $("#reais2").show();
-                        $("#reais2").addClass("animated FadeInVertical")
-                        $("#quadrado").show();
-						$("#quadrado").addClass("animated FadeInVertical");
+                        $("#reais2").addClass("animated slideInRightFade")
                         $("#ctPreco").show();
                         $("#unidade").show();
-                        $("#ctPreco").addClass("animated FadeInVertical");
-                        $("#unidade").addClass("animated FadeInVertical");
-                        $("#nome").show();
-                        $("#nome").addClass("animated FadeInVertical");
-                    }, 1800);
+                        $("#ctPreco").addClass("animated slideInRightFade");
+                        $("#unidade").addClass("animated slideInRightFade");
+                    }, 2000);
+                    
+                    setTimeout(function() {  
+                        $("#ctImg").removeClass();
+                        $("#nome").removeClass();
+                        $("#reais2").removeClass();
+                        $("#valor").removeClass();
+                        $("#ctPreco").removeClass();
+                        $("#unidade").removeClass();
+                        $("#validade").removeClass();
+                    }, 3000);
+                    setTimeout(function() {  
+                        $("#ctImg").addClass("animated slideOutRightFade");
+                        $("#nome").addClass("animated slideOutRightFade");
+                        $("#reais2").addClass("animated slideOutRightFade");
+                        $("#valor").addClass("animated slideOutRightFade");
+                        $("#ctPreco").addClass("animated slideOutRightFade");
+                        $("#unidade").addClass("animated slideOutRightFade");
+                        $("#validade").addClass("animated slideOutRightFade");
+                    }, 9600); 
                 } else {
                     $("#calhau").show();
                     $("#calhau").get(0).play();

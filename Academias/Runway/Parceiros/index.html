@@ -13,11 +13,12 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <img id="fundo" src="./media/fundo.jpg" />
+            <img id="fundo" autoplay src="./media/fundo1.jpeg" ></img> </div>
             
             <!-- Dados -->
             <div id="ctImg"><img id="fileId" src="" /></div>
-            <div id="texto">Texto</div>
+            <div id="texto"></div>
+            <div id="descricao"></div>
         </div>
                 
         <!-- Scripts -->
@@ -47,13 +48,16 @@
             
             //Autoplay
             function GnPlay() {
-				$("#ctImg").fadeIn();
+                $("#ctImg").show();
+				//$("#fileId").addClass('animated fadeIn');
                 
                 //Agenda a exibição do conteúdo
                 var contentLoaded = false;
                 setTimeout(function() {
                     $("#texto").show();
-                    $("#texto").addClass('exibir-conteudo');
+                    $("#texto").addClass('animated fadeIn');
+                    $("#descricao").show();
+                    $("#descricao").addClass('animated fadeIn');
                 }, 1000);
                 
             }

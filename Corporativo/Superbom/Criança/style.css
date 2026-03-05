@@ -78,13 +78,13 @@ body {
     background: url(./media/fechamento.jpg);
 }
 div#nome {
-    height: 120px;
+    height: 83px;
     position: absolute;
     left: 655px;
-    top: 615px;
+    top: 585px;
     font-family: 'AmsiProCond-Bold';
     color: #f9e400;
-    font-size: 42px;
+    font-size: 38px;
     text-align: center;
     width: 620px;
     display: none;
@@ -141,8 +141,8 @@ div#unidade {
 }
 div#validade {
     position: absolute;
-    left: 685px;
-    top: 715px;
+    left: 690px;
+    top: 682px;
     font-family: 'AmsiProCond-Bold';
     color: #054905;
     font-size: 25px;
@@ -150,14 +150,19 @@ div#validade {
     text-align: center;
     display: none;
 }
+div#valor{
+    top: 69px;
+    position: absolute;
+    left: 1011px;
+}
 img#fileId {
     position: absolute;
-    height: 567px;
-    width: 705px;
+    height: 430px;
+    width: 505px;
     top: 150px;
-    left: 610px;
+    left: 730px;
     z-index: 20;
-    display: none;
+    /*display: none; */
     
 }
 div #ctImg {

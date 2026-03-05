@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿    <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8"  />
@@ -11,34 +11,36 @@
         <div id="conteudo">
             
             <!-- Fundo -->
-            <video id="fundo" src="./media/fundo2.mp4"></video>
-                        
+            <video id="fundo" muted src="./media/fundo1.mp4"></video>
+            <div id="valor">
+            <img id="valor" src="./media/preco.png">          
+            </div>
             <!-- Imagem -->
-            <div id="ctImg"><img id="fileId" /></div>
+            <div id="ctImg" ><img id="fileId" /></div>
             
             <!-- Dados -->
             <div id="dados">
-                <div id="nome">Nome</div>
-                <div id="validade"></div>                
+                <div id="nome"></div>
+                <div id="validade"></div>
             </div>
-			<img id="bola" src="./media/bola.png" />
+            <h1 id="reais2" style="display: none;">R$</h1>
 			<div id="ctPreco2">
 				<div id="ctPreco">
 					<div id="preco"></div>
 					<div id="cents"></div>
-					<div id="unidade"></div>                
+					<div id="unidade"></div>
 				</div>
 			</div>
             
             <!-- Calhau -->
-            <video id="calhau" src="./media/calhau.mp4?a=1" ></video>
+            <video id="calhau" muted src="./media/calhau.mp4" ></video>
             
         </div>
         
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
         <script src="../../lib/js/GnLib.js"></script>
-        <script>           
+        <script>
             if (typeof (GnContentFound) != 'undefined') {
                 GnContentFound();
             }
@@ -46,6 +48,7 @@
             var comImagem = true;
             var ext;
             var possuiConteudo = true;
+            var DURATION = 15000;
             $(function () {
                 
                 //GnPlayer
@@ -69,29 +72,64 @@
             //Autoplay
             function GnPlay() {
                 $("#fundo").get(0).play();
+                $("#reais2").hide();
+                $("#valor").hide();
+                $("#ctImg").hide();
+                $("#validadefundo").hide();
                 
-                if( possuiConteudo ) {
+                 if( possuiConteudo ) {
 				
 					   var params = $("#preco").html().split(",");
                        $("#preco").html(params[0]);
 					   $("#cents").html(","+params[1]);
-                       //var validade = $("#validade").html();
-                       //$("#validade").html("Ofertas válidas de " + validade + " ou enquanto durar o estoque.");
-				
+                       var validade = $("#validade").html();
+                       $("#validade").html("OFERTAS VÁLIDAS DE " + validade + "");
+                    
+                    
                     setTimeout(function() {  
-                        $("#nome").fadeIn();
-						$("#fileId").show();
-                        $("#ctImg").fadeIn();
-                        $("#validade").fadeIn();
-						
-						$("#bola").show();
-						$("#bola").addClass("animated");
-						$("#bola").addClass("zoomIn");
-                    }, 2400);
+                        $("#validade").fadeIn(500);
+                    }, 3500);
+
                     setTimeout(function() {  
-                        $("#ctPreco").fadeIn();
-                        $("#unidade").fadeIn();
-                    }, 2800);
+                        $("#valor").show();
+                        $("#valor").addClass("animated slideInRightFade")
+                        $("#validadefundo").show();
+                        $("#validadefundo").addClass("animated slideInRightFade")
+                    }, 100);
+
+                    setTimeout(function() {  
+                        $("#fileId").show();
+                        $("#ctImg").show();
+                        $("#fileId").addClass("animated slideInRightFade");
+                        $("#nome").show();
+                        $("#nome").addClass("animated slideInRightFade");
+                        $("#reais2").show();
+                        $("#reais2").addClass("animated slideInRightFade")
+                        $("#ctPreco").show();
+                        $("#unidade").show();
+                        $("#ctPreco").addClass("animated slideInRightFade");
+                        $("#unidade").addClass("animated slideInRightFade");
+                    }, 1000);
+                    
+                    setTimeout(function() {  
+                        $("#ctImg").removeClass();
+                        $("#nome").removeClass();
+                        $("#reais2").removeClass();
+                        $("#valor").removeClass();
+                        $("#ctPreco").removeClass();
+                        $("#unidade").removeClass();
+                        $("#validade").removeClass();
+                    }, 3000);
+                    setTimeout(function() {  
+                        $("#ctImg").addClass("animated slideOutRightFade");
+                        $("#nome").addClass("animated slideOutRightFade");
+                        $("#reais2").addClass("animated slideOutRightFade");
+                        $("#valor").addClass("animated slideOutRightFade");
+                        $("#ctPreco").addClass("animated slideOutRightFade");
+                        $("#unidade").addClass("animated slideOutRightFade");
+                        $("#validade").addClass("animated slideOutRightFade");
+                        $("#validadefundo").addClass("animated slideOutRightFade");
+                    }, 10000); 
                 } else {
                     $("#calhau").show();
                     $("#calhau").get(0).play();

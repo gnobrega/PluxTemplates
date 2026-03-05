@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Demi';
+    src: url('./fonts/avenir-next-lt-pro-demi.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url('./fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 270px;
+    height: 407px;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    -moz-transform-origin: 0 0;
+}
+/* Dados */
+#barra {
+    position: absolute;
+    top: 240px;
+    left: 0;
+    background: #273f53;
+    width: 270px;
+    height: 141px;
+    display: none;
+    border-top: 3px solid #218EE1;
+}
+#logo {
+        position: absolute;
+    top: 2px;
+    left: 93px;
+    display: none;
+    height: 74px;
+}
+#conteudo { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 379px;
+    background: #273f53;
+}
+#editoria {
+    position: absolute;
+    top: 169px;
+    left: 11px;
+    font-family: 'AvenirNextLTPro-Demi';
+    font-size: 12px;
+    color: #df9400;
+    display: none;
+}
+#texto {
+    position: absolute;
+    top: 266px;
+    left: 11px;
+    font-family: 'AvenirNextLTPro-Bold';
+    font-size: 19px;
+    color: #fff;
+    width: 248px;
+    display: none;
+    line-height: 21px;
+    text-align: center;
+}
+#credito {
+    position: absolute;
+    top: 248px;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 9px;
+    text-align: right;
+    width: 170px;
+    left: 95px;
+    display: none;
+}
+#bar {
+    position: absolute;
+    top: 177px;
+}
+#ctImg {
+    display: none;
+}
+#fileid {
+    position: absolute;
+    top: 63px;
+    left: 0;
+    width: 270px;
+    height: 217px;
+}
+.mostra-barra {
+    animation-name: mostra-barra;
+    animation-duration: 1s;
+}
+@keyframes mostra-barra {
+    from {
+        top: 337px;
+    }
+    to {
+        top: 240px;
+    }
+}

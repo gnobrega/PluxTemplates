@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=768, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/animate.css">
+    </head>
+    <body>
+        <h2 id="console"></h2>
+
+        <video id="fundo" muted src="./media/fundo.mp4"></video>
+
+        <!-- Conteúdo -->
+        <div id="conteudo">
+
+            <!-- Dados -->
+            <div id="texto"></div>
+        </div>
+
+        
+        <img id="logo" src="./media/logo.png" />
+        
+        <div id="blackout" ><!-- Calhau -->
+            <video id="calhau" muted src="./media/calhau.mp4" ></video>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../../lib/js/jquery-3.1.1.min.js"></script>
+        <script src="../../lib/js/GnLib.js"></script>
+        <script>           
+            
+            
+            $("#calhau").get(0).play();
+            var ext;
+            var possuiConteudo = true;
+            $(function () {
+                
+                //GnPlayer
+                if( !GnLib.getParam('preview') ) {
+                    
+                    //Carrega o conteúdo
+                    var DATA_SOURCE = "/EMPRESAS/regras.xml";
+                    GnLib.autoloadContent(DATA_SOURCE, function(template) {
+                    });
+                    
+                } else { //Preview
+                    GnLib.loadPreview();
+                    $("body").css("zoom", "0.25");
+				   
+                   //Autplay
+                   setTimeout(function() {
+                       GnPlay();
+                   }, 1000);
+                }
+            });
+            
+            //Autoplay
+            function GnPlay() {
+                $("video").get(0).play();
+
+                if( possuiConteudo ) {
+                    if (typeof (GnContentFound) != 'undefined') {
+                        GnContentFound();
+                    }
+                     $("#blackout").hide();
+                    setTimeout(function() {
+                        $("#texto").fadeIn();
+                    }, 6000);
+                }else {
+                    $("#blackout").show();
+                    $("#calhau").get(0).play();
+                    
+                }
+            }
+            
+            //Autoplay - localhost
+            if( window.location.href.indexOf("localhost/html5") > -1 ) {
+                setTimeout(function() {
+                    GnPlay();
+                }, 1000);
+            }
+            
+            //Chama o calhau
+            GnLib.dump = function() {
+                possuiConteudo = false;
+            }
+            
+        </script>
+    </body>
+</html>

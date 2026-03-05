@@ -11,20 +11,17 @@
         
         <h2 id="console"></h2>
         <div id="content">
-            <img id="blackout" src="./media/blackout.png" style="position: absolute; z-index: 99;" />
-            <!--<img src="./media/indeed.jpg" style="position: absolute; z-index: 99; height: 100px; width: 200px;" />-->
-            <!-- Fundo -->
-            <video name="fundo1" id="fundo1" style="left: -2px; position: absolute;" src="./media/vidoe.mp4" autoplay="autoplay" height="100px" width="200px" >
-            </video>
-            <!--<video id="fundo2" autoplay src="./media/fundo.mp4" autoplay left="97px" height="97px" width="97px" ></video>-->
-            
+            <video id="1" src="./media/seb2.mp4" muted  style="position: absolute; left: 0px; z-index: 99; width: 97px; height: 97px;" ></video>
+            <video id="2" src="./media/seb2.mp4" muted  style="position: absolute; left: 97px; z-index: 99; width: 97px; height: 97px;" ></video>
+            <img id="3" src="./media/cbdd.png" muted hidden style="position: absolute; left: 0px; z-index: 99; width: 97px; height: 97px;" ></img>
+            <img id="4" src="./media/cbdd.png" muted hidden style="position: absolute; left: 97px; z-index: 99; width: 97px; height: 97px;" ></img>
             
         </div>
         <!-- Scripts -->
         <script src="../../lib/js/jquery-3.1.1.min.js"></script>
         <script src="../../lib/js/GnLib.js"></script>
         <script>
-            var DURATION = 10000000;
+            var DURATION = 36000;
             var comImagem = true;
             var ext;
             var possuiConteudo = true;
@@ -40,11 +37,21 @@
                 }
 
             function GnPlay() {
-                $('#fundo1').get(0).play();
+                var video1 = document.getElementById("1");
+                var video2 = document.getElementById("2");
+                video1.currentTime = 0;
+                video2.currentTime = 0;
+                video1.play();
+                video2.play();
+                $("#3").hide();
+                $("#4").hide();
+                setTimeout(function() {
+                    $("#3").show();
+                    $("#4").show();
+                    $("#1").hide();
+                    $("#2").hide();
+                }, 20000);
             }
-            setTimeout(function(){
-                $('#blackout').hide();
-            }, 1000);
             
             if( window.location.href.indexOf("localhost/html5") > -1 ) {
                 setTimeout(function() {
